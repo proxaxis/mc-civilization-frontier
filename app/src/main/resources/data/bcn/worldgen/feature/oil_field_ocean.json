@@ -1,0 +1,9 @@
+{
+  "type": "bcn:oil_field",
+  "pool_radius": 10,
+  "pool_depth": 3,
+  "spout_height": 45,
+  "pocket_radius": 10,
+  "pocket_depth": 25,
+  "spring_chance": 0.5
+}

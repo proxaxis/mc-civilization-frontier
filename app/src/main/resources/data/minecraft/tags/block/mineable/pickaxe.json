@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "bcn:copper_ore",
+    "bcn:deepslate_copper_ore",
+    "bcn:tin_ore",
+    "bcn:deepslate_tin_ore",
+    "bcn:silver_ore",
+    "bcn:deepslate_silver_ore",
+    "bcn:uranium_ore",
+    "bcn:deepslate_uranium_ore",
+    "bcn:ruby_ore",
+    "bcn:deepslate_ruby_ore",
+    "bcn:sapphire_ore",
+    "bcn:deepslate_sapphire_ore",
+    "bcn:peridot_ore",
+    "bcn:deepslate_peridot_ore",
+    "bcn:electrotine_ore",
+    "bcn:deepslate_electrotine_ore",
+    "bcn:marble",
+    "bcn:oil_spring"
+  ]
+}

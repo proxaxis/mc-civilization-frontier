@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "#c:ores/tin",
+    "#c:ores/silver",
+    "#c:ores/uranium",
+    "#c:ores/ruby",
+    "#c:ores/sapphire",
+    "#c:ores/peridot",
+    "#c:ores/electrotine",
+    "#c:ores/copper"
+  ]
+}

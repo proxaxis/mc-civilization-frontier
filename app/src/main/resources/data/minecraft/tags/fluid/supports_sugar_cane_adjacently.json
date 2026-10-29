@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "bcn:oil",
+    "bcn:flowing_oil"
+  ]
+}

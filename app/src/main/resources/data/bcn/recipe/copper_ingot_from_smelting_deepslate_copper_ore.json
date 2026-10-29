@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "ingredient": "bcn:deepslate_copper_ore",
+  "result": {
+    "id": "minecraft:copper_ingot"
+  }
+}

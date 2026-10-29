@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "bcn:copper_ore",
+    "bcn:deepslate_copper_ore",
+    "bcn:tin_ore",
+    "bcn:deepslate_tin_ore"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+	"schemaVersion": 1,
+	"id": "bcn",
+	"version": "${version}",
+	"name": "Build Craft Neo",
+	"description": "World generation content for Build Craft Neo: ores, marble and oil fields.",
+	"authors": ["Civilization Frontier"],
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.civilizationfrontier.bcn.BuildCraftNeo"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
