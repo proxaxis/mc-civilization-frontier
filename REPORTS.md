@@ -174,3 +174,20 @@
   * スペルと職業ツリーの連携(ツリーアンロック→実スペル発動)は puffish unlock と spell_engine 側のアイテム/スペルプール結合の設計が必要
   * 職業選択の排他ロック(他職業カテゴリ不可)は別途実装が必要
   * 奥義・召喚・瞬間移動など一部スペルは impact 骨格のみで実挙動は未実装
+
+## task-103(続2) - 職業選択・排他ロック datapack 実装
+
+* 結果: 一部完了(実機プレイヤー検証は未実施)
+* 変更点:
+  * `data/cfb/advancement/on_join.json`: 初回参加時に `cfb:job/menu` を実行する進捗
+  * `data/cfb/function/job/menu.mcfunction`: tellraw クリック式の4職業選択メニュー
+  * `data/cfb/function/job/{guardian,assassin,mage,paladin}.mcfunction`: 選択職業を unlock、他3職業を lock + 確認メッセージ
+  * `/reload` で `Data pack cfb loaded successfully` を再確認
+* 判明したこと:
+  * `puffish_skills category lock/unlock` コマンドが存在し datapack function から実行可能な設計にできる
+  * `minecraft:tick` トリガーの進捗 + rewards.function で初回参加時の自動メニューが実装できる
+  * rcon 経由ではプレイヤー引数コマンドの検証ができない(lock/unlock の実挙動はプレイヤーログイン時要確認)
+* 未解決・要判断:
+  * `category lock <players> <category>` の引数順は仮定(@s 前提)。プレイヤー参加時に要検証
+  * スキルツリーアンロックとスペル発動の実連携(puffish unlock→spell 使用可否)は別設計が必要
+  * on_join メニューは初回のみ。再選択手段(リセット)の設計が必要
