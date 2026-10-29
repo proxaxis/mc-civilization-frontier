@@ -1,0 +1,48 @@
+{
+  "school": "spell_power:arcane",
+  "range": 16.0,
+  "tier": 4,
+  "group": "paladin_protection",
+  "learn": {},
+  "active": {
+    "cast": {
+      "duration": 0.5,
+      "animation": {
+        "id": "spell_engine:one_handed_area_charge"
+      }
+    }
+  },
+  "release": {
+    "animation": {
+      "id": "spell_engine:one_handed_area_release"
+    }
+  },
+  "impacts": [
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "effect_id": "minecraft:absorption",
+          "duration": 15.0
+        }
+      }
+    }
+  ],
+  "cost": {
+    "exhaust": 2.4,
+    "cooldown": {
+      "group": "weapon",
+      "duration": 60,
+      "proportional": true
+    },
+    "item": {
+      "id": "runes:protection_stone"
+    }
+  },
+  "target": {
+    "type": "AREA",
+    "area": {
+      "include_caster": true
+    }
+  }
+}

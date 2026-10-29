@@ -1,0 +1,667 @@
+{
+  "step_lv1": {
+    "title": "影の歩法 Lv1 - Shadow Step",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Shadow Step Lv1(累計 3%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:movement_speed",
+          "value": 0.03,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "step_lv2": {
+    "title": "影の歩法 Lv2 - Shadow Step",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Shadow Step Lv2(累計 6%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:movement_speed",
+          "value": 0.06,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "step_lv3": {
+    "title": "影の歩法 Lv3 - Shadow Step",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Shadow Step Lv3(累計 9%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:movement_speed",
+          "value": 0.09,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "step_lv4": {
+    "title": "影の歩法 Lv4 - Shadow Step",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Shadow Step Lv4(累計 12%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:movement_speed",
+          "value": 0.12,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "step_lv5": {
+    "title": "影の歩法 Lv5 - Shadow Step",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Shadow Step Lv5(累計 15%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:movement_speed",
+          "value": 0.15,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "eye_lv1": {
+    "title": "急所の目 Lv1 - Vital Eye",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Vital Eye Lv1(累計 2%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.02,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "eye_lv2": {
+    "title": "急所の目 Lv2 - Vital Eye",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Vital Eye Lv2(累計 4%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.04,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "eye_lv3": {
+    "title": "急所の目 Lv3 - Vital Eye",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Vital Eye Lv3(累計 6%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.06,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "eye_lv4": {
+    "title": "急所の目 Lv4 - Vital Eye",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Vital Eye Lv4(累計 8%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.08,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "eye_lv5": {
+    "title": "急所の目 Lv5 - Vital Eye",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Vital Eye Lv5(累計 10%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.1,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "measure_lv1": {
+    "title": "暗殺の間合い Lv1 - Assassin's Measure",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Assassin's Measure Lv1(累計 4%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:attack_damage",
+          "value": 0.04,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "measure_lv2": {
+    "title": "暗殺の間合い Lv2 - Assassin's Measure",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Assassin's Measure Lv2(累計 8%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:attack_damage",
+          "value": 0.08,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "measure_lv3": {
+    "title": "暗殺の間合い Lv3 - Assassin's Measure",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Assassin's Measure Lv3(累計 12%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:attack_damage",
+          "value": 0.12,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "measure_lv4": {
+    "title": "暗殺の間合い Lv4 - Assassin's Measure",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Assassin's Measure Lv4(累計 16%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:attack_damage",
+          "value": 0.16,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "measure_lv5": {
+    "title": "暗殺の間合い Lv5 - Assassin's Measure",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Assassin's Measure Lv5(累計 20%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:attack_damage",
+          "value": 0.2,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "aura_lv1": {
+    "title": "沈黙の殺気 Lv1 - Silent Killing Aura",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Silent Killing Aura Lv1(累計 4%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:armor_toughness",
+          "value": 0.04,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "aura_lv2": {
+    "title": "沈黙の殺気 Lv2 - Silent Killing Aura",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Silent Killing Aura Lv2(累計 8%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:armor_toughness",
+          "value": 0.08,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "aura_lv3": {
+    "title": "沈黙の殺気 Lv3 - Silent Killing Aura",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Silent Killing Aura Lv3(累計 12%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:armor_toughness",
+          "value": 0.12,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "aura_lv4": {
+    "title": "沈黙の殺気 Lv4 - Silent Killing Aura",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Silent Killing Aura Lv4(累計 16%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:armor_toughness",
+          "value": 0.16,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "aura_lv5": {
+    "title": "沈黙の殺気 Lv5 - Silent Killing Aura",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Silent Killing Aura Lv5(累計 20%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:armor_toughness",
+          "value": 0.2,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "body_lv1": {
+    "title": "軽業の体 Lv1 - Acrobatic Body",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Acrobatic Body Lv1(累計 2%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.02,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "body_lv2": {
+    "title": "軽業の体 Lv2 - Acrobatic Body",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Acrobatic Body Lv2(累計 4%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.04,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "body_lv3": {
+    "title": "軽業の体 Lv3 - Acrobatic Body",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Acrobatic Body Lv3(累計 6%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.06,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "body_lv4": {
+    "title": "軽業の体 Lv4 - Acrobatic Body",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Acrobatic Body Lv4(累計 8%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.08,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "body_lv5": {
+    "title": "軽業の体 Lv5 - Acrobatic Body",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Acrobatic Body Lv5(累計 10%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.1,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "flash": {
+    "title": "瞬刃 - Flash Blade",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Flash Blade アンロック(詳細は JOB_ASSASSIN.md)",
+    "rewards": []
+  },
+  "dash": {
+    "title": "影走り - Shadow Dash",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Shadow Dash アンロック(詳細は JOB_ASSASSIN.md)",
+    "rewards": []
+  },
+  "hamstring": {
+    "title": "断脚刃 - Hamstring",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Hamstring アンロック(詳細は JOB_ASSASSIN.md)",
+    "rewards": []
+  },
+  "blood_trail": {
+    "title": "血痕の追跡 - Blood Trail",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Blood Trail アンロック(詳細は JOB_ASSASSIN.md)",
+    "rewards": []
+  },
+  "afterimage": {
+    "title": "残像 - Afterimage",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Afterimage アンロック(詳細は JOB_ASSASSIN.md)",
+    "rewards": []
+  },
+  "smoke": {
+    "title": "煙幕 - Smoke Veil",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Smoke Veil アンロック(詳細は JOB_ASSASSIN.md)",
+    "rewards": []
+  },
+  "shadow_strike": {
+    "title": "影縫い - Shadow Strike",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Shadow Strike アンロック(詳細は JOB_ASSASSIN.md)",
+    "rewards": []
+  },
+  "needle": {
+    "title": "麻痺針 - Paralytic Needle",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Paralytic Needle アンロック(詳細は JOB_ASSASSIN.md)",
+    "rewards": []
+  },
+  "abyss": {
+    "title": "深淵の呼吸 - Abyssal Breath",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Abyssal Breath アンロック(詳細は JOB_ASSASSIN.md)",
+    "rewards": []
+  },
+  "taunt": {
+    "title": "挑発の影 - Shadow Taunt",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Shadow Taunt アンロック(詳細は JOB_ASSASSIN.md)",
+    "rewards": []
+  },
+  "stealth": {
+    "title": "ステルス - Stealth",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Stealth アンロック(詳細は JOB_ASSASSIN.md)",
+    "rewards": []
+  },
+  "deathblow": {
+    "title": "致命打 - Deathblow",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Deathblow アンロック(詳細は JOB_ASSASSIN.md)",
+    "rewards": []
+  },
+  "vanish": {
+    "title": "闇遁 - Vanish",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Vanish アンロック(詳細は JOB_ASSASSIN.md)",
+    "rewards": []
+  },
+  "clone": {
+    "title": "影分身 - Shadow Clone",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Shadow Clone アンロック(詳細は JOB_ASSASSIN.md)",
+    "rewards": []
+  },
+  "burial": {
+    "title": "影葬 - Shadow Burial",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Shadow Burial アンロック(詳細は JOB_ASSASSIN.md)",
+    "rewards": []
+  }
+}

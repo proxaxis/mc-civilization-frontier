@@ -1,0 +1,48 @@
+{
+  "school": "spell_power:healing",
+  "range": 16.0,
+  "tier": 4,
+  "group": "priest_holy",
+  "learn": {},
+  "active": {
+    "cast": {
+      "duration": 1.5,
+      "animation": {
+        "id": "spell_engine:one_handed_area_charge"
+      }
+    }
+  },
+  "release": {
+    "animation": {
+      "id": "spell_engine:one_handed_area_release"
+    }
+  },
+  "impacts": [
+    {
+      "action": {
+        "type": "HEAL",
+        "heal": {
+          "spell_power_coefficient": 4.0
+        }
+      }
+    }
+  ],
+  "cost": {
+    "exhaust": 2.8,
+    "cooldown": {
+      "group": "weapon",
+      "duration": 120,
+      "proportional": true
+    },
+    "item": {
+      "id": "runes:healing_stone"
+    }
+  },
+  "target": {
+    "type": "AIM",
+    "aim": {
+      "sticky": true,
+      "use_caster_as_fallback": true
+    }
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "physique_lv1": {
+    "definition": "physique_lv1",
+    "x": 0,
+    "y": 40,
+    "root": true
+  },
+  "physique_lv2": {
+    "definition": "physique_lv2",
+    "x": 0,
+    "y": 80,
+    "root": false
+  },
+  "physique_lv3": {
+    "definition": "physique_lv3",
+    "x": 0,
+    "y": 120,
+    "root": false
+  },
+  "physique_lv4": {
+    "definition": "physique_lv4",
+    "x": 0,
+    "y": 160,
+    "root": false
+  },
+  "physique_lv5": {
+    "definition": "physique_lv5",
+    "x": 0,
+    "y": 200,
+    "root": false
+  },
+  "plating_lv1": {
+    "definition": "plating_lv1",
+    "x": 40,
+    "y": 40,
+    "root": true
+  },
+  "plating_lv2": {
+    "definition": "plating_lv2",
+    "x": 40,
+    "y": 80,
+    "root": false
+  },
+  "plating_lv3": {
+    "definition": "plating_lv3",
+    "x": 40,
+    "y": 120,
+    "root": false
+  },
+  "plating_lv4": {
+    "definition": "plating_lv4",
+    "x": 40,
+    "y": 160,
+    "root": false
+  },
+  "plating_lv5": {
+    "definition": "plating_lv5",
+    "x": 40,
+    "y": 200,
+    "root": false
+  },
+  "stance_lv1": {
+    "definition": "stance_lv1",
+    "x": 80,
+    "y": 40,
+    "root": true
+  },
+  "stance_lv2": {
+    "definition": "stance_lv2",
+    "x": 80,
+    "y": 80,
+    "root": false
+  },
+  "stance_lv3": {
+    "definition": "stance_lv3",
+    "x": 80,
+    "y": 120,
+    "root": false
+  },
+  "stance_lv4": {
+    "definition": "stance_lv4",
+    "x": 80,
+    "y": 160,
+    "root": false
+  },
+  "stance_lv5": {
+    "definition": "stance_lv5",
+    "x": 80,
+    "y": 200,
+    "root": false
+  },
+  "shield_lv1": {
+    "definition": "shield_lv1",
+    "x": 120,
+    "y": 40,
+    "root": true
+  },
+  "shield_lv2": {
+    "definition": "shield_lv2",
+    "x": 120,
+    "y": 80,
+    "root": false
+  },
+  "shield_lv3": {
+    "definition": "shield_lv3",
+    "x": 120,
+    "y": 120,
+    "root": false
+  },
+  "shield_lv4": {
+    "definition": "shield_lv4",
+    "x": 120,
+    "y": 160,
+    "root": false
+  },
+  "shield_lv5": {
+    "definition": "shield_lv5",
+    "x": 120,
+    "y": 200,
+    "root": false
+  },
+  "presence_lv1": {
+    "definition": "presence_lv1",
+    "x": 160,
+    "y": 40,
+    "root": true
+  },
+  "presence_lv2": {
+    "definition": "presence_lv2",
+    "x": 160,
+    "y": 80,
+    "root": false
+  },
+  "presence_lv3": {
+    "definition": "presence_lv3",
+    "x": 160,
+    "y": 120,
+    "root": false
+  },
+  "presence_lv4": {
+    "definition": "presence_lv4",
+    "x": 160,
+    "y": 160,
+    "root": false
+  },
+  "presence_lv5": {
+    "definition": "presence_lv5",
+    "x": 160,
+    "y": 200,
+    "root": false
+  },
+  "bulwark": {
+    "definition": "bulwark",
+    "x": 240,
+    "y": 40
+  },
+  "charge": {
+    "definition": "charge",
+    "x": 280,
+    "y": 40
+  },
+  "barrage": {
+    "definition": "barrage",
+    "x": 320,
+    "y": 40
+  },
+  "roar": {
+    "definition": "roar",
+    "x": 360,
+    "y": 40
+  },
+  "resolve": {
+    "definition": "resolve",
+    "x": 400,
+    "y": 40
+  },
+  "bastion": {
+    "definition": "bastion",
+    "x": 240,
+    "y": 120
+  },
+  "wall": {
+    "definition": "wall",
+    "x": 280,
+    "y": 120
+  },
+  "cover": {
+    "definition": "cover",
+    "x": 320,
+    "y": 120
+  },
+  "flesh_roar": {
+    "definition": "flesh_roar",
+    "x": 360,
+    "y": 120
+  },
+  "second_wind": {
+    "definition": "second_wind",
+    "x": 400,
+    "y": 160
+  },
+  "seismic": {
+    "definition": "seismic",
+    "x": 240,
+    "y": 240
+  },
+  "def_field": {
+    "definition": "def_field",
+    "x": 280,
+    "y": 200
+  },
+  "vow": {
+    "definition": "vow",
+    "x": 320,
+    "y": 240
+  },
+  "aegis": {
+    "definition": "aegis",
+    "x": 360,
+    "y": 280
+  },
+  "unbreakable": {
+    "definition": "unbreakable",
+    "x": 400,
+    "y": 280
+  }
+}

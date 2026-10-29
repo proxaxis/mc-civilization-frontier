@@ -1,0 +1,227 @@
+{
+  "mana_lv1": {
+    "definition": "mana_lv1",
+    "x": 0,
+    "y": 40,
+    "root": true
+  },
+  "mana_lv2": {
+    "definition": "mana_lv2",
+    "x": 0,
+    "y": 80,
+    "root": false
+  },
+  "mana_lv3": {
+    "definition": "mana_lv3",
+    "x": 0,
+    "y": 120,
+    "root": false
+  },
+  "mana_lv4": {
+    "definition": "mana_lv4",
+    "x": 0,
+    "y": 160,
+    "root": false
+  },
+  "mana_lv5": {
+    "definition": "mana_lv5",
+    "x": 0,
+    "y": 200,
+    "root": false
+  },
+  "circulation_lv1": {
+    "definition": "circulation_lv1",
+    "x": 40,
+    "y": 40,
+    "root": true
+  },
+  "circulation_lv2": {
+    "definition": "circulation_lv2",
+    "x": 40,
+    "y": 80,
+    "root": false
+  },
+  "circulation_lv3": {
+    "definition": "circulation_lv3",
+    "x": 40,
+    "y": 120,
+    "root": false
+  },
+  "circulation_lv4": {
+    "definition": "circulation_lv4",
+    "x": 40,
+    "y": 160,
+    "root": false
+  },
+  "circulation_lv5": {
+    "definition": "circulation_lv5",
+    "x": 40,
+    "y": 200,
+    "root": false
+  },
+  "amplify_lv1": {
+    "definition": "amplify_lv1",
+    "x": 80,
+    "y": 40,
+    "root": true
+  },
+  "amplify_lv2": {
+    "definition": "amplify_lv2",
+    "x": 80,
+    "y": 80,
+    "root": false
+  },
+  "amplify_lv3": {
+    "definition": "amplify_lv3",
+    "x": 80,
+    "y": 120,
+    "root": false
+  },
+  "amplify_lv4": {
+    "definition": "amplify_lv4",
+    "x": 80,
+    "y": 160,
+    "root": false
+  },
+  "amplify_lv5": {
+    "definition": "amplify_lv5",
+    "x": 80,
+    "y": 200,
+    "root": false
+  },
+  "chant_lv1": {
+    "definition": "chant_lv1",
+    "x": 120,
+    "y": 40,
+    "root": true
+  },
+  "chant_lv2": {
+    "definition": "chant_lv2",
+    "x": 120,
+    "y": 80,
+    "root": false
+  },
+  "chant_lv3": {
+    "definition": "chant_lv3",
+    "x": 120,
+    "y": 120,
+    "root": false
+  },
+  "chant_lv4": {
+    "definition": "chant_lv4",
+    "x": 120,
+    "y": 160,
+    "root": false
+  },
+  "chant_lv5": {
+    "definition": "chant_lv5",
+    "x": 120,
+    "y": 200,
+    "root": false
+  },
+  "affinity_lv1": {
+    "definition": "affinity_lv1",
+    "x": 160,
+    "y": 40,
+    "root": true
+  },
+  "affinity_lv2": {
+    "definition": "affinity_lv2",
+    "x": 160,
+    "y": 80,
+    "root": false
+  },
+  "affinity_lv3": {
+    "definition": "affinity_lv3",
+    "x": 160,
+    "y": 120,
+    "root": false
+  },
+  "affinity_lv4": {
+    "definition": "affinity_lv4",
+    "x": 160,
+    "y": 160,
+    "root": false
+  },
+  "affinity_lv5": {
+    "definition": "affinity_lv5",
+    "x": 160,
+    "y": 200,
+    "root": false
+  },
+  "firebolt": {
+    "definition": "firebolt",
+    "x": 240,
+    "y": 40
+  },
+  "frostbolt": {
+    "definition": "frostbolt",
+    "x": 280,
+    "y": 40
+  },
+  "blink": {
+    "definition": "blink",
+    "x": 320,
+    "y": 40
+  },
+  "cache": {
+    "definition": "cache",
+    "x": 360,
+    "y": 40
+  },
+  "mana_shield": {
+    "definition": "mana_shield",
+    "x": 400,
+    "y": 40
+  },
+  "inferno": {
+    "definition": "inferno",
+    "x": 240,
+    "y": 120
+  },
+  "frost_domain": {
+    "definition": "frost_domain",
+    "x": 280,
+    "y": 120
+  },
+  "flare": {
+    "definition": "flare",
+    "x": 320,
+    "y": 120
+  },
+  "surge": {
+    "definition": "surge",
+    "x": 360,
+    "y": 120
+  },
+  "chain": {
+    "definition": "chain",
+    "x": 400,
+    "y": 160
+  },
+  "shockbolt": {
+    "definition": "shockbolt",
+    "x": 240,
+    "y": 240
+  },
+  "attune": {
+    "definition": "attune",
+    "x": 280,
+    "y": 240
+  },
+  "gravity": {
+    "definition": "gravity",
+    "x": 320,
+    "y": 240
+  },
+  "burst": {
+    "definition": "burst",
+    "x": 360,
+    "y": 240
+  },
+  "final": {
+    "definition": "final",
+    "x": 400,
+    "y": 280
+  }
+}

@@ -2,7 +2,7 @@
   "school": "spell_power:arcane",
   "range": 16.0,
   "tier": 3,
-  "group": "cfb_guardian",
+  "group": "paladin_protection",
   "learn": {},
   "active": {
     "cast": {
@@ -28,9 +28,18 @@
     }
   ],
   "cost": {
-    "exhaust": 0.5,
+    "exhaust": 2.0,
     "cooldown": {
-      "duration": 70
+      "group": "weapon",
+      "duration": 70,
+      "proportional": true
+    }
+  },
+  "target": {
+    "type": "AIM",
+    "aim": {
+      "sticky": true,
+      "use_caster_as_fallback": true
     }
   }
 }

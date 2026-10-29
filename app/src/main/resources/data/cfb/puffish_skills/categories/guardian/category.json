@@ -1,0 +1,11 @@
+{
+  "title": "守護者",
+  "icon": {
+    "type": "item",
+    "data": {
+      "item": "minecraft:shield"
+    }
+  },
+  "background": "minecraft:textures/block/stone.png",
+  "exclusive_root": true
+}

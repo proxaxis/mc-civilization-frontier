@@ -2,7 +2,7 @@
   "school": "spell_power:arcane",
   "range": 16.0,
   "tier": 5,
-  "group": "cfb_assassin",
+  "group": "rogue_subtlety",
   "learn": {},
   "active": {
     "cast": {
@@ -29,12 +29,20 @@
     }
   ],
   "cost": {
-    "exhaust": 0.8,
+    "exhaust": 3.2,
     "cooldown": {
-      "duration": 180
+      "group": "weapon",
+      "duration": 180,
+      "proportional": true
     },
     "item": {
       "id": "runes:arcane_stone"
+    }
+  },
+  "target": {
+    "type": "AIM",
+    "aim": {
+      "sticky": true
     }
   }
 }

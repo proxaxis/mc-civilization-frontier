@@ -2,7 +2,7 @@
   "school": "spell_power:healing",
   "range": 16.0,
   "tier": 2,
-  "group": "cfb_paladin",
+  "group": "priest_holy",
   "learn": {},
   "active": {
     "cast": {
@@ -29,9 +29,17 @@
     }
   ],
   "cost": {
-    "exhaust": 0.4,
+    "exhaust": 1.6,
     "cooldown": {
-      "duration": 40
+      "group": "weapon",
+      "duration": 40,
+      "proportional": true
+    }
+  },
+  "target": {
+    "type": "AREA",
+    "area": {
+      "include_caster": true
     }
   }
 }

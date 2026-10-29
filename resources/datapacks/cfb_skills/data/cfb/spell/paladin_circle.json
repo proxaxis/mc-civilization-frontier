@@ -2,7 +2,7 @@
   "school": "spell_power:healing",
   "range": 16.0,
   "tier": 3,
-  "group": "cfb_paladin",
+  "group": "priest_holy",
   "learn": {},
   "active": {
     "cast": {
@@ -28,12 +28,21 @@
     }
   ],
   "cost": {
-    "exhaust": 0.5,
+    "exhaust": 2.0,
     "cooldown": {
-      "duration": 50
+      "group": "weapon",
+      "duration": 50,
+      "proportional": true
     },
     "item": {
       "id": "runes:healing_stone"
+    }
+  },
+  "target": {
+    "type": "AIM",
+    "aim": {
+      "sticky": true,
+      "use_caster_as_fallback": true
     }
   }
 }

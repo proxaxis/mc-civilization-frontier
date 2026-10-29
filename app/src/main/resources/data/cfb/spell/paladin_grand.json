@@ -1,0 +1,48 @@
+{
+  "school": "spell_power:healing",
+  "range": 16.0,
+  "tier": 5,
+  "group": "priest_holy",
+  "learn": {},
+  "active": {
+    "cast": {
+      "duration": 2.0,
+      "animation": {
+        "id": "spell_engine:one_handed_area_charge"
+      }
+    }
+  },
+  "release": {
+    "animation": {
+      "id": "spell_engine:one_handed_area_release"
+    }
+  },
+  "impacts": [
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "effect_id": "minecraft:regeneration",
+          "duration": 20.0
+        }
+      }
+    }
+  ],
+  "cost": {
+    "exhaust": 3.6,
+    "cooldown": {
+      "group": "weapon",
+      "duration": 180,
+      "proportional": true
+    },
+    "item": {
+      "id": "runes:healing_stone"
+    }
+  },
+  "target": {
+    "type": "AREA",
+    "area": {
+      "include_caster": true
+    }
+  }
+}

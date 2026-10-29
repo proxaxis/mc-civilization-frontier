@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "cfb:test_arcane",
+      "required": false
+    }
+  ]
+}

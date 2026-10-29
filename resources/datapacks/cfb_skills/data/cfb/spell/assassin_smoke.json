@@ -2,7 +2,7 @@
   "school": "spell_power:arcane",
   "range": 16.0,
   "tier": 2,
-  "group": "cfb_assassin",
+  "group": "rogue_subtlety",
   "learn": {},
   "active": {
     "cast": {
@@ -19,9 +19,11 @@
   },
   "impacts": [],
   "cost": {
-    "exhaust": 0.4,
+    "exhaust": 1.6,
     "cooldown": {
-      "duration": 40
+      "group": "weapon",
+      "duration": 40,
+      "proportional": true
     },
     "item": {
       "id": "runes:protection_stone"

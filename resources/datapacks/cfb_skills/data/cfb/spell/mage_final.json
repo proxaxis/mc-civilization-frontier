@@ -2,7 +2,7 @@
   "school": "spell_power:arcane",
   "range": 16.0,
   "tier": 5,
-  "group": "cfb_mage",
+  "group": "arcane_sorcery",
   "learn": {},
   "active": {
     "cast": {
@@ -29,12 +29,20 @@
     }
   ],
   "cost": {
-    "exhaust": 1.0,
+    "exhaust": 4.0,
     "cooldown": {
-      "duration": 200
+      "group": "weapon",
+      "duration": 200,
+      "proportional": true
     },
     "item": {
       "id": "runes:arcane_stone"
+    }
+  },
+  "target": {
+    "type": "AIM",
+    "aim": {
+      "sticky": true
     }
   }
 }

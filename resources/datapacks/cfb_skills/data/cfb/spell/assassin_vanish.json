@@ -2,7 +2,7 @@
   "school": "spell_power:arcane",
   "range": 16.0,
   "tier": 3,
-  "group": "cfb_assassin",
+  "group": "rogue_subtlety",
   "learn": {},
   "active": {
     "cast": {
@@ -29,9 +29,17 @@
     }
   ],
   "cost": {
-    "exhaust": 0.4,
+    "exhaust": 1.6,
     "cooldown": {
-      "duration": 70
+      "group": "weapon",
+      "duration": 70,
+      "proportional": true
+    }
+  },
+  "target": {
+    "type": "AREA",
+    "area": {
+      "include_caster": true
     }
   }
 }

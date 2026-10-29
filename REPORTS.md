@@ -252,3 +252,19 @@
   * tick function 内のコマンドは呼び出し元(サーバー)権限で実行されるため、puffish の lock/unlock が非 op でも機能する
 * 未解決・要判断:
   * 実クリックでの動作はユーザーのリトライ確認待ち
+
+## task-103検証6 - cfbスペル実発動の調査とjar同梱への移行
+
+* 結果: 原因特定・対策適用(最終確認はクライアント jar 更新待ち)
+* 変更点:
+  * cfb スペル全60種に `target` 追加(damage=AIM, heal=AIM+fallback, effect=AREA include_caster) — 未定義で発動不可だった
+  * `group` を実在グループ名に変更(arcane_sorcery等)、cooldown を既存形式に合わせる
+  * スペル・タグ・puffish categories・functions を `bcn-0.1.0.jar` に同梱(data/cfb 他95エントリ)
+  * 暫定リソースパック cfb_assets.zip に60種アイコン+lang(name/description)を生成
+* 判明したこと:
+  * 複数スペル運用は「呪文書(spell_book)+トリンケットスロット+Binding Table」が正しい形。杖は1スペル自己完結で拡張不可
+  * Binding Table: バニラ本+ラピス→呪文書タイプ選択→レベル消費でスペル購入。巻物で追加スペルをバインド
+  * スペルホットバーのスロットキー(L/U等)=そのまま発動キー
+  * datapack のスペル定義はサーバー側のみではクライアントに届かずキャスト不可 → jar同梱が必須(cfb:test_arcane=arcane_missile完全コピーでも打てず、namespace/配布形態が原因と確定)
+* 未解決・要判断:
+  * クライアント jar 更新後の発動確認待ち。成功なら datapack の spell/関連を jar 側に寄せる運用に確定か

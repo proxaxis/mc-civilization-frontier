@@ -2,7 +2,7 @@
   "school": "spell_power:arcane",
   "range": 16.0,
   "tier": 2,
-  "group": "cfb_mage",
+  "group": "arcane_sorcery",
   "learn": {},
   "active": {
     "cast": {
@@ -19,9 +19,11 @@
   },
   "impacts": [],
   "cost": {
-    "exhaust": 0.3,
+    "exhaust": 1.2,
     "cooldown": {
-      "duration": 60
+      "group": "weapon",
+      "duration": 60,
+      "proportional": true
     }
   }
 }

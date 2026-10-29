@@ -1,0 +1,11 @@
+{
+  "title": "魔道士",
+  "icon": {
+    "type": "item",
+    "data": {
+      "item": "minecraft:blaze_rod"
+    }
+  },
+  "background": "minecraft:textures/block/stone.png",
+  "exclusive_root": true
+}

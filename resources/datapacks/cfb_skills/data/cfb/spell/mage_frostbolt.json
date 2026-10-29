@@ -2,7 +2,7 @@
   "school": "spell_power:frost",
   "range": 16.0,
   "tier": 1,
-  "group": "cfb_mage",
+  "group": "arcane_sorcery",
   "learn": {},
   "active": {
     "cast": {
@@ -29,12 +29,20 @@
     }
   ],
   "cost": {
-    "exhaust": 0.2,
+    "exhaust": 0.8,
     "cooldown": {
-      "duration": 10
+      "group": "weapon",
+      "duration": 10,
+      "proportional": true
     },
     "item": {
       "id": "runes:frost_stone"
+    }
+  },
+  "target": {
+    "type": "AIM",
+    "aim": {
+      "sticky": true
     }
   }
 }

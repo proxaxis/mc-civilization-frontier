@@ -1,0 +1,45 @@
+{
+  "school": "spell_power:arcane",
+  "range": 16.0,
+  "tier": 3,
+  "group": "paladin_protection",
+  "learn": {},
+  "active": {
+    "cast": {
+      "duration": 1.0,
+      "animation": {
+        "id": "spell_engine:one_handed_area_charge"
+      }
+    }
+  },
+  "release": {
+    "animation": {
+      "id": "spell_engine:one_handed_area_release"
+    }
+  },
+  "impacts": [
+    {
+      "action": {
+        "type": "HEAL",
+        "heal": {
+          "spell_power_coefficient": 3.0
+        }
+      }
+    }
+  ],
+  "cost": {
+    "exhaust": 2.0,
+    "cooldown": {
+      "group": "weapon",
+      "duration": 70,
+      "proportional": true
+    }
+  },
+  "target": {
+    "type": "AIM",
+    "aim": {
+      "sticky": true,
+      "use_caster_as_fallback": true
+    }
+  }
+}

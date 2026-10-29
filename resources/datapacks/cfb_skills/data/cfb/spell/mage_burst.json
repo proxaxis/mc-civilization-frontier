@@ -2,7 +2,7 @@
   "school": "spell_power:fire",
   "range": 16.0,
   "tier": 4,
-  "group": "cfb_mage",
+  "group": "arcane_sorcery",
   "learn": {},
   "active": {
     "cast": {
@@ -29,12 +29,20 @@
     }
   ],
   "cost": {
-    "exhaust": 0.6,
+    "exhaust": 2.4,
     "cooldown": {
-      "duration": 25
+      "group": "weapon",
+      "duration": 25,
+      "proportional": true
     },
     "item": {
       "id": "runes:fire_stone"
+    }
+  },
+  "target": {
+    "type": "AIM",
+    "aim": {
+      "sticky": true
     }
   }
 }

@@ -85,7 +85,7 @@ S = {
 
 def make_spell(job, sid, v):
     school, tier, cast, cd, exh, rune, imp = v
-    cost = {"exhaust": exh, "cooldown": {"duration": cd}}
+    cost = {"exhaust": exh * 4.0, "cooldown": {"group": "weapon", "duration": cd, "proportional": True}}
     if rune:
         cost["item"] = {"id": rune}
     spell = {
@@ -107,6 +107,12 @@ def make_spell(job, sid, v):
         "cost": cost,
     }
     kind = imp[0]
+    if kind == "damage":
+        spell["target"] = {"type": "AIM", "aim": {"sticky": True}}
+    elif kind == "heal":
+        spell["target"] = {"type": "AIM", "aim": {"sticky": True, "use_caster_as_fallback": True}}
+    elif kind == "effect":
+        spell["target"] = {"type": "AREA", "area": {"include_caster": True}}
     if kind == "damage":
         spell["impacts"] = [{"action": {"type": "DAMAGE", "damage": {"spell_power_coefficient": imp[1], "knockback": 0.3}}}]
     elif kind == "heal":
