@@ -432,3 +432,20 @@
 * 未解決・要判断:
   * 構造物への自動トリガー(侵入検知や生成時スポナー置換)は未配線 — 現状は関数経由の手動/イベント呼び出し
   * spawn関数の配置先・密度のバランスは設計値待ち
+
+## 5ca627a - resources: ITEMS.md 公式レシピ併記 + IC2C/LP 公式データ取得
+
+* 結果: 成功(公式データ取得+ドキュメント併記 完了、push 済み)
+* 変更点:
+  * ITEMS.md 4件(BC/IC2/PR/LP)の各アイテムに `公式レシピ` 行を併記(マッチ数: IC2 161件, BC 30件, PR 73件, LP 13件)
+  * `resources/industrialcraft/`: IC2Classic-1.19.2-2.1.3.4.jar から `assets/`(4521ファイル)+`data/` を展開配置、`recipes_export.json`(917件のクラフトレシピ機械抽出)を追加
+  * `resources/logisticspipes/src/logisticspipes/recipes/`: JSON化されていないコード内登録レシピの公式ソースを収録
+  * 両 README.md に取得元・方法を追記
+* 判明したこと:
+  * `TinyModularThings/IC2Classic` は API/バグトラッカーのみで実装ソース非公開. IC2C のクラフトレシピは `IC2Recipes.addRecipes` のコード内登録(`data/ic2/recipes` は空) → CFR 逆コンパイル+SRG→Mojmap マッピング(mcp_config)で `Items.f_XXXX_` 等を解決し抽出可能だった
+  * ITEMS.md の wiki 記述は旧版ベースのため、現行公式データと名称が異なる項目は未マッチ(IC2C 版違い、PR の1.21 改名、LP/BC のコード内レシピ)
+  * BC/LP では JSON にないレシピが多数(パイプ類、モジュール類はコード登録) → LP は公式ソースを src/ に収録して対応
+* 未解決・要判断:
+  * 未マッチ項目への対応方針(手作業エイリアス or 別版データ参照)は要検討
+  * IC2C の機械レシピ(macerator 等)は `recipes_export.json` 対象外(コード内 TileEntity::loadRecipes で別途登録)
+  * IC2 Experimental と IC2 Classic でレシピ体系が異なる点は BCN 実装時にどちら準拠とするか要決定
