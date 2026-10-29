@@ -1,0 +1,7 @@
+tellraw @s [{"text":"=== クエスト ===","color":"gold"}]
+tellraw @s [{"text":"1. 開拓の第一歩: 木材64個納品 → 鉄貨5枚","color":"gray"}]
+tellraw @s [{"text":"[納品する]","color":"aqua","click_event":{"action":"run_command","command":"/function cfb:quest/q1"}}]
+tellraw @s [{"text":"2. 鉱山の脅威: ゾンビ10体討伐(達成済みで自動判定)","color":"gray"}]
+tellraw @s [{"text":"[申告する]","color":"aqua","click_event":{"action":"run_command","command":"/function cfb:quest/q2"}}]
+tellraw @s [{"text":"3. 交易への道: 小麦64個納品 → 鉄貨8枚","color":"gray"}]
+tellraw @s [{"text":"[納品する]","color":"aqua","click_event":{"action":"run_command","command":"/function cfb:quest/q3"}}]

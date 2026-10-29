@@ -1,0 +1,2 @@
+tellraw @a [{"text":"=== 災害テスト ===","color":"dark_red"}]
+tellraw @a [{"text":"[黄昏] ","color":"gray","click_event":{"action":"run_command","command":"/function cfb:disaster/dusk"}},{"text":"[脅威] ","color":"gray","click_event":{"action":"run_command","command":"/function cfb:disaster/threat"}},{"text":"[襲撃] ","color":"gray","click_event":{"action":"run_command","command":"/function cfb:disaster/raid"}}]

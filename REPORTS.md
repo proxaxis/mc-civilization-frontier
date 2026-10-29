@@ -358,3 +358,18 @@
 * 未解決・要判断:
   * スクロール渡し等で巻物を譲渡すれば未習得者も使える(厳密ロックではない)。完全ロックには spell_engine 側の拡張が必要
   * 実機での unlock→巻物入手→結合→発動の一連確認は未実施
+
+## task-104実装1 - 経済/災害基盤(datapack実装+BCN Java設計)
+
+* 結果: 骨格実装・デプロイ済み(Java連携はソースのみ)
+* 変更点:
+  * `cfb_economy` datapack 新設: MD両替メニュー(5階級双方向)、日次維持費徴収、クエスト3種、災害3種関数
+  * `BcnEconomy.java` 新設: Flan CurrencyRegistry への MD 登録、AdPother 汚染監視→閾値で cfb:disaster/* 発火、日次徴収の設計実装
+* 判明したこと:
+  * Flan に CurrencyRegistry/CurrencyHandler API があり、Coins JE 硬貨を通貨登録すればクレーム売買・維持費が MD で動く(buyType=MONEY)
+  * AdPother は ChunkPollution/EntityPollution/コールバック群を提供 → 汚染値の読取とフックが可能
+  * datapack からは Flan クレーム/汚染値を読めない → Java 側必須の箇所が明確化
+* 未解決・要判断:
+  * BCN のビルド環境(Gradle/JDK)がこのシェルに無い → Java 部分はソースのみ、ビルドは後続環境で
+  * 維持費の本実装(Flan クレーム参照)・EFP 読取・災害自動発火は Java 側待ち
+  * クエスト/災害/両替は datapack で動作するが、完成度は骨格レベル(拡充は設計次第)
