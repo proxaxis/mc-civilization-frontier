@@ -1,0 +1,13 @@
+{
+  "values": [
+    "projectred_exploration:marble_wall",
+    "projectred_exploration:marble_brick_wall",
+    "projectred_exploration:basalt_wall",
+    "projectred_exploration:basalt_cobble_wall",
+    "projectred_exploration:basalt_brick_wall",
+    "projectred_exploration:ruby_block_wall",
+    "projectred_exploration:sapphire_block_wall",
+    "projectred_exploration:peridot_block_wall",
+    "projectred_exploration:electrotine_block_wall"
+  ]
+}

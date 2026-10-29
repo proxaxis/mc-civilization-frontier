@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "projectred_fabrication:block/ic_workbench_bottom",
+    "east": "projectred_fabrication:block/ic_workbench_side",
+    "north": "projectred_fabrication:block/ic_workbench_front",
+    "particle": "projectred_fabrication:block/ic_workbench_front",
+    "south": "projectred_fabrication:block/ic_workbench_front",
+    "up": "projectred_fabrication:block/ic_workbench_top",
+    "west": "projectred_fabrication:block/ic_workbench_side"
+  }
+}

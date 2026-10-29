@@ -1,0 +1,7 @@
+{
+  "type": "projectred_exploration:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "configKey": "peridot_ore",
+  "features": "projectred_exploration:peridot_ore",
+  "step": "underground_ores"
+}
