@@ -1,0 +1,65 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "cfb:guardian_aegis",
+      "required": false
+    },
+    {
+      "id": "cfb:guardian_barrage",
+      "required": false
+    },
+    {
+      "id": "cfb:guardian_bastion",
+      "required": false
+    },
+    {
+      "id": "cfb:guardian_bulwark",
+      "required": false
+    },
+    {
+      "id": "cfb:guardian_charge",
+      "required": false
+    },
+    {
+      "id": "cfb:guardian_cover",
+      "required": false
+    },
+    {
+      "id": "cfb:guardian_def_field",
+      "required": false
+    },
+    {
+      "id": "cfb:guardian_flesh_roar",
+      "required": false
+    },
+    {
+      "id": "cfb:guardian_resolve",
+      "required": false
+    },
+    {
+      "id": "cfb:guardian_roar",
+      "required": false
+    },
+    {
+      "id": "cfb:guardian_second_wind",
+      "required": false
+    },
+    {
+      "id": "cfb:guardian_seismic",
+      "required": false
+    },
+    {
+      "id": "cfb:guardian_unbreakable",
+      "required": false
+    },
+    {
+      "id": "cfb:guardian_vow",
+      "required": false
+    },
+    {
+      "id": "cfb:guardian_wall",
+      "required": false
+    }
+  ]
+}

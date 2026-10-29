@@ -373,3 +373,20 @@
   * BCN のビルド環境(Gradle/JDK)がこのシェルに無い → Java 部分はソースのみ、ビルドは後続環境で
   * 維持費の本実装(Flan クレーム参照)・EFP 読取・災害自動発火は Java 側待ち
   * クエスト/災害/両替は datapack で動作するが、完成度は骨格レベル(拡充は設計次第)
+
+## task-104実装2 - BCNビルド環境確立+クエストエンジン拡充
+
+* 結果: 実装・デプロイ済み
+* 変更点:
+  * Java25+Gradle9.8 で BCN を実際にビルド(`gradle build` 成功、実 jar 生成→modsにデプロイ)
+  * BcnEconomy をリフレクション型連携に書換(Flan/AdPother mod jar をビルド依存せず BCN 単体でビルド可)
+  * `gen_quests.py` 新設: 章立て3章15クエスト(納品/討伐/探索)+MD硬貨・XP報酬
+  * 討伐クエストは `minecraft.killed:` 統計で自動カウント
+  * Undead Nights に horde カウントダウン告知を有効化
+* 判明したこと:
+  * app/src/main/resources に assets/data を置けば Gradle ビルドで jar へ自動同梱される(手動zip注入は不要に)
+  * 討伐カウントは `minecraft.killed:<entity>` スコアboard統計が正解(自前インクリメント不要)
+* 未解決・要判断:
+  * Flan ClaimHandler/AdPother の実 API メソッドはビルド時に未解決(リフレクションスタブ) → mod jar を modImplementation に追加すれば本実装可能
+  * EFP閾値・維持費料率は仮値(バランス要実測)
+  * クエストは骨格動作、ストーリー本文・連鎖ロックは未実装

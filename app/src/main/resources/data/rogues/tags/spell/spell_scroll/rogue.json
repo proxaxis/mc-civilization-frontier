@@ -1,0 +1,65 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "cfb:assassin_abyss",
+      "required": false
+    },
+    {
+      "id": "cfb:assassin_afterimage",
+      "required": false
+    },
+    {
+      "id": "cfb:assassin_blood_trail",
+      "required": false
+    },
+    {
+      "id": "cfb:assassin_burial",
+      "required": false
+    },
+    {
+      "id": "cfb:assassin_clone",
+      "required": false
+    },
+    {
+      "id": "cfb:assassin_dash",
+      "required": false
+    },
+    {
+      "id": "cfb:assassin_deathblow",
+      "required": false
+    },
+    {
+      "id": "cfb:assassin_flash",
+      "required": false
+    },
+    {
+      "id": "cfb:assassin_hamstring",
+      "required": false
+    },
+    {
+      "id": "cfb:assassin_needle",
+      "required": false
+    },
+    {
+      "id": "cfb:assassin_shadow_strike",
+      "required": false
+    },
+    {
+      "id": "cfb:assassin_smoke",
+      "required": false
+    },
+    {
+      "id": "cfb:assassin_stealth",
+      "required": false
+    },
+    {
+      "id": "cfb:assassin_taunt",
+      "required": false
+    },
+    {
+      "id": "cfb:assassin_vanish",
+      "required": false
+    }
+  ]
+}
