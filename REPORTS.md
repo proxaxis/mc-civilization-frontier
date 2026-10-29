@@ -334,3 +334,14 @@
   * puffish カテゴリは jar 同梱ではロードされない → world datapack が必須(一方でスペル・タグは jar が必須)
   * docker compose 再作成時に `WORKSPACE_HOST_PATH` 未指定だとリモート daemon 側に空 dir がマウントされ MOD が全く読み込まれない(「Loading 4 mods」が兆候)
   * コマンド公式構文: `puffish_skills category lock/unlock <player> <category>`、`skills`(経験値等)は別系
+
+## task-103実装3 - 職業再選択(リセット)経路
+
+* 結果: 実装・ロード確認済み
+* 変更点:
+  * `cfb:job/reset` を追加(全4カテゴリを `category erase` → メニュー再表示)
+  * メニューに [職業をリセットする] を追加(trigger cfb_job=5)、tick が reset を実行
+  * jar 側の functions は既に除去済みのため world datapack のみ更新
+* 未解決・要判断:
+  * erase はスキル・経験値・ポイントも消す設計(リセット=全部消去)。残したい場合は unlock のみに変更要
+  * 未習得スペルのキャストロック・アイコン本実装は次フェーズ
