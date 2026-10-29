@@ -390,3 +390,16 @@
   * Flan ClaimHandler/AdPother の実 API メソッドはビルド時に未解決(リフレクションスタブ) → mod jar を modImplementation に追加すれば本実装可能
   * EFP閾値・維持費料率は仮値(バランス要実測)
   * クエストは骨格動作、ストーリー本文・連鎖ロックは未実装
+
+## task-104実装3 - EFP自走化(スコアボード汚染指数→災害自動発火)
+
+* 結果: 実装・デプロイ済み
+* 変更点:
+  * `cfb_efp` スコアボードで EFP を管理し、economy_tick が閾値(12/30/60)で黄昏/脅威/襲撃を自動発火
+  * `disaster/trigger` に EFP 加算ボタン(重機稼働+10・兵器使用+50・リセット)を追加 → 手動検証可能
+  * fee/daily の徴収文に EFP 値を表示
+* 判明したこと:
+  * datapack 側で EFP を自前管理すれば Java API 無しでも災害連携は自走する(AdPother 連携は精度向上用の後段)
+* 未解決・要判断:
+  * 重機稼働・兵器使用の実イベントからの EFP 加算は BCN Java 側の仕掛けが本実装
+  * AdPother 実汚染値との同期(双方向)は mod jar を modImplementation に入れれば本実装可能

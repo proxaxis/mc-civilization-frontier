@@ -7,3 +7,5 @@ scoreboard objectives add cfb_q_zombie minecraft.killed:minecraft.zombie
 scoreboard objectives add cfb_q_pillager minecraft.killed:minecraft.pillager
 scoreboard objectives add cfb_q_wither minecraft.killed:minecraft.wither_skeleton
 scoreboard objectives add cfb_q_guardian minecraft.killed:minecraft.elder_guardian
+scoreboard objectives add cfb_efp dummy "EFP"
+scoreboard players set #efp cfb_efp 0
