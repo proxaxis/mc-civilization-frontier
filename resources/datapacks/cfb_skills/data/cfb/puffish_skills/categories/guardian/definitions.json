@@ -507,8 +507,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Bulwark Stance アンロック(詳細は JOB_GUARDIAN.md)",
-    "rewards": []
+    "description": "Bulwark Stance アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:guardian_bulwark\"],pool:\"rogues:spell_scroll/warrior\"}]"
+        }
+      }
+    ]
   },
   "charge": {
     "title": "盾突撃 - Shield Charge",
@@ -518,8 +525,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Shield Charge アンロック(詳細は JOB_GUARDIAN.md)",
-    "rewards": []
+    "description": "Shield Charge アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:guardian_charge\"],pool:\"rogues:spell_scroll/warrior\"}]"
+        }
+      }
+    ]
   },
   "barrage": {
     "title": "楯の乱打 - Shield Barrage",
@@ -529,8 +543,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Shield Barrage アンロック(詳細は JOB_GUARDIAN.md)",
-    "rewards": []
+    "description": "Shield Barrage アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:guardian_barrage\"],pool:\"rogues:spell_scroll/warrior\"}]"
+        }
+      }
+    ]
   },
   "roar": {
     "title": "守護の咆哮 - Guardian's Roar",
@@ -540,8 +561,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Guardian's Roar アンロック(詳細は JOB_GUARDIAN.md)",
-    "rewards": []
+    "description": "Guardian's Roar アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:guardian_roar\"],pool:\"rogues:spell_scroll/warrior\"}]"
+        }
+      }
+    ]
   },
   "resolve": {
     "title": "鉄の抵抗 - Iron Resolve",
@@ -551,8 +579,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Iron Resolve アンロック(詳細は JOB_GUARDIAN.md)",
-    "rewards": []
+    "description": "Iron Resolve アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:guardian_resolve\"],pool:\"rogues:spell_scroll/warrior\"}]"
+        }
+      }
+    ]
   },
   "bastion": {
     "title": "城塞の号令 - Bastion Call",
@@ -562,8 +597,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Bastion Call アンロック(詳細は JOB_GUARDIAN.md)",
-    "rewards": []
+    "description": "Bastion Call アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:guardian_bastion\"],pool:\"rogues:spell_scroll/warrior\"}]"
+        }
+      }
+    ]
   },
   "wall": {
     "title": "忍耐の壁 - Wall of Endurance",
@@ -573,8 +615,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Wall of Endurance アンロック(詳細は JOB_GUARDIAN.md)",
-    "rewards": []
+    "description": "Wall of Endurance アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:guardian_wall\"],pool:\"rogues:spell_scroll/warrior\"}]"
+        }
+      }
+    ]
   },
   "cover": {
     "title": "覆い隠す盾 - Covering Shield",
@@ -584,8 +633,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Covering Shield アンロック(詳細は JOB_GUARDIAN.md)",
-    "rewards": []
+    "description": "Covering Shield アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:guardian_cover\"],pool:\"rogues:spell_scroll/warrior\"}]"
+        }
+      }
+    ]
   },
   "flesh_roar": {
     "title": "肉壁の咆哮 - Flesh Wall Roar",
@@ -595,8 +651,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Flesh Wall Roar アンロック(詳細は JOB_GUARDIAN.md)",
-    "rewards": []
+    "description": "Flesh Wall Roar アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:guardian_flesh_roar\"],pool:\"rogues:spell_scroll/warrior\"}]"
+        }
+      }
+    ]
   },
   "second_wind": {
     "title": "起死回生 - Second Wind",
@@ -606,8 +669,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Second Wind アンロック(詳細は JOB_GUARDIAN.md)",
-    "rewards": []
+    "description": "Second Wind アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:guardian_second_wind\"],pool:\"rogues:spell_scroll/warrior\"}]"
+        }
+      }
+    ]
   },
   "seismic": {
     "title": "地震槌 - Seismic Slam",
@@ -617,8 +687,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Seismic Slam アンロック(詳細は JOB_GUARDIAN.md)",
-    "rewards": []
+    "description": "Seismic Slam アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:guardian_seismic\"],pool:\"rogues:spell_scroll/warrior\"}]"
+        }
+      }
+    ]
   },
   "def_field": {
     "title": "防戦結界 - Defensive Field",
@@ -628,8 +705,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Defensive Field アンロック(詳細は JOB_GUARDIAN.md)",
-    "rewards": []
+    "description": "Defensive Field アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:guardian_def_field\"],pool:\"rogues:spell_scroll/warrior\"}]"
+        }
+      }
+    ]
   },
   "vow": {
     "title": "不屈の誓い - Vow of Indomitability",
@@ -639,8 +723,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Vow of Indomitability アンロック(詳細は JOB_GUARDIAN.md)",
-    "rewards": []
+    "description": "Vow of Indomitability アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:guardian_vow\"],pool:\"rogues:spell_scroll/warrior\"}]"
+        }
+      }
+    ]
   },
   "aegis": {
     "title": "聖盾の加護 - Aegis Ward",
@@ -650,8 +741,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Aegis Ward アンロック(詳細は JOB_GUARDIAN.md)",
-    "rewards": []
+    "description": "Aegis Ward アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:guardian_aegis\"],pool:\"rogues:spell_scroll/warrior\"}]"
+        }
+      }
+    ]
   },
   "unbreakable": {
     "title": "断固たる防壁 - Unbreakable Bulwark",
@@ -661,7 +759,14 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Unbreakable Bulwark アンロック(詳細は JOB_GUARDIAN.md)",
-    "rewards": []
+    "description": "Unbreakable Bulwark アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:guardian_unbreakable\"],pool:\"rogues:spell_scroll/warrior\"}]"
+        }
+      }
+    ]
   }
 }

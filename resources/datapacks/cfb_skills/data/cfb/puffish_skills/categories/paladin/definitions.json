@@ -507,8 +507,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Quick Mend アンロック(詳細は JOB_PALADIN.md)",
-    "rewards": []
+    "description": "Quick Mend アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:paladin_quick\"],pool:\"paladins:spell_scroll/priest\"}]"
+        }
+      }
+    ]
   },
   "heal": {
     "title": "即時回復 - Heal",
@@ -518,8 +525,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Heal アンロック(詳細は JOB_PALADIN.md)",
-    "rewards": []
+    "description": "Heal アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:paladin_heal\"],pool:\"paladins:spell_scroll/priest\"}]"
+        }
+      }
+    ]
   },
   "purify": {
     "title": "浄化 - Purify",
@@ -529,8 +543,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Purify アンロック(詳細は JOB_PALADIN.md)",
-    "rewards": []
+    "description": "Purify アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:paladin_purify\"],pool:\"paladins:spell_scroll/priest\"}]"
+        }
+      }
+    ]
   },
   "rally": {
     "title": "鼓舞の祈祷 - Rallying Prayer",
@@ -540,8 +561,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Rallying Prayer アンロック(詳細は JOB_PALADIN.md)",
-    "rewards": []
+    "description": "Rallying Prayer アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:paladin_rally\"],pool:\"paladins:spell_scroll/priest\"}]"
+        }
+      }
+    ]
   },
   "consecrate": {
     "title": "聖別 - Consecrate",
@@ -551,8 +579,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Consecrate アンロック(詳細は JOB_PALADIN.md)",
-    "rewards": []
+    "description": "Consecrate アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:paladin_consecrate\"],pool:\"paladins:spell_scroll/priest\"}]"
+        }
+      }
+    ]
   },
   "blessing": {
     "title": "祝福 - Blessing",
@@ -562,8 +597,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Blessing アンロック(詳細は JOB_PALADIN.md)",
-    "rewards": []
+    "description": "Blessing アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:paladin_blessing\"],pool:\"paladins:spell_scroll/priest\"}]"
+        }
+      }
+    ]
   },
   "ward": {
     "title": "守護光 - Ward of Light",
@@ -573,8 +615,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Ward of Light アンロック(詳細は JOB_PALADIN.md)",
-    "rewards": []
+    "description": "Ward of Light アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:paladin_ward\"],pool:\"paladins:spell_scroll/priest\"}]"
+        }
+      }
+    ]
   },
   "regen": {
     "title": "再生の誓い - Vow of Regeneration",
@@ -584,8 +633,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Vow of Regeneration アンロック(詳細は JOB_PALADIN.md)",
-    "rewards": []
+    "description": "Vow of Regeneration アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:paladin_regen\"],pool:\"paladins:spell_scroll/priest\"}]"
+        }
+      }
+    ]
   },
   "hymn": {
     "title": "力の賛歌 - Hymn of Might",
@@ -595,8 +651,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Hymn of Might アンロック(詳細は JOB_PALADIN.md)",
-    "rewards": []
+    "description": "Hymn of Might アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:paladin_hymn\"],pool:\"paladins:spell_scroll/priest\"}]"
+        }
+      }
+    ]
   },
   "martyr": {
     "title": "苦痛の代償 - Martyr's Bond",
@@ -606,8 +669,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Martyr's Bond アンロック(詳細は JOB_PALADIN.md)",
-    "rewards": []
+    "description": "Martyr's Bond アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:paladin_martyr\"],pool:\"paladins:spell_scroll/priest\"}]"
+        }
+      }
+    ]
   },
   "circle": {
     "title": "治癒の輪 - Circle of Healing",
@@ -617,8 +687,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Circle of Healing アンロック(詳細は JOB_PALADIN.md)",
-    "rewards": []
+    "description": "Circle of Healing アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:paladin_circle\"],pool:\"paladins:spell_scroll/priest\"}]"
+        }
+      }
+    ]
   },
   "eruption": {
     "title": "信仰の爆発 - Faith Eruption",
@@ -628,8 +705,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Faith Eruption アンロック(詳細は JOB_PALADIN.md)",
-    "rewards": []
+    "description": "Faith Eruption アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:paladin_eruption\"],pool:\"paladins:spell_scroll/priest\"}]"
+        }
+      }
+    ]
   },
   "sanctuary": {
     "title": "聖域の展開 - Sanctuary",
@@ -639,8 +723,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Sanctuary アンロック(詳細は JOB_PALADIN.md)",
-    "rewards": []
+    "description": "Sanctuary アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:paladin_sanctuary\"],pool:\"paladins:spell_scroll/priest\"}]"
+        }
+      }
+    ]
   },
   "repose": {
     "title": "魂の安寧 - Soul Repose",
@@ -650,8 +741,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Soul Repose アンロック(詳細は JOB_PALADIN.md)",
-    "rewards": []
+    "description": "Soul Repose アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:paladin_repose\"],pool:\"paladins:spell_scroll/priest\"}]"
+        }
+      }
+    ]
   },
   "grand": {
     "title": "大聖域 - Grand Sanctuary",
@@ -661,7 +759,14 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Grand Sanctuary アンロック(詳細は JOB_PALADIN.md)",
-    "rewards": []
+    "description": "Grand Sanctuary アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:paladin_grand\"],pool:\"paladins:spell_scroll/priest\"}]"
+        }
+      }
+    ]
   }
 }

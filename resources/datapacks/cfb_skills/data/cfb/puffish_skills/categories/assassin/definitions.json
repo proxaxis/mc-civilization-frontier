@@ -507,8 +507,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Flash Blade アンロック(詳細は JOB_ASSASSIN.md)",
-    "rewards": []
+    "description": "Flash Blade アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:assassin_flash\"],pool:\"rogues:spell_scroll/rogue\"}]"
+        }
+      }
+    ]
   },
   "dash": {
     "title": "影走り - Shadow Dash",
@@ -518,8 +525,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Shadow Dash アンロック(詳細は JOB_ASSASSIN.md)",
-    "rewards": []
+    "description": "Shadow Dash アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:assassin_dash\"],pool:\"rogues:spell_scroll/rogue\"}]"
+        }
+      }
+    ]
   },
   "hamstring": {
     "title": "断脚刃 - Hamstring",
@@ -529,8 +543,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Hamstring アンロック(詳細は JOB_ASSASSIN.md)",
-    "rewards": []
+    "description": "Hamstring アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:assassin_hamstring\"],pool:\"rogues:spell_scroll/rogue\"}]"
+        }
+      }
+    ]
   },
   "blood_trail": {
     "title": "血痕の追跡 - Blood Trail",
@@ -540,8 +561,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Blood Trail アンロック(詳細は JOB_ASSASSIN.md)",
-    "rewards": []
+    "description": "Blood Trail アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:assassin_blood_trail\"],pool:\"rogues:spell_scroll/rogue\"}]"
+        }
+      }
+    ]
   },
   "afterimage": {
     "title": "残像 - Afterimage",
@@ -551,8 +579,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Afterimage アンロック(詳細は JOB_ASSASSIN.md)",
-    "rewards": []
+    "description": "Afterimage アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:assassin_afterimage\"],pool:\"rogues:spell_scroll/rogue\"}]"
+        }
+      }
+    ]
   },
   "smoke": {
     "title": "煙幕 - Smoke Veil",
@@ -562,8 +597,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Smoke Veil アンロック(詳細は JOB_ASSASSIN.md)",
-    "rewards": []
+    "description": "Smoke Veil アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:assassin_smoke\"],pool:\"rogues:spell_scroll/rogue\"}]"
+        }
+      }
+    ]
   },
   "shadow_strike": {
     "title": "影縫い - Shadow Strike",
@@ -573,8 +615,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Shadow Strike アンロック(詳細は JOB_ASSASSIN.md)",
-    "rewards": []
+    "description": "Shadow Strike アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:assassin_shadow_strike\"],pool:\"rogues:spell_scroll/rogue\"}]"
+        }
+      }
+    ]
   },
   "needle": {
     "title": "麻痺針 - Paralytic Needle",
@@ -584,8 +633,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Paralytic Needle アンロック(詳細は JOB_ASSASSIN.md)",
-    "rewards": []
+    "description": "Paralytic Needle アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:assassin_needle\"],pool:\"rogues:spell_scroll/rogue\"}]"
+        }
+      }
+    ]
   },
   "abyss": {
     "title": "深淵の呼吸 - Abyssal Breath",
@@ -595,8 +651,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Abyssal Breath アンロック(詳細は JOB_ASSASSIN.md)",
-    "rewards": []
+    "description": "Abyssal Breath アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:assassin_abyss\"],pool:\"rogues:spell_scroll/rogue\"}]"
+        }
+      }
+    ]
   },
   "taunt": {
     "title": "挑発の影 - Shadow Taunt",
@@ -606,8 +669,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Shadow Taunt アンロック(詳細は JOB_ASSASSIN.md)",
-    "rewards": []
+    "description": "Shadow Taunt アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:assassin_taunt\"],pool:\"rogues:spell_scroll/rogue\"}]"
+        }
+      }
+    ]
   },
   "stealth": {
     "title": "ステルス - Stealth",
@@ -617,8 +687,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Stealth アンロック(詳細は JOB_ASSASSIN.md)",
-    "rewards": []
+    "description": "Stealth アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:assassin_stealth\"],pool:\"rogues:spell_scroll/rogue\"}]"
+        }
+      }
+    ]
   },
   "deathblow": {
     "title": "致命打 - Deathblow",
@@ -628,8 +705,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Deathblow アンロック(詳細は JOB_ASSASSIN.md)",
-    "rewards": []
+    "description": "Deathblow アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:assassin_deathblow\"],pool:\"rogues:spell_scroll/rogue\"}]"
+        }
+      }
+    ]
   },
   "vanish": {
     "title": "闇遁 - Vanish",
@@ -639,8 +723,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Vanish アンロック(詳細は JOB_ASSASSIN.md)",
-    "rewards": []
+    "description": "Vanish アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:assassin_vanish\"],pool:\"rogues:spell_scroll/rogue\"}]"
+        }
+      }
+    ]
   },
   "clone": {
     "title": "影分身 - Shadow Clone",
@@ -650,8 +741,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Shadow Clone アンロック(詳細は JOB_ASSASSIN.md)",
-    "rewards": []
+    "description": "Shadow Clone アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:assassin_clone\"],pool:\"rogues:spell_scroll/rogue\"}]"
+        }
+      }
+    ]
   },
   "burial": {
     "title": "影葬 - Shadow Burial",
@@ -661,7 +759,14 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Shadow Burial アンロック(詳細は JOB_ASSASSIN.md)",
-    "rewards": []
+    "description": "Shadow Burial アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:assassin_burial\"],pool:\"rogues:spell_scroll/rogue\"}]"
+        }
+      }
+    ]
   }
 }

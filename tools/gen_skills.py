@@ -174,14 +174,18 @@ for job, spec in JOBS.items():
                 connections.append([f"{key}_lv{lv-1}", f"{key}_lv{lv}"])
 
     # アクティブ: 親パッシブの Lv ノードから枝出し. x=6以上の列
+    pool = {"guardian": "rogues:spell_scroll/warrior", "assassin": "rogues:spell_scroll/rogue",
+            "mage": "wizards:spell_scroll/arcane", "paladin": "paladins:spell_scroll/priest"}[job]
     for i, (key, nj, ne, pkey, plv) in enumerate(spec["actives"]):
         did = key
         cost = ULT_XP if plv == 5 else ACTIVE_XP
+        sid = f"cfb:{job}_{key}"
+        scroll = f'give @s spell_engine:spell_scroll[spell_engine:spell_container={{spell_ids:["{sid}"],pool:"{pool}"}}]'
         definitions[did] = {
             "title": f"{nj} - {ne}",
             "icon": item_icon("minecraft:paper"),
-            "description": f"{ne} アンロック(詳細は JOB_{job.upper()}.md)",
-            "rewards": [],
+            "description": f"{ne} アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+            "rewards": [{"type": "puffish_skills:command", "data": {"command": scroll}}],
         }
         skills[did] = {
             "definition": did,

@@ -507,8 +507,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Firebolt アンロック(詳細は JOB_MAGE.md)",
-    "rewards": []
+    "description": "Firebolt アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:mage_firebolt\"],pool:\"wizards:spell_scroll/arcane\"}]"
+        }
+      }
+    ]
   },
   "frostbolt": {
     "title": "氷結弾 - Frostbolt",
@@ -518,8 +525,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Frostbolt アンロック(詳細は JOB_MAGE.md)",
-    "rewards": []
+    "description": "Frostbolt アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:mage_frostbolt\"],pool:\"wizards:spell_scroll/arcane\"}]"
+        }
+      }
+    ]
   },
   "blink": {
     "title": "瞬間移動 - Blink",
@@ -529,8 +543,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Blink アンロック(詳細は JOB_MAGE.md)",
-    "rewards": []
+    "description": "Blink アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:mage_blink\"],pool:\"wizards:spell_scroll/arcane\"}]"
+        }
+      }
+    ]
   },
   "cache": {
     "title": "術式保存 - Spell Cache",
@@ -540,8 +561,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Spell Cache アンロック(詳細は JOB_MAGE.md)",
-    "rewards": []
+    "description": "Spell Cache アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:mage_cache\"],pool:\"wizards:spell_scroll/arcane\"}]"
+        }
+      }
+    ]
   },
   "mana_shield": {
     "title": "魔力障壁 - Mana Shield",
@@ -551,8 +579,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Mana Shield アンロック(詳細は JOB_MAGE.md)",
-    "rewards": []
+    "description": "Mana Shield アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:mage_mana_shield\"],pool:\"wizards:spell_scroll/arcane\"}]"
+        }
+      }
+    ]
   },
   "inferno": {
     "title": "範囲火炎 - Inferno Wave",
@@ -562,8 +597,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Inferno Wave アンロック(詳細は JOB_MAGE.md)",
-    "rewards": []
+    "description": "Inferno Wave アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:mage_inferno\"],pool:\"wizards:spell_scroll/arcane\"}]"
+        }
+      }
+    ]
   },
   "frost_domain": {
     "title": "氷結領域 - Frost Domain",
@@ -573,8 +615,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Frost Domain アンロック(詳細は JOB_MAGE.md)",
-    "rewards": []
+    "description": "Frost Domain アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:mage_frost_domain\"],pool:\"wizards:spell_scroll/arcane\"}]"
+        }
+      }
+    ]
   },
   "flare": {
     "title": "魔力鮮明 - Mana Flare",
@@ -584,8 +633,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Mana Flare アンロック(詳細は JOB_MAGE.md)",
-    "rewards": []
+    "description": "Mana Flare アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:mage_flare\"],pool:\"wizards:spell_scroll/arcane\"}]"
+        }
+      }
+    ]
   },
   "surge": {
     "title": "魔道加速 - Arcane Surge",
@@ -595,8 +651,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Arcane Surge アンロック(詳細は JOB_MAGE.md)",
-    "rewards": []
+    "description": "Arcane Surge アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:mage_surge\"],pool:\"wizards:spell_scroll/arcane\"}]"
+        }
+      }
+    ]
   },
   "chain": {
     "title": "雷鎖 - Chain Lightning",
@@ -606,8 +669,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Chain Lightning アンロック(詳細は JOB_MAGE.md)",
-    "rewards": []
+    "description": "Chain Lightning アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:mage_chain\"],pool:\"wizards:spell_scroll/arcane\"}]"
+        }
+      }
+    ]
   },
   "shockbolt": {
     "title": "雷撃弾 - Shockbolt",
@@ -617,8 +687,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Shockbolt アンロック(詳細は JOB_MAGE.md)",
-    "rewards": []
+    "description": "Shockbolt アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:mage_shockbolt\"],pool:\"wizards:spell_scroll/arcane\"}]"
+        }
+      }
+    ]
   },
   "attune": {
     "title": "属性同調 - Elemental Attunement",
@@ -628,8 +705,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Elemental Attunement アンロック(詳細は JOB_MAGE.md)",
-    "rewards": []
+    "description": "Elemental Attunement アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:mage_attune\"],pool:\"wizards:spell_scroll/arcane\"}]"
+        }
+      }
+    ]
   },
   "gravity": {
     "title": "重力操作 - Gravity Well",
@@ -639,8 +723,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Gravity Well アンロック(詳細は JOB_MAGE.md)",
-    "rewards": []
+    "description": "Gravity Well アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:mage_gravity\"],pool:\"wizards:spell_scroll/arcane\"}]"
+        }
+      }
+    ]
   },
   "burst": {
     "title": "属性爆発 - Elemental Burst",
@@ -650,8 +741,15 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Elemental Burst アンロック(詳細は JOB_MAGE.md)",
-    "rewards": []
+    "description": "Elemental Burst アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:mage_burst\"],pool:\"wizards:spell_scroll/arcane\"}]"
+        }
+      }
+    ]
   },
   "final": {
     "title": "終末術式 - Final Incantation",
@@ -661,7 +759,14 @@
         "item": "minecraft:paper"
       }
     },
-    "description": "Final Incantation アンロック(詳細は JOB_MAGE.md)",
-    "rewards": []
+    "description": "Final Incantation アンロック(巻物を獲得し、結合台で呪文書へ結合)",
+    "rewards": [
+      {
+        "type": "puffish_skills:command",
+        "data": {
+          "command": "give @s spell_engine:spell_scroll[spell_engine:spell_container={spell_ids:[\"cfb:mage_final\"],pool:\"wizards:spell_scroll/arcane\"}]"
+        }
+      }
+    ]
   }
 }
