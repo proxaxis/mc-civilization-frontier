@@ -207,3 +207,19 @@
 * 未解決・要判断:
   * bot/クライアント経由の実機検証は minecraft-data の 26.3 対応 or Fabric 側 MCP mod 待ち
   * 現時点で可能なのは datapack ロード検証まで(実機動作は未確認)
+
+## task-103検証3 - Carpet 偽プレイヤーによる実機検証
+
+* 結果: 成功
+* 変更点:
+  * `fabric-carpet-26.3+v260915.jar` を `resources/mods/` に追加(検証用)
+  * `/player verifier spawn` で偽プレイヤー参加、`execute as verifier run function cfb:job/guardian` を実行
+  * `execute as verifier run puffish_skills category lock/unlock @s cfb:<job>` が実効することを確認(Locked/Unlocked の応答あり)
+* 判明したこと:
+  * mineflayer は 26.3 プロトコル非対応(最大 26.1)で接続不可→代替として Carpet の `/player` 偽プレイヤーが使えた
+  * job 選択 function の lock/unlock は `@s` コンテキストで正しく動作する設計で問題ない
+  * ONLINE_MODE=FALSE でローカル偽プレイヤー参加を検証できる
+* 未解決・要判断:
+  * スペルとアイテムの結合(spell pool/weapon_attributes)は未実装で、実際の発動検証はまだ
+  * on_join メニューの実表示はクライアント確認が必要
+  * carpet は検証目的で追加。本番構成から外すかは要判断
