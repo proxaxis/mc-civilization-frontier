@@ -59,6 +59,11 @@ BCN (Build Craft Neo) 実装用に、BuildCraft / IndustrialCraft2 / Project:Red
 - リファイナリー: 実装する (ユーザー決定). 黒オイル(原油)を MJ 消費で精製し金オイル(燃料)にする旧 BC の2段階燃料チェーンを再現. 黒オイルは低性能, 金オイルは高性能燃料
 - UU マター/スクラップ/質量生成機: 実装は後回し (ユーザー決定). 電力シンク系の後半コンテンツとして別タスク化候補
 - 宝石ツール/装備 (ルビー/サファイア等): 実装しない (ユーザー決定). 宝石は回路・中間素材用途のみ
+- EFP バランス: エンジン 100 台の 3 時間連続稼働で災害閾値到達を目安 (ユーザー決定). 稼働機械の tick 単位加算係数をこれに合わせる
+- EFP 更新: BCN(mod) 側から `cfb_efp` スコアボードへ直接書き込む (ユーザー決定)
+- `c:` タグ: 鉱石・インゴット等は conventional タグに登録する (ユーザー決定)
+- 未使用アセット: 実装対象にしない. 資産は残しておく (ユーザー決定)
+- improvement_minecarts: パッチ済み jar を現状維持 (ユーザー決定)
 - ゲート/チップセット: Assembly Table 系は MJ 消費型の独自クラフト UI で、動力は MJ ケーブル直結 (ユーザー決定). 条件/トリガーはレッドストーン論理として設計
 - IC2 系機械: macerator/extractor/compressor/canner/alloy smelter 等の処理レシピは `recipes_export.json`, `machine_recipes_export.json` を基にデータ駆動化
 - ID 命名: `bcn:` 名前空間. アセットは `resources/` の既存物を優先流用 (textures/models/lang)
