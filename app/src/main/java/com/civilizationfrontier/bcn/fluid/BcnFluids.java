@@ -9,6 +9,8 @@ import net.minecraft.world.level.material.Fluid;
 public final class BcnFluids {
 	public static final FlowingFluid OIL = register("oil", new OilFluid.Still());
 	public static final FlowingFluid FLOWING_OIL = register("flowing_oil", new OilFluid.Flowing());
+	public static final FlowingFluid FUEL = register("fuel", new FuelFluid.Still());
+	public static final FlowingFluid FLOWING_FUEL = register("flowing_fuel", new FuelFluid.Flowing());
 
 	private static <T extends Fluid> T register(String name, T fluid) {
 		return Registry.register(BuiltInRegistries.FLUID, Bcn.id(name), fluid);

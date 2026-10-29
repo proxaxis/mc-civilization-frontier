@@ -33,6 +33,13 @@ public final class MachineBlockEntities {
 	public static final BlockEntityType<BatteryBlockEntity> BATTERY = register("battery",
 			FabricBlockEntityTypeBuilder.create(BatteryBlockEntity::new,
 					BcnBlocks.BATTERY_BOX, BcnBlocks.MFE).build());
+	public static final BlockEntityType<EngineBlockEntity> ENGINE = register("engine",
+			FabricBlockEntityTypeBuilder.create(EngineBlockEntity::new,
+					BcnBlocks.ENGINE_STONE, BcnBlocks.ENGINE_COMBUSTION).build());
+	public static final BlockEntityType<com.civilizationfrontier.bcn.energy.block.entity.RefineryBlockEntity> REFINERY = register("refinery",
+			FabricBlockEntityTypeBuilder.create(
+					com.civilizationfrontier.bcn.energy.block.entity.RefineryBlockEntity::new,
+					BcnBlocks.REFINERY).build());
 
 	private static <T extends BlockEntity> BlockEntityType<T> register(String name, BlockEntityType<T> type) {
 		return Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, Bcn.id(name), type);
@@ -40,5 +47,7 @@ public final class MachineBlockEntities {
 
 	public static void init() {
 		FluidStorage.SIDED.registerForBlockEntity((be, face) -> be.storage(face), WATERPROOF_PIPE);
+		FluidStorage.SIDED.registerForBlockEntity((be, face) -> be.fluidStorage(face), ENGINE);
+		FluidStorage.SIDED.registerForBlockEntity((be, face) -> be.fluidStorage(face), REFINERY);
 	}
 }

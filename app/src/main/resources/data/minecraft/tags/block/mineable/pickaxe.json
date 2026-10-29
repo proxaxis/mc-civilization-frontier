@@ -47,6 +47,8 @@
     "bcn:transformer_hv",
     "bcn:battery_box",
     "bcn:mfe",
-    "bcn:mj_consumer"
+    "bcn:mj_consumer",
+    "bcn:engine_combustion",
+    "bcn:refinery"
   ]
 }

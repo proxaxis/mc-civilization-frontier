@@ -668,3 +668,50 @@
   * 受信機が許容圧超過パケットを受けた場合は拒否のみ (IC2 の機械爆発は未実装)
   * BFS 探索はパケット毎の都度走査. 巨大ケーブル網での負荷は規模が出てから要測定
   * EFP 係数は設計値 (2.8e-6/t). 実バランスは稼働機械数の実測で再調整
+
+## task-206 BCN 制御回路 (壁面 RS ワイヤー+小型論理素子)
+
+* 結果: 成功 (実機検証済み)
+* 変更点:
+  * `BcnWireBlock` 新設 — FaceAttachedHorizontalDirectionalBlock で床/壁/天井に貼付可能. Conn 3 状態 (none/wire/block) の multipart 接続モデルは item_pipe 踏襲. 信号伝播は独自のコンポーネント評価: 面6+辺12 の近傍で flood し、外部ソースの OR を powered へ一括反映 (強度なしのブール式, 距離減衰なし)
+  * `BcnGateBlock` 新設 — 同一クラスで 10 種 (not/buffer/or/nor/and/nand/xor/xnor/rs_latch/t_latch). ローカル端子 (front/back/left/right) を AttachFace+FACING からワールド方向へ解決. 入力は `level.getSignal(neighbor, dir)` で vanilla 準拠に読み、出力側のみ弱+強信号を返す. 評価は `scheduleTick(2)` で行いラッチは MEM プロパティに状態保持. トグルラッチは右クリックでも反転
+  * `BcnEngineBlock` — neighborChanged/getStateForPlacement で `hasNeighborSignal` → ACTIVE を同期 (RS 信号オンオフ経路)
+  * アセット: blockstates(redwire=6面×6接続+lit, gate=10種×6向き+out点灯)・モデル・テクスチャ・items・loot・shapeless レシピ・lang を生成 (約190ファイル)
+  * mineable/pickaxe に redwire + gate 全種を追加
+* 検証 (ローカル Fabric サーバ + RCON):
+  * 床ワイヤー: レバー→ワイヤー連鎖で powered 伝播を確認
+  * 壁ワイヤー: 床→壁→上部壁への登り伝播を確認 (edge 近傍で角回り込み動作)
+  * OR ゲート: 入力ワイヤー ON → out_east=true → 出力ワイヤー → engine_stone active=true の全経路を確認
+  * NOT ゲート: 無入力で out_north=true, AND ゲート: 片入力のみで off (負例も正しい)
+* 判明したこと:
+  * 26.3 の `SignalGetter.getSignal(pos,dir)` は conductor に対して `getDirectSignalTo` を畳み込むため、powered 固体ブロックを素通りして直接信号を読める (diode 互換の入力検出)
+  * ワイヤーが弱信号のみを出す設計にすると外部読み取りは直接信号のみで自己保持しない (ダストは読み対象から除外してフィードバック防止)
+  * サーバーの `pause-when-empty-seconds` が tick 駆動の検証を止める → 検証時は -1 必須
+  * setblock の `lever[powered=true]` は位置によって稀に lever が残らない事象あり (ハーネス側の問題、本コード非依存)
+* 未解決・要判断:
+  * `data/bcn/recipe/rail_signal.json` が `minecraft:redstone_dust` を参照し datapack ロード失敗 → 正しくは `minecraft:redstone` (railway 担当の要修正, 検証時は jar 側を仮パッチ)
+  * 絶縁色違いワイヤー・ケーブル束・ジャケット被覆は未実装 (PR 仕様の拡張余地)
+  * ゲートのクライアント目視 (pin 点灯・壁貼り見た目) はクライアント起動待ち
+
+## task-203 BCN エンジン + リファイナリー (燃料→MJ・2段階燃料)
+
+* 結果: 実装済み — 固体/流体燃料エンジンの発電・リファイナリー精製・稼働中 EFP 加算を testserver で実機確認
+* 燃料体系: 黒オイル (bcn:oil, 3000 MJ/B) → リファイナリー精製 → 金オイル (bcn:fuel, 12000 MJ/B) の2段階
+* 実装:
+  * `FuelFluid` + `BcnFluids.FUEL/FLOWING_FUEL` + FUEL 液ブロック + `fuel_bucket` (金オイル, 描画登録済)
+  * `BcnEngineBlock` — `EngineKind` (STONE: 固体燃料 1 MJ/t LV 出力 / COMBUSTION: 流体燃料 6 MJ/t MV 出力) 化し MjMachineBlock 継承 + EntityBlock 化
+  * `EngineBlockEntity` — RS 信号稼働, 燃焼時間消費, 定格フルパケット送出, 稼働中 EFP 2.8e-6/t. 固体燃料は WorldlyContainer 1 スロット (ホッパー搬入可) + 右クリック投入, 流体燃料は FluidStorage.SIDED 経由 (パイプ/バケツ) で内部タンク 4B
+  * `MjRefineryBlock`/`RefineryBlockEntity` — 入力タンク (oil 専用 8B) → 405 droplets/t・4 MJ/t 消費で変換 → 出力タンク (fuel 8B). FluidStorage.SIDED で注入=oil のみ/取出=fuel のみの片道窓口, バケツ操作も対応
+* 実機検証 (testserver, RCON/data get):
+  * engine_stone: burn_time 消費で 1 MJ/t 発電 → 銅線 → 消費機へ 12.92/pkt で到達 (active=稼働中)
+  * engine_combustion: タンク 81000 droplets を消費し 6 MJ/t で 9000 MJ 生成 → 金線経由で 8998.68 到達
+  * refinery: oil 81000→54675, fuel 0→26325 (405/t) 変換, MJ 260 消費
+  * 稼働中 `efp_buffer` が蓄積し整数分は cfb_efp へ反映
+* 判明したこと:
+  * `data modify block` で文字列流体 ID を書くと loadAdditional の getValue が EMPTY を返す事象を確認 (空は null 扱いの防御実装済み). 実経路は fluidStorage.insert がインスタンス直接保持するため影響なし
+  * 燃料タンクの save/load 経路 (data modify 注入等) は実流体搬入経路 (防水パイプ→fluidStorage) での再検証を推奨
+* 未解決・要判断:
+  * 燃料対応表はかまど近似の固定テーブル (CookingFuel コンポーネント参照への移行は別タスク候補)
+  * エンジン GUI 未実装 (燃料投入は右クリック/ホッパー/パイプ). 管理 UI は別途
+  * 核/蒸気等の上位 tier は EngineKind 拡張で追加可能 (今回 STONE/COMBUSTION のみ)
+  * engine_combustion テクスチャは engine_stone の色変え暫定

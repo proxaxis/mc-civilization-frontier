@@ -21,6 +21,12 @@ public final class BcnClient implements ClientModInitializer {
                 null, null);
         FluidRenderingRegistry.register(BcnFluids.OIL, BcnFluids.FLOWING_OIL, oil);
 
+        FluidModel.Unbaked fuel = new FluidModel.Unbaked(
+                new Material(Bcn.id("block/fuel_still")),
+                new Material(Bcn.id("block/fuel_flow")),
+                null, null);
+        FluidRenderingRegistry.register(BcnFluids.FUEL, BcnFluids.FLOWING_FUEL, fuel);
+
         EntityRendererRegistry.register(BcnEntities.CANNONBALL,
                 context -> new ThrownItemRenderer<>(context, 1.0F, true));
         EntityRendererRegistry.register(BcnEntities.SIEGE_SHOT,

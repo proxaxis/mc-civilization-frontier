@@ -54,6 +54,11 @@ public final class BcnItems {
 	public static final Item TRANSFORMER_HV = registerBlockItem("transformer_hv", BcnBlocks.TRANSFORMER_HV);
 	public static final Item BATTERY_BOX = registerBlockItem("battery_box", BcnBlocks.BATTERY_BOX);
 	public static final Item MFE = registerBlockItem("mfe", BcnBlocks.MFE);
+	public static final Item ENGINE_COMBUSTION = registerBlockItem("engine_combustion", BcnBlocks.ENGINE_COMBUSTION);
+	public static final Item REFINERY = registerBlockItem("refinery", BcnBlocks.REFINERY);
+	public static final Item FUEL_BUCKET = register("fuel_bucket",
+			properties -> new BucketItem(BcnFluids.FUEL, properties),
+			new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1));
 	public static final Item REDWIRE = registerBlockItem("redwire", BcnBlocks.REDWIRE);
 	public static final Item GATE_NOT = registerBlockItem("gate_not", BcnBlocks.GATE_NOT);
 	public static final Item GATE_BUFFER = registerBlockItem("gate_buffer", BcnBlocks.GATE_BUFFER);

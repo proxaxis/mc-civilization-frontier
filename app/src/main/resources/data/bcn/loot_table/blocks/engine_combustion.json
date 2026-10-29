@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "bcn:engine_combustion"
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "bcn:blocks/engine_combustion"
+}

@@ -1,45 +1,73 @@
 package com.civilizationfrontier.bcn.block;
 
+import com.civilizationfrontier.bcn.block.entity.EngineBlockEntity;
+import com.civilizationfrontier.bcn.block.entity.MachineBlockEntities;
+import com.civilizationfrontier.bcn.energy.block.EngineKind;
+import com.civilizationfrontier.bcn.energy.block.MjMachineBlock;
+import net.fabricmc.fabric.api.transfer.v1.fluid.FluidStorageUtil;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
-import net.minecraft.world.level.redstone.Orientation;
+import net.minecraft.world.phys.BlockHitResult;
 
-public class BcnEngineBlock extends Block {
-	public static final EnumProperty<Direction> FACING = EnumProperty.create("facing", Direction.class);
-	public static final BooleanProperty ACTIVE = BooleanProperty.create("active");
+/**
+ * 燃焼エンジン. 燃料を消費して MJ を発生し FACING 面へ送出する.
+ * レッドストーン信号で稼働/停止を切替 (BC エンジン準拠).
+ */
+public class BcnEngineBlock extends MjMachineBlock {
 
-	public BcnEngineBlock(Properties properties) {
+	private final EngineKind kind;
+
+	public BcnEngineBlock(EngineKind kind, Properties properties) {
 		super(properties);
-		registerDefaultState(stateDefinition.any().setValue(FACING, Direction.UP).setValue(ACTIVE, false));
+		this.kind = kind;
 	}
 
-	@Override
-	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		builder.add(FACING, ACTIVE);
+	public EngineKind kind() {
+		return kind;
 	}
 
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext ctx) {
-		return defaultBlockState()
-				.setValue(FACING, ctx.getNearestLookingDirection().getOpposite())
+		return super.getStateForPlacement(ctx)
 				.setValue(ACTIVE, ctx.getLevel().hasNeighborSignal(ctx.getClickedPos()));
 	}
 
 	@Override
-	protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block,
-			Orientation orientation, boolean movedByPiston) {
-		if (!level.isClientSide()) {
-			boolean powered = level.hasNeighborSignal(pos);
-			if (state.getValue(ACTIVE) != powered) {
-				level.setBlock(pos, state.setValue(ACTIVE, powered), Block.UPDATE_ALL);
+	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+		return new EngineBlockEntity(pos, state);
+	}
+
+	@Override
+	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state,
+			BlockEntityType<T> type) {
+		return ticker(type, MachineBlockEntities.ENGINE, EngineBlockEntity::tick);
+	}
+
+	@Override
+	protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
+			Player player, InteractionHand hand, BlockHitResult hit) {
+		if (level.getBlockEntity(pos) instanceof EngineBlockEntity be) {
+			if (kind.fluidFueled()
+					&& FluidStorageUtil.interactWithFluidStorage(be.fluidStorage(hit.getDirection()), player, hand)) {
+				return InteractionResult.SUCCESS;
+			}
+			if (!kind.fluidFueled() && EngineBlockEntity.fuelTicks(stack) > 0) {
+				if (!level.isClientSide() && be.insertFuel(stack)) {
+					return InteractionResult.SUCCESS;
+				}
+				return InteractionResult.CONSUME;
 			}
 		}
+		return super.useItemOn(stack, state, level, pos, player, hand, hit);
 	}
 }

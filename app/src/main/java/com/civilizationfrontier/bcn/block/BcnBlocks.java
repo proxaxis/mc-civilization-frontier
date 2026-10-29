@@ -4,10 +4,12 @@ import java.util.function.Function;
 
 import com.civilizationfrontier.bcn.Bcn;
 import com.civilizationfrontier.bcn.energy.MjPressure;
+import com.civilizationfrontier.bcn.energy.block.EngineKind;
 import com.civilizationfrontier.bcn.energy.block.MjBatteryBlock;
 import com.civilizationfrontier.bcn.energy.block.MjCableBlock;
 import com.civilizationfrontier.bcn.energy.block.MjConsumerBlock;
 import com.civilizationfrontier.bcn.energy.block.MjGeneratorBlock;
+import com.civilizationfrontier.bcn.energy.block.MjRefineryBlock;
 import com.civilizationfrontier.bcn.energy.block.MjTransformerBlock;
 import com.civilizationfrontier.bcn.fluid.BcnFluids;
 import net.minecraft.core.Registry;
@@ -55,8 +57,14 @@ public final class BcnBlocks {
 					.noLootTable());
 	public static final Block ENGINE_FRAME = register("engine_frame", Block::new,
 			BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).mapColor(MapColor.METAL));
-	public static final BcnEngineBlock ENGINE_STONE = register("engine_stone", BcnEngineBlock::new,
+	public static final BcnEngineBlock ENGINE_STONE = register("engine_stone",
+			properties -> new BcnEngineBlock(EngineKind.STONE, properties),
 			BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).mapColor(MapColor.STONE));
+	public static final BcnEngineBlock ENGINE_COMBUSTION = register("engine_combustion",
+			properties -> new BcnEngineBlock(EngineKind.COMBUSTION, properties),
+			BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).mapColor(MapColor.METAL)
+					.requiresCorrectToolForDrops());
+	public static final MjRefineryBlock REFINERY = register("refinery", MjRefineryBlock::new, machineProps());
 	public static final BcnPipeBlock ITEM_PIPE = register("item_pipe",
 			properties -> new BcnPipeBlock(properties, false),
 			BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).noOcclusion());
@@ -97,6 +105,15 @@ public final class BcnBlocks {
 			properties -> new MjBatteryBlock(MjPressure.LV, 16000, properties), machineProps());
 	public static final MjBatteryBlock MFE = register("mfe",
 			properties -> new MjBatteryBlock(MjPressure.MV, 1600000, properties), machineProps());
+	public static final Block FUEL = register("fuel", properties -> new OilLiquidBlock(BcnFluids.FUEL, properties),
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.GOLD)
+					.replaceable()
+					.noCollision()
+					.strength(100.0F)
+					.pushReaction(net.minecraft.world.level.material.PushReaction.POPPED)
+					.liquid()
+					.noLootTable());
 	public static final Block OIL_SPRING = register("oil_spring", OilSpringBlock::new,
 			BlockBehaviour.Properties.ofFullCopy(Blocks.OBSIDIAN)
 					.mapColor(MapColor.COLOR_BLACK)
