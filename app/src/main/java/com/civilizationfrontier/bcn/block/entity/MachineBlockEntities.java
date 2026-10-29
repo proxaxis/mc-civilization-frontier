@@ -36,6 +36,10 @@ public final class MachineBlockEntities {
 	public static final BlockEntityType<EngineBlockEntity> ENGINE = register("engine",
 			FabricBlockEntityTypeBuilder.create(EngineBlockEntity::new,
 					BcnBlocks.ENGINE_STONE, BcnBlocks.ENGINE_COMBUSTION).build());
+	public static final BlockEntityType<com.civilizationfrontier.bcn.energy.block.entity.QuarryBlockEntity> QUARRY = register("quarry",
+			FabricBlockEntityTypeBuilder.create(
+					com.civilizationfrontier.bcn.energy.block.entity.QuarryBlockEntity::new,
+					BcnBlocks.QUARRY).build());
 	public static final BlockEntityType<com.civilizationfrontier.bcn.energy.block.entity.RefineryBlockEntity> REFINERY = register("refinery",
 			FabricBlockEntityTypeBuilder.create(
 					com.civilizationfrontier.bcn.energy.block.entity.RefineryBlockEntity::new,

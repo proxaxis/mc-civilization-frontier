@@ -715,3 +715,20 @@
   * エンジン GUI 未実装 (燃料投入は右クリック/ホッパー/パイプ). 管理 UI は別途
   * 核/蒸気等の上位 tier は EngineKind 拡張で追加可能 (今回 STONE/COMBUSTION のみ)
   * engine_combustion テクスチャは engine_stone の色変え暫定
+
+## task-205 BCN クァーリー (地上→岩盤の自動採掘)
+
+* 結果: 実装済み — MJ 供給で直下 5x5 を層状自動採掘, ドロップを隣接コンテナへ搬出, Flan 保護判定と未ロード待機を実機確認
+* 実装 (`MjQuarryBlock`/`QuarryBlockEntity`):
+  * MjStorageBlockEntity 継承の MJ 消費機 (LV 以下受電, 容量 128, 1 ブロック 8 MJ, 4 tick 間隔)
+  * 採掘範囲: クァーリー直下 5x5, y-1 から層状 (x->z->y 下降) に岩盤まで走査. 空気/流体/採掘不可 (岩盤等) はスキップ
+  * 採掘は設置者を記録し `[BCN-Quarry]` FakePlayer で `Block.getDrops` 発行. Flan `ClaimHandler` をリフレクション解決: クレーム有り → `getOwner` が設置者と一致 or `canInteract(BREAK)` が許可なら採掘, 判定不能クレームは保守的にスキップ
+  * 未ロード位置はカーソルを進めず待機 (常駐チャンクロード無しの設計準拠)
+  * ドロップは隣接 Container (チェスト/WorldlyContainer 準拠の item_pipe) へ搬出, 溢れ分は上面へ自然ドロップ. 稼働中 EFP 加算
+* 実機検証 (testserver, RCON):
+  * mj_source 供供給で採掘進行 (received 584 MJ, 57 ブロック掘削, カーソル cy 下降), 丸石 56 個がチェストへ搬出
+  * `efp_buffer` 蓄積 + `total_emitted` が掘削数カウンタとして記録
+* 未解決・要判断:
+  * 範囲は固定 5x5 (BC 式の枠/マーカー拡張は未実装). 掘削速度・消費は要バランス調整
+  * 保護判定はクレーム存在チェック + owner 一致 + canInteract(BREAK) の 3 段リフレクション. Flan のクレーム作成検証は要実地テスト
+  * GUI/枠表示未実装 (稼働表示は ACTIVE ブロック状態)

@@ -70,5 +70,6 @@
   "block.bcn.fuel": "Fuel",
   "item.bcn.fuel_bucket": "Fuel Bucket",
   "block.bcn.engine_combustion": "Combustion Engine",
-  "block.bcn.refinery": "Refinery"
+  "block.bcn.refinery": "Refinery",
+  "block.bcn.quarry": "Quarry"
 }

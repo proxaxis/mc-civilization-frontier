@@ -70,5 +70,6 @@
   "block.bcn.fuel": "金オイル",
   "item.bcn.fuel_bucket": "金オイルバケツ",
   "block.bcn.engine_combustion": "内燃エンジン",
-  "block.bcn.refinery": "リファイナリー"
+  "block.bcn.refinery": "リファイナリー",
+  "block.bcn.quarry": "クァーリー"
 }

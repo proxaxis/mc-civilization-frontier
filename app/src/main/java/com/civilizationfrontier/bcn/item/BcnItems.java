@@ -56,6 +56,7 @@ public final class BcnItems {
 	public static final Item MFE = registerBlockItem("mfe", BcnBlocks.MFE);
 	public static final Item ENGINE_COMBUSTION = registerBlockItem("engine_combustion", BcnBlocks.ENGINE_COMBUSTION);
 	public static final Item REFINERY = registerBlockItem("refinery", BcnBlocks.REFINERY);
+	public static final Item QUARRY = registerBlockItem("quarry", BcnBlocks.QUARRY);
 	public static final Item FUEL_BUCKET = register("fuel_bucket",
 			properties -> new BucketItem(BcnFluids.FUEL, properties),
 			new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1));

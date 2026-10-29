@@ -9,6 +9,7 @@ import com.civilizationfrontier.bcn.energy.block.MjBatteryBlock;
 import com.civilizationfrontier.bcn.energy.block.MjCableBlock;
 import com.civilizationfrontier.bcn.energy.block.MjConsumerBlock;
 import com.civilizationfrontier.bcn.energy.block.MjGeneratorBlock;
+import com.civilizationfrontier.bcn.energy.block.MjQuarryBlock;
 import com.civilizationfrontier.bcn.energy.block.MjRefineryBlock;
 import com.civilizationfrontier.bcn.energy.block.MjTransformerBlock;
 import com.civilizationfrontier.bcn.fluid.BcnFluids;
@@ -65,6 +66,7 @@ public final class BcnBlocks {
 			BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).mapColor(MapColor.METAL)
 					.requiresCorrectToolForDrops());
 	public static final MjRefineryBlock REFINERY = register("refinery", MjRefineryBlock::new, machineProps());
+	public static final MjQuarryBlock QUARRY = register("quarry", MjQuarryBlock::new, machineProps());
 	public static final BcnPipeBlock ITEM_PIPE = register("item_pipe",
 			properties -> new BcnPipeBlock(properties, false),
 			BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).noOcclusion());

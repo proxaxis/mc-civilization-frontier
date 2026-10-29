@@ -194,7 +194,6 @@ public class BcnGateBlock extends FaceAttachedHorizontalDirectionalBlock {
 	@Override
 	protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
 		int in = readInputs(level, pos, state);
-		System.err.println("[BCN-DEBUG] tick " + type + " @" + pos + " in=" + in);
 		int[] outMem = {hasMemory ? state.getValue(MEM) : 0};
 		int out = evaluate(in, outMem[0], outMem);
 
@@ -218,7 +217,6 @@ public class BcnGateBlock extends FaceAttachedHorizontalDirectionalBlock {
 	protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block,
 			net.minecraft.world.level.redstone.Orientation orientation, boolean movedByPiston) {
 		if (!level.isClientSide()) {
-			System.err.println("[BCN-DEBUG] neighborChanged " + type + " @" + pos);
 			level.scheduleTick(pos, this, 2);
 		}
 	}
@@ -227,7 +225,6 @@ public class BcnGateBlock extends FaceAttachedHorizontalDirectionalBlock {
 	protected void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
 		super.onPlace(state, level, pos, oldState, movedByPiston);
 		if (!level.isClientSide()) {
-			System.err.println("[BCN-DEBUG] onPlace " + type + " @" + pos);
 			level.scheduleTick(pos, this, 2);
 		}
 	}

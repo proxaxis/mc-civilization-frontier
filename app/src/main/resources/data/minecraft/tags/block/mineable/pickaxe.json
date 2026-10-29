@@ -49,6 +49,7 @@
     "bcn:mfe",
     "bcn:mj_consumer",
     "bcn:engine_combustion",
-    "bcn:refinery"
+    "bcn:refinery",
+    "bcn:quarry"
   ]
 }

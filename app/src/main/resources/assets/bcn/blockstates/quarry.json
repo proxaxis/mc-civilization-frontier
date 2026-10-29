@@ -1,0 +1,48 @@
+{
+  "variants": {
+    "active=false,facing=down": {
+      "model": "bcn:block/quarry",
+      "x": 180
+    },
+    "active=true,facing=down": {
+      "model": "bcn:block/quarry_on",
+      "x": 180
+    },
+    "active=false,facing=up": {
+      "model": "bcn:block/quarry"
+    },
+    "active=true,facing=up": {
+      "model": "bcn:block/quarry_on"
+    },
+    "active=false,facing=north": {
+      "model": "bcn:block/quarry"
+    },
+    "active=true,facing=north": {
+      "model": "bcn:block/quarry_on"
+    },
+    "active=false,facing=south": {
+      "model": "bcn:block/quarry",
+      "y": 180
+    },
+    "active=true,facing=south": {
+      "model": "bcn:block/quarry_on",
+      "y": 180
+    },
+    "active=false,facing=west": {
+      "model": "bcn:block/quarry",
+      "y": 90
+    },
+    "active=true,facing=west": {
+      "model": "bcn:block/quarry_on",
+      "y": 90
+    },
+    "active=false,facing=east": {
+      "model": "bcn:block/quarry",
+      "y": 270
+    },
+    "active=true,facing=east": {
+      "model": "bcn:block/quarry_on",
+      "y": 270
+    }
+  }
+}
