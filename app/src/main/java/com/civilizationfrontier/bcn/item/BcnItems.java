@@ -35,6 +35,8 @@ public final class BcnItems {
 	public static final Item MARBLE = registerBlockItem("marble", BcnBlocks.MARBLE);
 	public static final Item OIL_SPRING = registerBlockItem("oil_spring", BcnBlocks.OIL_SPRING);
 	public static final Item ENGINE_FRAME = registerBlockItem("engine_frame", BcnBlocks.ENGINE_FRAME);
+	public static final Item ENGINE_STONE = registerBlockItem("engine_stone", BcnBlocks.ENGINE_STONE);
+	public static final Item ITEM_PIPE = registerBlockItem("item_pipe", BcnBlocks.ITEM_PIPE);
 
 	public static final Item RAW_TIN = register("raw_tin", Item::new, new Item.Properties());
 	public static final Item RAW_SILVER = register("raw_silver", Item::new, new Item.Properties());

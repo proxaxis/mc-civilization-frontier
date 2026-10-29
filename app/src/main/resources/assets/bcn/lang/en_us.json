@@ -31,5 +31,7 @@
 	"item.bcn.oil_bucket": "Oil Bucket",
 	"fluid.bcn.oil": "Oil",
 	"block.bcn.engine_frame": "Engine Frame",
-	"itemGroup.bcn.main": "Build Craft Neo"
+	"itemGroup.bcn.main": "Build Craft Neo",
+	"block.bcn.engine_stone": "Stone Engine",
+	"block.bcn.item_pipe": "Item Pipe"
 }

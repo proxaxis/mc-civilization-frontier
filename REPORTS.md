@@ -525,3 +525,13 @@
   * `engine_frame` 検証用ブロック — 5 要素のカスタム 3D モデル・blockstate・アイテムモデル・テクスチャ・lang を追加し登録
 * 検証済み: 登録 18 件 vs items.json 29 件の網羅差分は流体のみで正常、`bcn:engine_frame` の give + setblock 動作確認
 * 未検証(クライアント目視): カスタムモデルの見た目・タブ表示・oil 流体レンダラ
+
+## BCN パイプ実装(アイテム輸送)
+
+* 結果: 実装済み — multipart 3 状態接続モデル
+* 変更点:
+  * `BcnPipeBlock` — 6 方向 Conn 列挙型(NONE/PIPE/BLOCK)、自動接続
+  * 接続条件: 同種パイプ=PIPE(連続管)、BlockEntity 持ち(容器/機械)=BLOCK(終端フランジ)、その他=NONE(土・壁には生えない)
+  * モデル: 中心コア+シャフト+終端フランジを分離、ガラス調透過テクスチャ(render_type: translucent)
+  * 26.3 の差分対応: EnumProperty(StringRepresentable)、updateShape 新シグネチャ(LevelReader+ScheduledTickAccess)
+* 未解決: クライアントでの透過・接続見た目の最終目視、流れるアイテムの BER 実装は task 204

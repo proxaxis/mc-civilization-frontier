@@ -31,5 +31,7 @@
 	"item.bcn.oil_bucket": "黒オイルバケツ",
 	"fluid.bcn.oil": "黒オイル",
 	"block.bcn.engine_frame": "エンジンフレーム",
-	"itemGroup.bcn.main": "Build Craft Neo"
+	"itemGroup.bcn.main": "Build Craft Neo",
+	"block.bcn.engine_stone": "石材エンジン",
+	"block.bcn.item_pipe": "アイテムパイプ"
 }

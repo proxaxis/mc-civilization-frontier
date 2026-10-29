@@ -9,6 +9,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Block;
+
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RedStoneOreBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -48,6 +49,10 @@ public final class BcnBlocks {
 					.noLootTable());
 	public static final Block ENGINE_FRAME = register("engine_frame", Block::new,
 			BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).mapColor(MapColor.METAL));
+	public static final BcnEngineBlock ENGINE_STONE = register("engine_stone", BcnEngineBlock::new,
+			BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).mapColor(MapColor.STONE));
+	public static final BcnPipeBlock ITEM_PIPE = register("item_pipe", BcnPipeBlock::new,
+			BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).noOcclusion());
 	public static final Block OIL_SPRING = register("oil_spring", OilSpringBlock::new,
 			BlockBehaviour.Properties.ofFullCopy(Blocks.OBSIDIAN)
 					.mapColor(MapColor.COLOR_BLACK)
@@ -58,7 +63,7 @@ public final class BcnBlocks {
 		return register(name, Block::new, BlockBehaviour.Properties.ofFullCopy(copyFrom).requiresCorrectToolForDrops());
 	}
 
-	private static Block register(String name, Function<BlockBehaviour.Properties, Block> factory,
+	private static <T extends Block> T register(String name, Function<BlockBehaviour.Properties, T> factory,
 			BlockBehaviour.Properties properties) {
 		ResourceKey<Block> key = ResourceKey.create(Registries.BLOCK, Bcn.id(name));
 		return Registry.register(BuiltInRegistries.BLOCK, key, factory.apply(properties.setId(key)));
