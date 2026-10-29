@@ -191,3 +191,19 @@
   * `category lock <players> <category>` の引数順は仮定(@s 前提)。プレイヤー参加時に要検証
   * スキルツリーアンロックとスペル発動の実連携(puffish unlock→spell 使用可否)は別設計が必要
   * on_join メニューは初回のみ。再選択手段(リセット)の設計が必要
+
+## task-103検証補足 - ボット検証環境の構築とプロトコル制約
+
+* 結果: 一部成功(bot 接続は未達)
+* 変更点:
+  * `docker-compose.yml` の testserver を `ONLINE_MODE=FALSE` に変更(検証用)
+  * `resources/datapacks/cfb_skills` もコンテナへマウント追加(cfb_fixes と同様)
+  * mineflayer ベースの検証 bot(HTTP API 付き)を /tmp/mcmcp に作成し接続を試行
+* 判明したこと:
+  * docker のポート公開はこの環境の netns からは未解決で、bot はコンテナ IP `172.18.0.2` 直接接続が必要だった
+  * minecraft-data / minecraft-protocol が対応するのは `26.1` までで、サーバーの 26.3 要求に合わず接続時に `incompatible 26.3` でキックされた
+  * Modrinth に 26.3 対応の Fabric 用 MCP 操作 mod は見当たらない(検索範囲では未確認)
+  * rcon の `puffish_skills category lock/unlock` は `<players> <category>` 引数が必要で、サーバーコンソール単独では実行対象を得られないため live 検証はプレイヤー必須
+* 未解決・要判断:
+  * bot/クライアント経由の実機検証は minecraft-data の 26.3 対応 or Fabric 側 MCP mod 待ち
+  * 現時点で可能なのは datapack ロード検証まで(実機動作は未確認)
