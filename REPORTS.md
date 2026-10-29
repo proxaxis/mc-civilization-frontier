@@ -156,3 +156,21 @@
   * ツリー内のスキルアンロック条件(経験値→ポイント交換)は experience.json の式で仮設定。バランスは要実プレイ調整
   * アクティブスキルはアンロックノードのみ。実際の発動アイテム・効果は Spell Engine 定義と連携する残作業あり
   * アイコンは book/paper の仮置き
+
+## task-103(続) - Spell Engine スペル定義と実機検証
+
+* 結果: 成功
+* 変更点:
+  * `tools/gen_spells.py` を新設し `data/cfb/spell/` に4職業x15=60スペル JSON を生成(school/tier/cast/cooldown/exhaust/rune/impact)
+  * cost は `exhaust`(満腹度消費) + `cooldown.duration` + 必要に応じ `item`(runes:*_stone) で実リソース表現
+  * impact は DAMAGE(spell_power_coefficient)/HEAL/STATUS_EFFECT/なし の4型で近似実装
+  * testserver へ配置し `/reload` で `Data pack cfb loaded successfully`・パースエラー 0 を確認
+* 判明したこと:
+  * Spell Engine の spell は `data/<ns>/spell/<id>.json` に配置。`school` は `spell_power:arcane/fire/frost/healing` 等
+  * cost の `exhaust` フィールドが満腹度(空腹)コストとして機能するため、別途自作フックなしで実現可能と判明
+  * `cooldown.group` は武器別ではなく duration 直指定も可
+  * スペル側の learn/active/impact は詳細だが、本実装は骨格(DAMAGE/HEAL/STATUS_EFFECT)で近似。SUMMON/PROJECTILE 等の高度挙動は未実装
+* 未解決・要判断:
+  * スペルと職業ツリーの連携(ツリーアンロック→実スペル発動)は puffish unlock と spell_engine 側のアイテム/スペルプール結合の設計が必要
+  * 職業選択の排他ロック(他職業カテゴリ不可)は別途実装が必要
+  * 奥義・召喚・瞬間移動など一部スペルは impact 骨格のみで実挙動は未実装

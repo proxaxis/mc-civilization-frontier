@@ -1,0 +1,40 @@
+{
+  "school": "spell_power:arcane",
+  "range": 16.0,
+  "tier": 5,
+  "group": "cfb_mage",
+  "learn": {},
+  "active": {
+    "cast": {
+      "duration": 2.0,
+      "animation": {
+        "id": "spell_engine:one_handed_area_charge"
+      }
+    }
+  },
+  "release": {
+    "animation": {
+      "id": "spell_engine:one_handed_area_release"
+    }
+  },
+  "impacts": [
+    {
+      "action": {
+        "type": "DAMAGE",
+        "damage": {
+          "spell_power_coefficient": 5.0,
+          "knockback": 0.3
+        }
+      }
+    }
+  ],
+  "cost": {
+    "exhaust": 1.0,
+    "cooldown": {
+      "duration": 200
+    },
+    "item": {
+      "id": "runes:arcane_stone"
+    }
+  }
+}

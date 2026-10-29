@@ -1,0 +1,40 @@
+{
+  "school": "spell_power:healing",
+  "range": 16.0,
+  "tier": 5,
+  "group": "cfb_paladin",
+  "learn": {},
+  "active": {
+    "cast": {
+      "duration": 2.0,
+      "animation": {
+        "id": "spell_engine:one_handed_area_charge"
+      }
+    }
+  },
+  "release": {
+    "animation": {
+      "id": "spell_engine:one_handed_area_release"
+    }
+  },
+  "impacts": [
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "effect_id": "minecraft:regeneration",
+          "duration": 20.0
+        }
+      }
+    }
+  ],
+  "cost": {
+    "exhaust": 0.9,
+    "cooldown": {
+      "duration": 180
+    },
+    "item": {
+      "id": "runes:healing_stone"
+    }
+  }
+}

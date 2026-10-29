@@ -1,0 +1,40 @@
+{
+  "school": "spell_power:frost",
+  "range": 16.0,
+  "tier": 2,
+  "group": "cfb_mage",
+  "learn": {},
+  "active": {
+    "cast": {
+      "duration": 0.5,
+      "animation": {
+        "id": "spell_engine:one_handed_area_charge"
+      }
+    }
+  },
+  "release": {
+    "animation": {
+      "id": "spell_engine:one_handed_area_release"
+    }
+  },
+  "impacts": [
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "effect_id": "minecraft:slowness",
+          "duration": 8.0
+        }
+      }
+    }
+  ],
+  "cost": {
+    "exhaust": 0.5,
+    "cooldown": {
+      "duration": 40
+    },
+    "item": {
+      "id": "runes:frost_stone"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "school": "spell_power:arcane",
+  "range": 16.0,
+  "tier": 4,
+  "group": "cfb_guardian",
+  "learn": {},
+  "active": {
+    "cast": {
+      "duration": 0.5,
+      "animation": {
+        "id": "spell_engine:one_handed_area_charge"
+      }
+    }
+  },
+  "release": {
+    "animation": {
+      "id": "spell_engine:one_handed_area_release"
+    }
+  },
+  "impacts": [
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "effect_id": "minecraft:absorption",
+          "duration": 15.0
+        }
+      }
+    }
+  ],
+  "cost": {
+    "exhaust": 0.6,
+    "cooldown": {
+      "duration": 60
+    },
+    "item": {
+      "id": "runes:protection_stone"
+    }
+  }
+}

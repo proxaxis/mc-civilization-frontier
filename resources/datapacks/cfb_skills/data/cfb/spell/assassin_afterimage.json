@@ -1,0 +1,37 @@
+{
+  "school": "spell_power:arcane",
+  "range": 16.0,
+  "tier": 2,
+  "group": "cfb_assassin",
+  "learn": {},
+  "active": {
+    "cast": {
+      "duration": 0.0,
+      "animation": {
+        "id": "spell_engine:one_handed_area_charge"
+      }
+    }
+  },
+  "release": {
+    "animation": {
+      "id": "spell_engine:one_handed_area_release"
+    }
+  },
+  "impacts": [
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "effect_id": "minecraft:speed",
+          "duration": 8.0
+        }
+      }
+    }
+  ],
+  "cost": {
+    "exhaust": 0.3,
+    "cooldown": {
+      "duration": 30
+    }
+  }
+}

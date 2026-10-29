@@ -1,0 +1,37 @@
+{
+  "school": "spell_power:arcane",
+  "range": 16.0,
+  "tier": 1,
+  "group": "cfb_guardian",
+  "learn": {},
+  "active": {
+    "cast": {
+      "duration": 0.0,
+      "animation": {
+        "id": "spell_engine:one_handed_area_charge"
+      }
+    }
+  },
+  "release": {
+    "animation": {
+      "id": "spell_engine:one_handed_area_release"
+    }
+  },
+  "impacts": [
+    {
+      "action": {
+        "type": "DAMAGE",
+        "damage": {
+          "spell_power_coefficient": 0.8,
+          "knockback": 0.3
+        }
+      }
+    }
+  ],
+  "cost": {
+    "exhaust": 0.2,
+    "cooldown": {
+      "duration": 15
+    }
+  }
+}

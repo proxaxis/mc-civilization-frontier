@@ -1,0 +1,39 @@
+{
+  "school": "spell_power:healing",
+  "range": 16.0,
+  "tier": 3,
+  "group": "cfb_paladin",
+  "learn": {},
+  "active": {
+    "cast": {
+      "duration": 0.5,
+      "animation": {
+        "id": "spell_engine:one_handed_area_charge"
+      }
+    }
+  },
+  "release": {
+    "animation": {
+      "id": "spell_engine:one_handed_area_release"
+    }
+  },
+  "impacts": [
+    {
+      "action": {
+        "type": "HEAL",
+        "heal": {
+          "spell_power_coefficient": 2.0
+        }
+      }
+    }
+  ],
+  "cost": {
+    "exhaust": 0.5,
+    "cooldown": {
+      "duration": 50
+    },
+    "item": {
+      "id": "runes:healing_stone"
+    }
+  }
+}

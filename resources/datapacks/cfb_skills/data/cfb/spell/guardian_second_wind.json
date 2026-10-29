@@ -1,0 +1,36 @@
+{
+  "school": "spell_power:arcane",
+  "range": 16.0,
+  "tier": 3,
+  "group": "cfb_guardian",
+  "learn": {},
+  "active": {
+    "cast": {
+      "duration": 1.0,
+      "animation": {
+        "id": "spell_engine:one_handed_area_charge"
+      }
+    }
+  },
+  "release": {
+    "animation": {
+      "id": "spell_engine:one_handed_area_release"
+    }
+  },
+  "impacts": [
+    {
+      "action": {
+        "type": "HEAL",
+        "heal": {
+          "spell_power_coefficient": 3.0
+        }
+      }
+    }
+  ],
+  "cost": {
+    "exhaust": 0.5,
+    "cooldown": {
+      "duration": 70
+    }
+  }
+}
