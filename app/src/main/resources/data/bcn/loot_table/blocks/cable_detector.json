@@ -1,0 +1,5 @@
+{
+  "type": "minecraft:block",
+  "pools": [{"entries": [{"type": "minecraft:item", "name": "bcn:cable_detector"}], "rolls": 1}],
+  "random_sequence": "bcn:blocks/cable_detector"
+}

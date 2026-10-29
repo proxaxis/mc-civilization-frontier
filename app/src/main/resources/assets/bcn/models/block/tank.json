@@ -1,0 +1,1 @@
+{"parent": "minecraft:block/cube_column", "textures": {"side": "bcn:block/tank_side", "end": "bcn:block/tank_end"}}

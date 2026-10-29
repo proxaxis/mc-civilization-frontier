@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "B": "minecraft:lava_bucket",
+    "F": "minecraft:furnace"
+  },
+  "pattern": [
+    " I ",
+    "IBI",
+    "IFI"
+  ],
+  "result": {
+    "id": "bcn:generator_geothermal"
+  }
+}

@@ -1,0 +1,1 @@
+{"parent": "minecraft:block/cube_bottom_top", "textures": {"side": "bcn:block/auto_workbench_side", "top": "bcn:block/auto_workbench_top", "bottom": "bcn:block/auto_workbench_bottom"}}

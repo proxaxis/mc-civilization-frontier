@@ -1,0 +1,48 @@
+{
+  "variants": {
+    "facing=down,active=false": {
+      "model": "bcn:block/generator_solar",
+      "x": 180
+    },
+    "facing=down,active=true": {
+      "model": "bcn:block/generator_solar_on",
+      "x": 180
+    },
+    "facing=up,active=false": {
+      "model": "bcn:block/generator_solar"
+    },
+    "facing=up,active=true": {
+      "model": "bcn:block/generator_solar_on"
+    },
+    "facing=north,active=false": {
+      "model": "bcn:block/generator_solar"
+    },
+    "facing=north,active=true": {
+      "model": "bcn:block/generator_solar_on"
+    },
+    "facing=south,active=false": {
+      "model": "bcn:block/generator_solar",
+      "y": 180
+    },
+    "facing=south,active=true": {
+      "model": "bcn:block/generator_solar_on",
+      "y": 180
+    },
+    "facing=west,active=false": {
+      "model": "bcn:block/generator_solar",
+      "y": 90
+    },
+    "facing=west,active=true": {
+      "model": "bcn:block/generator_solar_on",
+      "y": 90
+    },
+    "facing=east,active=false": {
+      "model": "bcn:block/generator_solar",
+      "y": 270
+    },
+    "facing=east,active=true": {
+      "model": "bcn:block/generator_solar_on",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " M ",
+    "M M",
+    " M "
+  ],
+  "key": {
+    "M": "minecraft:stick"
+  },
+  "result": {
+    "id": "bcn:gear_wood",
+    "count": 1
+  }
+}

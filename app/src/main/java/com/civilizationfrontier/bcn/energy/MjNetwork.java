@@ -60,17 +60,21 @@ public final class MjNetwork {
 		Set<BlockPos> visited = new HashSet<>();
 		Deque<BlockPos> queue = new ArrayDeque<>();
 		Map<BlockPos, Double> lossAt = new HashMap<>();
+		Map<BlockPos, Direction> entryDir = new HashMap<>();
 		List<BlockPos> burn = new ArrayList<>();
 		List<Candidate> candidates = new ArrayList<>();
 		visited.add(start);
 		visited.add(from);
 		queue.add(start);
 		lossAt.put(start, startCable.lossPerBlock());
+		entryDir.put(start, face.getOpposite());
+		startCable.onPacketPass(level, start, energy);
 
 		while (!queue.isEmpty()) {
 			BlockPos cur = queue.poll();
 			double curLoss = lossAt.get(cur);
-			for (Direction d : Direction.values()) {
+			MjCable curCable = (MjCable) level.getBlockState(cur).getBlock();
+			for (Direction d : curCable.routesFrom(level, cur, entryDir.get(cur))) {
 				BlockPos next = cur.relative(d);
 				if (!visited.add(next)) {
 					continue;
@@ -81,6 +85,8 @@ public final class MjNetwork {
 						continue;
 					}
 					lossAt.put(next, curLoss + cable.lossPerBlock());
+					entryDir.put(next, d.getOpposite());
+					cable.onPacketPass(level, next, energy);
 					queue.add(next);
 				} else {
 					BlockEntity be = level.getBlockEntity(next);

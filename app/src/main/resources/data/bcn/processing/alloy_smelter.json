@@ -1,0 +1,84 @@
+{
+  "recipes": [
+    {
+      "in": [
+        [
+          "minecraft:copper_ingot",
+          1
+        ],
+        [
+          "bcn:tin_ingot",
+          1
+        ]
+      ],
+      "out": [
+        "bcn:bronze_ingot",
+        4
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "minecraft:copper_ingot",
+          1
+        ],
+        [
+          "bcn:tin_ingot",
+          1
+        ],
+        [
+          "bcn:tin_ingot",
+          1
+        ]
+      ],
+      "out": [
+        "bcn:bronze_ingot",
+        5
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "minecraft:iron_ingot",
+          1
+        ],
+        [
+          "minecraft:coal",
+          1
+        ],
+        [
+          "minecraft:coal",
+          1
+        ]
+      ],
+      "out": [
+        "bcn:steel_ingot",
+        1
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "minecraft:iron_ingot",
+          1
+        ],
+        [
+          "bcn:copper_dust",
+          1
+        ]
+      ],
+      "out": [
+        "bcn:steel_ingot",
+        1
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    }
+  ]
+}

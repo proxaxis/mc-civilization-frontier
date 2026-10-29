@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "bcn:paintbrush",
+    "minecraft:blue_dye"
+  ],
+  "result": {
+    "id": "bcn:paintbrush_blue",
+    "count": 1
+  }
+}

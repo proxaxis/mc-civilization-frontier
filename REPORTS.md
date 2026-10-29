@@ -742,3 +742,78 @@
   * economy_tick から閾値直接判定を削除し CD 経由に変更
   * threat の召喚位置を @r(ランダムプレイヤー位置)に変更(関数呼び出し位置への定点召喚を解消)
 * 検証: EFP=46 設定で threat が 1 回発火し 30 消費(46→16), CD 6000 カウントダウン確認. 連続発火メッセージ 0 件
+
+## task-210 BCN builder 系 (landmark/filler/blueprint/architect/builder)
+
+* 結果: 実装完了, 実機検証は兄弟タスクのビルド破綻で未実施
+* 変更点:
+  * `builder/LandmarkBlock` — 青マーカー + 緑マーカー (path フラグで兼用). 右クリックで active 切替, 軸方向に MAX_DISTANCE=64 内のマーカーを直線スキャンして連結, 到達可能マーカー群の包絡直方体を findVolume で返す (path マーカーは範囲形成に非参加). active 時は lightLevel 12
+  * `builder/FillerBlock` + `FillerBlockEntity` — 27 slot WorldlyContainer (ホッパー供給可, BlockItem のみ投入可). 空の手で右クリックで pattern 切替 (fill/clear/flatten/stairs=外殻). 4 tick 毎に 1 ブロック処理, 1 ブロックあたり 1 MJ 消費. 隣接 landmark の findVolume で範囲取得, `level.isLoaded` でロード済みチャンクのみ稼働
+  * `builder/SnapshotItem` — template/blueprint/map_location/list の 4 kind. blueprint は volume 内の全セルをパレット+インデックスで完全保存, template は素材のみ. データは `DataComponents.CUSTOM_DATA` の CompoundTag 格納. map_location は useOn でクリック座標を marks 配列に追記
+  * `builder/ArchitectTableBlock` — blueprint/template を持って右クリックすると隣接 landmark 範囲を capture してアイテムへ書き込み (GUI は未実装の右クリック式)
+  * `builder/BuilderBlock` + `BuilderBlockEntity` — slot0=blueprint, 1-27=素材. blueprint アイテムで右クリックで装着, 空の手で排出. 4 tick 毎にセルを走査しパレット一致ブロックを消費して配置, 1 ブロック 1 MJ. 設置原点は機械直上 (origin タグ読み取りは次版)
+  * アセット: blockstates(landmark/path_mark active 2 態, 機械 3 種), モデル, テクスチャ, items, loot, レシピ, lang (en/ja) 生成
+  * 登録は他エージェントが先行で入れていた FILLER/BUILDER エントリと重複するため整理 (最終的に BcnBlocks/BcnItems/MachineBlockEntities 全て 1 定義)
+* 判明したこと:
+  * 26.3 では `displayClientMessage` は無く `Player.sendSystemMessage(Component)` を使う
+  * `BlockEntityType.Builder.of` は存在せず, Fabric API の `FabricBlockEntityTypeBuilder.create` を使う
+  * `Containers.dropItemStack` でインベントリ溢れ分を床に出せる
+  * 共有レジストリファイル (BcnBlocks/BcnItems/MachineBlockEntities) は複数エージェントが同時編集しており短時間で内容が変わる
+* 未解決・要判断:
+  * ビルドは兄弟エージェントの in-flight コード (EnvGenerator/Geothermal/Reactor/WaterGenerator/SolarGenerator/TankBlockEntity/BcnWrenchItem) のコンパイルエラーで失敗中. 本タスクのファイルは単体 javac でコンパイル済み
+  * 実機検証 (landmark 3 点→filler 充填, blueprint 保存→builder 再現, MJ 消費) は全体ビルド復旧後に要実施
+  * landmark の赤ビーム表示・architect 本 GUI・builder の複数ブロック/tick 化は未実装の拡張余地
+
+## task-210 BCN IC2 発電機 (地熱/水力/風力/ソーラー/原子炉)
+
+* 結果: 実装済み — コンパイル確認済み (自身のファイルにエラー無し). testserver 実機検証は未実施 (下記ブロッカー)
+* 実装 (energy/block, energy/block/entity):
+  * `Ic2GeneratorBlock` — 5種共通ブロック (FACING 出力面, ACTIVE 発電表示, UI 無し). useItemOn で溶岩バケツ投入 (FluidStorageUtil) / ウランインゴット燃料投入
+  * `EnvGeneratorBlockEntity` — 環境発電機の共通基底. 20tick 毎に環境再評価, クリーン電力は EFP 微減算 (-1e-6/t)
+  * `generator_water` — 3x3x3 の水ブロック数に応じて最大 0.1 MJ/t (ULV)
+  * `generator_wind` — y64-144 の高度係数 x 天候 (雨 1.2, 雷 1.5) で最大 2 MJ/t (ULV). 要見空
+  * `generator_solar` — SKY_LIGHT_FACTOR 環境属性 x 天候 (雨 0.4, 雷 0.2) で最大 0.4 MJ/t (ULV). 要見空
+  * `GeothermalBlockEntity` — 溶岩タンク 4B, 溶岩バケツ/防水パイプ受入 (FluidStorage.SIDED 登録), 8 MJ/t (LV)
+  * `ReactorBlockEntity` — ウランインゴット 1 個 = 6000tick, 2 MJ/t (LV). 稼働で熱蓄積, 停止で冷却, 熱>=1200 でメルトダウン (半径8爆発+ドロップ+EFP+500). 燃料切れは熱スパイク+400 で高温時に臨界誘発. パルス運転で安全運用可能な設計
+* リソース: blockstate/model/texture(生成)/item/loot/recipe/lang/pickaxe タグを 5 ブロック分追加
+* ブロッカー: 並行作業中のエージェントが MjProcessorBlock 系 (macerator 等) と BcnProcessingRecipes, cable detector/splitter, pump, auto_workbench を編集中でコンパイル不可のため、現時点でフルビルド不可. 自身の新規ファイル群はエラー無しを確認済み
+* 未検証: testserver での発電量・メルトダウン・EFP の実機確認 (ビルブロッカー解消後に要検証)
+
+## task-21x 実装1 - BCN IC2 加工機 (macerator/extractor/compressor/canner/alloy_smelter)
+
+* 結果: 実装・ビルド済み (実機起動検証は並行タスクの datapack 破損で保留)
+* 変更点:
+  * `energy/BcnProcessingRecipes` — `data/*/processing/<machine>.json` を SimpleSynchronousResourceReloadListener で読む機種別レシピローダー. datapack 追加でレシピ拡張可能
+  * `energy/block/MjProcessorBlock` — MjMachineBlock (FACING+ACTIVE) 継承の共通加工ブロック. useItemOn=入力投入, useWithoutItem=出力回収
+  * `energy/block/entity/ProcessorBlockEntity` — WorldlyContainer+MjReceiver. 入力2+出力1スロット, レシピ解決→progress→MJ消費 (4/tick, LV圧, 260MJ バッファ), ACTIVE=稼働中, EFP 微加算, hopper は上面/側面=入力・下面=出力
+  * `BcnBlocks` に5機械登録, `MachineBlockEntities` に共通 PROCESSOR 型, `BcnItems` に機械5種+資材11種 (dust4, bronze/steel ingot, coal_chunk, rubber, tin_can, fuel_can, canned_food)
+  * レシピ: 粉砕=鉱石→粉2x/インゴット→粉/砂・火打石派生, 抽出=slime→rubber 等, 圧縮=coal_chunk→diamond 等, 缶詰=tin_can+fuel_bucket/cooked_beef, 合金炉=copper+tin→bronze4, iron+coal→steel
+  * アセット: 5機械の orientable + active 前面モデル, 機種色アクセント, アイテム11種テクスチャ
+* 判明したこと:
+  * 26.3 の ResourceManagerReloadListener メソッド名は `onResourceManagerReload` (reload ではない)
+  * FabricBlockEntityTypeBuilder は1型で複数ブロックを束ねられる (PROCESSOR 型が5機械共有, 機種は blockstate の block から解決)
+* 未解決・要判断:
+  * 実機検証は testserver が別タスクの datapack 破損で起動不可のため未実施 (javac/gradle build では全ソースコンパイル済み)
+  * レシピ ticks/MJ 係数は仮値 (400t, 4MJ/t). バランス要実測
+
+## task-210 BCN IC2 電力周辺(絶縁/検出/分割ケーブル, batbox/mfsu, バッテリー)
+
+* 結果: 実装済み・実機検証済み
+* 変更点:
+  * `MjCable` に `routesFrom(level,pos,entry)` (送出方向フィルタ) と `onPacketPass` (通過フック) を追加. `MjNetwork` BFS は各ケーブルの侵入面を追跡して利用. 既定は従来どおり全方向で既存ケーブル互換
+  * `cable_detector` — MjCableBlock 派生 (EV, 損失0.32). onPacketPass で BE が 4tick パルス発光, isSignalSource/getSignal/getDirectSignal で RS15 出力
+  * `cable_splitter` — FACING=指定入力面. 入力面からのパケットは `CableSplitterBlockEntity.nextLane` が送出可能面 (ケーブル/Receiver 隣接) をラウンドロビン巡回して振り分け. 入力面以外からは通常ケーブルとして全方向通過
+  * 絶縁派生 — cable_gold/cable_hv を被覆なし (0.2/0.4 MJ 損失, 強度0.5) とし, 2x/4x 絶縁を追加 (損失 0.18/0.16, 0.36/0.32, 強度2.0). ランクは据え置き (IC2 源流 0.5/0.45/0.4, 1.0/0.9/0.8 EU の MJ 換算)
+  * `batbox` (LV, 16000MJ) / `mfsu` (EV, 4000000MJ) を追加し battery_box(LV)/mfe(MV) と合わせて 3 段蓄電. BATTERY BE タイプは 4 ブロック共有
+  * `BcnComponents.MJ_STORED` (int コンポーネント) + `MjBatteryItem` — アイテム内 MJ 保持 (re_battery 4000/LV, su_battery 400/LV 使い捨て, energy_crystal 400000/MV, lapotron_crystal 4000000/EV, batpack 24000, lappack 120000). 耐久バーで残量表示, pack は胸スロット装備可
+  * `BatteryBlockEntity` — WorldlyContainer の機械スロット 2 個 (slot0=充電:バッファ→充電式, slot1=放電:バッテリー→バッファ, SU は空で消滅). ホッパー/パイプからの搬入出も可
+* 実機検証 (testserver, RCON):
+  * splitter: source→splitter(facing=down)→2 consumer で両枝 608.64 MJ 同量受信 (ラウンドロビン分流)
+  * detector: パケット通過で隣接 redstone_lamp が lit=true
+  * batbox/mfsu: 側面 mj_source から 715 MJ 充電確認 (上面=出力面への入力は正しく拒否)
+  * バッテリー: charge スロットの re_battery に mj_stored=741 充電, su_battery は放電スロットで消費→消滅
+* 未解決・要判断:
+  * 絶縁ケーブル/検出/分割のテクスチャは素ケーブル流用 (専用絶縁テクスチャは後続で差替可)
+  * batbox と battery_box は同スペックの重複 (battery_box は先行実装の残置, 将来 batbox に統合して battery_box 削除検討)
+  * batpack/lappack の装備中ツール給電 (IC2 のツール連携) は未実装, バッテリーとしては充放電可
+  * 被覆なし銅ケーブルの独立アイテムは未追加 (copper_cable は従来通り 0.08)

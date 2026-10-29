@@ -1,0 +1,67 @@
+{
+  "textures": {
+    "0": "bcn:block/cable_gold_4x",
+    "particle": "bcn:block/cable_gold_4x"
+  },
+  "elements": [
+    {
+      "from": [
+        5,
+        5,
+        0
+      ],
+      "to": [
+        11,
+        11,
+        5
+      ],
+      "faces": {
+        "north": {
+          "texture": "#0",
+          "uv": [
+            5,
+            5,
+            11,
+            11
+          ]
+        },
+        "down": {
+          "texture": "#0",
+          "uv": [
+            5,
+            0,
+            11,
+            5
+          ]
+        },
+        "up": {
+          "texture": "#0",
+          "uv": [
+            5,
+            0,
+            11,
+            5
+          ]
+        },
+        "west": {
+          "texture": "#0",
+          "uv": [
+            0,
+            5,
+            5,
+            11
+          ]
+        },
+        "east": {
+          "texture": "#0",
+          "uv": [
+            0,
+            5,
+            5,
+            11
+          ]
+        }
+      }
+    }
+  ]
+}

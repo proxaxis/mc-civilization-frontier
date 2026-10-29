@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "bcn:gear_wood",
+    "bcn:gear_stone",
+    "bcn:gear_iron",
+    "bcn:gear_gold",
+    "bcn:gear_diamond"
+  ]
+}

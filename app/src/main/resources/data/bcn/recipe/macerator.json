@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": "minecraft:flint",
+    "C": "minecraft:cobblestone",
+    "E": "bcn:engine_frame",
+    "R": "bcn:electrotine_dust"
+  },
+  "pattern": [
+    "FFF",
+    "CEC",
+    "R R"
+  ],
+  "result": {
+    "id": "bcn:macerator"
+  }
+}

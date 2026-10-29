@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " M ",
+    "MGM",
+    " M "
+  ],
+  "key": {
+    "G": "bcn:gear_gold",
+    "M": "minecraft:diamond"
+  },
+  "result": {
+    "id": "bcn:gear_diamond",
+    "count": 1
+  }
+}

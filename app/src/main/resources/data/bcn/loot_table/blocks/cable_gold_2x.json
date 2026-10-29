@@ -1,0 +1,5 @@
+{
+  "type": "minecraft:block",
+  "pools": [{"entries": [{"type": "minecraft:item", "name": "bcn:cable_gold_2x"}], "rolls": 1}],
+  "random_sequence": "bcn:blocks/cable_gold_2x"
+}

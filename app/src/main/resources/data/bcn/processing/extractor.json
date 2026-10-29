@@ -1,0 +1,46 @@
+{
+  "recipes": [
+    {
+      "in": [
+        [
+          "minecraft:slime_ball",
+          1
+        ]
+      ],
+      "out": [
+        "bcn:rubber",
+        2
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "minecraft:honeycomb",
+          1
+        ]
+      ],
+      "out": [
+        "bcn:rubber",
+        1
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "minecraft:kelp",
+          1
+        ]
+      ],
+      "out": [
+        "minecraft:dried_kelp",
+        2
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    }
+  ]
+}

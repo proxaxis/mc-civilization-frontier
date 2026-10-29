@@ -109,8 +109,8 @@ public class BcnPipeBlock extends Block implements EntityBlock {
 
 	private Conn conn(BlockState neighbor) {
 		if (neighbor.getBlock() instanceof BcnPipeBlock other) {
-			// 同種パイプのみ接続 (アイテム管とケーブル等は混線しない)
-			return other.fluid == fluid && other.getClass() == getClass() ? Conn.PIPE : Conn.NONE;
+			// 同流体種のパイプ同士は接続 (アイテム管とケーブル等は混線しない)
+			return other.fluid == fluid ? Conn.PIPE : Conn.NONE;
 		}
 		if (neighbor.hasBlockEntity()) return Conn.BLOCK; // 容器・機械のみ終端接続
 		return Conn.NONE;

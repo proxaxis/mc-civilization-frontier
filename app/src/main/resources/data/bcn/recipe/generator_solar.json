@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "G": "minecraft:glass",
+    "R": "minecraft:redstone",
+    "I": "minecraft:iron_ingot"
+  },
+  "pattern": [
+    "GGG",
+    "RRR",
+    " I "
+  ],
+  "result": {
+    "id": "bcn:generator_solar"
+  }
+}

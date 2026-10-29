@@ -36,18 +36,35 @@ public class ItemPipeBlockEntity extends BlockEntity implements WorldlyContainer
 	private static final int[] SLOTS = { 0 };
 
 	public static final class Transit {
+		public static final long NO_DEST = Long.MIN_VALUE;
+
 		public ItemStack stack = ItemStack.EMPTY;
 		public Direction from = Direction.UP;
 		public Direction to = Direction.DOWN;
 		public float progress;
 		public boolean turned;
+		/** 配送先パイプ位置 (BlockPos.asLong). NO_DEST なら無宛先 (ランダム網走行). */
+		public long dest = NO_DEST;
+		/** 配送先での搬出面. 6 以上はパイプ内部バッファへの直接配送を意味する. */
+		public int destFace = -1;
+		/** 経路の残り出口方向 (各パイプ通過時に先頭から消費). */
+		public Direction[] route = new Direction[0];
+		public int routeIdx;
+
+		public boolean hasRoute() {
+			return routeIdx < route.length || dest != NO_DEST;
+		}
 	}
 
 	private final List<Transit> transit = new ArrayList<>();
 	private Direction pendingFrom;
 
 	public ItemPipeBlockEntity(BlockPos pos, BlockState state) {
-		super(MachineBlockEntities.ITEM_PIPE, pos, state);
+		this(MachineBlockEntities.ITEM_PIPE, pos, state);
+	}
+
+	protected ItemPipeBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
+		super(type, pos, state);
 	}
 
 	public List<Transit> transit() {
@@ -55,6 +72,11 @@ public class ItemPipeBlockEntity extends BlockEntity implements WorldlyContainer
 	}
 
 	public boolean addTransit(ItemStack stack, Direction from) {
+		return addTransit(stack, from, Transit.NO_DEST, -1, List.of());
+	}
+
+	/** 宛先付き Transit を投入する. destFace>=6 は宛先パイプ内部への直接配送. */
+	public boolean addTransit(ItemStack stack, Direction from, long dest, int destFace, List<Direction> route) {
 		if (stack.isEmpty() || transit.size() >= MAX_TRANSIT) {
 			return false;
 		}
@@ -62,6 +84,9 @@ public class ItemPipeBlockEntity extends BlockEntity implements WorldlyContainer
 		t.stack = stack.copy();
 		t.from = from;
 		t.to = from.getOpposite();
+		t.dest = dest;
+		t.destFace = destFace;
+		t.route = route.toArray(new Direction[0]);
 		transit.add(t);
 		markDirtyAndSync();
 		return true;
@@ -73,7 +98,7 @@ public class ItemPipeBlockEntity extends BlockEntity implements WorldlyContainer
 			Transit t = transit.get(i);
 			t.progress += SPEED;
 			if (!t.turned && t.progress >= 0.5F) {
-				t.to = chooseExit(t.from);
+				t.to = chooseExit(level, pos, t);
 				t.turned = true;
 				sync = true;
 			}
@@ -97,7 +122,27 @@ public class ItemPipeBlockEntity extends BlockEntity implements WorldlyContainer
 		REMOVE, BOUNCE, HOLD
 	}
 
-	private Direction chooseExit(Direction from) {
+	/**
+	 * 出口決定. 宛先付き Transit は経路を辿り、宛先パイプでは destFace へ向かう.
+	 * サブクラスは無宛先アイテムへ宛先を割り当てるためオーバーライドできる.
+	 */
+	protected Direction chooseExit(Level level, BlockPos pos, Transit t) {
+		if (t.dest != Transit.NO_DEST && BlockPos.of(t.dest).equals(pos) && t.destFace >= 0) {
+			return t.destFace < Direction.values().length ? Direction.values()[t.destFace] : t.from;
+		}
+		if (t.routeIdx < t.route.length) {
+			Direction next = t.route[t.routeIdx++];
+			if (getBlockState().getValue(BcnPipeBlock.property(next)) != Conn.NONE) {
+				return next;
+			}
+			// 経路が実態と食い違った (配管変更) → 以降は無宛先扱い
+			t.dest = Transit.NO_DEST;
+			t.routeIdx = t.route.length;
+		}
+		return randomExit(t.from);
+	}
+
+	private Direction randomExit(Direction from) {
 		BlockState state = getBlockState();
 		List<Direction> exits = new ArrayList<>();
 		for (Direction d : Direction.values()) {
@@ -109,6 +154,9 @@ public class ItemPipeBlockEntity extends BlockEntity implements WorldlyContainer
 	}
 
 	private HandOff handOff(Level level, BlockPos pos, Transit t) {
+		if (t.dest != Transit.NO_DEST && BlockPos.of(t.dest).equals(pos)) {
+			return deliver(level, pos, t);
+		}
 		BlockPos targetPos = pos.relative(t.to);
 		BlockState targetState = level.getBlockState(targetPos);
 		if (targetState.getBlock() instanceof BcnPipeBlock pipe && !pipe.fluid
@@ -139,6 +187,50 @@ public class ItemPipeBlockEntity extends BlockEntity implements WorldlyContainer
 		}
 		bounce(t);
 		return HandOff.BOUNCE;
+	}
+
+	/**
+	 * 宛先パイプへ到達した Transit の最終配送.
+	 * destFace>=6 は内部バッファ配送、有効方向ならその先のコンテナへ、
+	 * 残りや失敗は無宛先に戻して再ルーティングに委ねる.
+	 */
+	private HandOff deliver(Level level, BlockPos pos, Transit t) {
+		onDeliveryArrived(t.stack);
+		if (t.destFace >= Direction.values().length) {
+			t.stack = internalDelivery(t.stack);
+			if (!t.stack.isEmpty()) {
+				eject(level, pos, t);
+			}
+			return HandOff.REMOVE;
+		}
+		if (t.destFace >= 0) {
+			Direction face = Direction.values()[t.destFace];
+			Container container = HopperBlockEntity.getContainerAt(level, pos.relative(face));
+			if (container != null && container != this) {
+				t.stack = HopperBlockEntity.addItem(this, container, t.stack, face.getOpposite());
+			}
+			if (!t.stack.isEmpty()) {
+				// 溢れ分は宛先を失って網内を再度流れる (別シンクで再ルーティングされる)
+				t.dest = Transit.NO_DEST;
+				t.destFace = -1;
+				t.route = new Direction[0];
+				t.routeIdx = 0;
+				bounce(t);
+				return HandOff.BOUNCE;
+			}
+			return HandOff.REMOVE;
+		}
+		eject(level, pos, t);
+		return HandOff.REMOVE;
+	}
+
+	/** 宛先到達時コールバック (要求元の inflight 減算など). 既定は何もしない. */
+	protected void onDeliveryArrived(ItemStack stack) {
+	}
+
+	/** destFace>=6 の内部配送先. 受け入れられなかった分を返す. 既定は全拒否. */
+	protected ItemStack internalDelivery(ItemStack stack) {
+		return stack;
 	}
 
 	private static void bounce(Transit t) {
@@ -175,6 +267,16 @@ public class ItemPipeBlockEntity extends BlockEntity implements WorldlyContainer
 			child.putBoolean("r", t.turned);
 			child.putFloat("p", t.progress);
 			child.store("s", ItemStack.CODEC, t.stack);
+			if (t.dest != Transit.NO_DEST) {
+				child.putLong("d", t.dest);
+				child.putInt("df", t.destFace);
+			}
+			if (t.routeIdx < t.route.length) {
+				ValueOutput.ValueOutputList rl = child.childrenList("rt");
+				for (int i = t.routeIdx; i < t.route.length; i++) {
+					rl.addChild().putInt("d", t.route[i].ordinal());
+				}
+			}
 		}
 	}
 
@@ -189,6 +291,16 @@ public class ItemPipeBlockEntity extends BlockEntity implements WorldlyContainer
 			t.turned = child.getBooleanOr("r", false);
 			t.progress = child.getFloatOr("p", 0);
 			t.stack = child.read("s", ItemStack.OPTIONAL_CODEC).orElse(ItemStack.EMPTY);
+			long dest = child.getLongOr("d", Transit.NO_DEST);
+			if (dest != Transit.NO_DEST) {
+				t.dest = dest;
+				t.destFace = child.getIntOr("df", -1);
+			}
+			List<Direction> route = new ArrayList<>();
+			for (ValueInput rc : child.childrenListOrEmpty("rt")) {
+				route.add(Direction.values()[rc.getIntOr("d", 0)]);
+			}
+			t.route = route.toArray(new Direction[0]);
 			if (!t.stack.isEmpty()) {
 				transit.add(t);
 			}

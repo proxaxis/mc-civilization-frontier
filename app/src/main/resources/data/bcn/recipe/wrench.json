@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "I I",
+    " G ",
+    " I "
+  ],
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "G": "bcn:gear_stone"
+  },
+  "result": {
+    "id": "bcn:wrench",
+    "count": 1
+  }
+}

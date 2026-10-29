@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "bcn:generator_solar"
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "bcn:blocks/generator_solar"
+}

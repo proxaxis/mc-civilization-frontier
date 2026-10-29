@@ -3,11 +3,16 @@ package com.civilizationfrontier.bcn.block;
 import java.util.function.Function;
 
 import com.civilizationfrontier.bcn.Bcn;
+import com.civilizationfrontier.bcn.crop.BoozeBarrelBlock;
+import com.civilizationfrontier.bcn.crop.CropStickBlock;
 import com.civilizationfrontier.bcn.energy.MjPressure;
 import com.civilizationfrontier.bcn.energy.block.EngineKind;
 import com.civilizationfrontier.bcn.energy.block.MjBatteryBlock;
 import com.civilizationfrontier.bcn.energy.block.MjCableBlock;
+import com.civilizationfrontier.bcn.energy.block.MjCableDetectorBlock;
+import com.civilizationfrontier.bcn.energy.block.MjCableSplitterBlock;
 import com.civilizationfrontier.bcn.energy.block.MjConsumerBlock;
+import com.civilizationfrontier.bcn.energy.block.Ic2GeneratorBlock;
 import com.civilizationfrontier.bcn.energy.block.MjGeneratorBlock;
 import com.civilizationfrontier.bcn.energy.block.MjQuarryBlock;
 import com.civilizationfrontier.bcn.energy.block.MjRefineryBlock;
@@ -21,6 +26,7 @@ import net.minecraft.world.level.block.Block;
 
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RedStoneOreBlock;
+import com.civilizationfrontier.bcn.energy.block.MjProcessorBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 
@@ -67,9 +73,30 @@ public final class BcnBlocks {
 					.requiresCorrectToolForDrops());
 	public static final MjRefineryBlock REFINERY = register("refinery", MjRefineryBlock::new, machineProps());
 	public static final MjQuarryBlock QUARRY = register("quarry", MjQuarryBlock::new, machineProps());
+	public static final MjProcessorBlock MACERATOR = register("macerator",
+			properties -> new MjProcessorBlock(properties, "macerator"), machineProps());
+	public static final MjProcessorBlock EXTRACTOR = register("extractor",
+			properties -> new MjProcessorBlock(properties, "extractor"), machineProps());
+	public static final MjProcessorBlock COMPRESSOR = register("compressor",
+			properties -> new MjProcessorBlock(properties, "compressor"), machineProps());
+	public static final MjProcessorBlock CANNER = register("canner",
+			properties -> new MjProcessorBlock(properties, "canner"), machineProps());
+	public static final MjProcessorBlock ALLOY_SMELTER = register("alloy_smelter",
+			properties -> new MjProcessorBlock(properties, "alloy_smelter"), machineProps());
 	public static final BcnPipeBlock ITEM_PIPE = register("item_pipe",
 			properties -> new BcnPipeBlock(properties, false),
 			BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).noOcclusion());
+	public static final BcnTankBlock TANK = register("tank", BcnTankBlock::new,
+			machineProps().noOcclusion());
+	public static final BcnPumpBlock PUMP = register("pump", BcnPumpBlock::new, machineProps());
+	public static final BcnChuteBlock CHUTE = register("chute", BcnChuteBlock::new, machineProps());
+	public static final BcnMiningWellBlock MINING_WELL = register("mining_well", BcnMiningWellBlock::new, machineProps());
+	public static final BcnSimpleMachineBlock AUTO_WORKBENCH = register("auto_workbench",
+			p -> new BcnSimpleMachineBlock(p, BcnSimpleMachineBlock.Kind.AUTO_WORKBENCH), machineProps());
+	public static final BcnSimpleMachineBlock FILTERED_BUFFER = register("filtered_buffer",
+			p -> new BcnSimpleMachineBlock(p, BcnSimpleMachineBlock.Kind.FILTERED_BUFFER), machineProps());
+	public static final BcnSimpleMachineBlock FLOOD_GATE = register("flood_gate",
+			p -> new BcnSimpleMachineBlock(p, BcnSimpleMachineBlock.Kind.FLOOD_GATE), machineProps());
 	public static final BcnPipeBlock WATERPROOF_PIPE = register("waterproof_pipe",
 			properties -> new BcnPipeBlock(properties, true),
 			BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).noOcclusion());
@@ -83,11 +110,33 @@ public final class BcnBlocks {
 	public static final MjCableBlock CABLE_COPPER = register("cable_copper",
 			properties -> new MjCableBlock(MjPressure.LV, 0.08, properties), cableProps(MapColor.COLOR_ORANGE));
 	public static final MjCableBlock CABLE_GOLD = register("cable_gold",
-			properties -> new MjCableBlock(MjPressure.MV, 0.16, properties), cableProps(MapColor.GOLD));
+			properties -> new MjCableBlock(MjPressure.MV, 0.2, properties), cableProps(MapColor.GOLD));
+	public static final MjCableBlock CABLE_GOLD_2X = register("cable_gold_2x",
+			properties -> new MjCableBlock(MjPressure.MV, 0.18, properties), insulatedCableProps(MapColor.GOLD));
+	public static final MjCableBlock CABLE_GOLD_4X = register("cable_gold_4x",
+			properties -> new MjCableBlock(MjPressure.MV, 0.16, properties), insulatedCableProps(MapColor.GOLD));
 	public static final MjCableBlock CABLE_GLASS_FIBER = register("cable_glass_fiber",
 			properties -> new MjCableBlock(MjPressure.HV, 0.01, properties), cableProps(MapColor.DIAMOND));
 	public static final MjCableBlock CABLE_HV = register("cable_hv",
-			properties -> new MjCableBlock(MjPressure.EV, 0.32, properties), cableProps(MapColor.COLOR_BLACK));
+			properties -> new MjCableBlock(MjPressure.EV, 0.4, properties), cableProps(MapColor.COLOR_BLACK));
+	public static final MjCableBlock CABLE_HV_2X = register("cable_hv_2x",
+			properties -> new MjCableBlock(MjPressure.EV, 0.36, properties), insulatedCableProps(MapColor.COLOR_BLACK));
+	public static final MjCableBlock CABLE_HV_4X = register("cable_hv_4x",
+			properties -> new MjCableBlock(MjPressure.EV, 0.32, properties), insulatedCableProps(MapColor.COLOR_BLACK));
+	public static final MjCableDetectorBlock CABLE_DETECTOR = register("cable_detector",
+			MjCableDetectorBlock::new, cableProps(MapColor.COLOR_RED));
+	public static final MjCableSplitterBlock CABLE_SPLITTER = register("cable_splitter",
+			MjCableSplitterBlock::new, cableProps(MapColor.COLOR_PURPLE));
+	public static final Ic2GeneratorBlock GENERATOR_GEOTHERMAL = register("generator_geothermal",
+			p -> new Ic2GeneratorBlock(Ic2GeneratorBlock.Gen.GEOTHERMAL, p), machineProps());
+	public static final Ic2GeneratorBlock GENERATOR_WATER = register("generator_water",
+			p -> new Ic2GeneratorBlock(Ic2GeneratorBlock.Gen.WATER, p), machineProps());
+	public static final Ic2GeneratorBlock GENERATOR_WIND = register("generator_wind",
+			p -> new Ic2GeneratorBlock(Ic2GeneratorBlock.Gen.WIND, p), machineProps());
+	public static final Ic2GeneratorBlock GENERATOR_SOLAR = register("generator_solar",
+			p -> new Ic2GeneratorBlock(Ic2GeneratorBlock.Gen.SOLAR, p), machineProps());
+	public static final Ic2GeneratorBlock REACTOR = register("reactor",
+			p -> new Ic2GeneratorBlock(Ic2GeneratorBlock.Gen.REACTOR, p), machineProps());
 	public static final MjGeneratorBlock MJ_GENERATOR = register("mj_generator", MjGeneratorBlock::new,
 			BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).mapColor(MapColor.COLOR_RED)
 					.requiresCorrectToolForDrops());
@@ -105,8 +154,12 @@ public final class BcnBlocks {
 			machineProps());
 	public static final MjBatteryBlock BATTERY_BOX = register("battery_box",
 			properties -> new MjBatteryBlock(MjPressure.LV, 16000, properties), machineProps());
+	public static final MjBatteryBlock BATBOX = register("batbox",
+			properties -> new MjBatteryBlock(MjPressure.LV, 16000, properties), machineProps());
 	public static final MjBatteryBlock MFE = register("mfe",
 			properties -> new MjBatteryBlock(MjPressure.MV, 1600000, properties), machineProps());
+	public static final MjBatteryBlock MFSU = register("mfsu",
+			properties -> new MjBatteryBlock(MjPressure.EV, 4000000, properties), machineProps());
 	public static final Block FUEL = register("fuel", properties -> new OilLiquidBlock(BcnFluids.FUEL, properties),
 			BlockBehaviour.Properties.of()
 					.mapColor(MapColor.GOLD)
@@ -144,6 +197,31 @@ public final class BcnBlocks {
 	public static final BcnGateBlock GATE_XNOR = registerGate("gate_xnor", BcnGateBlock.GateType.XNOR);
 	public static final BcnGateBlock GATE_RS_LATCH = registerGate("gate_rs_latch", BcnGateBlock.GateType.RS_LATCH);
 	public static final BcnGateBlock GATE_T_LATCH = registerGate("gate_t_latch", BcnGateBlock.GateType.T_LATCH);
+	public static final CropStickBlock CROP_STICK = register("crop_stick", CropStickBlock::new,
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.WOOD)
+					.noCollision()
+					.noOcclusion()
+					.strength(0.1F)
+					.sound(net.minecraft.world.level.block.SoundType.WOOD)
+					.pushReaction(net.minecraft.world.level.material.PushReaction.DESTROY));
+	public static final BoozeBarrelBlock BOOZE_BARREL = register("booze_barrel", BoozeBarrelBlock::new,
+			BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL));
+	public static final com.civilizationfrontier.bcn.builder.LandmarkBlock LANDMARK = register("landmark",
+			p -> new com.civilizationfrontier.bcn.builder.LandmarkBlock(p, false),
+			BlockBehaviour.Properties.of().noOcclusion().strength(0.3F)
+					.lightLevel(s -> s.getValue(com.civilizationfrontier.bcn.builder.LandmarkBlock.ACTIVE) ? 12 : 0));
+	public static final com.civilizationfrontier.bcn.builder.LandmarkBlock PATH_MARK = register("path_mark",
+			p -> new com.civilizationfrontier.bcn.builder.LandmarkBlock(p, true),
+			BlockBehaviour.Properties.of().noOcclusion().strength(0.3F)
+					.lightLevel(s -> s.getValue(com.civilizationfrontier.bcn.builder.LandmarkBlock.ACTIVE) ? 12 : 0));
+	public static final com.civilizationfrontier.bcn.builder.FillerBlock FILLER = register("filler",
+			com.civilizationfrontier.bcn.builder.FillerBlock::new, machineProps());
+	public static final com.civilizationfrontier.bcn.builder.BuilderBlock BUILDER = register("builder",
+			com.civilizationfrontier.bcn.builder.BuilderBlock::new, machineProps());
+	public static final com.civilizationfrontier.bcn.builder.ArchitectTableBlock ARCHITECT_TABLE = register("architect_table",
+			com.civilizationfrontier.bcn.builder.ArchitectTableBlock::new,
+			BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE));
 
 	private static BcnGateBlock registerGate(String name, BcnGateBlock.GateType type) {
 		return register(name, properties -> new BcnGateBlock(properties, type),
@@ -155,7 +233,12 @@ public final class BcnBlocks {
 	}
 
 	private static BlockBehaviour.Properties cableProps(MapColor color) {
-		return BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).mapColor(color).noOcclusion();
+		return BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).mapColor(color).noOcclusion()
+				.strength(0.5F);
+	}
+
+	private static BlockBehaviour.Properties insulatedCableProps(MapColor color) {
+		return cableProps(color).strength(2.0F);
 	}
 
 	private static BlockBehaviour.Properties machineProps() {

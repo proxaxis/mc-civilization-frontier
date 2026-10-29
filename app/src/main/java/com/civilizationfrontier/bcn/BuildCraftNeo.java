@@ -2,6 +2,7 @@ package com.civilizationfrontier.bcn;
 
 import com.civilizationfrontier.bcn.block.BcnBlocks;
 import com.civilizationfrontier.bcn.block.entity.MachineBlockEntities;
+import com.civilizationfrontier.bcn.energy.BcnProcessingRecipes;
 import com.civilizationfrontier.bcn.entity.BcnEntities;
 import com.civilizationfrontier.bcn.fluid.BcnFluids;
 import com.civilizationfrontier.bcn.item.BcnItemGroup;
@@ -21,6 +22,7 @@ public class BuildCraftNeo implements ModInitializer {
 		BcnFluids.init();
 		BcnBlocks.init();
 		MachineBlockEntities.init();
+		com.civilizationfrontier.bcn.item.BcnComponents.init();
 		BcnItems.init();
 		BcnEntities.init();
 		BcnItemGroup.init();
@@ -30,5 +32,6 @@ public class BuildCraftNeo implements ModInitializer {
 		BcnCastTest.init();
 		BcnRailway.init();
 		BcnCommands.init();
+		BcnProcessingRecipes.init();
 	}
 }

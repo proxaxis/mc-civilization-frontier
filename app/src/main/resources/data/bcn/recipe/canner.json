@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "T": "bcn:tin_ingot",
+    "E": "bcn:engine_frame",
+    "R": "bcn:electrotine_dust"
+  },
+  "pattern": [
+    "TTT",
+    "TET",
+    " R "
+  ],
+  "result": {
+    "id": "bcn:canner"
+  }
+}

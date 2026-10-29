@@ -1,0 +1,48 @@
+{
+  "variants": {
+    "active=false,facing=down": {
+      "model": "bcn:block/batbox",
+      "x": 180
+    },
+    "active=true,facing=down": {
+      "model": "bcn:block/batbox",
+      "x": 180
+    },
+    "active=false,facing=up": {
+      "model": "bcn:block/batbox"
+    },
+    "active=true,facing=up": {
+      "model": "bcn:block/batbox"
+    },
+    "active=false,facing=north": {
+      "model": "bcn:block/batbox"
+    },
+    "active=true,facing=north": {
+      "model": "bcn:block/batbox"
+    },
+    "active=false,facing=south": {
+      "model": "bcn:block/batbox",
+      "y": 180
+    },
+    "active=true,facing=south": {
+      "model": "bcn:block/batbox",
+      "y": 180
+    },
+    "active=false,facing=west": {
+      "model": "bcn:block/batbox",
+      "y": 90
+    },
+    "active=true,facing=west": {
+      "model": "bcn:block/batbox",
+      "y": 90
+    },
+    "active=false,facing=east": {
+      "model": "bcn:block/batbox",
+      "y": 270
+    },
+    "active=true,facing=east": {
+      "model": "bcn:block/batbox",
+      "y": 270
+    }
+  }
+}

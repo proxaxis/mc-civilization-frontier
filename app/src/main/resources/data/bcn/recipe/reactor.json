@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "I": "minecraft:iron_block",
+    "U": "bcn:uranium_ingot",
+    "R": "minecraft:redstone_block"
+  },
+  "pattern": [
+    " I ",
+    "IUI",
+    "IRI"
+  ],
+  "result": {
+    "id": "bcn:reactor"
+  }
+}

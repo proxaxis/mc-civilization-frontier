@@ -40,12 +40,21 @@ public class FluidPipeBlockEntity extends BlockEntity {
 	private static final int SOURCE_INTERVAL = 20;
 
 	public static final class FluidTransit {
+		public static final long NO_DEST = Long.MIN_VALUE;
+
 		public FluidVariant variant = FluidVariant.blank();
 		public long amount;
 		public Direction from = Direction.UP;
 		public Direction to = Direction.DOWN;
 		public float progress;
 		public boolean turned;
+		/** 配送先パイプ位置 (BlockPos.asLong). NO_DEST なら無宛先. */
+		public long dest = NO_DEST;
+		/** 配送先での搬出面. */
+		public int destFace = -1;
+		/** 経路の残り出口方向 (各パイプ通過時に先頭から消費). */
+		public Direction[] route = new Direction[0];
+		public int routeIdx;
 	}
 
 	private final List<FluidTransit> transit = new ArrayList<>();
@@ -61,6 +70,12 @@ public class FluidPipeBlockEntity extends BlockEntity {
 	}
 
 	private boolean addTransit(FluidVariant variant, long amount, Direction from) {
+		return addTransit(variant, amount, from, FluidTransit.NO_DEST, -1, List.of());
+	}
+
+	/** 宛先付き Transit を投入する (物流液体補給の配送に使用). */
+	public boolean addTransit(FluidVariant variant, long amount, Direction from, long dest, int destFace,
+			List<Direction> route) {
 		if (transit.size() >= MAX_TRANSIT || amount <= 0) {
 			return false;
 		}
@@ -69,6 +84,9 @@ public class FluidPipeBlockEntity extends BlockEntity {
 		t.amount = amount;
 		t.from = from;
 		t.to = from.getOpposite();
+		t.dest = dest;
+		t.destFace = destFace;
+		t.route = route.toArray(new Direction[0]);
 		transit.add(t);
 		setChanged();
 		return true;
@@ -87,7 +105,7 @@ public class FluidPipeBlockEntity extends BlockEntity {
 			FluidTransit t = transit.get(i);
 			t.progress += SPEED;
 			if (!t.turned && t.progress >= 0.5F) {
-				t.to = chooseExit(t.from);
+				t.to = chooseExit(pos, t);
 				t.turned = true;
 				setChanged();
 			}
@@ -105,7 +123,22 @@ public class FluidPipeBlockEntity extends BlockEntity {
 		REMOVE, BOUNCE, HOLD
 	}
 
-	private Direction chooseExit(Direction from) {
+	private Direction chooseExit(BlockPos pos, FluidTransit t) {
+		if (t.dest != FluidTransit.NO_DEST && BlockPos.of(t.dest).equals(pos) && t.destFace >= 0) {
+			return t.destFace < Direction.values().length ? Direction.values()[t.destFace] : t.from;
+		}
+		if (t.routeIdx < t.route.length) {
+			Direction next = t.route[t.routeIdx++];
+			if (getBlockState().getValue(BcnPipeBlock.property(next)) != Conn.NONE) {
+				return next;
+			}
+			t.dest = FluidTransit.NO_DEST;
+			t.routeIdx = t.route.length;
+		}
+		return randomExit(t.from);
+	}
+
+	private Direction randomExit(Direction from) {
 		BlockState state = getBlockState();
 		List<Direction> exits = new ArrayList<>();
 		for (Direction d : Direction.values()) {
@@ -117,6 +150,31 @@ public class FluidPipeBlockEntity extends BlockEntity {
 	}
 
 	private HandOff handOff(Level level, BlockPos pos, FluidTransit t) {
+		if (t.dest != FluidTransit.NO_DEST && BlockPos.of(t.dest).equals(pos) && t.destFace >= 0
+				&& t.destFace < Direction.values().length) {
+			Direction face = Direction.values()[t.destFace];
+			Storage<FluidVariant> storage = FluidStorage.SIDED.find(level, pos.relative(face), face.getOpposite());
+			if (storage != null) {
+				long inserted;
+				try (Transaction tx = Transaction.openOuter()) {
+					inserted = storage.insert(t.variant, t.amount, tx);
+					if (inserted > 0) {
+						tx.commit();
+					}
+				}
+				t.amount -= inserted;
+				if (t.amount <= 0) {
+					return HandOff.REMOVE;
+				}
+			}
+			// 宛先タンクが満杯 → 宛先喪失して網内を再送
+			t.dest = FluidTransit.NO_DEST;
+			t.destFace = -1;
+			t.route = new Direction[0];
+			t.routeIdx = 0;
+			bounce(t);
+			return HandOff.BOUNCE;
+		}
 		BlockPos targetPos = pos.relative(t.to);
 		BlockState targetState = level.getBlockState(targetPos);
 		if (targetState.getBlock() instanceof BcnPipeBlock pipe && pipe.fluid
@@ -253,6 +311,16 @@ public class FluidPipeBlockEntity extends BlockEntity {
 			child.putInt("t", t.to.ordinal());
 			child.putBoolean("r", t.turned);
 			child.putFloat("p", t.progress);
+			if (t.dest != FluidTransit.NO_DEST) {
+				child.putLong("d", t.dest);
+				child.putInt("df", t.destFace);
+			}
+			if (t.routeIdx < t.route.length) {
+				ValueOutput.ValueOutputList rl = child.childrenList("rt");
+				for (int i = t.routeIdx; i < t.route.length; i++) {
+					rl.addChild().putInt("d", t.route[i].ordinal());
+				}
+			}
 		}
 	}
 
@@ -274,6 +342,16 @@ public class FluidPipeBlockEntity extends BlockEntity {
 			t.to = Direction.values()[child.getIntOr("t", 0)];
 			t.turned = child.getBooleanOr("r", false);
 			t.progress = child.getFloatOr("p", 0);
+			long dest = child.getLongOr("d", FluidTransit.NO_DEST);
+			if (dest != FluidTransit.NO_DEST) {
+				t.dest = dest;
+				t.destFace = child.getIntOr("df", -1);
+			}
+			List<Direction> route = new ArrayList<>();
+			for (ValueInput rc : child.childrenListOrEmpty("rt")) {
+				route.add(Direction.values()[rc.getIntOr("d", 0)]);
+			}
+			t.route = route.toArray(new Direction[0]);
 			transit.add(t);
 		}
 	}

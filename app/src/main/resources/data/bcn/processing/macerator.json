@@ -1,0 +1,214 @@
+{
+  "recipes": [
+    {
+      "in": [
+        [
+          "minecraft:iron_ore",
+          1
+        ]
+      ],
+      "out": [
+        "bcn:iron_dust",
+        2
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "minecraft:deepslate_iron_ore",
+          1
+        ]
+      ],
+      "out": [
+        "bcn:iron_dust",
+        2
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "minecraft:gold_ore",
+          1
+        ]
+      ],
+      "out": [
+        "bcn:gold_dust",
+        2
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "minecraft:deepslate_gold_ore",
+          1
+        ]
+      ],
+      "out": [
+        "bcn:gold_dust",
+        2
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "minecraft:copper_ore",
+          1
+        ]
+      ],
+      "out": [
+        "bcn:copper_dust",
+        2
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "minecraft:deepslate_copper_ore",
+          1
+        ]
+      ],
+      "out": [
+        "bcn:copper_dust",
+        2
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "bcn:tin_ore",
+          1
+        ]
+      ],
+      "out": [
+        "bcn:tin_dust",
+        2
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "bcn:deepslate_tin_ore",
+          1
+        ]
+      ],
+      "out": [
+        "bcn:tin_dust",
+        2
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "minecraft:iron_ingot",
+          1
+        ]
+      ],
+      "out": [
+        "bcn:iron_dust",
+        1
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "minecraft:gold_ingot",
+          1
+        ]
+      ],
+      "out": [
+        "bcn:gold_dust",
+        1
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "minecraft:copper_ingot",
+          1
+        ]
+      ],
+      "out": [
+        "bcn:copper_dust",
+        1
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "bcn:tin_ingot",
+          1
+        ]
+      ],
+      "out": [
+        "bcn:tin_dust",
+        1
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "minecraft:cobblestone",
+          1
+        ]
+      ],
+      "out": [
+        "minecraft:sand",
+        1
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "minecraft:gravel",
+          1
+        ]
+      ],
+      "out": [
+        "minecraft:flint",
+        1
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "minecraft:coal",
+          1
+        ]
+      ],
+      "out": [
+        "bcn:coal_chunk",
+        1
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    }
+  ]
+}

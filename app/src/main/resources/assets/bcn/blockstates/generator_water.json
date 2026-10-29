@@ -1,0 +1,48 @@
+{
+  "variants": {
+    "facing=down,active=false": {
+      "model": "bcn:block/generator_water",
+      "x": 180
+    },
+    "facing=down,active=true": {
+      "model": "bcn:block/generator_water_on",
+      "x": 180
+    },
+    "facing=up,active=false": {
+      "model": "bcn:block/generator_water"
+    },
+    "facing=up,active=true": {
+      "model": "bcn:block/generator_water_on"
+    },
+    "facing=north,active=false": {
+      "model": "bcn:block/generator_water"
+    },
+    "facing=north,active=true": {
+      "model": "bcn:block/generator_water_on"
+    },
+    "facing=south,active=false": {
+      "model": "bcn:block/generator_water",
+      "y": 180
+    },
+    "facing=south,active=true": {
+      "model": "bcn:block/generator_water_on",
+      "y": 180
+    },
+    "facing=west,active=false": {
+      "model": "bcn:block/generator_water",
+      "y": 90
+    },
+    "facing=west,active=true": {
+      "model": "bcn:block/generator_water_on",
+      "y": 90
+    },
+    "facing=east,active=false": {
+      "model": "bcn:block/generator_water",
+      "y": 270
+    },
+    "facing=east,active=true": {
+      "model": "bcn:block/generator_water_on",
+      "y": 270
+    }
+  }
+}

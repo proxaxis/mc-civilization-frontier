@@ -1,0 +1,64 @@
+{
+  "recipes": [
+    {
+      "in": [
+        [
+          "bcn:coal_chunk",
+          1
+        ],
+        8
+      ],
+      "out": [
+        "minecraft:diamond",
+        1
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "minecraft:snowball",
+          1
+        ],
+        4
+      ],
+      "out": [
+        "minecraft:ice",
+        1
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "minecraft:sand",
+          1
+        ],
+        4
+      ],
+      "out": [
+        "minecraft:sandstone",
+        1
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "bcn:coal_chunk",
+          1
+        ],
+        2
+      ],
+      "out": [
+        "minecraft:coal_block",
+        1
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    }
+  ]
+}
