@@ -36,3 +36,24 @@
 * 未解決・要判断:
   * 起動テスト未実施(task 101 の最初の作業)
   * ENEMIES.md の独自敵は実モブでないため、自作か既存割当の方針決定が必要
+
+## 5afab43 - task 101 環境構築・起動検証
+
+* 結果: 成功
+* 変更点:
+  * `docker-compose.yml` testserver に `${WORKSPACE_HOST_PATH:-.}/resources/mods:/data/mods:ro` を追加. 本環境の Docker daemon は別ホスト(実パス `/home/me/devserver/mc-civilization-frontier`)にあるため `WORKSPACE_HOST_PATH` 環境変数で上書きする形にした. 同様に `resources/datapacks/cfb_fixes` を `/data/world/datapacks/cfb_fixes:ro` にマウント
+  * `MEMORY=6G` を追加(78 MOD でデフォルト 1G は不足)
+  * `resources/datapacks/cfb_fixes/` 新設: `improvement_minecarts:riding` predicate を 26.3 形式(`minecraft:entity_type`)に上書きする修正 datapack. pack_format=121
+  * コンテナ内 `/data/server.properties` の `pause-when-empty-seconds` を `-1` に変更(検証用、ボリューム側のみ)
+* 判明したこと:
+  * イメージの Java は 25.0.4.1 で `java>=25` 要件を満たす. タグ差し替え不要
+  * 起動成功: 169 mod ロード、依存エラー・クラッシュ・mixin 起因の起動失敗なし、`Done` 到達. `file/cfb_fixes (world)` が有効化され 65 datapack 稼働
+  * improvement_minecarts の `riding.json` が廃止済み `entity_sub_predicate_type: minecraft:type` を使い初回起動が失敗. datapack での上書きで解消(jar は無変更)
+  * 構造物 locate 実績: ネザーで Incendium 5 種全て成功(forbidden_castle/sanctum/infernal_altar/piglin_village/nether_reactor、368〜2016 blocks)、オーバーワールドで nova_structures/graveyard/structory_towers/towns_and_towers/mvs 成功、エンドで nullscape/mes(=Moog's End Structures) 成功、`remnant_bosses:eclipsed_realm` 次元で hollow_citadel 成功
+  * Lootr は実地検証済み: loot table 付き chest が `id: lootr:chest` + `LootrId` 付きで個別ルート化される. 設定は `config/lootr-common.jsonc` で変換有効・次元制限なし
+  * Undead Nights 現在設定: `config/undeadnights.json5`(夜襲有効、猶予0日、距離70〜75、上限80体、夜襲中は睡眠不可、自動難易度進行ON)、`undeadnights_difficulty_config.json`(Level1: 5日周期・発生率100・追加波ありクールダウン45)、`undeadnights_horde_mobs_config.json`(波最大15、elite 3、demolition 6/TNT5)
+  * 生成密度: repurposed_structures の mineshafts 系は spacing=1(バニラ式)、dungeons+ は spacing=8 でやや密だがパックの意図的構成と判断. 過密を示す設定ミスは見当たらず
+  * 警告(起動は阻害しない): spell_engine と adpother の `player` メソッド mixin overwrite 競合(adpother 優先、spell_engine 側スキップ)、flan の未導入 MOD 連携データ(mekanism/create/AE2等)の parse エラー、Katters 翻訳キー欠落、初回のみ RPG Series loot 解決エラー(再起動で解消)
+* 未解決・要判断:
+  * ワールドは MOD 未搭載の初回起動で一度生成済みのため、スポーン周辺チャンクはバニラ生成. 全コンテンツをスポーン近辺で確認したい場合は world ボリュームの作り直しが必要(要ユーザー判断)
+  * `WORKSPACE_HOST_PATH` は現環境固有. 別環境では unset(`.` 既定)で動くが、リモート daemon 環境では設定が必要
