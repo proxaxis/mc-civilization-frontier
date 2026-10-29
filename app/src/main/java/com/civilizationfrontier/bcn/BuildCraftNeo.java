@@ -4,6 +4,7 @@ import com.civilizationfrontier.bcn.block.BcnBlocks;
 import com.civilizationfrontier.bcn.fluid.BcnFluids;
 import com.civilizationfrontier.bcn.item.BcnItems;
 import com.civilizationfrontier.bcn.worldgen.BcnFeatures;
+import com.civilizationfrontier.bcn.economy.BcnCastTest;
 import com.civilizationfrontier.bcn.economy.BcnEconomy;
 import com.civilizationfrontier.bcn.worldgen.BcnWorldgen;
 import net.fabricmc.api.ModInitializer;
@@ -19,5 +20,6 @@ public class BuildCraftNeo implements ModInitializer {
 		BcnFeatures.init();
 		BcnWorldgen.init();
 		BcnEconomy.init();
+		BcnCastTest.init();
 	}
 }

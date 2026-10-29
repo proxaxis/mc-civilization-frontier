@@ -506,3 +506,13 @@
   * 巻物譲渡で未習得者もスペル使用可能(完全ロックは spell_engine 拡張が必要)
   * 構造物への敵自動出現トリガーは未配線(関数呼出しで代替)
   * EFP閾値・維持費額は仮値のまま(実機バランス要調整)
+
+## task-201 BCN 油田仕上げ(流体レンダラ)
+
+* 結果: 実装済み — クライアント描画の既知不具合を修正
+* 変更点:
+  * `BcnClient` (ClientModInitializer) を src/client/java に新設 — splitEnvironmentSourceSets のため client ソースセット必須
+  * `FluidRenderingRegistry.register(OIL, FLOWING_OIL, FluidModel$Unbaked)` で oil_still/oil_flow テクスチャを登録
+  * fabric.mod.json に client エントリポイント追加
+  * このバージョンの API は `FluidRenderingRegistry.register(Fluid, Fluid, FluidModel$Unbaked)` で、Material は単一 Identifier コンストラクタを取る
+* 未解決: クライアントでの実際の描画確認は実機待ち(サーバー側では検証不可)
