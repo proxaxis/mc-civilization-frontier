@@ -732,3 +732,13 @@
   * 範囲は固定 5x5 (BC 式の枠/マーカー拡張は未実装). 掘削速度・消費は要バランス調整
   * 保護判定はクレーム存在チェック + owner 一致 + canInteract(BREAK) の 3 段リフレクション. Flan のクレーム作成検証は要実地テスト
   * GUI/枠表示未実装 (稼働表示は ACTIVE ブロック状態)
+
+## hotfix 災害連鎖発火の修正 (cfb_economy)
+
+* 障害: EFP が閾値(12/30/60)を超えると economy_tick が毎 tick 災害を発火し続け, threat が evoker/illusioner を毎 tick 召喚. エンティティ集中で SpellcasterIllager.pushEntities が詰まりサーバー watchdog クラッシュの連鎖原因になっていた
+* 修正:
+  * disaster/check.mcfunction を新設: 発火時に該当階級分を EFP から消費し #disaster_cd=6000(5分) を設定. 低階級から順に判定して 1 回 1 件のみ発火
+  * disaster/decay.mcfunction を新設: 1200tick 毎に EFP -1 の自然減衰(旧実装は remove 0 で無効だった)
+  * economy_tick から閾値直接判定を削除し CD 経由に変更
+  * threat の召喚位置を @r(ランダムプレイヤー位置)に変更(関数呼び出し位置への定点召喚を解消)
+* 検証: EFP=46 設定で threat が 1 回発火し 30 消費(46→16), CD 6000 カウントダウン確認. 連続発火メッセージ 0 件
