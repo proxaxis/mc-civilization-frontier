@@ -223,3 +223,18 @@
   * スペルとアイテムの結合(spell pool/weapon_attributes)は未実装で、実際の発動検証はまだ
   * on_join メニューの実表示はクライアント確認が必要
   * carpet は検証目的で追加。本番構成から外すかは要判断
+
+## task-103検証4 - スペル↔アイテム結合と実発動試行
+
+* 結果: 一部完了(発動は未達)
+* 変更点:
+  * `data/wizards/tags/spell/weapon/staff_arcane.json` を cfb datapack に追加し、wizards:staff_arcane に mage スペル4種(firebolt/inferno/shockbolt/blink)を結合
+  * carpet 偽プレイヤーに staff_arcane を持たせ `player verifier use` で発動を試行
+* 判明したこと:
+  * スペルの武器結合は `data/<ns>/tags/spell/weapon/<item_id>.json` のタグ形式(item id とタグ名を一致させる)
+  * `weapon_attributes` は戦闘属性で、スペル結合には関係ない
+  * 偽プレイヤーの `use` ではスペル発動を確認できず(foodLevel 20 のまま)。spell_engine の発動経路はアイテムの spell_container コンポーネント or 正しい操作タイミングが必要な可能性
+  * `execute as` 経由の `cast` 系コマンドは存在しない(spell_engine に直接発動コマンドは無い模様)
+* 未解決・要判断:
+  * スペル実発動は spell_container を持つアイテム定義(weapon_attributes or 独自アイテム)または実クライアントでの操作が必要。偽プレイヤーでの発動検証は未達
+  * cfb スペルの構造はロード済み。発動経路の結線は残課題
