@@ -238,3 +238,17 @@
 * 未解決・要判断:
   * スペル実発動は spell_container を持つアイテム定義(weapon_attributes or 独自アイテム)または実クライアントでの操作が必要。偽プレイヤーでの発動検証は未達
   * cfb スペルの構造はロード済み。発動経路の結線は残課題
+
+## task-103検証5 - 職業選択メニューのクリック不発を trigger 方式へ修正
+
+* 結果: 修正済み(ユーザーリトライ待ち)
+* 変更点:
+  * メニューの clickEvent を `/function` 直接実行から `/trigger cfb_job set 1..4` へ変更(非 op でも実行可)
+  * `cfb:tick`(minecraft:tick タグ)でスコアを監視し、該当 job function をサーバー権限で実行後リセット+再有効化
+  * `cfb:load`(minecraft:load タグ)で `cfb_job` trigger objective を作成・全員有効化
+  * `op YSK357` を付与
+* 判明したこと:
+  * tellraw の run_command はプレイヤー自身の権限で実行されるため、非 op では /function が動かない。trigger スコア経由が正攻法
+  * tick function 内のコマンドは呼び出し元(サーバー)権限で実行されるため、puffish の lock/unlock が非 op でも機能する
+* 未解決・要判断:
+  * 実クリックでの動作はユーザーのリトライ確認待ち
