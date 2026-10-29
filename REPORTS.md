@@ -127,3 +127,14 @@
   * 1職業コンプは仮コストで約12,500xp(レベル100-120相当)。Tier3/4ゲートは討伐実績・クエストを条件想定
 * 未解決・要判断:
   * 数値は103実装時にJOB_*.mdと照合して最終調整が必要
+
+## task-103(着手) - スキルツリー datapack 生成
+
+* 結果: 一部完了(継続中)
+* 変更点:
+  * `tools/gen_skills.py` を新設し、`resources/datapacks/cfb_skills/` に4職業×40ノード(パッシブ5×5Lv+アクティブ15)の category.json を生成。合計160ノード
+  * 各職業 = `cfb:{job}` カテゴリ、パッシブは attribute reward(multiply_total)、アクティブは親パッシブLv前提のアンロックノード
+* 未解決・要判断:
+  * puffish_skills の JSON スキーマ(category.json の形式・keys)は実機での検証待ち(task101環境で読み込み確認が必要)
+  * アイコンを全て book 仮置き。職業・スキル別に要差し替え
+  * 残作業: Spell Engine スペル定義、空腹度コストフック、職業選択UI/排他ロック

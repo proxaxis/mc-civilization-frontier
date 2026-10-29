@@ -1,0 +1,1048 @@
+{
+  "title": "暗殺者",
+  "icon": {
+    "type": "item",
+    "data": {
+      "item": "minecraft:iron_sword"
+    }
+  },
+  "background": "minecraft:textures/block/stone.png",
+  "exclusive_root": true,
+  "skills": {
+    "abyss": {
+      "title": "深淵の呼吸 - Abyssal Breath",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_eye_lv3"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Abyssal Breath アンロック(JOB_ASSASSIN.md 参照)"
+    },
+    "afterimage": {
+      "title": "残像 - Afterimage",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_body_lv1"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Afterimage アンロック(JOB_ASSASSIN.md 参照)"
+    },
+    "aura_lv1": {
+      "title": "沈黙の殺気 Lv1 - Silent Killing Aura",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 100,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:armor_toughness",
+            "value": 0.04,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Silent Killing Aura レベル1(累計効果 4%%)"
+    },
+    "aura_lv2": {
+      "title": "沈黙の殺気 Lv2 - Silent Killing Aura",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 200,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:armor_toughness",
+            "value": 0.08,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_aura_lv1"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Silent Killing Aura レベル2(累計効果 8%%)"
+    },
+    "aura_lv3": {
+      "title": "沈黙の殺気 Lv3 - Silent Killing Aura",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 400,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:armor_toughness",
+            "value": 0.12,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_aura_lv2"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Silent Killing Aura レベル3(累計効果 12%%)"
+    },
+    "aura_lv4": {
+      "title": "沈黙の殺気 Lv4 - Silent Killing Aura",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 700,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:armor_toughness",
+            "value": 0.16,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_aura_lv3"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Silent Killing Aura レベル4(累計効果 16%%)"
+    },
+    "aura_lv5": {
+      "title": "沈黙の殺気 Lv5 - Silent Killing Aura",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 1100,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:armor_toughness",
+            "value": 0.2,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_aura_lv4"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Silent Killing Aura レベル5(累計効果 20%%)"
+    },
+    "blood_trail": {
+      "title": "血痕の追跡 - Blood Trail",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_aura_lv1"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Blood Trail アンロック(JOB_ASSASSIN.md 参照)"
+    },
+    "body_lv1": {
+      "title": "軽業の体 Lv1 - Acrobatic Body",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 100,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:luck",
+            "value": 0.02,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Acrobatic Body レベル1(累計効果 2%%)"
+    },
+    "body_lv2": {
+      "title": "軽業の体 Lv2 - Acrobatic Body",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 200,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:luck",
+            "value": 0.04,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_body_lv1"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Acrobatic Body レベル2(累計効果 4%%)"
+    },
+    "body_lv3": {
+      "title": "軽業の体 Lv3 - Acrobatic Body",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 400,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:luck",
+            "value": 0.06,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_body_lv2"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Acrobatic Body レベル3(累計効果 6%%)"
+    },
+    "body_lv4": {
+      "title": "軽業の体 Lv4 - Acrobatic Body",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 700,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:luck",
+            "value": 0.08,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_body_lv3"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Acrobatic Body レベル4(累計効果 8%%)"
+    },
+    "body_lv5": {
+      "title": "軽業の体 Lv5 - Acrobatic Body",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 1100,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:luck",
+            "value": 0.1,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_body_lv4"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Acrobatic Body レベル5(累計効果 10%%)"
+    },
+    "burial": {
+      "title": "影葬 - Shadow Burial",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 1000,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_measure_lv5"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Shadow Burial アンロック(JOB_ASSASSIN.md 参照)"
+    },
+    "clone": {
+      "title": "影分身 - Shadow Clone",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 1000,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_body_lv5"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Shadow Clone アンロック(JOB_ASSASSIN.md 参照)"
+    },
+    "dash": {
+      "title": "影走り - Shadow Dash",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_step_lv1"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Shadow Dash アンロック(JOB_ASSASSIN.md 参照)"
+    },
+    "deathblow": {
+      "title": "致命打 - Deathblow",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_measure_lv4"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Deathblow アンロック(JOB_ASSASSIN.md 参照)"
+    },
+    "eye_lv1": {
+      "title": "急所の目 Lv1 - Vital Eye",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 100,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:luck",
+            "value": 0.02,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Vital Eye レベル1(累計効果 2%%)"
+    },
+    "eye_lv2": {
+      "title": "急所の目 Lv2 - Vital Eye",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 200,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:luck",
+            "value": 0.04,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_eye_lv1"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Vital Eye レベル2(累計効果 4%%)"
+    },
+    "eye_lv3": {
+      "title": "急所の目 Lv3 - Vital Eye",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 400,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:luck",
+            "value": 0.06,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_eye_lv2"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Vital Eye レベル3(累計効果 6%%)"
+    },
+    "eye_lv4": {
+      "title": "急所の目 Lv4 - Vital Eye",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 700,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:luck",
+            "value": 0.08,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_eye_lv3"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Vital Eye レベル4(累計効果 8%%)"
+    },
+    "eye_lv5": {
+      "title": "急所の目 Lv5 - Vital Eye",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 1100,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:luck",
+            "value": 0.1,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_eye_lv4"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Vital Eye レベル5(累計効果 10%%)"
+    },
+    "flash": {
+      "title": "瞬刃 - Flash Blade",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_eye_lv1"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Flash Blade アンロック(JOB_ASSASSIN.md 参照)"
+    },
+    "hamstring": {
+      "title": "断脚刃 - Hamstring",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_measure_lv1"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Hamstring アンロック(JOB_ASSASSIN.md 参照)"
+    },
+    "measure_lv1": {
+      "title": "暗殺の間合い Lv1 - Assassin's Measure",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 100,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:attack_damage",
+            "value": 0.04,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Assassin's Measure レベル1(累計効果 4%%)"
+    },
+    "measure_lv2": {
+      "title": "暗殺の間合い Lv2 - Assassin's Measure",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 200,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:attack_damage",
+            "value": 0.08,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_measure_lv1"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Assassin's Measure レベル2(累計効果 8%%)"
+    },
+    "measure_lv3": {
+      "title": "暗殺の間合い Lv3 - Assassin's Measure",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 400,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:attack_damage",
+            "value": 0.12,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_measure_lv2"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Assassin's Measure レベル3(累計効果 12%%)"
+    },
+    "measure_lv4": {
+      "title": "暗殺の間合い Lv4 - Assassin's Measure",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 700,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:attack_damage",
+            "value": 0.16,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_measure_lv3"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Assassin's Measure レベル4(累計効果 16%%)"
+    },
+    "measure_lv5": {
+      "title": "暗殺の間合い Lv5 - Assassin's Measure",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 1100,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:attack_damage",
+            "value": 0.2,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_measure_lv4"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Assassin's Measure レベル5(累計効果 20%%)"
+    },
+    "needle": {
+      "title": "麻痺針 - Paralytic Needle",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_eye_lv2"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Paralytic Needle アンロック(JOB_ASSASSIN.md 参照)"
+    },
+    "shadow_strike": {
+      "title": "影縫い - Shadow Strike",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_measure_lv2"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Shadow Strike アンロック(JOB_ASSASSIN.md 参照)"
+    },
+    "smoke": {
+      "title": "煙幕 - Smoke Veil",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_aura_lv2"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Smoke Veil アンロック(JOB_ASSASSIN.md 参照)"
+    },
+    "stealth": {
+      "title": "ステルス - Stealth",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_aura_lv4"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Stealth アンロック(JOB_ASSASSIN.md 参照)"
+    },
+    "step_lv1": {
+      "title": "影の歩法 Lv1 - Shadow Step",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 100,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:movement_speed",
+            "value": 0.03,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Shadow Step レベル1(累計効果 3%%)"
+    },
+    "step_lv2": {
+      "title": "影の歩法 Lv2 - Shadow Step",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 200,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:movement_speed",
+            "value": 0.06,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_step_lv1"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Shadow Step レベル2(累計効果 6%%)"
+    },
+    "step_lv3": {
+      "title": "影の歩法 Lv3 - Shadow Step",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 400,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:movement_speed",
+            "value": 0.09,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_step_lv2"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Shadow Step レベル3(累計効果 9%%)"
+    },
+    "step_lv4": {
+      "title": "影の歩法 Lv4 - Shadow Step",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 700,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:movement_speed",
+            "value": 0.12,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_step_lv3"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Shadow Step レベル4(累計効果 12%%)"
+    },
+    "step_lv5": {
+      "title": "影の歩法 Lv5 - Shadow Step",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 1100,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:movement_speed",
+            "value": 0.15,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_step_lv4"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Shadow Step レベル5(累計効果 15%%)"
+    },
+    "taunt": {
+      "title": "挑発の影 - Shadow Taunt",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_aura_lv3"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Shadow Taunt アンロック(JOB_ASSASSIN.md 参照)"
+    },
+    "vanish": {
+      "title": "闇遁 - Vanish",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:assassin",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:assassin_step_lv4"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Vanish アンロック(JOB_ASSASSIN.md 参照)"
+    }
+  }
+}

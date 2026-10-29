@@ -1,0 +1,1048 @@
+{
+  "title": "魔道士",
+  "icon": {
+    "type": "item",
+    "data": {
+      "item": "minecraft:blaze_rod"
+    }
+  },
+  "background": "minecraft:textures/block/stone.png",
+  "exclusive_root": true,
+  "skills": {
+    "affinity_lv1": {
+      "title": "属性適性 Lv1 - Elemental Affinity",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 100,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:luck",
+            "value": 0.02,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Elemental Affinity レベル1(累計効果 2%%)"
+    },
+    "affinity_lv2": {
+      "title": "属性適性 Lv2 - Elemental Affinity",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 200,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:luck",
+            "value": 0.04,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_affinity_lv1"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Elemental Affinity レベル2(累計効果 4%%)"
+    },
+    "affinity_lv3": {
+      "title": "属性適性 Lv3 - Elemental Affinity",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 400,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:luck",
+            "value": 0.06,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_affinity_lv2"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Elemental Affinity レベル3(累計効果 6%%)"
+    },
+    "affinity_lv4": {
+      "title": "属性適性 Lv4 - Elemental Affinity",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 700,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:luck",
+            "value": 0.08,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_affinity_lv3"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Elemental Affinity レベル4(累計効果 8%%)"
+    },
+    "affinity_lv5": {
+      "title": "属性適性 Lv5 - Elemental Affinity",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 1100,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:luck",
+            "value": 0.1,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_affinity_lv4"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Elemental Affinity レベル5(累計効果 10%%)"
+    },
+    "amplify_lv1": {
+      "title": "術式強化 Lv1 - Spell Amplification",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 100,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:attack_damage",
+            "value": 0.04,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Spell Amplification レベル1(累計効果 4%%)"
+    },
+    "amplify_lv2": {
+      "title": "術式強化 Lv2 - Spell Amplification",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 200,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:attack_damage",
+            "value": 0.08,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_amplify_lv1"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Spell Amplification レベル2(累計効果 8%%)"
+    },
+    "amplify_lv3": {
+      "title": "術式強化 Lv3 - Spell Amplification",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 400,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:attack_damage",
+            "value": 0.12,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_amplify_lv2"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Spell Amplification レベル3(累計効果 12%%)"
+    },
+    "amplify_lv4": {
+      "title": "術式強化 Lv4 - Spell Amplification",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 700,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:attack_damage",
+            "value": 0.16,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_amplify_lv3"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Spell Amplification レベル4(累計効果 16%%)"
+    },
+    "amplify_lv5": {
+      "title": "術式強化 Lv5 - Spell Amplification",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 1100,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:attack_damage",
+            "value": 0.2,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_amplify_lv4"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Spell Amplification レベル5(累計効果 20%%)"
+    },
+    "attune": {
+      "title": "属性同調 - Elemental Attunement",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_affinity_lv4"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Elemental Attunement アンロック(JOB_MAGE.md 参照)"
+    },
+    "blink": {
+      "title": "瞬間移動 - Blink",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_mana_lv1"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Blink アンロック(JOB_MAGE.md 参照)"
+    },
+    "burst": {
+      "title": "属性爆発 - Elemental Burst",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_amplify_lv4"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Elemental Burst アンロック(JOB_MAGE.md 参照)"
+    },
+    "cache": {
+      "title": "術式保存 - Spell Cache",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_chant_lv1"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Spell Cache アンロック(JOB_MAGE.md 参照)"
+    },
+    "chain": {
+      "title": "雷鎖 - Chain Lightning",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_affinity_lv3"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Chain Lightning アンロック(JOB_MAGE.md 参照)"
+    },
+    "chant_lv1": {
+      "title": "詠唱熟達 Lv1 - Chanting Mastery",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 100,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:movement_speed",
+            "value": 0.03,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Chanting Mastery レベル1(累計効果 3%%)"
+    },
+    "chant_lv2": {
+      "title": "詠唱熟達 Lv2 - Chanting Mastery",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 200,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:movement_speed",
+            "value": 0.06,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_chant_lv1"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Chanting Mastery レベル2(累計効果 6%%)"
+    },
+    "chant_lv3": {
+      "title": "詠唱熟達 Lv3 - Chanting Mastery",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 400,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:movement_speed",
+            "value": 0.09,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_chant_lv2"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Chanting Mastery レベル3(累計効果 9%%)"
+    },
+    "chant_lv4": {
+      "title": "詠唱熟達 Lv4 - Chanting Mastery",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 700,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:movement_speed",
+            "value": 0.12,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_chant_lv3"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Chanting Mastery レベル4(累計効果 12%%)"
+    },
+    "chant_lv5": {
+      "title": "詠唱熟達 Lv5 - Chanting Mastery",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 1100,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:movement_speed",
+            "value": 0.15,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_chant_lv4"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Chanting Mastery レベル5(累計効果 15%%)"
+    },
+    "circulation_lv1": {
+      "title": "魔力循環 Lv1 - Mana Circulation",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 100,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:armor_toughness",
+            "value": 0.05,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Mana Circulation レベル1(累計効果 5%%)"
+    },
+    "circulation_lv2": {
+      "title": "魔力循環 Lv2 - Mana Circulation",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 200,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:armor_toughness",
+            "value": 0.1,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_circulation_lv1"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Mana Circulation レベル2(累計効果 10%%)"
+    },
+    "circulation_lv3": {
+      "title": "魔力循環 Lv3 - Mana Circulation",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 400,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:armor_toughness",
+            "value": 0.15,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_circulation_lv2"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Mana Circulation レベル3(累計効果 15%%)"
+    },
+    "circulation_lv4": {
+      "title": "魔力循環 Lv4 - Mana Circulation",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 700,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:armor_toughness",
+            "value": 0.2,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_circulation_lv3"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Mana Circulation レベル4(累計効果 20%%)"
+    },
+    "circulation_lv5": {
+      "title": "魔力循環 Lv5 - Mana Circulation",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 1100,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:armor_toughness",
+            "value": 0.25,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_circulation_lv4"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Mana Circulation レベル5(累計効果 25%%)"
+    },
+    "final": {
+      "title": "終末術式 - Final Incantation",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 1000,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_amplify_lv5"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Final Incantation アンロック(JOB_MAGE.md 参照)"
+    },
+    "firebolt": {
+      "title": "火炎弾 - Firebolt",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_affinity_lv1"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Firebolt アンロック(JOB_MAGE.md 参照)"
+    },
+    "flare": {
+      "title": "魔力鮮明 - Mana Flare",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_amplify_lv2"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Mana Flare アンロック(JOB_MAGE.md 参照)"
+    },
+    "frost_domain": {
+      "title": "氷結領域 - Frost Domain",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_affinity_lv2"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Frost Domain アンロック(JOB_MAGE.md 参照)"
+    },
+    "frostbolt": {
+      "title": "氷結弾 - Frostbolt",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_affinity_lv1"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Frostbolt アンロック(JOB_MAGE.md 参照)"
+    },
+    "gravity": {
+      "title": "重力操作 - Gravity Well",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_mana_lv4"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Gravity Well アンロック(JOB_MAGE.md 参照)"
+    },
+    "inferno": {
+      "title": "範囲火炎 - Inferno Wave",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_amplify_lv2"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Inferno Wave アンロック(JOB_MAGE.md 参照)"
+    },
+    "mana_lv1": {
+      "title": "深き魔力 Lv1 - Deep Mana",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 100,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:luck",
+            "value": 0.02,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Deep Mana レベル1(累計効果 2%%)"
+    },
+    "mana_lv2": {
+      "title": "深き魔力 Lv2 - Deep Mana",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 200,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:luck",
+            "value": 0.04,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_mana_lv1"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Deep Mana レベル2(累計効果 4%%)"
+    },
+    "mana_lv3": {
+      "title": "深き魔力 Lv3 - Deep Mana",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 400,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:luck",
+            "value": 0.06,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_mana_lv2"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Deep Mana レベル3(累計効果 6%%)"
+    },
+    "mana_lv4": {
+      "title": "深き魔力 Lv4 - Deep Mana",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 700,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:luck",
+            "value": 0.08,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_mana_lv3"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Deep Mana レベル4(累計効果 8%%)"
+    },
+    "mana_lv5": {
+      "title": "深き魔力 Lv5 - Deep Mana",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 1100,
+      "reward": [
+        {
+          "type": "puffish_skills:attribute",
+          "data": {
+            "attribute": "minecraft:luck",
+            "value": 0.1,
+            "operation": "multiply_total"
+          }
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_mana_lv4"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Deep Mana レベル5(累計効果 10%%)"
+    },
+    "mana_shield": {
+      "title": "魔力障壁 - Mana Shield",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_circulation_lv1"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Mana Shield アンロック(JOB_MAGE.md 参照)"
+    },
+    "shockbolt": {
+      "title": "雷撃弾 - Shockbolt",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_affinity_lv4"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Shockbolt アンロック(JOB_MAGE.md 参照)"
+    },
+    "surge": {
+      "title": "魔道加速 - Arcane Surge",
+      "icon": {
+        "type": "item",
+        "data": {
+          "item": "minecraft:book"
+        }
+      },
+      "category": "cfb:mage",
+      "size": 1.0,
+      "cost": 300,
+      "reward": [
+        {
+          "type": "puffish_skills:none"
+        }
+      ],
+      "required_skills": [
+        "cfb:mage_chant_lv2"
+      ],
+      "required_points": 0,
+      "required_spent_points": 0,
+      "description": "Arcane Surge アンロック(JOB_MAGE.md 参照)"
+    }
+  }
+}
