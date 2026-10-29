@@ -90,3 +90,29 @@
 * 判明したこと:
   * 本パックにマナプールは存在しない。コスト体系は 🍖満腹度・⚡隠し満腹度・💎ルーン で構成
 * 未解決・要判断: なし
+
+## 7fd02c4 - 106 ワールド生成系コンテンツの先行実装(鉱石・油田)
+
+* 結果: 成功
+* 変更点:
+  * `/ws/app` に Fabric Mod `bcn` 0.1.0 を新規実装(gradle 9.8.2 + loom 1.19.3 + JDK25, mojmap 直結で `mappings` 行不要)
+  * 鉱石ブロック 17 種: 銅・錫・銀・ウラニウム・ルビー・サファイア・ペリドット・エレクトロタイン(=ニコライト)の石/深層バリアント+大理石. RedStoneOreBlock で電気石の lit を再現
+  * アイテム: raw 3 種・インゴット 3 種・宝石 3 種・electrotine_dust・oil_bucket・各ブロックアイテム. 精錬レシピ・採掘レベル/`c:` コンベンションタグ付き
+  * オイル流体(oil/flowing_oil)+オイルブロック+油源泉ブロック. 無限水源なし・水流より遅く浅く(3 マス)・エンダーマンとブレイズにダメージ・強い沈降力・炎/溶岩隣接で着火・`WATER_EVAPORATES` 次元で設置 1 秒後に爆発
+  * worldgen: `worldgen/feature/`+`placed_feature/` JSON(26.3 の新形式, `config` なし)+`BiomeModifications.addFeature` で `#c:is_desert`/`#c:is_ocean`/`foundInOverworld` へ注入. 油田は独自 `bcn:oil_field` Feature(codec を FEATURE_TYPE へ登録)
+  * loot_table は 26.3 形式(`condition`/`modifier`/`tool/can_silk_touch`). ウラニウムは幸運ボーナスなしの raw_uranium 1 個, ニコライトは 3-5 個+fortune, 宝石は 1-2 個+fortune
+  * `improvement_minecarts:riding` predicate が旧形式で新規ワールド作成をクラッシュさせていたため、jar 内の該当 JSON を `minecraft:vehicle`+`minecraft:entity_type` 形式に修正(`cfb_fixes` には既に修正版あり)
+  * 生成 jar を `resources/mods/bcn-0.1.0.jar` に配置
+* 判明したこと:
+  * 26.3 は非難読化(mojmap 実行時名, intermediary/yarn なし). worldgen は `worldgen/feature` へ移動し `Feature` が config 統合インタフェース化, loot は `condition`/`modifier` 単数キー化, `ResourceLocation` は `Identifier`, `EnderMan` は `Enderman`, `PushReaction.DESTROY` は `POPPED`, `ultraWarm()` は `environmentAttributes().getValue(WATER_EVAPORATES,pos)` へ移行. region のパレットキーは `Name` ではなく `''`
+  * 既存 JSON 準拠で生成: tin count8 trapz -24..56 size8, silver count6 -64..32 size9, 宝石各 count1 -80..80 size8-10, electrotine count4 -32..32 size8, marble count1 uniform -64..64 size64, 銅は spec より count8 trapz 0..64, ウラニウム count3 above_bottom 0..127 size3
+  * 検証はローカル Fabric サーバ(fabric-api+bcn のみ)で実施: `/locate`+`/forceload` でチャンク生成→リージョン NBT スキャンで全鉱石が想定高度にあることを確認(例: 錫はセクション -1..3, ウラニウム -1..3+深層). 油田は砂漠/海洋の地表セクション 4-6 にプール+噴出柱+地下ポケット, 油源泉もポケット底に生成確認(6 箇所中 2 箇所で spring_chance 0.5 と整合)
+  * `minecraft:lake` は fluid を任意 BlockStateProvider で指定可能で油溜まりに流用可. `minecraft:ore` で液体ブロックを鉱脈化可能(地下オイルポケット)
+  * testserver 起動テストで roguelike-dungeons の CisternRoom 生成が 60 秒を超え Watchdog クラッシュした(既存 mod 側の問題, 本件とは無関係だが大量生成時に再現しやすい)
+  * `cfb_fixes` 自体は新形式に修正済みだったが、クラッシュしていたのは mod 同梱ファイルの方だった
+* 未解決・要判断:
+  * イリジウムは仕様どおり未実装(クラフト限定の注記のみ)
+  * 油田のレア度は仮値(池 1/80, 砂漠田 1/200, 海洋田 1/250). 実機プレイで要バランス調整
+  * オイルの着火は簡易実装(源→油流+直上着火), 「油流が燃え続ける」挙動や溶岩→黒曜石化は未実装. クライアント側の流体描画属性(FluidVariantRenderHandler 相当)もサーバ検証範囲外のため未確認
+  * testserver のワールドはクラッシュ後に再生成済みだが、roguelike-dungeons の重生成は task 5.4 側で要対応. `/ws/resources/mods` の improvement_minecarts jar はローカル修正済み(上流バグ, 後続タスクでも要認識)
+  * クリエイティブタブへの登録・`oil` のクライアント描画確認は task 200 の範囲として残した
