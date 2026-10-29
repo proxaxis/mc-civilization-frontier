@@ -613,3 +613,58 @@
   * ホッパーからの種自動供給・パイプ直入れは WorldlyContainer 契約上動作する設計 (チェスト放出で実証済) だが, パイプ終端までの E2E は task-204 側成果物との組み合わせ未検証
   * GUI は未実装 (種投入は右クリック挿入/ホッパー, 状態は素手右クリック表示). 管理 UI が必要なら追加
   * 自動栽培機のクラフトレシピ未整備 (設計は TECH_ITEMS.md/精密作業台系の確定待ち)
+
+## task-209 BCN 鉄道高度化 (時刻表ダイヤ・信号システム)
+
+* 結果: 実装済み — 信号閉塞・時刻表ダイヤ・自律運行を testserver で実機確認
+* 実装 (com.civilizationfrontier.bcn.railway):
+  * `bcn:rail_signal` — ガードレール脇に立てる閉塞信号ブロック (FACING 4 方向 + ASPECT clear/stop). BE は 20tick 毎にレールグラフを `RailState` で BFS 走査して閉塞区間を構成 (他信号のガードレールを境界, 上限 128)
+  * 占有判定: 区間内にトロッコがあれば STOP. 停止は "区間方向へ動く先頭車両" のみ対象なので出区間列車は赤でも通過でき単線でもデッドロックしない. 保持時は motion とかまど push を保存→ゼロ化→位置固定、解放時に復帰
+  * RS 連動: STOP で全方向に強度 15 を出力 (側面ランプ等の駆動用). ガードレール未検出時は fails-closed で STOP
+  * 時刻表: `RailwayData` SavedData に路線 (名前・周期 period・停車場リスト). 停車場は `at <offset>` (周期内発車時刻) または `dwell <ticks>` (停車時間). 列車割当は `im.root` → 路線名
+  * `TimetableManager` — IM の駅停車 (zone 1/4, `im.wait` 減算) に乗り、残り発車時刻を毎 tick 書き込む. 時計は 26.3 の WorldClock (overworld) を使用
+  * `/bcn rail` コマンド: line create/delete/list/info, stop add(at|dwell)/remove, assign/unassign, trains, time
+* 検証 (testserver, 26.3):
+  * 区間内駐車車両で両方向信号が aspect=stop、解放で clear 復帰 + 保持車両が保存 motion で再発車
+  * 反対方向の通過は赤でも止まらない (方向性確認)
+  * 駅停車中の列車の `im.wait` が発車時刻まで減算され予定時刻に発車 (offset 指定で実発車確認)
+* デプロイ: bcn-0.1.0.jar → resources/mods (停止→上書き→起動の手順. 稼働中上書きは zip 破損を招く注意を追記)
+* 未解決・要判断:
+  * 分岐ポイント自動切替は未対応 (経路は路線の停車場リスト管理)
+  * 未管理単発トロッコは車両単位制御、ガードレール上の先客への追突は物理的に防げない
+  * 詳細仕様は docs/RAILWAY.md に記載
+
+## task-202 BCN エネルギー基盤 MJ (生成・伝送・消費 API とケーブル)
+
+* 結果: 実装済み — 生成 → ケーブル伝送 → 消費の往復、MJ-P ランク、変圧・蓄電、EFP 加算 API を testserver で実機確認
+* 実装 (com.civilizationfrontier.bcn.energy):
+  * `MjPressure` — 5 ランク ULV/LV/MV/HV/EV = 2/13/51/205/819 MJ-P (旧 EU-P ×0.4 整数化)
+  * `MjReceiver` — パケット受信インターフェース `receive(packetEnergy, face)`. パケットのエネルギー量自体が圧値
+  * `MjCable` — `maxPacket()` (許容圧) + `lossPerBlock()` (損失/ブロック). ケーブルは BlockEntity を持たずブロック特性として定義
+  * `MjNetwork.sendPacket` — 出力面からパケット 1 個を送出. 隣接 Receiver へ直送 or ケーブル網を BFS 探索して最短ホップの受信先へ配送. 網シミュレーション無し (パケット都度探索) の軽量設計
+  * `BcnEfp` — `cfb_efp` スコアボード (#efp ホルダ) へ `add(server, long)`. objective 未存在時は DUMMY で自動作成
+* ブロック (全12種, MachineBlockEntities 登録):
+  * ケーブル5種: tin(ULV, 0.01) / copper(LV, 0.08) / gold(MV, 0.16) / glass_fiber(HV, 0.01) / hv(EV, 0.32). 損失は IC2 源流値 ×0.4. BcnPipeBlock の 3 状態 multipart 流用, `getClass()` 一致条件でアイテム管/液管との混線を防止
+  * `mj_generator` — 検証用発電機 4 MJ/t. TIER 状態で ULV〜EV 切替, 定格フルパケットを溜め送出, 稼働中 EFP 2.8e-6/t 蓄積 (100 台×3h → 閾値 60 の設計値)
+  * `mj_consumer` — 全量吸収シンク. `total_received` が累計計測値
+  * `transformer_lv/mv/hv` — 降圧変圧器 (MV→LV, HV→MV, EV→HV). 出力面以外で入力ランク以下を受け, 出力ランクで最大 4 pkt/t 送出 (大1→小4)
+  * `battery_box` (LV, 16000 MJ) / `mfe` (MV, 1.6M MJ) — 出力面以外で充電, FACING 面からランクパケット放出
+* 実機検証 (testserver, RCON, `/data get block` 観測):
+  * 発電機(LV) → 銅線3 → 消費機: 受信 433.84 = 34pkt × 12.76 (13 - 3×0.08 損失を正確に確認)
+  * ULV(2MJ) 発電 → スズ線 → 消費機: 85pkt × 1.98 (2 - 2×0.01) で通過
+  * LV(13MJ) → スズ線(許容2): ケーブル蒸発 (`IS_AIR` 確認), MV(51MJ) → 銅線(許容13): 同様に蒸発
+  * 蓄電器: 発電 → 銅線 → battery_box 充電 (received 335.92) → 出力面から消費機へ 335.84 放電, 残量 0.08
+  * 変圧器: tier=2 発電機 → 金線 → transformer_lv(MV→LV) → 銅線 → 消費機. 50.84 入力 → 406.64 出力 (8pkt 変換, 残 0.08)
+  * EFP: `/bcn_efp 5` で 49→54 加算, 発電機の `efp_buffer` 小数蓄積を NBT で確認. `/bcn_mj` 直接給電 100MJ 確認
+  * BE の NBT (mj/total_received/total_emitted/efp_buffer) は再起動を跨いで永続化確認
+* 判明したこと:
+  * `BlockEntityType` 生成は `FabricBlockEntityTypeBuilder` + `MachineBlockEntities` 登録が既存流儀 (BE ctor は (pos,state) で型内埋め)
+  * 26.3 の NBT は `saveAdditional/loadAdditional` (ValueOutput/ValueInput). `/data get block` で検証可能
+  * ケーブルは BE 無し (BFS がブロックを辿る). `newBlockEntity` → null で問題なく動作
+  * `BcnPipeBlock` 継承で `hasBlockEntity()==true` になるため隣接パイプは BLOCK キャップ表示になる (見た目のみ)
+* 未解決・要判断:
+  * パケットは最短ホップ1受信先のみに届く (均等分配なし). 複数受信先への分配ポリシーは機械実装時に要検討
+  * 変圧器は入力ランク以下のパケットを許容 (小パケットは素通し的に変換). 逆変換 (昇圧) は仕様上省略
+  * 受信機が許容圧超過パケットを受けた場合は拒否のみ (IC2 の機械爆発は未実装)
+  * BFS 探索はパケット毎の都度走査. 巨大ケーブル網での負荷は規模が出てから要測定
+  * EFP 係数は設計値 (2.8e-6/t). 実バランスは稼働機械数の実測で再調整
