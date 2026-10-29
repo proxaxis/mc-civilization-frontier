@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:redstone",
+    "bcn:grin_powder"
+  ],
+  "result": {
+    "id": "bcn:weed_ex"
+  }
+}

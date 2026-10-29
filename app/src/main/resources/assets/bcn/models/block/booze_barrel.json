@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "bcn:block/booze_barrel_top",
+    "side": "bcn:block/booze_barrel_side"
+  }
+}

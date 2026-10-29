@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "cross=false,growth=0": {
+      "model": "bcn:block/crop_stick_s0"
+    },
+    "cross=false,growth=1": {
+      "model": "bcn:block/crop_stick_s1"
+    },
+    "cross=false,growth=2": {
+      "model": "bcn:block/crop_stick_s2"
+    },
+    "cross=false,growth=3": {
+      "model": "bcn:block/crop_stick_s3"
+    },
+    "cross=true,growth=0": {
+      "model": "bcn:block/crop_stick_cross_s0"
+    },
+    "cross=true,growth=1": {
+      "model": "bcn:block/crop_stick_cross_s1"
+    },
+    "cross=true,growth=2": {
+      "model": "bcn:block/crop_stick_cross_s2"
+    },
+    "cross=true,growth=3": {
+      "model": "bcn:block/crop_stick_cross_s3"
+    }
+  }
+}

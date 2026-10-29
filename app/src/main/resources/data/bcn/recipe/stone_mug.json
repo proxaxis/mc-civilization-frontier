@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "S S",
+    "S S",
+    "SSS"
+  ],
+  "key": {
+    "S": "minecraft:stone"
+  },
+  "result": {
+    "id": "bcn:stone_mug"
+  }
+}

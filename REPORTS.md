@@ -766,7 +766,7 @@
 
 ## task-210 BCN IC2 発電機 (地熱/水力/風力/ソーラー/原子炉)
 
-* 結果: 実装済み — コンパイル確認済み (自身のファイルにエラー無し). testserver 実機検証は未実施 (下記ブロッカー)
+* 結果: 実装済み, testserver 実機検証済み
 * 実装 (energy/block, energy/block/entity):
   * `Ic2GeneratorBlock` — 5種共通ブロック (FACING 出力面, ACTIVE 発電表示, UI 無し). useItemOn で溶岩バケツ投入 (FluidStorageUtil) / ウランインゴット燃料投入
   * `EnvGeneratorBlockEntity` — 環境発電機の共通基底. 20tick 毎に環境再評価, クリーン電力は EFP 微減算 (-1e-6/t)
@@ -776,8 +776,15 @@
   * `GeothermalBlockEntity` — 溶岩タンク 4B, 溶岩バケツ/防水パイプ受入 (FluidStorage.SIDED 登録), 8 MJ/t (LV)
   * `ReactorBlockEntity` — ウランインゴット 1 個 = 6000tick, 2 MJ/t (LV). 稼働で熱蓄積, 停止で冷却, 熱>=1200 でメルトダウン (半径8爆発+ドロップ+EFP+500). 燃料切れは熱スパイク+400 で高温時に臨界誘発. パルス運転で安全運用可能な設計
 * リソース: blockstate/model/texture(生成)/item/loot/recipe/lang/pickaxe タグを 5 ブロック分追加
-* ブロッカー: 並行作業中のエージェントが MjProcessorBlock 系 (macerator 等) と BcnProcessingRecipes, cable detector/splitter, pump, auto_workbench を編集中でコンパイル不可のため、現時点でフルビルド不可. 自身の新規ファイル群はエラー無しを確認済み
-* 未検証: testserver での発電量・メルトダウン・EFP の実機確認 (ビルブロッカー解消後に要検証)
+* 検証 (testserver, RCON):
+  * solar: produced_total 8.06 MJ, efp_buffer -8.4e-5 (クリーン微減算)
+  * wind: produced_total 8.1 MJ (高度係数動作)
+  * water: produced_total 5.3 MJ (周囲水ブロック検出)
+  * geothermal: 溶岩タンク注入後 produced_total 56.0 MJ = 8 MJ/t x 7t, 溶岩消費 81 droplet/t
+  * reactor: 空スロットで熱スパイク1回 (+400) のみ, 冷却動作, メルトダウンせず
+  * reactor メルトダウン: heat+燃料で臨界, 爆発でブロック破壊, EFP 938 -> 1438 (+500)
+* 修正: 燃料切れ熱スパイクが毎 tick 加算され空設置数秒で爆発するバグを fuelOutSpiked フラグで1回化
+* 備考: 並行作業 (crop/processor 系) のコンパイルエラーのため、jar は ReactorBlockEntity.class と tin_can レシピを直接パッチした検証用ビルド. ソースは修正済みなので次回フルビルドに反映される
 
 ## task-21x 実装1 - BCN IC2 加工機 (macerator/extractor/compressor/canner/alloy_smelter)
 
@@ -817,3 +824,48 @@
   * batbox と battery_box は同スペックの重複 (battery_box は先行実装の残置, 将来 batbox に統合して battery_box 削除検討)
   * batpack/lappack の装備中ツール給電 (IC2 のツール連携) は未実装, バッテリーとしては充放電可
   * 被覆なし銅ケーブルの独立アイテムは未追加 (copper_cable は従来通り 0.08)
+
+## task-212 BCN マシン群 (tank/pump/chute/mining_well 等)
+
+* 結果: 実装済み・実機検証済み — 優先4機種は testserver で動作確認, 残り3機種は登録/配置まで確認
+* 実装 (全て `block/` + `block/entity/`, 登録は BcnBlocks/BcnItems/MachineBlockEntities):
+  * `tank` — ガラスタンク. 1段16B, 縦積み連結をカラム集約の Storage として露出(下から充填/上から排出). `FluidStorage.SIDED` + バケツ右クリック対応, 透過描画
+  * `pump` — MjStorageBlockEntity 消費機. 直下64ブロックを下降スキャンし最初の流体ソースを 10MJ で汲み上げ, 内部4B バッファ→隣接 FluidStorage (防水パイプ等) へ送出
+  * `chute` — MJ 不要のチェスト+ホッパー. 18スロット, 8tick毎に上の容器から1個引き込み下へ押し出し
+  * `mining_well` — Mj 消費 8MJ/ブロックで直下を1列掘削(クァーリー単幅版). FakePlayer+Flan 保護準拠, ドロップは FACING 背面の容器へ排出(なければ上にドロップ), 設置者記録
+  * `auto_workbench` — グリッド9スロット+出力1. 20tick毎に `RecipeManager.getRecipeFor(CRAFTING)` でレシピ判定し自動クラフト(残存素材は getRemainingItems で処理). WorldlyContainer で素材投入/成果取出
+  * `filtered_buffer` — フィルター9ゴースト+バッファ18スロット. 一致品のみを8tick毎に隣接容器へ押し出し(空フィルタ=全通過)
+  * `flood_gate` — 4B バッファ. 20tick毎に隣接の空気/置換可能セルへソースブロックを拡散配置(タンク逆動作)
+* アセット: BC 原本テクスチャ(tank/pump/mining_well/chute/auto_workbench/flood_gate/filtered_buffer)を流用, orientable+cube_column モデル, lang/loot/mineable 登録
+* 実機検証 (testserver, forceload 必須):
+  * pump — 隣接 mj_source 受電 (mj:260) で水源を汲み上げ amt:81000, `fl:minecraft:water` 確認
+  * mining_well — 受電で直下を cy:150→93 まで掘削進行, 消費 MJ 減少
+  * auto_workbench — oak_planks×4 を2x2に並べて crafting_table 自動生成 (出力スロット9に2個)
+  * chute — 上位チェストの apple×3 が下位チェストへ到達
+* 検証中の環境起因トラブル:
+  * 並行作業の `bcn:tin_can` 未登録アイテム参照でサーバが Registry ロード失敗→クラッシュループ(並行側で TIN_CAN 登録後に解消, 再デプロイ済み)
+  * 初期検証で機械が mj:0 だった原因は (a) 機械ブロックのチャンクが forceload 対象外, (b) mj_source を非隣接(+2)に設置した試行ミス — 隣接受電で解決
+* 未解決・要判断:
+  * tank の液面可視レンダリングは未実装(BER で半透明流体面を描く案)
+  * filtered_buffer のフィルタースロットは NBT/`item replace` で設定する形 (GUI 未実装のため)
+  * auto_workbench のレシピ固定(テンプレート保持)は現状グリッド内容をそのまま使う簡易版 (BC 原本はレシピをテンプレとして保持)
+  * flood_gate の拡散範囲は隣接1セル/回のみ (広域拡散アルゴリズムは未実装)
+  * クライアントでのモデル見た目(前面LED等)は目視未確認
+
+## task-206 BCN 部品 (歯車・レンチ・絵筆)
+
+* 結果: 実装済み — 5 歯車・レンチ・絵筆 17 色を give/クラフト可能, レンチで facing 回転を実機確認
+* 実装:
+  * `gear_wood/stone/iron/gold/diamond` — BC 定型の段階クラフト (中央=下位歯車, 十字=素材4). `c:gears/{wooden,stone,iron,golden,diamond}` + `c:gears` conventional タグ登録
+  * `BcnWrenchItem` (`wrench`) — 石歯車+鉄3. 右クリックで任意ブロックの `facing` EnumProperty<Direction> を順送り回転 (バニラ機械・BCN 機械共通)
+  * `paintbrush` + 染色版16色 (paintbrush+染料→着色). 着色機能はスコープ外でアイテム/レシピのみ
+* 実機検証 (testserver, RCON/carpet fake player):
+  * `/give` で全品入手, `/recipe give` で gear_iron/wrench/paintbrush_red のレシピ登録を確認
+  * レンチ: furnace north→south 回転, engine_stone north→east 連続回転を確認
+* 判明したこと:
+  * carpet fake player は tp 後に落下するため検証時は足場設置が必須. `use once` は単発で外れる場合があり `use continuous` が確実
+  * レシピ読込エラーは並行作業の `bcn:rail_signal`/`bcn:tin_can`/`bcn:processing/*` のみで部品レシピは全正常
+* 未解決・要判断:
+  * 絵筆の対象ブロック着色機能は未実装 (スコープ外, 別タスク)
+  * 歯車の段階クラフト中間物としての c:gears タグ活用は後続レシピで拡張
+  * 並行作業のレシピエラー (tin_can, rail_signal, processing/*) は別タスクで要修正

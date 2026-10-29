@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "bcn:mug_dark_coffee",
+    "minecraft:sugar",
+    "minecraft:milk_bucket"
+  ],
+  "result": {
+    "id": "bcn:mug_coffee"
+  }
+}

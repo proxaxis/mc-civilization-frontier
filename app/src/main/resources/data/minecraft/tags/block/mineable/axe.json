@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "bcn:trebuchet"
+    "bcn:trebuchet",
+    "bcn:booze_barrel"
   ]
 }

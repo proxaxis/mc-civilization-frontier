@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " G ",
+    "RCR",
+    "R R"
+  ],
+  "key": {
+    "G": "minecraft:glass",
+    "R": "minecraft:redstone",
+    "C": "minecraft:copper_ingot"
+  },
+  "result": {
+    "id": "bcn:crop_analyzer"
+  }
+}

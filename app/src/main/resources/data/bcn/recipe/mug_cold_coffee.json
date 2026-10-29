@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "bcn:stone_mug",
+    "bcn:coffee_powder",
+    "minecraft:water_bottle"
+  ],
+  "result": {
+    "id": "bcn:mug_cold_coffee"
+  }
+}

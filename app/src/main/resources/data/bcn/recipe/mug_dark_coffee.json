@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": "bcn:mug_cold_coffee",
+  "result": {
+    "id": "bcn:mug_dark_coffee"
+  }
+}

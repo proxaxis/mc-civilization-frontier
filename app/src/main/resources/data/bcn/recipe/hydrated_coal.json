@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:coal",
+    "minecraft:water_bucket"
+  ],
+  "result": {
+    "id": "bcn:hydrated_coal"
+  }
+}
