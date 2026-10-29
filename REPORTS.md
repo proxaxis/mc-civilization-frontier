@@ -449,3 +449,41 @@
   * 未マッチ項目への対応方針(手作業エイリアス or 別版データ参照)は要検討
   * IC2C の機械レシピ(macerator 等)は `recipes_export.json` 対象外(コード内 TileEntity::loadRecipes で別途登録)
   * IC2 Experimental と IC2 Classic でレシピ体系が異なる点は BCN 実装時にどちら準拠とするか要決定
+
+## 6c3c029 - resources+docs: 残課題対処 (IC2C機械レシピ抽出, TECH_ITEMS.md 新設)
+
+* 結果: 成功 (push は環境の GitHub 認証が無く不可, ローカルコミットのみ)
+* 変更点:
+  * `resources/industrialcraft/machine_recipes_export.json` 新設 — IC2C jar の TileEntity::loadRecipes を逆コンパイルし機械レシピ188件を抽出
+  * `resources/industrialcraft/README.md` に export 追加と Experimental 準拠の決定を追記
+  * `docs/TECH_ITEMS.md` 新設 — 4MOD 全706項目のアイテム/レシピ一覧, EU→MJ 統一表, 実装考慮, EFP 連携方針
+* 判明したこと:
+  * IC2C の機械レシピは `addIC2XPRecipe`/`addIC2SimpleRecipe` 系の一様形式で抽出可能 (188件: macerator 60, extractor 36, compressor 33 等)
+  * ユーザー決定: BCN の IC2 仕様は Experimental 準拠 (IC2C は近似参照)
+* 未解決・要判断:
+  * push はユーザー側の認証で実行が必要 (ローカルに 3 コミット未 push)
+  * TECH_ITEMS.md の未マッチ項目のレシピ正本は wiki 記述または LP src/ コードを参照
+
+## 26f0afc / dfa0e7 - task-106 E2E導線検証と実機確認
+
+* 結果: 成功(重大不備を複数発見し修正済み)
+* 検証環境: testserver(171 mods)、YSK357 実接続(carpet client)、RCON+data.dat(puffish永続データ)で検証
+* 変更点:
+  * cfb_economy: クエスト18件/MD両替10件/維持費の無条件報酬バグを `clear 0` カウント+`return run` ゲートで修正
+  * 討伐クエスト: 消費ベースライン方式(cfb_q_zb等)に変更 — minecraft.killed スコアの set 非依存で確実動作
+  * cfb_skills: `category erase` が全カテゴリを unlocked 状態へ戻す puffish 挙動を発見、reset に lock 全付与を追加、`cfb_hasjob` フラグで無断転職禁止、`job/first_join` で初回全ロック
+  * cfbスペル60種: deliver(発射物)/visuals(パーティクル)/sound が皆無だった骨格状態を解消(school別マッピングで演出実装)
+  * bcn jar 再ビルド: サーバー側コンテンツ除去(役割分担に適合)、test_arcane 削除、最新 spell/tag 同梱
+* 判明したこと:
+  * `puffish_skills:command` reward は @s=プレイヤー + function 権限で実行 → give は非opでも動作、isAction=true は解放時のみ(リセットでは巻物は再付与されない)
+  * unlock→巻物give は実機で確認(frostbolt巻物がインベントリに出現)
+  * 職業選択→対象のみunlock、リセット→全消去+全ロック+再選択可、選択後の無断転職不可 を data.dat で確認
+  * クエスト/両替/討伐カウント/メニュー表示、汎用敵14種・構造物セット5種・ボス4体召喚、lich耐性ギミックを確認
+  * 結合台経路: paladin_consecrate/assassin_dash 結合済み呪文書が実在(player インベントリ)しておりタグ経路は機能
+* 未解決・要判断:
+  * 結合→スロットキー発動の最終確認はクライアント操作待ち(発動自体は user 報告で確認済み、演出実装後の再確認を依頼中)
+  * 購入封じは spell_book タグ空で設計上成立しているが、結合台UIでの非表示確認は未実施
+  * 巻物の受け渡しで未習得者もスペル使用可能(完全ロックは spell_engine 側拡張が必要)
+  * クライアント側 jar 差替えが必要(演出・購入封じの反映のため)
+  * 構造物への敵自動出現トリガーは未配線(関数呼出しで代替中)
+  * EFP閾値・維持費額は仮値のまま
