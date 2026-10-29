@@ -138,3 +138,21 @@
   * puffish_skills の JSON スキーマ(category.json の形式・keys)は実機での検証待ち(task101環境で読み込み確認が必要)
   * アイコンを全て book 仮置き。職業・スキル別に要差し替え
   * 残作業: Spell Engine スペル定義、空腹度コストフック、職業選択UI/排他ロック
+
+## task-103検証 - cfb_skills datapack 実機検証
+
+* 結果: 成功
+* 変更点:
+  * `tools/gen_skills.py` を公式スキーマ準拠に修正: `categories/<job>/` 配下へ `category.json`/`definitions.json`/`skills.json`/`connections.json`/`experience.json` の5分割、`config.json`(version 3、categories一覧)を追加
+  * skills は `{"definition": <ローカルid>, "x": int, "y": int, "root": bool}`、connections は `[["idA","idB"],...]` 配列、definitions は `rewards` 複数形、experience は `expression` + `puffish_skills:` 名前空間付き source
+  * testserver へ datapack を配置し `/reload` で `Data pack cfb loaded successfully` を確認
+  * 副次修正: `bcn-0.1.0.jar` の zip 構造不良(`invalid LOC header` でレシピ読込失敗)を標準 deflate で再パックして解消
+* 判明したこと:
+  * puffish_skills 0.19.2 のカテゴリ構造は5ファイル分割式(統合json不可)、definition 参照はローカルid、`cost` は skill に存在しない(警告のみ)
+  * 有効な xp source type は `puffish_skills:kill_entity` 等の名前空間付き。source は `variables`(operations 連鎖)+`experience`(式)+`anti_farming` 構成
+  * docker cp の再配置は既存 /tmp コピーを消してから行わないと入れ子化する
+  * リロード失敗時は他MOD(flan等)のエラーも混在するため `cfb:` プレフィクスで絞って確認すると判別しやすい
+* 未解決・要判断:
+  * ツリー内のスキルアンロック条件(経験値→ポイント交換)は experience.json の式で仮設定。バランスは要実プレイ調整
+  * アクティブスキルはアンロックノードのみ。実際の発動アイテム・効果は Spell Engine 定義と連携する残作業あり
+  * アイコンは book/paper の仮置き

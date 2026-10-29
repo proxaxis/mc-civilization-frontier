@@ -1,0 +1,667 @@
+{
+  "barrier_lv1": {
+    "title": "聖なる結界 Lv1 - Holy Barrier",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Holy Barrier Lv1(累計 4%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:armor_toughness",
+          "value": 0.04,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "barrier_lv2": {
+    "title": "聖なる結界 Lv2 - Holy Barrier",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Holy Barrier Lv2(累計 8%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:armor_toughness",
+          "value": 0.08,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "barrier_lv3": {
+    "title": "聖なる結界 Lv3 - Holy Barrier",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Holy Barrier Lv3(累計 12%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:armor_toughness",
+          "value": 0.12,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "barrier_lv4": {
+    "title": "聖なる結界 Lv4 - Holy Barrier",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Holy Barrier Lv4(累計 16%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:armor_toughness",
+          "value": 0.16,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "barrier_lv5": {
+    "title": "聖なる結界 Lv5 - Holy Barrier",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Holy Barrier Lv5(累計 20%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:armor_toughness",
+          "value": 0.2,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "faith_lv1": {
+    "title": "信仰の耐性 Lv1 - Faith Resilience",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Faith Resilience Lv1(累計 5%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:knockback_resistance",
+          "value": 0.05,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "faith_lv2": {
+    "title": "信仰の耐性 Lv2 - Faith Resilience",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Faith Resilience Lv2(累計 10%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:knockback_resistance",
+          "value": 0.1,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "faith_lv3": {
+    "title": "信仰の耐性 Lv3 - Faith Resilience",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Faith Resilience Lv3(累計 15%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:knockback_resistance",
+          "value": 0.15,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "faith_lv4": {
+    "title": "信仰の耐性 Lv4 - Faith Resilience",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Faith Resilience Lv4(累計 20%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:knockback_resistance",
+          "value": 0.2,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "faith_lv5": {
+    "title": "信仰の耐性 Lv5 - Faith Resilience",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Faith Resilience Lv5(累計 25%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:knockback_resistance",
+          "value": 0.25,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "mercy_lv1": {
+    "title": "慈悲の供給 Lv1 - Merciful Supply",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Merciful Supply Lv1(累計 3%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.03,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "mercy_lv2": {
+    "title": "慈悲の供給 Lv2 - Merciful Supply",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Merciful Supply Lv2(累計 6%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.06,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "mercy_lv3": {
+    "title": "慈悲の供給 Lv3 - Merciful Supply",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Merciful Supply Lv3(累計 9%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.09,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "mercy_lv4": {
+    "title": "慈悲の供給 Lv4 - Merciful Supply",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Merciful Supply Lv4(累計 12%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.12,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "mercy_lv5": {
+    "title": "慈悲の供給 Lv5 - Merciful Supply",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Merciful Supply Lv5(累計 15%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.15,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "healing_lv1": {
+    "title": "回復術式熟達 Lv1 - Healing Mastery",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Healing Mastery Lv1(累計 5%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:max_health",
+          "value": 0.05,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "healing_lv2": {
+    "title": "回復術式熟達 Lv2 - Healing Mastery",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Healing Mastery Lv2(累計 10%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:max_health",
+          "value": 0.1,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "healing_lv3": {
+    "title": "回復術式熟達 Lv3 - Healing Mastery",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Healing Mastery Lv3(累計 15%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:max_health",
+          "value": 0.15,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "healing_lv4": {
+    "title": "回復術式熟達 Lv4 - Healing Mastery",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Healing Mastery Lv4(累計 20%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:max_health",
+          "value": 0.2,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "healing_lv5": {
+    "title": "回復術式熟達 Lv5 - Healing Mastery",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Healing Mastery Lv5(累計 25%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:max_health",
+          "value": 0.25,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "breath_lv1": {
+    "title": "清らかな息吹 Lv1 - Pure Breath",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Pure Breath Lv1(累計 2%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.02,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "breath_lv2": {
+    "title": "清らかな息吹 Lv2 - Pure Breath",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Pure Breath Lv2(累計 4%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.04,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "breath_lv3": {
+    "title": "清らかな息吹 Lv3 - Pure Breath",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Pure Breath Lv3(累計 6%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.06,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "breath_lv4": {
+    "title": "清らかな息吹 Lv4 - Pure Breath",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Pure Breath Lv4(累計 8%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.08,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "breath_lv5": {
+    "title": "清らかな息吹 Lv5 - Pure Breath",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Pure Breath Lv5(累計 10%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.1,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "quick": {
+    "title": "迅速回復 - Quick Mend",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Quick Mend アンロック(詳細は JOB_PALADIN.md)",
+    "rewards": []
+  },
+  "heal": {
+    "title": "即時回復 - Heal",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Heal アンロック(詳細は JOB_PALADIN.md)",
+    "rewards": []
+  },
+  "purify": {
+    "title": "浄化 - Purify",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Purify アンロック(詳細は JOB_PALADIN.md)",
+    "rewards": []
+  },
+  "rally": {
+    "title": "鼓舞の祈祷 - Rallying Prayer",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Rallying Prayer アンロック(詳細は JOB_PALADIN.md)",
+    "rewards": []
+  },
+  "consecrate": {
+    "title": "聖別 - Consecrate",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Consecrate アンロック(詳細は JOB_PALADIN.md)",
+    "rewards": []
+  },
+  "blessing": {
+    "title": "祝福 - Blessing",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Blessing アンロック(詳細は JOB_PALADIN.md)",
+    "rewards": []
+  },
+  "ward": {
+    "title": "守護光 - Ward of Light",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Ward of Light アンロック(詳細は JOB_PALADIN.md)",
+    "rewards": []
+  },
+  "regen": {
+    "title": "再生の誓い - Vow of Regeneration",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Vow of Regeneration アンロック(詳細は JOB_PALADIN.md)",
+    "rewards": []
+  },
+  "hymn": {
+    "title": "力の賛歌 - Hymn of Might",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Hymn of Might アンロック(詳細は JOB_PALADIN.md)",
+    "rewards": []
+  },
+  "martyr": {
+    "title": "苦痛の代償 - Martyr's Bond",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Martyr's Bond アンロック(詳細は JOB_PALADIN.md)",
+    "rewards": []
+  },
+  "circle": {
+    "title": "治癒の輪 - Circle of Healing",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Circle of Healing アンロック(詳細は JOB_PALADIN.md)",
+    "rewards": []
+  },
+  "eruption": {
+    "title": "信仰の爆発 - Faith Eruption",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Faith Eruption アンロック(詳細は JOB_PALADIN.md)",
+    "rewards": []
+  },
+  "sanctuary": {
+    "title": "聖域の展開 - Sanctuary",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Sanctuary アンロック(詳細は JOB_PALADIN.md)",
+    "rewards": []
+  },
+  "repose": {
+    "title": "魂の安寧 - Soul Repose",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Soul Repose アンロック(詳細は JOB_PALADIN.md)",
+    "rewards": []
+  },
+  "grand": {
+    "title": "大聖域 - Grand Sanctuary",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Grand Sanctuary アンロック(詳細は JOB_PALADIN.md)",
+    "rewards": []
+  }
+}

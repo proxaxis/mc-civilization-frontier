@@ -1,0 +1,667 @@
+{
+  "mana_lv1": {
+    "title": "深き魔力 Lv1 - Deep Mana",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Deep Mana Lv1(累計 2%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.02,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "mana_lv2": {
+    "title": "深き魔力 Lv2 - Deep Mana",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Deep Mana Lv2(累計 4%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.04,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "mana_lv3": {
+    "title": "深き魔力 Lv3 - Deep Mana",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Deep Mana Lv3(累計 6%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.06,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "mana_lv4": {
+    "title": "深き魔力 Lv4 - Deep Mana",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Deep Mana Lv4(累計 8%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.08,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "mana_lv5": {
+    "title": "深き魔力 Lv5 - Deep Mana",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Deep Mana Lv5(累計 10%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.1,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "circulation_lv1": {
+    "title": "魔力循環 Lv1 - Mana Circulation",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Mana Circulation Lv1(累計 5%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:armor_toughness",
+          "value": 0.05,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "circulation_lv2": {
+    "title": "魔力循環 Lv2 - Mana Circulation",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Mana Circulation Lv2(累計 10%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:armor_toughness",
+          "value": 0.1,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "circulation_lv3": {
+    "title": "魔力循環 Lv3 - Mana Circulation",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Mana Circulation Lv3(累計 15%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:armor_toughness",
+          "value": 0.15,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "circulation_lv4": {
+    "title": "魔力循環 Lv4 - Mana Circulation",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Mana Circulation Lv4(累計 20%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:armor_toughness",
+          "value": 0.2,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "circulation_lv5": {
+    "title": "魔力循環 Lv5 - Mana Circulation",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Mana Circulation Lv5(累計 25%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:armor_toughness",
+          "value": 0.25,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "amplify_lv1": {
+    "title": "術式強化 Lv1 - Spell Amplification",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Spell Amplification Lv1(累計 4%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:attack_damage",
+          "value": 0.04,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "amplify_lv2": {
+    "title": "術式強化 Lv2 - Spell Amplification",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Spell Amplification Lv2(累計 8%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:attack_damage",
+          "value": 0.08,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "amplify_lv3": {
+    "title": "術式強化 Lv3 - Spell Amplification",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Spell Amplification Lv3(累計 12%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:attack_damage",
+          "value": 0.12,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "amplify_lv4": {
+    "title": "術式強化 Lv4 - Spell Amplification",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Spell Amplification Lv4(累計 16%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:attack_damage",
+          "value": 0.16,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "amplify_lv5": {
+    "title": "術式強化 Lv5 - Spell Amplification",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Spell Amplification Lv5(累計 20%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:attack_damage",
+          "value": 0.2,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "chant_lv1": {
+    "title": "詠唱熟達 Lv1 - Chanting Mastery",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Chanting Mastery Lv1(累計 3%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:movement_speed",
+          "value": 0.03,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "chant_lv2": {
+    "title": "詠唱熟達 Lv2 - Chanting Mastery",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Chanting Mastery Lv2(累計 6%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:movement_speed",
+          "value": 0.06,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "chant_lv3": {
+    "title": "詠唱熟達 Lv3 - Chanting Mastery",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Chanting Mastery Lv3(累計 9%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:movement_speed",
+          "value": 0.09,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "chant_lv4": {
+    "title": "詠唱熟達 Lv4 - Chanting Mastery",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Chanting Mastery Lv4(累計 12%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:movement_speed",
+          "value": 0.12,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "chant_lv5": {
+    "title": "詠唱熟達 Lv5 - Chanting Mastery",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Chanting Mastery Lv5(累計 15%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:movement_speed",
+          "value": 0.15,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "affinity_lv1": {
+    "title": "属性適性 Lv1 - Elemental Affinity",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Elemental Affinity Lv1(累計 2%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.02,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "affinity_lv2": {
+    "title": "属性適性 Lv2 - Elemental Affinity",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Elemental Affinity Lv2(累計 4%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.04,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "affinity_lv3": {
+    "title": "属性適性 Lv3 - Elemental Affinity",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Elemental Affinity Lv3(累計 6%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.06,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "affinity_lv4": {
+    "title": "属性適性 Lv4 - Elemental Affinity",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Elemental Affinity Lv4(累計 8%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.08,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "affinity_lv5": {
+    "title": "属性適性 Lv5 - Elemental Affinity",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:book"
+      }
+    },
+    "description": "Elemental Affinity Lv5(累計 10%%)",
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:luck",
+          "value": 0.1,
+          "operation": "multiply_total"
+        }
+      }
+    ]
+  },
+  "firebolt": {
+    "title": "火炎弾 - Firebolt",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Firebolt アンロック(詳細は JOB_MAGE.md)",
+    "rewards": []
+  },
+  "frostbolt": {
+    "title": "氷結弾 - Frostbolt",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Frostbolt アンロック(詳細は JOB_MAGE.md)",
+    "rewards": []
+  },
+  "blink": {
+    "title": "瞬間移動 - Blink",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Blink アンロック(詳細は JOB_MAGE.md)",
+    "rewards": []
+  },
+  "cache": {
+    "title": "術式保存 - Spell Cache",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Spell Cache アンロック(詳細は JOB_MAGE.md)",
+    "rewards": []
+  },
+  "mana_shield": {
+    "title": "魔力障壁 - Mana Shield",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Mana Shield アンロック(詳細は JOB_MAGE.md)",
+    "rewards": []
+  },
+  "inferno": {
+    "title": "範囲火炎 - Inferno Wave",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Inferno Wave アンロック(詳細は JOB_MAGE.md)",
+    "rewards": []
+  },
+  "frost_domain": {
+    "title": "氷結領域 - Frost Domain",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Frost Domain アンロック(詳細は JOB_MAGE.md)",
+    "rewards": []
+  },
+  "flare": {
+    "title": "魔力鮮明 - Mana Flare",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Mana Flare アンロック(詳細は JOB_MAGE.md)",
+    "rewards": []
+  },
+  "surge": {
+    "title": "魔道加速 - Arcane Surge",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Arcane Surge アンロック(詳細は JOB_MAGE.md)",
+    "rewards": []
+  },
+  "chain": {
+    "title": "雷鎖 - Chain Lightning",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Chain Lightning アンロック(詳細は JOB_MAGE.md)",
+    "rewards": []
+  },
+  "shockbolt": {
+    "title": "雷撃弾 - Shockbolt",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Shockbolt アンロック(詳細は JOB_MAGE.md)",
+    "rewards": []
+  },
+  "attune": {
+    "title": "属性同調 - Elemental Attunement",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Elemental Attunement アンロック(詳細は JOB_MAGE.md)",
+    "rewards": []
+  },
+  "gravity": {
+    "title": "重力操作 - Gravity Well",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Gravity Well アンロック(詳細は JOB_MAGE.md)",
+    "rewards": []
+  },
+  "burst": {
+    "title": "属性爆発 - Elemental Burst",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Elemental Burst アンロック(詳細は JOB_MAGE.md)",
+    "rewards": []
+  },
+  "final": {
+    "title": "終末術式 - Final Incantation",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "description": "Final Incantation アンロック(詳細は JOB_MAGE.md)",
+    "rewards": []
+  }
+}

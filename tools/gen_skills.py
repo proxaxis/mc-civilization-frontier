@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """Pufferfish's Skills 用スキルツリー datapack を生成する.
 
-SKILL_TREE.md / JOB_*.md の設計に基づき、4 職業カテゴリと
-パッシブ(Lv1-5 直鎖)+アクティブ(アンロック)ノードの JSON を出力する.
-出力先: resources/datapacks/cfb_skills/data/cfb/puffish_skills/
+形式: data/cfb/puffish_skills/categories/<job>/ に
+category.json / definitions.json / skills.json / connections.json / experience.json
+を出力する. 出力先: resources/datapacks/cfb_skills/
 """
 import json, os
 
-OUT = "/ws/resources/datapacks/cfb_skills/data/cfb/puffish_skills"
+ROOT = "/ws/resources/datapacks/cfb_skills/data/cfb/puffish_skills"
 XP = {1: 100, 2: 200, 3: 400, 4: 700, 5: 1100}
 ACTIVE_XP = 300
 ULT_XP = 1000
@@ -22,7 +22,6 @@ ATTR = {
     "resist": "minecraft:armor_toughness",
 }
 
-# job: (passives: [(key, attr, name_ja, name_en)], actives: [(key, name_ja, name_en, parent_key, parent_lv)])
 JOBS = {
     "guardian": {
         "title": "守護者", "icon": "minecraft:shield",
@@ -134,32 +133,29 @@ JOBS = {
     },
 }
 
-def skill_json(job, sid, name_ja, name_en, desc, cost, parents, reward=None):
-    return {
-        "title": f"{name_ja} - {name_en}",
-        "icon": {"type": "item", "data": {"item": "minecraft:book"}},
-        "category": f"cfb:{job}",
-        "size": 1.0,
-        "cost": cost,
-        "reward": reward or [{"type": "puffish_skills:none"}],
-        "required_skills": parents,
-        "required_points": 0,
-        "required_spent_points": 0,
-        "description": desc,
-    }
+def item_icon(item):
+    return {"type": "item", "data": {"item": item}}
 
 for job, spec in JOBS.items():
+    cat_dir = os.path.join(ROOT, "categories", job)
+    os.makedirs(cat_dir, exist_ok=True)
+
+    # definitions.json: スキル定義(見た目・報酬・コスト)
+    definitions = {}
+    # skills.json: ツリー上のノード配置(definition 参照 + 位置)
     skills = {}
-    # パッシブ: Lv1-5 直鎖
-    for key, attr, nj, ne, per in spec["passives"]:
+    # connections.json: ノード間の辺
+    connections = []
+
+    # パッシブ: key_lv1..5 の直鎖. x=列(0..4), y=レベル(0..4)
+    for col, (key, attr, nj, ne, per) in enumerate(spec["passives"]):
         for lv in range(1, 6):
-            sid = f"{key}_lv{lv}"
-            parents = [] if lv == 1 else [f"cfb:{job}_{key}_lv{lv-1}"]
-            skills[sid] = skill_json(
-                job, sid, f"{nj} Lv{lv}", ne,
-                f"{ne} レベル{lv}(累計効果 {int(per*lv*100)}%%)",
-                XP[lv], parents,
-                reward=[{
+            did = f"{key}_lv{lv}"
+            definitions[did] = {
+                "title": f"{nj} Lv{lv} - {ne}",
+                "icon": item_icon("minecraft:book"),
+                "description": f"{ne} Lv{lv}(累計 {int(per*lv*100)}%%)",
+                "rewards": [{
                     "type": "puffish_skills:attribute",
                     "data": {
                         "attribute": ATTR[attr],
@@ -167,28 +163,85 @@ for job, spec in JOBS.items():
                         "operation": "multiply_total",
                     },
                 }],
-            )
-    # アクティブ: パッシブLv到達を前提
-    for key, nj, ne, pkey, plv in spec["actives"]:
-        sid = f"{key}"
-        skills[sid] = skill_json(
-            job, sid, nj, ne,
-            f"{ne} アンロック(JOB_{job.upper()}.md 参照)",
-            ULT_XP if plv == 5 else ACTIVE_XP,
-            [f"cfb:{job}_{pkey}_lv{plv}"],
-        )
-    cat = {
+            }
+            skills[did] = {
+                "definition": did,
+                "x": col * 40,
+                "y": lv * 40,
+                "root": lv == 1,
+            }
+            if lv > 1:
+                connections.append([f"{key}_lv{lv-1}", f"{key}_lv{lv}"])
+
+    # アクティブ: 親パッシブの Lv ノードから枝出し. x=6以上の列
+    for i, (key, nj, ne, pkey, plv) in enumerate(spec["actives"]):
+        did = key
+        cost = ULT_XP if plv == 5 else ACTIVE_XP
+        definitions[did] = {
+            "title": f"{nj} - {ne}",
+            "icon": item_icon("minecraft:paper"),
+            "description": f"{ne} アンロック(詳細は JOB_{job.upper()}.md)",
+            "rewards": [],
+        }
+        skills[did] = {
+            "definition": did,
+            "x": 240 + (i % 5) * 40,
+            "y": (i // 5 + plv) * 40,
+        }
+        connections.append([f"{pkey}_lv{plv}", key])
+
+    category = {
         "title": spec["title"],
-        "icon": {"type": "item", "data": {"item": spec["icon"]}},
+        "icon": item_icon(spec["icon"]),
         "background": "minecraft:textures/block/stone.png",
         "exclusive_root": True,
-        "skills": sorted(skills.keys()),
     }
-    d = os.path.join(OUT, "categories", job)
-    os.makedirs(d, exist_ok=True)
-    # カテゴリ json: category定義ファイルに skills を含める形式
-    cat["skills"] = {sid: skills[sid] for sid in cat["skills"]}
-    with open(os.path.join(d, "category.json"), "w", encoding="utf-8") as f:
-        json.dump(cat, f, ensure_ascii=False, indent=2)
+    experience = {
+        "level_limit": 25,
+        "reset_on_death": False,
+        "experience_per_level": {
+            "type": "expression",
+            "data": {"expression": "min(level ^ 1.5 + 30, 300)"},
+        },
+        "sources": [
+            {
+                "type": "puffish_skills:kill_entity",
+                "data": {
+                    "variables": {
+                        "dropped_xp": {
+                            "operations": [
+                                {"type": "get_dropped_experience"}
+                            ]
+                        },
+                        "max_health": {
+                            "operations": [
+                                {"type": "get_killed_living_entity"},
+                                {"type": "get_max_health"},
+                            ]
+                        },
+                    },
+                    "experience": "dropped_xp + max_health / 20",
+                    "anti_farming": {
+                        "limit_per_chunk": 15,
+                        "reset_after_seconds": 300,
+                    },
+                },
+            }
+        ],
+    }
+
+    for fname, obj in (
+        ("category.json", category),
+        ("definitions.json", definitions),
+        ("skills.json", skills),
+        ("connections.json", connections),
+        ("experience.json", experience),
+    ):
+        with open(os.path.join(cat_dir, fname), "w", encoding="utf-8") as f:
+            json.dump(obj, f, ensure_ascii=False, indent=2)
+
+    # 旧形式の category.json(単一ファイル)が残っていれば削除
+    stale = os.path.join(cat_dir, "..")  # noop
     print(f"{job}: {len(skills)} nodes")
+
 print("done")
