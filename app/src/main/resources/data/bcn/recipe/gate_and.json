@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "minecraft:smooth_stone_slab",
+    "bcn:redwire",
+    "bcn:redwire",
+    "bcn:redwire",
+    "minecraft:redstone"
+  ],
+  "result": {
+    "id": "bcn:gate_and",
+    "count": 1
+  }
+}

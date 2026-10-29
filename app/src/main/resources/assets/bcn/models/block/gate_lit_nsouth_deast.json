@@ -1,0 +1,1 @@
+{"textures":{"0":"bcn:block/gate_pin_on","particle":"bcn:block/gate_pin_on"},"elements":[{"from":[11.9,5.9,13.9],"to":[16.1,10.1,17.1],"faces":{"down":{"texture":"#0"},"up":{"texture":"#0"},"north":{"texture":"#0"},"south":{"texture":"#0"},"west":{"texture":"#0"},"east":{"texture":"#0"}}}]}

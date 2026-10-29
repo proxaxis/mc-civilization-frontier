@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "bcn:block/cable_copper_core"
+  }
+}

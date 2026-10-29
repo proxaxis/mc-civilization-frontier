@@ -1,1 +1,134 @@
-{"multipart": [{"apply": {"model": "bcn:block/item_pipe_core"}}, {"when": {"OR": [{"north": "pipe"}, {"north": "block"}]}, "apply": {"model": "bcn:block/item_pipe_arm"}}, {"when": {"north": "block"}, "apply": {"model": "bcn:block/item_pipe_cap"}}, {"when": {"OR": [{"south": "pipe"}, {"south": "block"}]}, "apply": {"model": "bcn:block/item_pipe_arm", "y": 180}}, {"when": {"south": "block"}, "apply": {"model": "bcn:block/item_pipe_cap", "y": 180}}, {"when": {"OR": [{"west": "pipe"}, {"west": "block"}]}, "apply": {"model": "bcn:block/item_pipe_arm", "y": 90}}, {"when": {"west": "block"}, "apply": {"model": "bcn:block/item_pipe_cap", "y": 90}}, {"when": {"OR": [{"east": "pipe"}, {"east": "block"}]}, "apply": {"model": "bcn:block/item_pipe_arm", "y": 270}}, {"when": {"east": "block"}, "apply": {"model": "bcn:block/item_pipe_cap", "y": 270}}, {"when": {"OR": [{"up": "pipe"}, {"up": "block"}]}, "apply": {"model": "bcn:block/item_pipe_arm", "x": 270}}, {"when": {"up": "block"}, "apply": {"model": "bcn:block/item_pipe_cap", "x": 270}}, {"when": {"OR": [{"down": "pipe"}, {"down": "block"}]}, "apply": {"model": "bcn:block/item_pipe_arm", "x": 90}}, {"when": {"down": "block"}, "apply": {"model": "bcn:block/item_pipe_cap", "x": 90}}], "render_type": "translucent"}
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "bcn:block/item_pipe_core"
+      }
+    },
+    {
+      "when": {
+        "OR": [
+          { "north": "pipe" },
+          { "north": "block" }
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/item_pipe_arm"
+      }
+    },
+    {
+      "when": {
+        "north": "block"
+      },
+      "apply": {
+        "model": "bcn:block/item_pipe_cap"
+      }
+    },
+    {
+      "when": {
+        "OR": [
+          { "south": "pipe" },
+          { "south": "block" }
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/item_pipe_arm",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "south": "block"
+      },
+      "apply": {
+        "model": "bcn:block/item_pipe_cap",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "OR": [
+          { "east": "pipe" },
+          { "east": "block" }
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/item_pipe_arm",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "east": "block"
+      },
+      "apply": {
+        "model": "bcn:block/item_pipe_cap",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "OR": [
+          { "west": "pipe" },
+          { "west": "block" }
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/item_pipe_arm",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "west": "block"
+      },
+      "apply": {
+        "model": "bcn:block/item_pipe_cap",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "OR": [
+          { "up": "pipe" },
+          { "up": "block" }
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/item_pipe_arm",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "up": "block"
+      },
+      "apply": {
+        "model": "bcn:block/item_pipe_cap",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "OR": [
+          { "down": "pipe" },
+          { "down": "block" }
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/item_pipe_arm",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "down": "block"
+      },
+      "apply": {
+        "model": "bcn:block/item_pipe_cap",
+        "x": 90
+      }
+    }
+  ],
+  "render_type": "translucent"
+}

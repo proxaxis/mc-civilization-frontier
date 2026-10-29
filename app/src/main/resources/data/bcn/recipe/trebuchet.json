@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": "#minecraft:planks",
+    "S": "minecraft:stick",
+    "I": "minecraft:iron_ingot"
+  },
+  "pattern": [
+    " S ",
+    "ISI",
+    "###"
+  ],
+  "result": {
+    "id": "bcn:trebuchet"
+  }
+}

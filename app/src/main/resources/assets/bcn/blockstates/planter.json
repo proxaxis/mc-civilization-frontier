@@ -1,0 +1,1 @@
+{"variants": {"active=false": {"model": "bcn:block/planter"}, "active=true": {"model": "bcn:block/planter_on"}}}

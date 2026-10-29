@@ -37,6 +37,34 @@ public final class BcnItems {
 	public static final Item ENGINE_FRAME = registerBlockItem("engine_frame", BcnBlocks.ENGINE_FRAME);
 	public static final Item ENGINE_STONE = registerBlockItem("engine_stone", BcnBlocks.ENGINE_STONE);
 	public static final Item ITEM_PIPE = registerBlockItem("item_pipe", BcnBlocks.ITEM_PIPE);
+	public static final Item WATERPROOF_PIPE = registerBlockItem("waterproof_pipe", BcnBlocks.WATERPROOF_PIPE);
+	public static final Item PLANTER = registerBlockItem("planter", BcnBlocks.PLANTER);
+	public static final Item MJ_SOURCE = registerBlockItem("mj_source", BcnBlocks.MJ_SOURCE);
+	public static final Item CANNON = registerBlockItem("cannon", BcnBlocks.CANNON);
+	public static final Item TREBUCHET = registerBlockItem("trebuchet", BcnBlocks.TREBUCHET);
+	public static final Item CABLE_TIN = registerBlockItem("cable_tin", BcnBlocks.CABLE_TIN);
+	public static final Item CABLE_COPPER = registerBlockItem("cable_copper", BcnBlocks.CABLE_COPPER);
+	public static final Item CABLE_GOLD = registerBlockItem("cable_gold", BcnBlocks.CABLE_GOLD);
+	public static final Item CABLE_GLASS_FIBER = registerBlockItem("cable_glass_fiber", BcnBlocks.CABLE_GLASS_FIBER);
+	public static final Item CABLE_HV = registerBlockItem("cable_hv", BcnBlocks.CABLE_HV);
+	public static final Item MJ_GENERATOR = registerBlockItem("mj_generator", BcnBlocks.MJ_GENERATOR);
+	public static final Item MJ_CONSUMER = registerBlockItem("mj_consumer", BcnBlocks.MJ_CONSUMER);
+	public static final Item TRANSFORMER_LV = registerBlockItem("transformer_lv", BcnBlocks.TRANSFORMER_LV);
+	public static final Item TRANSFORMER_MV = registerBlockItem("transformer_mv", BcnBlocks.TRANSFORMER_MV);
+	public static final Item TRANSFORMER_HV = registerBlockItem("transformer_hv", BcnBlocks.TRANSFORMER_HV);
+	public static final Item BATTERY_BOX = registerBlockItem("battery_box", BcnBlocks.BATTERY_BOX);
+	public static final Item MFE = registerBlockItem("mfe", BcnBlocks.MFE);
+	public static final Item REDWIRE = registerBlockItem("redwire", BcnBlocks.REDWIRE);
+	public static final Item GATE_NOT = registerBlockItem("gate_not", BcnBlocks.GATE_NOT);
+	public static final Item GATE_BUFFER = registerBlockItem("gate_buffer", BcnBlocks.GATE_BUFFER);
+	public static final Item GATE_OR = registerBlockItem("gate_or", BcnBlocks.GATE_OR);
+	public static final Item GATE_NOR = registerBlockItem("gate_nor", BcnBlocks.GATE_NOR);
+	public static final Item GATE_AND = registerBlockItem("gate_and", BcnBlocks.GATE_AND);
+	public static final Item GATE_NAND = registerBlockItem("gate_nand", BcnBlocks.GATE_NAND);
+	public static final Item GATE_XOR = registerBlockItem("gate_xor", BcnBlocks.GATE_XOR);
+	public static final Item GATE_XNOR = registerBlockItem("gate_xnor", BcnBlocks.GATE_XNOR);
+	public static final Item GATE_RS_LATCH = registerBlockItem("gate_rs_latch", BcnBlocks.GATE_RS_LATCH);
+	public static final Item GATE_T_LATCH = registerBlockItem("gate_t_latch", BcnBlocks.GATE_T_LATCH);
 
 	public static final Item RAW_TIN = register("raw_tin", Item::new, new Item.Properties());
 	public static final Item RAW_SILVER = register("raw_silver", Item::new, new Item.Properties());
@@ -51,6 +79,8 @@ public final class BcnItems {
 	public static final Item OIL_BUCKET = register("oil_bucket",
 			properties -> new BucketItem(BcnFluids.OIL, properties),
 			new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1));
+	public static final Item CANNONBALL = register("cannonball", Item::new, new Item.Properties());
+	public static final Item SIEGE_SHOT = register("siege_shot", Item::new, new Item.Properties().stacksTo(16));
 
 	private static Item registerBlockItem(String name, Block block) {
 		ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Bcn.id(name));

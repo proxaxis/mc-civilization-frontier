@@ -1,0 +1,1 @@
+{"textures":{"0":"bcn:block/wire_on","particle":"bcn:block/wire_on"},"elements":[{"from":[6,15,6],"to":[16,16,10],"faces":{"down":{"texture":"#0"},"up":{"texture":"#0"},"north":{"texture":"#0"},"south":{"texture":"#0"},"west":{"texture":"#0"},"east":{"texture":"#0"}}}]}

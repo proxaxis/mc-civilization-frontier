@@ -1,0 +1,48 @@
+{
+  "variants": {
+    "facing=down,loaded=false": {
+      "model": "bcn:block/trebuchet",
+      "x": 180
+    },
+    "facing=down,loaded=true": {
+      "model": "bcn:block/trebuchet_loaded",
+      "x": 180
+    },
+    "facing=up,loaded=false": {
+      "model": "bcn:block/trebuchet"
+    },
+    "facing=up,loaded=true": {
+      "model": "bcn:block/trebuchet_loaded"
+    },
+    "facing=north,loaded=false": {
+      "model": "bcn:block/trebuchet"
+    },
+    "facing=north,loaded=true": {
+      "model": "bcn:block/trebuchet_loaded"
+    },
+    "facing=south,loaded=false": {
+      "model": "bcn:block/trebuchet",
+      "y": 180
+    },
+    "facing=south,loaded=true": {
+      "model": "bcn:block/trebuchet_loaded",
+      "y": 180
+    },
+    "facing=west,loaded=false": {
+      "model": "bcn:block/trebuchet",
+      "y": 90
+    },
+    "facing=west,loaded=true": {
+      "model": "bcn:block/trebuchet_loaded",
+      "y": 90
+    },
+    "facing=east,loaded=false": {
+      "model": "bcn:block/trebuchet",
+      "y": 270
+    },
+    "facing=east,loaded=true": {
+      "model": "bcn:block/trebuchet_loaded",
+      "y": 270
+    }
+  }
+}

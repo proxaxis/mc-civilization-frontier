@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "bcn:gate_t_latch"
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "bcn:blocks/gate_t_latch"
+}

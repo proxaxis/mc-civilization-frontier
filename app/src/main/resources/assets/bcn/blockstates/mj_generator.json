@@ -1,0 +1,224 @@
+{
+  "variants": {
+    "active=false,facing=down,tier=0": {
+      "model": "bcn:block/mj_generator",
+      "x": 180
+    },
+    "active=false,facing=down,tier=1": {
+      "model": "bcn:block/mj_generator",
+      "x": 180
+    },
+    "active=false,facing=down,tier=2": {
+      "model": "bcn:block/mj_generator",
+      "x": 180
+    },
+    "active=false,facing=down,tier=3": {
+      "model": "bcn:block/mj_generator",
+      "x": 180
+    },
+    "active=false,facing=down,tier=4": {
+      "model": "bcn:block/mj_generator",
+      "x": 180
+    },
+    "active=true,facing=down,tier=0": {
+      "model": "bcn:block/mj_generator_on",
+      "x": 180
+    },
+    "active=true,facing=down,tier=1": {
+      "model": "bcn:block/mj_generator_on",
+      "x": 180
+    },
+    "active=true,facing=down,tier=2": {
+      "model": "bcn:block/mj_generator_on",
+      "x": 180
+    },
+    "active=true,facing=down,tier=3": {
+      "model": "bcn:block/mj_generator_on",
+      "x": 180
+    },
+    "active=true,facing=down,tier=4": {
+      "model": "bcn:block/mj_generator_on",
+      "x": 180
+    },
+    "active=false,facing=up,tier=0": {
+      "model": "bcn:block/mj_generator"
+    },
+    "active=false,facing=up,tier=1": {
+      "model": "bcn:block/mj_generator"
+    },
+    "active=false,facing=up,tier=2": {
+      "model": "bcn:block/mj_generator"
+    },
+    "active=false,facing=up,tier=3": {
+      "model": "bcn:block/mj_generator"
+    },
+    "active=false,facing=up,tier=4": {
+      "model": "bcn:block/mj_generator"
+    },
+    "active=true,facing=up,tier=0": {
+      "model": "bcn:block/mj_generator_on"
+    },
+    "active=true,facing=up,tier=1": {
+      "model": "bcn:block/mj_generator_on"
+    },
+    "active=true,facing=up,tier=2": {
+      "model": "bcn:block/mj_generator_on"
+    },
+    "active=true,facing=up,tier=3": {
+      "model": "bcn:block/mj_generator_on"
+    },
+    "active=true,facing=up,tier=4": {
+      "model": "bcn:block/mj_generator_on"
+    },
+    "active=false,facing=north,tier=0": {
+      "model": "bcn:block/mj_generator"
+    },
+    "active=false,facing=north,tier=1": {
+      "model": "bcn:block/mj_generator"
+    },
+    "active=false,facing=north,tier=2": {
+      "model": "bcn:block/mj_generator"
+    },
+    "active=false,facing=north,tier=3": {
+      "model": "bcn:block/mj_generator"
+    },
+    "active=false,facing=north,tier=4": {
+      "model": "bcn:block/mj_generator"
+    },
+    "active=true,facing=north,tier=0": {
+      "model": "bcn:block/mj_generator_on"
+    },
+    "active=true,facing=north,tier=1": {
+      "model": "bcn:block/mj_generator_on"
+    },
+    "active=true,facing=north,tier=2": {
+      "model": "bcn:block/mj_generator_on"
+    },
+    "active=true,facing=north,tier=3": {
+      "model": "bcn:block/mj_generator_on"
+    },
+    "active=true,facing=north,tier=4": {
+      "model": "bcn:block/mj_generator_on"
+    },
+    "active=false,facing=south,tier=0": {
+      "model": "bcn:block/mj_generator",
+      "y": 180
+    },
+    "active=false,facing=south,tier=1": {
+      "model": "bcn:block/mj_generator",
+      "y": 180
+    },
+    "active=false,facing=south,tier=2": {
+      "model": "bcn:block/mj_generator",
+      "y": 180
+    },
+    "active=false,facing=south,tier=3": {
+      "model": "bcn:block/mj_generator",
+      "y": 180
+    },
+    "active=false,facing=south,tier=4": {
+      "model": "bcn:block/mj_generator",
+      "y": 180
+    },
+    "active=true,facing=south,tier=0": {
+      "model": "bcn:block/mj_generator_on",
+      "y": 180
+    },
+    "active=true,facing=south,tier=1": {
+      "model": "bcn:block/mj_generator_on",
+      "y": 180
+    },
+    "active=true,facing=south,tier=2": {
+      "model": "bcn:block/mj_generator_on",
+      "y": 180
+    },
+    "active=true,facing=south,tier=3": {
+      "model": "bcn:block/mj_generator_on",
+      "y": 180
+    },
+    "active=true,facing=south,tier=4": {
+      "model": "bcn:block/mj_generator_on",
+      "y": 180
+    },
+    "active=false,facing=west,tier=0": {
+      "model": "bcn:block/mj_generator",
+      "y": 90
+    },
+    "active=false,facing=west,tier=1": {
+      "model": "bcn:block/mj_generator",
+      "y": 90
+    },
+    "active=false,facing=west,tier=2": {
+      "model": "bcn:block/mj_generator",
+      "y": 90
+    },
+    "active=false,facing=west,tier=3": {
+      "model": "bcn:block/mj_generator",
+      "y": 90
+    },
+    "active=false,facing=west,tier=4": {
+      "model": "bcn:block/mj_generator",
+      "y": 90
+    },
+    "active=true,facing=west,tier=0": {
+      "model": "bcn:block/mj_generator_on",
+      "y": 90
+    },
+    "active=true,facing=west,tier=1": {
+      "model": "bcn:block/mj_generator_on",
+      "y": 90
+    },
+    "active=true,facing=west,tier=2": {
+      "model": "bcn:block/mj_generator_on",
+      "y": 90
+    },
+    "active=true,facing=west,tier=3": {
+      "model": "bcn:block/mj_generator_on",
+      "y": 90
+    },
+    "active=true,facing=west,tier=4": {
+      "model": "bcn:block/mj_generator_on",
+      "y": 90
+    },
+    "active=false,facing=east,tier=0": {
+      "model": "bcn:block/mj_generator",
+      "y": 270
+    },
+    "active=false,facing=east,tier=1": {
+      "model": "bcn:block/mj_generator",
+      "y": 270
+    },
+    "active=false,facing=east,tier=2": {
+      "model": "bcn:block/mj_generator",
+      "y": 270
+    },
+    "active=false,facing=east,tier=3": {
+      "model": "bcn:block/mj_generator",
+      "y": 270
+    },
+    "active=false,facing=east,tier=4": {
+      "model": "bcn:block/mj_generator",
+      "y": 270
+    },
+    "active=true,facing=east,tier=0": {
+      "model": "bcn:block/mj_generator_on",
+      "y": 270
+    },
+    "active=true,facing=east,tier=1": {
+      "model": "bcn:block/mj_generator_on",
+      "y": 270
+    },
+    "active=true,facing=east,tier=2": {
+      "model": "bcn:block/mj_generator_on",
+      "y": 270
+    },
+    "active=true,facing=east,tier=3": {
+      "model": "bcn:block/mj_generator_on",
+      "y": 270
+    },
+    "active=true,facing=east,tier=4": {
+      "model": "bcn:block/mj_generator_on",
+      "y": 270
+    }
+  }
+}

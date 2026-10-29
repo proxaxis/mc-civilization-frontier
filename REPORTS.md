@@ -535,3 +535,81 @@
   * モデル: 中心コア+シャフト+終端フランジを分離、ガラス調透過テクスチャ(render_type: translucent)
   * 26.3 の差分対応: EnumProperty(StringRepresentable)、updateShape 新シグネチャ(LevelReader+ScheduledTickAccess)
 * 未解決: クライアントでの透過・接続見た目の最終目視、流れるアイテムの BER 実装は task 204
+
+## task-207 実装1 - BCN 重火器(大砲・攻城兵器)+ EFP 連携
+
+* 結果: 実装・実機検証済み(設置/RS発射/着弾爆発/EFP加算まで動作確認)
+* 変更点:
+  * `entity/BcnShellEntity` + `CannonballEntity` + `SiegeShotEntity` — ThrowableItemProjectile 継承の砲弾. 大砲弾は高速直進(威力2.0)、巨石は放物線(威力3.5)
+  * `block/BcnArtilleryBlock` 基底 + `BcnCannonBlock` + `BcnTrebuchetBlock` — facing/loaded/triggered 状態. 弾薬 useItemOn 装填、素手 useWithoutItem 手動発射、neighborChanged の RS 立ち上がり発射
+  * `BcnEntities` — EntityType 登録 + `hasShellCapacity`(同時上限48, 超過は発射拒否)
+  * 低負荷設計: `noSave()`(アンロードで滞留しない)、`maxAge` で生存 tick 上限(200/300)、`updateInterval(10)`、`fireImmune`
+  * EFP 連携: 発射 `BcnEfp.add(server, 4/8)`、着弾 `+6/12`. API は task-202 側の `energy.BcnEfp`(cfb_efp スコアボード直接書込)を利用
+  * `BcnClient` に ThrownItemRenderer 登録(アイテムスプライト描画)
+  * リソース一式: blockstate/model/items/texture 生成, loot, recipe(cannon/trebuchet/cannonball/siege_shot), mineable タグ, lang en/ja
+* 検証済み(RCON):
+  * setblock で cannon/trebuchet 設置 → redstone_block 供給で発射 → EFP +4(砲撃)/+8(投石) 加算を確認
+  * 下向き大砲で着弾爆発 +6 加算、投石機の飛行エンティティと Motion 実測
+  * `bcn:cannonball`/`bcn:siege_shot` の summon + `getEntities` カウント動作
+* 判明したこと:
+  * 26.3 はプレイヤー不在だと発射物がシミュレーション範囲外で凍結する(Dummy 合流で再開・着弾加算も確認). vanilla 仕様
+  * 26.3 の `useItemOn` は既定が `TRY_WITH_EMPTY_HAND` 返しで、`PASS` を返すと `useWithoutItem` が呼ばれない → 手動発射に必須
+  * `Direction.getNormal()` は `getUnitVec3i()/getUnitVec3()` に改名
+* 未解決・要判断:
+  * 爆風の地形破壊係数/弾速/EFP 係数はバランス要実測(完了条件の調整対象)
+  * `useItemOn` 装填の実機目視は本テストの RCON 手順では未完了(ロジックはバイトコード確認済み)
+  * 他タスク(energy/railway)の WIP が src 全体を頻繁に壊すため、デプロイ jar は broken ファイル除外の自前ビルド(energy/block・railway 系は除外、MachineBlockEntities は部分スタブで代替)
+
+## task-204 BCN パイプ輸送ネットワーク(アイテム+防水液体)
+
+* 結果: 実装済み・実機検証済み — アイテム輸送・液体輸送ともにテストサーバで動作確認
+* 変更点:
+  * `ItemPipeBlockEntity` — 搬送中アイテムを Transit リスト(stack/from/to/progress/turned)で保持する BlockEntity. WorldlyContainer 実装の仮想1スロットでホッパー・他機械からの投入を受け付け(投入面=進入面として搬送開始)
+  * 輸送: 10tick/ブロック定速. 中央通過時に接続面(PIPE/BLOCK)からランダムに出口選択、行き止まりは反転して往復(BC式バウンス). 端で Container/WorldlyContainerHolder へ `HopperBlockEntity.addItem` 相当で放出、満杯・拒否は残量をバウンス、搬送中に接続先が消えた開放端は ItemEntity として排出
+  * `BcnPipeBlock` — EntityBlock 化, `fluid` フラグで系統判別(異系統パイプは接続しない), `property(Direction)` ヘルパ, 防水側は useItemOn で `FluidStorageUtil.interactWithFluidStorage`(バケツ右クリックで注/汲)
+  * `FluidPipeBlockEntity` — FluidVariant+量(mB)のブロブ搬送. `FluidStorage.SIDED` で外部からの圧入を受付(Transaction は addOuterCloseCallback でコミット時のみ生成). 隣接 FluidStorage から ~25mB/t 自動抽出+隣接ソースブロック汲み上げ(1秒間隔, 簡易ポンプ相当で将来ポンプ機械に移行予定)
+  * `ItemPipeRenderer` + `ItemPipeRenderState` — 26.3 新 submit パイプラインの BER. updateForTopItem で ItemStackRenderState を作り進行度+partialTick で位置補間して描画(エンティティ不用)
+  * 登録は既存 `MachineBlockEntities` に集約(FabricBlockEntityTypeBuilder), `waterproof_pipe` の blockstate/モデル/アイテムモデル/loot/mineable/lang を追加, テクスチャは pipe_body/pipe_cap の青緑 tint 版を PIL 生成
+  * 接続先判定: `getContainerAt` で WorldlyContainerHolder(堆肥桶等)・コンテナ付エンティティも終端として扱う
+* 実機検証(testserver, RCON):
+  * ホッパー→item_pipe×3→チェストで cobblestone×8, stone×64, dirt×4 が到達
+  * transit NBT(`p`/`f`/`t`/`s`)で搬送中アイテムが可視, サーバ再起動をまたいで永続化を確認
+  * チェスト撤去後はアイテムがネットワーク内を往復(デッドエンドバウンス), 水源は防水パイプが汲み上げて 81000mB ブロブがパイプ間を移動
+* 実機検証で発覚した環境起因の障害(対処済み):
+  * `BcnGateBlock` — createBlockStateDefinition が super() 内で hasMemory 未初期化を読み MEM 未定義で起動クラッシュ(並行作業側で同内容に修正済み)
+  * `recipe/rail_signal.json` — `minecraft:redstone_dust` の無効IDで Registry ロード失敗 → `minecraft:redstone` に修正済み
+* 未解決・要判断:
+  * ghost item の実際の見た目(スケール 0.375, FIXED 表示)はクライアント目視待ち
+  * 防水パイプ内の液体ブロブ描画は未実装(NBTでは可視). 必要なら半透明キューブの BER 追加
+  * 分岐選択・抽出ゲート・選択管・パイプワイヤー連動は発展項目(task 200/206 系)
+  * 液体の汲み上げは無料(エンジン不要). MJ 必須化は task-203 系の発電系統確立後
+  * 防水パイプの終端が FluidStorage 非対応(バニラ容器含む)の場合は往復滞留のみ. 開放端への流出は未実装
+
+## task-208 BCN 農業自動化 (自動栽培・収穫設備)
+
+* 結果: 実装済み・実機検証済み — 自動栽培機が種まき・育成待ち・収穫・搬出を稼働確認
+* 変更点:
+  * `PlanterBlockEntity` — 自身中心の 5x5 (自ブロックを除く 24 区画) を巡回. 10tick 間隔で成熟作物を収穫・空き耕地へ種まき. 種 9 + 収穫 9 の 18 スロット, WorldlyContainer 実装 (上=種投入, 下/横=収穫物) でホッパー連携
+  * 作物判定: CropBlock (isMaxAge), NetherWartBlock, BonemealableBlock+age 汎用 (Farmer's Delight 作物・ココア・スイートベリーも対象), 植付可否は `canSurvive` (FarmlandBlock 系・FD の rich soil 含む)
+  * 収穫ドロップの種は種スロットへ優先回収して自動再栽培ループ化. 収穫物は `HopperBlockEntity.getContainerAt`+`addItem` で隣接 Container へ自動放出 (チェスト, ホッパー, task-204 のパイプ BE=WorldlyContainer も対象)
+  * MJ: `energy.MjReceiver` 実装, 許容圧 MV (51 MJ-P). 内部バッファ 1000, 種まき 10 / 収穫 20 MJ 消費
+  * EFP: task-202 の `energy.BcnEfp.add` 経由で発電機と同率 (2.8e-6/tick 換算 = 作業 1 回 2.8e-5) を `efp_buffer` に蓄積し整数分を `cfb_efp` スコアボードへ反映
+  * `MjSourceBlock`/`MjSourceBlockEntity` — デバッグ用無限 MJ 源, 毎 tick 全面へ LV パケット送出 (発電機実装までの検証用)
+  * `BcnCommands` — `/bcn_mj <pos> <amount>` (Receiver へ分割給電), `/bcn_efp <amount>` (加算検証)
+  * リソース: blockstate/planter(active 2状態), model, items, loot, mineable タグ, lang en/ja, テクスチャは既存 engine 系の暫定流用
+* 実機検証 (testserver, RCON):
+  * 5x5 耕地+中央 planter+上部 mj_source で `mj: 0→723` 給電確認 (MjNetwork.sendPacket→receive 経路)
+  * wheat_seeds×64 投入 → 種まき・自然成長・成熟収穫の自動ループ. 種は種スロットへ還流 (64+1 に回復)
+  * 隣接チェストへ小麦搬出 18→50 個と累積確認. `efp_buffer: 0.00154` (~55 作業分) 蓄積確認
+  * `bcn_efp` で cfb_efp スコアボード書込み実測 (46→49), `bcn_mj` で Receiver 判定・給電動作確認
+* 判明したこと:
+  * 26.3 では `CommandSourceStack.hasPermission(int)` が廃止 → `permissions().hasPermission(Permissions.COMMANDS_GAMEMASTER)` へ移行
+  * 26.3 では gamerule 名が名前空間化 (`minecraft:random_tick_speed`, `minecraft:spawn_mobs`)
+  * `time query daytime` は 26.3 に無い (timeline 系に変更), RCON で `say`/`echo` は応答に出ない → `scoreboard players set` マーカーで観測
+  * randomTickSpeed 加速環境では無水耕地が即 dirt 化する → 試験畑は周囲モート給水が必須
+  * `execute if block` は RCON で結果を返さないため検証は data get/scoreboard 併用が必要
+* 未解決・要判断:
+  * planter 側の ACTIVE 表示切替は稼働瞬間のみ (作業間隔で点滅). 常時点灯ポリシーに変えるかは演出調整時に判断
+  * ホッパーからの種自動供給・パイプ直入れは WorldlyContainer 契約上動作する設計 (チェスト放出で実証済) だが, パイプ終端までの E2E は task-204 側成果物との組み合わせ未検証
+  * GUI は未実装 (種投入は右クリック挿入/ホッパー, 状態は素手右クリック表示). 管理 UI が必要なら追加
+  * 自動栽培機のクラフトレシピ未整備 (設計は TECH_ITEMS.md/精密作業台系の確定待ち)

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "top": "bcn:block/trebuchet_top",
+    "front": "bcn:block/trebuchet_front_loaded",
+    "side": "bcn:block/trebuchet_side"
+  }
+}

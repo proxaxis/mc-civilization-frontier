@@ -1,0 +1,48 @@
+{
+  "variants": {
+    "active=false,facing=down": {
+      "model": "bcn:block/transformer_hv",
+      "x": 180
+    },
+    "active=true,facing=down": {
+      "model": "bcn:block/transformer_hv",
+      "x": 180
+    },
+    "active=false,facing=up": {
+      "model": "bcn:block/transformer_hv"
+    },
+    "active=true,facing=up": {
+      "model": "bcn:block/transformer_hv"
+    },
+    "active=false,facing=north": {
+      "model": "bcn:block/transformer_hv"
+    },
+    "active=true,facing=north": {
+      "model": "bcn:block/transformer_hv"
+    },
+    "active=false,facing=south": {
+      "model": "bcn:block/transformer_hv",
+      "y": 180
+    },
+    "active=true,facing=south": {
+      "model": "bcn:block/transformer_hv",
+      "y": 180
+    },
+    "active=false,facing=west": {
+      "model": "bcn:block/transformer_hv",
+      "y": 90
+    },
+    "active=true,facing=west": {
+      "model": "bcn:block/transformer_hv",
+      "y": 90
+    },
+    "active=false,facing=east": {
+      "model": "bcn:block/transformer_hv",
+      "y": 270
+    },
+    "active=true,facing=east": {
+      "model": "bcn:block/transformer_hv",
+      "y": 270
+    }
+  }
+}
