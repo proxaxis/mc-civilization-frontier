@@ -1,0 +1,9 @@
+{
+  "entity": "this",
+  "predicate": {
+    "vehicle": {
+      "minecraft:entity_type": "#improvement_minecarts:carts"
+    }
+  },
+  "type": "minecraft:entity_properties"
+}

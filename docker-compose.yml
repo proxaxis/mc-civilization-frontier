@@ -27,6 +27,7 @@ services:
       ONLINE_MODE: "TRUE"
       ENABLE_RCON: "true"
       RCON_PASSWORD: "devpassword"
+      MEMORY: "6G"
       JVM_XX_OPTS: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"
     ports:
       - "25565:25565"
@@ -36,6 +37,8 @@ services:
     tty: true
     volumes:
       - nv_testserver_data:/data
+      - ${WORKSPACE_HOST_PATH:-.}/resources/mods:/data/mods:ro
+      - ${WORKSPACE_HOST_PATH:-.}/resources/datapacks/cfb_fixes:/data/world/datapacks/cfb_fixes:ro
 
   # Operation Agent
   orchestrator:
