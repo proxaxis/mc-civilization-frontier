@@ -3,6 +3,7 @@
 Minecraft Japan Wiki の "MOD解説/LogisticsPipes/アイテムリスト" を基にした、LogisticsPipes で追加されるブロックとアイテムの一覧. BuildCraft との併用を前提とした MOD. 
 
 - 出典: https://minecraftjapan.miraheze.org/wiki/MOD解説/LogisticsPipes/アイテムリスト
+- "公式レシピ" 行の出典: 公式リポジトリの recipe JSON 28件 (コード内登録レシピは src/logisticspipes/recipes/ 参照)
 - Dev571 で多くのパイプ類にレシピ変更が入った. 全体的にコストは低減されているが、一部パイプはコスト増加.
 - 作り方の "【Dev570以前】" "【Dev571以降】" 等はバージョン別レシピ. "【溶接作業台で作成】" は溶接作業台でのみ作成可能で、(鉄インゴット1) は加工1回毎に燃料として消費される分.
 
@@ -11,6 +12,7 @@ Minecraft Japan Wiki の "MOD解説/LogisticsPipes/アイテムリスト" を基
 ### 1.1. LP変換機 (Logistics Power Junction)
 
 - 作り方: 【Dev570以前】基本パイプ1 + 金チップ1 + 赤石粉2 + 鉄インゴット5 || 【Dev571以降】レッドストーンブロック1 + 赤石粉2 + 鉄インゴット6
+- 公式レシピ: (定型) part:chip_basic + ore:dustRedstonex2 + logisticspipes:frame + ore:ingotIronx2 + minecraft:redstone_block -> logisticspipes:power_junction
 - 説明: MC1.3.2対応版 以降の必須重要装置. これの併設(＋動力供給)なしではロジパイプが動作しない. BuildCraftなどのMJ、RF、または IndustrialCraft2のEUを、 ロジパイプ稼動用の専用エネルギーLPに変換するコンバーター. 超高圧(2048EU/t)の入力でも爆発しない. また、これ自体が内部に200万LPまで貯蔵できるストレージを持つ. ロジパイプの中でも基本パイプとしか接続できないが、 そのロジパイプネットワークのどこか一箇所に接続されていれば、 そのネットワークに所属する全ロジパイプにLPを供給する. 分断されている場合は、1ネットワーク毎に1台ずつの併設が必要. Dev571より、作成に基本パイプ及び金チップ（歯車）が不要に. 代わりにレッドストーンブロックが必要になった（実質赤石粉が11個必要に）
 
 ### 1.2. RF変換機 (Logistics RF Power Provider)
@@ -26,21 +28,25 @@ Minecraft Japan Wiki の "MOD解説/LogisticsPipes/アイテムリスト" を基
 ### 1.4. ロジスティクス作業台 (Logistics Crafting Table)
 
 - 作り方: 作業台1 + 石の歯車1 + チェスト1 + 木材4
+- 公式レシピ: (定型) minecraft:crafting_table + ore:plankWoodx2 + logisticspipes:frame + minecraft:piston -> logisticspipes:crafting_table
 - 説明: BC3.6.0以降、スタック不可アイテムを加工パイプで使用する際のほぼ必須装置. 仕様としてはFFMのワークテーブルに近いが、 手動で作成することはできず加工パイプが必要. 内部にレシピを登録して加工パイプを接続することで、 クラフト要求があった場合に材料を搬入、作成して送り出す. 空になったバケツなどは内部に残るので、適切なパイプを使用して搬出すること.
 
 ### 1.5. 基本パイプ (Basic Logistics Pipe)
 
 - 作り方: 【Dev570以前】ダイヤパイプ1 + 金チップ（金の歯車）2 + 赤石トーチ2 + ガラス4 || 【Dev571以降】ダイヤパイプ1 + 丸石パイプ2 + 金チップ（金の歯車）1 + 赤石トーチ1 + ガラス2
+- 公式レシピ: (定型) logisticspipes:chip_fpga + logisticspipes:pipe_transport_basic -> logisticspipes:pipe_basic
 - 説明: 最も基本的なロジパイプ. 他のロジパイプの素材にもなる. GUIでアイテム指定しておく事でそのアイテムの回収ポイントになり、 隣接して回収物搬入用のインベントリ内包ブロックを設置しておくと、 抽出モジュールの発送物や、加工パイプの余剰物など、 発送側に宛先指定されなかったアイテムの受け皿として機能する.
 
 ### 1.6. ブランクモジュール (Blank module)
 
 - 作り方: 【Dev570以前】赤石粉2 + 金塊1 + 紙6 || 【Dev571以降】赤石粉2 + 金塊1 + 紙2
+- 公式レシピ: (定型) ore:dustRedstone + ore:paper + ore:nuggetGold -> logisticspipes:module_blank
 - 説明: 各種モジュールの作成における中間素材となる部品. これ自体には何の効果も無い.
 
 ### 1.7. ファジーロジスティクス作業台 (Logistics Fuzzy Crafting Table)
 
 - 作り方: ロジスティクス作業台1 + ネザー水晶1
+- 公式レシピ: (定型) part:chip_basic + logisticspipes:crafting_table -> logisticspipes:crafting_table_fuzzy
 - 説明: 鉱石辞書の使用、ダメージ値無視、NBTタグ無視、"Ore"が付くアイテムといった指定ができるようになる. ファジーチップとセットで使用する.
 
 ## 2. パイプ
@@ -72,6 +78,7 @@ Minecraft Japan Wiki の "MOD解説/LogisticsPipes/アイテムリスト" を基
 #### 2.2.3. リクエストディスク (Logistics Disk)
 
 - 作り方: 赤石粉1 + 金塊4 + イカスミ4
+- 公式レシピ: (定型) ore:ingotIronx4 + ore:dustRedstonex4 + ore:nuggetGold -> logisticspipes:disk
 - 説明: "要求パイプMk2"専用で、無印の要求パイプでは利用できない. よく使うリクエストの内容を登録＆保存しておけるフロッピーディスク. 複数種類＆個数のアイテムをボタン1発でリクエストできる. 保存したディスクを取り出して、他の要求パイプMk2に使い回す事も可能.
 
 #### 2.2.4. 遠隔要求パイプ (Remote Orderer Logistics Pipe)
@@ -387,6 +394,7 @@ Minecraft Japan Wiki の "MOD解説/LogisticsPipes/アイテムリスト" を基
 #### 4.5.2. 不定経路輸送パイプ (Unrouted Transport Pipe)
 
 - 作り方: 板ガラス1 + 鉄インゴット2 + レッドストーン1
+- 公式レシピ: (定型) ore:ingotIronx4 + ore:dustRedstonex2 + ore:blockGlassx2 -> logisticspipes:pipe_transport_basicx8
 - 説明: LPを消費してパイプ内のアイテム輸送速度を他のロジパイプと同じ速度に保つパイプ. パイプにのみ接続し、一切のコンテナに接続しない. BCのパイプ同様乱数に基づいた確率によって分岐するため分岐点にも使えない. ただ、コストが安いのでBCのパイプの代わりに利用するとよいかもしれない. 現在、どのバージョンから追加されたのか捜索中.
 
 ## 5. 溶接作業台
@@ -429,6 +437,7 @@ Minecraft Japan Wiki の "MOD解説/LogisticsPipes/アイテムリスト" を基
 ### 5.8. 要求作業台 (Logistics Request Table)
 
 - 作り方: 【溶接作業台で作成】 作業台1 + ホッパー1 + チェスト1 + 加工パイプ（Mk2）1 + 要求パイプ（Mk2）1 + ダイヤチップ2 + 石レンガ2 + (鉄インゴット1)
+- 公式レシピ: (定型) logisticspipes:chip_advanced + logisticspipes:pipe_request_mk2 + logisticspipes:frame + logisticspipes:pipe_crafting + ore:chestWood -> logisticspipes:pipe_request_table
 - 説明: 要求パイプの機能を持った作業台. ロジスティクス作業台と違い、手動でのクラフティングも可能. GUI右側は要求パイプのGUIそのままとなっており、左側はロジスティクス作業台にリクエストボタン（レシピのアイテムをクラフトするのに必要なアイテムを取り寄せてくれる）を付けたものとなっている. GUIが大きく、デフォルトサイズでは画面いっぱいにGUIが表示されるのが難点. ちなみにBCの漏斗では作成不可（バニラのホッパーのみ）
 
 ## 6. その他アイテム
@@ -451,6 +460,7 @@ Minecraft Japan Wiki の "MOD解説/LogisticsPipes/アイテムリスト" を基
 ### 6.4. リモートオーダー (Remote Orderer)
 
 - 作り方: ガラス4 + ダイヤチップ2
+- 公式レシピ: (定型) part:chip_advancedx2 + ore:ingotGold + ore:dustRedstonex3 + ore:blockGlass + ore:gemLapisx2 -> logisticspipes:remote_orderer
 - 説明: これで各種ロジパイプ(通常パイプは×)を右クリックすると、 要求パイプと同じGUIが出現、その場にアイテムを取り寄せられる. チェストetc.に隣接していない場所でも取り寄せは可能だが、 その場合、送られてきたアイテムはその場にラインアウトする. Dev612より、遠隔要求パイプでの使用にLPが必要となった（距離と同量. 次元を跨ぐ場合は+500）
 
 ### 6.5. リモートオーダー(色付き/全16色)

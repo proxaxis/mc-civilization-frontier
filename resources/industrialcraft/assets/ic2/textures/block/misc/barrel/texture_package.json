@@ -1,0 +1,9 @@
+{
+	"down": "ic2:block/misc/barrel/down",
+	"east": "ic2:block/misc/barrel/east",
+	"north": "ic2:block/misc/barrel/east",
+	"south": "ic2:block/misc/barrel/east",
+	"treetap": "ic2:block/misc/barrel/treetap",
+	"up": "ic2:block/misc/barrel/up",
+	"west": "ic2:block/misc/barrel/east"
+}

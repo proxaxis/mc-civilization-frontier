@@ -1,0 +1,14 @@
+{
+	"active_down": "ic2:block/machine/hv/rocket_miner/active_down",
+	"active_east": "ic2:block/machine/lv/electrolyzer/active_north",
+	"active_north": "ic2:block/machine/lv/electrolyzer/active_north",
+	"active_south": "ic2:block/machine/lv/electrolyzer/active_north",
+	"active_up": "ic2:block/electric/energy_storage/mfe/up",
+	"active_west": "ic2:block/machine/lv/electrolyzer/active_north",
+	"inactive_down": "ic2:block/machine/hv/rocket_miner/active_down",
+	"inactive_east": "ic2:block/machine/lv/electrolyzer/active_north",
+	"inactive_north": "ic2:block/machine/lv/electrolyzer/active_north",
+	"inactive_south": "ic2:block/machine/lv/electrolyzer/active_north",
+	"inactive_up": "ic2:block/electric/energy_storage/mfe/up",
+	"inactive_west": "ic2:block/machine/lv/electrolyzer/active_north"
+}

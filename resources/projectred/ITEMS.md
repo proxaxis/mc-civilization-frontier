@@ -3,6 +3,7 @@
 Minecraft Japan Wiki の "MOD解説/Project:Red" 配下の各サブページを基にした、Project:Red で追加されるブロックとアイテムの一覧. 
 
 - 出典: MOD解説/Project:Red/Base、Integration、Mechanical、World、他モジュール (https://minecraftjapan.miraheze.org)
+- "公式レシピ" 行の出典: 公式リポジトリ MC1.21.1 系の data/*/recipe JSON (タグは #forge:* 表記)
 
 ## 【Base】
 
@@ -30,90 +31,121 @@ Minecraft Japan Wiki の "MOD解説/Project:Red" 配下の各サブページを�
   - 説明: 各種レッドストーン集積回路を作成する為の部品. 中間素材. 集積回路内では単にインバーター(反転送信器)としても使用される.
 - 指針基板 (Pointer)
   - 作り方: 石＋レッドストーントーチ＋ストーンウェハー
+  - 公式レシピ: (定型) #c:stones + minecraft:redstone_torch + projectred_core:plate -> projectred_core:pointer
   - 説明: 各種レッドストーン集積回路を作成する為の部品. 中間素材. 可変可能な速度で回転、タイマー回路やシーケンス回路に必要となる.
 - シリコンチップ基板 (Silicon Chip)
   - 作り方: ストーンウェハー3＋レッドウェハー
+  - 公式レシピ: (定型) projectred_core:infused_silicon + projectred_core:platex3 -> projectred_core:silicon_chip
   - 説明: 中間素材.
 - 不純物入りシリコンチップ基板 (Energized Silicon Chip)
   - 作り方: ストーンウェハー3＋イエローウェハー
+  - 公式レシピ: (定型) projectred_core:energized_silicon + projectred_core:platex3 -> projectred_core:energized_silicon_chip
   - 説明: 中間素材.
 - アセンブリ基板 (Plate Assembly)
   - 作り方: ストーンウェハー3＋棒2＋ワイヤー基板2
   - 説明: 中間素材. 二枚のワイヤー基盤を仕込んで、小さな櫓状に組み上げた装置. 配列素子の作成に使用する.
 - 赤合金インゴット (Red Alloy Ingot)
   - 作り方: 赤鉄化合物を精錬
+  - 公式レシピ: (精錬) projectred_core:red_iron_comp -> projectred_core:red_ingot
   - 説明: レッドストーンを添加し合金化した金属. これを材料にして作られる各種ワイヤーは、 レッドストーンパウダーの実に16倍(256マス)という脅威の伝達距離を誇る. 銅インゴットからも作成可能.
 - 高純度シリコン (Silicon Boule)
   - 作り方: 砂石炭化合物を精錬
+  - 公式レシピ: (精錬) projectred_core:sand_coal_comp -> projectred_core:boule
   - 説明: 砂に石炭を添加し製錬したもの. これを材料にしてシリコンウェハーが作られる.
 - シリコンウェハー (Silicon)
   - 作り方: [手ノコ]高純度シリコン
+  - 公式レシピ: (定型) cb_microblock:diamond_saw + projectred_core:boule -> projectred_core:siliconx8
   - 説明: 分かりやすく言えばシリコンの薄切り. 様々な用途に使用される.
 - レッドウェハー (Infused Silicon)
   - 作り方: レッドシリコン化合物を製錬
+  - 公式レシピ: (精錬) projectred_core:red_silicon_comp -> projectred_core:infused_silicon
   - 説明: レッドストーンとシリコンの化合物. こちらも様々な用途に使用される.
 - 不純物入りシリコンウェハー (Energized Silicon)
   - 作り方: 不純物シリコン化合物を製錬
+  - 公式レシピ: (精錬) projectred_core:glow_silicon_comp -> projectred_core:energized_silicon
   - 説明: シリコンに不純物を混ぜたもの. こちらも様々な用途に使用される.
 - モーター (Motor)
   - 作り方: 鉄インゴット+石2+銅製のコイル2+レッドストーン2
+  - 公式レシピ: (定型) #c:ingots/iron + #c:stonesx2 + projectred_core:copper_coilx2 + #c:dusts/redstonex2 -> projectred_core:motor
   - 説明: Baseのみでは銅がないため作成不可.
 - 銅製のコイル (Copper Coil)
   - 作り方: [絞り板]銅インゴット
+  - 公式レシピ: (定型) #c:ingots/copper + projectred_core:draw_plate -> projectred_core:copper_coil
   - 説明: Baseのみでは銅がないため作成不可. 絞り板は素材として消費しない. いくつかのアイテムの作成に必要.
 - 鉄製のコイル (Iron Coil)
   - 作り方: [絞り板]鉄インゴット
+  - 公式レシピ: (定型) #c:ingots/iron + projectred_core:draw_plate -> projectred_core:iron_coil
   - 説明: Baseのみでも作成可能だが使い道がない. 絞り板は素材として消費しない. いくつかのアイテムの作成に必要.
 - 金製のコイル (Gold Coil)
   - 作り方: [絞り板]金インゴット
+  - 公式レシピ: (定型) #c:ingots/gold + projectred_core:draw_plate -> projectred_core:gold_coil
   - 説明: Baseのみでも作成可能だが使い道がない. 絞り板は素材として消費しない. いくつかのアイテムの作成に必要.
 - 帆布 (Woven Cloth)
   - 作り方: 糸9+棒1
+  - 公式レシピ: (定型) #c:stringsx8 + #c:rods/wooden -> projectred_core:woven_cloth
   - 説明: 帆の作成に使用.
 - -帆 (Sail)
   - 作り方: 帆布6
+  - 公式レシピ: (定型) projectred_core:woven_clothx6 -> projectred_core:sail
   - 説明: 恐らく-帆は帆の誤植.
 - ルビー (Ruby)
   - 作り方: なし
+  - 公式レシピ: (精錬) projectred_exploration:deepslate_ruby_ore -> projectred_core:ruby
+  - 公式レシピ: (不定形) projectred_exploration:ruby_block -> projectred_core:rubyx9
+  - 公式レシピ: (精錬) projectred_exploration:ruby_ore -> projectred_core:ruby
   - 説明: 【Base】のみでは使い道なし.
 - サファイヤ (Sapphire)
   - 作り方: なし
+  - 公式レシピ: (精錬) projectred_exploration:deepslate_sapphire_ore -> projectred_core:sapphire
+  - 公式レシピ: (不定形) projectred_exploration:sapphire_block -> projectred_core:sapphirex9
+  - 公式レシピ: (精錬) projectred_exploration:sapphire_ore -> projectred_core:sapphire
   - 説明: 【Base】のみでは使い道なし.
 - ペリドット (Peridot)
   - 作り方: なし
+  - 公式レシピ: (精錬) projectred_exploration:deepslate_peridot_ore -> projectred_core:peridot
+  - 公式レシピ: (不定形) projectred_exploration:peridot_block -> projectred_core:peridotx9
+  - 公式レシピ: (精錬) projectred_exploration:peridot_ore -> projectred_core:peridot
   - 説明: 【Base】のみでは使い道なし.
 - 赤合金化合物 (Red Iron Compound)
   - 作り方: 鉄インゴット1+レッドストーン8
+  - 公式レシピ: (定型) #c:dusts/redstonex8 + #c:ingots/iron -> projectred_core:red_iron_comp
   - 説明: 鉄にレッドストーンを化合したもの. これを精錬することで赤合金インゴットを作成できる.
 - 砂石炭化合物 (Sandy Coal Compound)
   - 作り方: 石炭ブロック1+砂or赤砂8
   - 説明: 砂に石炭を化合したもの. これを精錬することで高純度シリコンを作成できる.
 - レッドシリコン化合物 (Red Silicon Compound)
   - 作り方: シリコンウェハー1+レッドストーン8
+  - 公式レシピ: (定型) #c:dusts/redstonex8 + projectred_core:silicon -> projectred_core:red_silicon_comp
   - 説明: シリコンにレッドストーンを化合したもの. これを精錬することでレッドウェハーを作成できる.
 - 不純物シリコン化合物 (Glowing Silicon Compound)
   - 作り方: シリコンウェハー1+グロウストーン8
+  - 公式レシピ: (定型) #c:dusts/glowstonex8 + projectred_core:silicon -> projectred_core:glow_silicon_comp
   - 説明: シリコンにグロウストーンを化合したもの. これを精錬することで不純物入りシリコンウェハーを作成できる.
 - 青合金インゴット (Electrotine Alloy Ingot)
   - 作り方: 青合金化合物を製錬
+  - 公式レシピ: (精錬) projectred_core:electrotine_iron_comp -> projectred_core:electrotine_ingot
   - 説明: ニコライトと鉄の化合物. こちらも様々な用途に使用される.
 - 青合金化合物 (Electotine Iron Compound)
   - 作り方: ニコライトパウダー8＋鉄インゴット1
   - 説明: 鉄にニコライトを化合したもの. こちらも様々な用途に使用される.
 - ブルーシリコン化合物 (Electrotine Silicon Compound)
   - 作り方: シリコンウェハー1+ニコライトパウダー8
+  - 公式レシピ: (定型) #c:dusts/electrotinex8 + projectred_core:silicon -> projectred_core:electrotine_silicon_comp
   - 説明: シリコンにニコライトを化合したもの. これを精錬することでブルーウェハーを作成できる.
 - ブルーウェハー (Electro Silicon)
   - 作り方: ブルーシリコン化合物を製錬
   - 説明: ニコライトとシリコンの化合物. こちらも様々な用途に使用される.
 - ドライバー (Screw Driver)
   - 作り方: 鉄インゴット3＋ラピスラズリ2
+  - 公式レシピ: (定型) #c:ingots/ironx3 + #c:dyes/bluex2 -> projectred_core:screwdriver
   - 説明: おなじみの工具. 既に設置済みな集積回路の向きを変えたり、 各集積回路のInput面を閉じるために使用. （pr6時点ではShift＋右クリック） 地味に石の剣と同程度の攻撃力を持ち、緊急時には武器としても使える.
 - 絞り板 (Draw Plate)
   - 作り方: 鉄ブロック Post4＋ダイヤモンドブロック Panel1
+  - 公式レシピ: (定型) neoforge:components:{"type": "neoforge:components", "componex5 -> projectred_core:draw_plate
   - 説明: コイルの作成に使用.
 - 検流計 (Multimeter)
   - 作り方: 赤合金インゴット2＋黒の染料2＋赤の染料2＋エメラルド1＋グロウストーンダスト1
+  - 公式レシピ: (定型) #c:ingots/red_alloyx2 + #c:dyes/blackx2 + #c:dyes/green + #c:dyes/redx2 + #c:dusts/glowstone -> projectred_core:multimeter
   - 説明: ワイヤーの信号強度やケーブル束の詳細などを把握できる機械.
 
 ### 2. ForgeMultiPartで追加されるブロック、アイテム
@@ -177,6 +209,7 @@ Minecraft Japan Wiki の "MOD解説/Project:Red" 配下の各サブページを�
 
 - 赤合金ワイヤー (Red Alloy Wire)
   - 作り方: 赤合金インゴット3
+  - 公式レシピ: (定型) #c:ingots/red_alloyx3 -> projectred_transmission:red_alloy_wirex12
   - 説明: 皮膜で覆われていない剥き出しのワイヤー. 下記の絶縁ワイヤー(Insulated Wire)各色のどれとでも連結できるので、 複数のレッドストーン動力流を合流、分派させたい時に便利. また、絶縁されていない分敷設マスの周囲に野放図に動力を伝達する. 一度に12個作成され、1個あたりのコストは鉄0.25＋赤粉1.
 - 絶縁ワイヤー (Insulated Wire)
   - 作り方: 赤合金インゴット3＋羊毛6
@@ -192,12 +225,14 @@ Minecraft Japan Wiki の "MOD解説/Project:Red" 配下の各サブページを�
   - 説明: 全17色のケーブル束(無色を含む)と、各色の染料を組み合わせると、 無色のケーブル束を染色、 または、既に染色したケーブルを別な色へと塗り直せる. なお、全16色が作成可能で、(無色を除く) 全16色の絶縁ワイヤーと同様、同色のケーブル束としか連結しないが、 例外的に無色のケーブル束とであれば、全ての色が連結する. ジャケットケーブルの材料には使えず、ジャケットケーブルとも連結しない. それ以外の性質はケーブル束(無色)と同じ.
 - ジャケットワイヤー (Framed Red Alloy Wire)
   - 作り方: 赤合金ワイヤー＋オークの原木 strip
+  - 公式レシピ: (定型) #c:rods/woodenx8 + projectred_transmission:red_alloy_wire -> projectred_transmission:framed_red_alloy_wire
   - 説明: 赤合金ワイヤーをブロックの覆いで囲ったもの. 赤合金ワイヤーとしか連結しない. ワイヤーを敷設するための床、壁面、天井が無いような空間で、 中空へとワイヤーを延長、敷設したい時に使用する. (1/8)板で右クリックすることで、その板に対応したカバーをすることができる.
 - ジャケット絶縁ワイヤー (Framed Insulated Wire)
   - 作り方: 絶縁ワイヤー+オークの原木 strip8
   - 説明: 絶縁ワイヤーを覆いで囲ったもの. 同じ色の絶縁ワイヤーとしか連結しない. 絶縁ワイヤーを敷設するための床、壁面、天井が無いような空間で、 中空へと絶縁ワイヤーを延長、敷設したい時に使用する.
 - ジャケットケーブル (Framed Bundled Cable)
   - 作り方: ケーブル束＋オークの原木 strip8
+  - 公式レシピ: (定型) #c:rods/woodenx8 + projectred_transmission:neutral_bundled_wire -> projectred_transmission:neutral_framed_bundled_wire
   - 説明: 丸石に限らず、ほとんど全ての種類のカバープレートで作成可能. ケーブル束(無色)を覆いで囲ったもの. ケーブル束(無色)としか連結しない. ケーブル束を敷設するための床、壁面、天井が無いような空間で、 中空へとケーブル束を延長、敷設したい時に使用する.
 - 青合金ワイヤー (Blue Alloy Wire)
   - 作り方: 青合金インゴット3＋羊毛6
@@ -213,54 +248,71 @@ Minecraft Japan Wiki の "MOD解説/Project:Red" 配下の各サブページを�
 
 - ORゲート (OR Gate)
   - 作り方: 陰極基板2＋導線基板3＋ストーンウェハー4
+  - 公式レシピ: (定型) projectred_core:platex4 + projectred_core:cathodex2 + projectred_core:conductive_platex3 -> projectred_integration:or_gate
   - 説明: 1ブロックでOR回路として機能する集積回路. 3つのinput面と1つのoutput面から構成される. input面のどれか1つに入力があるなら、output面から出力し続ける. 事前にドライバを持ちながらshift+右クリックする事で、特定サイドのinput面を閉じることができる.
 - NORゲート (NOR Gate)
   - 作り方: 陰極基板＋陽極基板＋導線基板3＋ストーンウェハー4
+  - 公式レシピ: (定型) projectred_core:platex4 + projectred_core:anode + projectred_core:conductive_platex3 + projectred_core:cathode -> projectred_integration:nor_gate
   - 説明: 1ブロックでNOR回路として機能する集積回路. 3つのinput面と1つのoutput面から構成される. input面全てに入力が無い間のみ、output面からの出力がONになる. （それ以外の場合は常にOFF） 事前にドライバを持ちながらshift+右クリックする事で、特定サイドのinput面を閉じることができる.
 - NOTゲート (NOT Gate)
   - 作り方: 陰極基板3＋陽極基板＋導線基板＋ストーンウェハー4
+  - 公式レシピ: (定型) projectred_core:platex4 + projectred_core:cathodex3 + projectred_core:anode + projectred_core:conductive_plate -> projectred_integration:not_gate
   - 説明: 1ブロックでNOT回路として機能する集積回路. 1つのinput面と3つのoutput面から構成される. 上記とは逆に、input面に入力を受けていない間、output面全てから出力し続ける.
 - ANDゲート (AND Gate)
   - 作り方: 陰極基板4＋陽極基板2＋導線基板＋ストーンウェハー2
+  - 公式レシピ: (定型) projectred_core:anodex2 + projectred_core:cathodex4 + projectred_core:platex2 + projectred_core:conductive_plate -> projectred_integration:and_gate
   - 説明: 1ブロックでAND回路として機能する集積回路. 3つのinput面と1つのoutput面から構成される. input面全部にレッドストーン入力がある間、output面から出力し続ける. 事前にドライバを持ちながらshift+右クリックする事で、特定サイドのinput面を閉じることができる.
 - NANDゲート (NAND Gate)
   - 作り方: 陰極基板3＋陽極基板3＋導線基板＋ストーンウェハー2
+  - 公式レシピ: (定型) projectred_core:anodex3 + projectred_core:cathodex3 + projectred_core:platex2 + projectred_core:conductive_plate -> projectred_integration:nand_gate
   - 説明: 1ブロックでNAND回路として機能する集積回路. 3つのinput面と1つのoutput面から構成される. input面全てに入力がある間のみ、output面からの出力がOFFになる. （それ以外の場合は常にON） 事前にドライバを持ちながらshift+右クリックする事で、特定サイドのinput面を閉じることができる.
 - XORゲート (XOR Gate)
   - 作り方: 陰極基板3＋陽極基板3＋導線基板3
+  - 公式レシピ: (定型) projectred_core:anodex3 + projectred_core:conductive_platex3 + projectred_core:cathodex3 -> projectred_integration:xor_gate
   - 説明: 1ブロックでXOR回路として機能する集積回路. 2つのinput面と1つのoutput面から構成される. 2つのinput面の状態が異なる場合のみ、output面からレッドストーン出力する. （ON+OFF、またはOFF+ON）
 - XNORゲート (XNOR Gate)
   - 作り方: 陰極基板4＋陽極基板3＋導線基板2
+  - 公式レシピ: (定型) projectred_core:anodex3 + projectred_core:cathodex4 + projectred_core:conductive_platex2 -> projectred_integration:xnor_gate
   - 説明: 1ブロックでXNOR回路として機能する集積回路. 2つのinput面と1つのoutput面から構成される. 2つのinput面の状態が同じ場合のみ、output面からレッドストーン出力する. （両方ON、または両方OFF）
 - Bufferゲート (Buffer Gate)
   - 作り方: 陰極基板2＋陽極基板2＋導線基板3＋ストーンウェハー2
+  - 公式レシピ: (定型) projectred_core:anodex2 + projectred_core:cathodex2 + projectred_core:conductive_platex3 + projectred_core:platex2 -> projectred_integration:buffer_gate
   - 説明: 1ブロックでBuffer回路として機能する集積回路. 1つのinput面と3つのoutput面から構成される. input面に入力を受けている間、output面全てからレッドストーン出力する.
 - マルチプレクサ回路 (Multiplexer)
   - 作り方: 陰極基板4＋陽極基板3＋導線基板1＋ストーンウェハー
+  - 公式レシピ: (定型) projectred_core:anodex3 + projectred_core:cathodex4 + projectred_core:plate + projectred_core:conductive_plate -> projectred_integration:multiplexer_gate
   - 説明: 1ブロックでマルチプレクサ回路として機能する集積回路. input面x3(向かって左、右、奥)とoutput面x1(向かって手前)で構成される. 奥がOFFの時左のON/OFFの状態、 奥がONの時右のON/OFFの状態をそのまま出力する.
 - パルス回路 (Pulse Former)
   - 作り方: 陰極基板3＋陽極基板3＋導線基板2＋ストーンウェハー
+  - 公式レシピ: (定型) projectred_core:anodex3 + projectred_core:cathodex3 + projectred_core:conductive_platex2 + projectred_core:plate -> projectred_integration:pulse_gate
   - 説明: 1ブロックでパルス回路として機能する集積回路. input面x1とoutput面x1だけで構成される. ON入力を受け取った際に、一瞬(1tick)だけレッドストーン動力を出力する. 出力時間は1tickで固定、任意に変更する事は出来ない.
 - リピーター回路 (Repeater)
   - 作り方: 陰極基板2＋陽極基板2＋導線基板＋ストーンウェハー4
+  - 公式レシピ: (定型) projectred_core:platex4 + projectred_core:cathodex2 + projectred_core:anodex2 + projectred_core:conductive_plate -> projectred_integration:repeater_gate
   - 説明: デフォルトのレッドストーンリピーターの強化版. 右クリックにより全9段階での伝達遅延が設定できる. (0.1/0.2/0.3/0.4/0.8/1.6/3.2/6.4/12.8秒) pre6からバニラのリピーター同様にロック機能が追加された.
 - 乱数回路 (Randomizer)
   - 作り方: 不純物入りシリコンチップ基板3＋導線基板4＋ストーンウェハー2
+  - 公式レシピ: (定型) projectred_core:platex2 + projectred_core:energized_silicon_chipx3 + projectred_core:conductive_platex4 -> projectred_integration:randomizer_gate
   - 説明: ランダムな信号を発生させる回路. input面1つとoutput面3つをもつ. input面に入力がある間、output面からランダムな間隔で信号を出力する. 3つのoutputはすべてバラバラに点滅する.
 - RS NOR Latch回路 (RS Latch)
   - 作り方: 陰極基板2＋陽極基板2＋導線基板4＋ストーンウェハー
+  - 公式レシピ: (定型) projectred_core:anodex2 + projectred_core:cathodex2 + projectred_core:conductive_platex4 + projectred_core:plate -> projectred_integration:sr_latch_gate
   - 説明: 1ブロックでラッチ回路(RS NOR)として機能する集積回路. input面x2(向かって左右)とoutput面x2(向かって前後)で構成される. それぞれのinputは時計回り90度側のoutputに対応. 双方のinput面ともに一瞬でもON入力を受け取ると、以後それを保持し続ける. (動力供給を停止したりスイッチを戻しても、出力しっ放し) ドライバのshift+右クリックで左右反転、さらに右クリックでinput側からの出力を遮断できる. ただし両方のinput面に同時にON入力が供給された瞬間が一瞬でもあると、 状態保持は一度リセットされ、改めて入力の有無が判定される.
 - Toggle Latch回路 (Toggle Latch)
   - 作り方: レバー＋陰極基板2＋＋導線基板2＋ストーンウェハー4
+  - 公式レシピ: (定型) projectred_core:cathodex2 + projectred_core:platex4 + projectred_core:conductive_platex2 + minecraft:lever -> projectred_integration:toggle_latch_gate
   - 説明: 1ブロックでラッチ回路(Toggle)として機能する集積回路. input面x2(向かって左右)とoutput面x2(向かって前後)で構成される. output面のどちらか片方から常にレッドストーン動力を出力している状態. input面からON入力を受け取った際に、これがもう片方に切り替わる. (プレイヤーが直接右クリックする事でも切り替え可能) output面x2からの出力を両方同時にOFF、または両方同時にONにはできない.
 - D Latch回路 (Transparent Latch)
   - 作り方: 陰極基板5＋陽極基板＋導線基板2＋ストーンウェハー
+  - 公式レシピ: (定型) projectred_core:anode + projectred_core:cathodex5 + projectred_core:conductive_platex2 + projectred_core:plate -> projectred_integration:transparent_latch_gate
   - 説明: input面A(手前)、input面B(左)、output面(右、奥)をもつ. input面AがONのときはinput面Bからの入力をそのまま出力する. input面Aがオフの時は、input面Aがオフになった瞬間の出力を保持する. Aがオフの間はBからの入力はoutputに影響しない.
 - 光センサー (Light Sensor)
   - 作り方: ラピスラズリ3＋導線基板＋ストーンウェハー5
+  - 公式レシピ: (定型) projectred_core:platex5 + #c:dyes/bluex3 + projectred_core:conductive_plate -> projectred_integration:light_sensor_gate
   - 説明: 光に反応して信号を出力するセンサー回路. ドライバーを持ちスニーク状態で右クリックで反応する光の種類のモード三種類を調節できる. モード赤が太陽などの影響のない松明などによる光レベル(デバッグ画面のbl)、 モード青が逆に松明などに影響されない自然光のみの光レベル(デバッグ画面のsl)、 モード赤青がその両方の光レベル(デバッグ画面のrl)にそれぞれ反応する. 結果は信号の強度により表される. モード赤 信号強度P=17x 自然光を除いた光レベルL Lはデバッグ画面のbl + 1で分かる. モード青 時間による明るさ変化をNとし、 Nは晴天時の昼は15、雨天時の昼は12、雷雨時の昼は10、夜は一律4とする. またこの値は日の入りとともに10秒に1ずつ減り、4となったところで夜になる. 同様に日の出とともに10秒に1ずつ増え、天気に合わせた値となったところで昼となる. また距離減衰Dは通常は最も近い空が見える地点からのX,Z両座標の合計となる. このとき信号強度P=17x (N-D) N - Dはデバッグ画面のslで分かる. 計算が少々面倒であったり、洞窟のような場所であるとDがとても分かりにくいので、デバッグ画面推奨. モード赤青 先述したモード赤とモード青の、信号強度のどちらか強いほうを出力する.
 - 雨センサー (Rain Sensor)
   - 作り方: スライムボール3＋導線基板＋ストーンウェハー5
+  - 公式レシピ: (定型) projectred_core:platex5 + #c:slimeballsx3 + projectred_core:conductive_plate -> projectred_integration:rain_sensor_gate
   - 説明: 雨に反応して信号を出力するセンサー回路. 雨が降っている間は最大強度で出力する.
 - タイマー回路 (Redstone Timer)
   - 作り方: 指針基板＋陰極基板＋陽極基板2＋導線基板3＋ストーンウェハー2
@@ -270,42 +322,54 @@ Minecraft Japan Wiki の "MOD解説/Project:Red" 配下の各サブページを�
   - 説明: 1ブロックでシーケンス回路として機能する集積回路. input面は持たず、四方全てがoutput面. 設置されると一定間隔で四方に時計回りでクロック出力する（ドライバで反時計回りも可） （出力間隔は右クリックで任意に設定可能） 常時ON状態であり、他からの入力などでOFF状態にはできない.
 - カウンタ回路 (Counter)
   - 作り方: 指針基板＋陰極基板2＋導線基板2＋ストーンウェハー4
+  - 公式レシピ: (定型) projectred_core:platex4 + projectred_core:cathodex2 + projectred_core:conductive_platex2 + projectred_core:pointer -> projectred_integration:counter_gate
   - 説明: 1ブロックでカウンタ回路として機能する集積回路. input面x2(向かって左右)とoutput面x2(向かって前後)で構成される. レッドストーン入力された回数(OFF→ONになったのを1回と計算)をカウントし、 それが規定数に到達したらレッドストーン動力を出力する. （これらのカウント計測は右クリックにより開く設定画面で任意に変更可能） ちなみに、片方のoutputはカウント数0(デフォルト)の時に. もう片方のoutputはカウント数が設定された回数に到達した時にONになる.
 - State Cell回路 (State Cell)
   - 作り方: シリコンチップ基板＋指針基板＋陰極基板＋陽極基板＋導線基板2＋ストーンウェハー3
+  - 公式レシピ: (定型) projectred_core:platex3 + projectred_core:anode + projectred_core:cathode + projectred_core:conductive_platex2 + projectred_core:silicon_chip + projectred_core:pointer -> projectred_integration:state_cell_gate
   - 説明: input面（左）、output面A（奥）、output面B（右）、制御面（手前）をもつ. 入力がONになるとAにONを出力し、回路のポインターがAの方向にセットされる. 入力がOFFになるとポインターがBの方向へ回転し始め、一定時間（任意に設定可能）後にBの方向を向くと Bにパルス出力すると同時にAがOFFになり、ポインターがAの方向に戻る. 制御面に入力がある間はポインターがAの方向に固定される.
 - 同期回路 (Synchronizer)
   - 作り方: シリコンチップ基板2＋陰極基板＋陽極基板＋導線基板5
+  - 公式レシピ: (定型) projectred_core:conductive_platex5 + projectred_core:cathode + projectred_core:silicon_chipx2 + projectred_core:anode -> projectred_integration:synchronizer_gate
   - 説明: 左右にinput面2つ、奥にoutput面1つ、手前に制御面1つをもつ. 入力があるとそれを回路に記憶し、両方に1回以上入力があるとパルスを出力した後回路をリセットする. 制御面に入力すると回路を強制リセットする.
 - トランシーババス (Bus Transceiver)
   - 作り方: ケーブル束基板6＋シリコンチップ基盤2＋ストーンウェハー
+  - 公式レシピ: (定型) projectred_core:bundled_platex6 + projectred_core:silicon_chipx2 + projectred_core:plate -> projectred_integration:bus_transceiver_gate
   - 説明: 信号の通過する方向を制御する回路. 2つのメイン信号面（手前、奥）と、2つの制御信号面（左右）をもつ. 制御信号面に信号を入力している間だけ、その制御面からみて左のメイン面から右のメイン面へ信号が通過できる. 制御信号が入力されていないときは2つのメイン面はどちら向きにも信号が通過できない. また、両方の制御面に信号が入力されている場合、 ONを入力するとそれを回路自体に保持し、両方のメイン面へ出力する. メイン信号面は絶縁ケーブルかケーブル束、制御信号面はケーブル（絶縁、非絶縁両方）とのみ接続する. 各メイン信号面の入出力状況は回路上の16ドットのディスプレイに表示されている.
 - コンパレータ回路 (Comparator)
   - 作り方: 導線基板2＋陰極基盤＋ネザー水晶2＋ストーンウェハー2
+  - 公式レシピ: (定型) projectred_core:conductive_platex4 + projectred_core:cathode + #c:gems/quartzx2 + projectred_core:platex2 -> projectred_integration:comparator_gate
   - 説明: バニラのコンパレータとほぼ同じ働きを持つ回路. 2つの入力面（左右）と、出力面（奥）をもつ. バニラと違い、壁や天井におけるという点で便利. 詳しい解説はレッドストーンを参照.
 - 乱数バス (Bus Randomizer)
   - 作り方: ケーブル束基板6＋導線基盤2＋不純物入りシリコンチップ基板
+  - 公式レシピ: (定型) projectred_core:bundled_platex6 + projectred_core:conductive_platex2 + projectred_core:energized_silicon_chip -> projectred_integration:bus_randomizer_gate
   - 説明: ケーブル束内の各色のケーブルにそれぞれランダムに出力をする回路. 3つの入力面（左右、手前）と、出力面（奥）をもつ. 左右の入力面から入力している間、奥の面から出力する. 二つのモードがあり、ドライバーで切り替えられる. 手前の入力面から入力があると、その色のみでランダム出力をする. 、排他モード 出力可能な色のうち、常にどれか一色のみがランダムに選択される. どの色も出力されない時間はない. 、非排他モード 出力可能な色のうち、どの色も半分の確率でONになる. こちらはどの色も出力されない時もある.
 - コンバータバス (Bus Converter)
   - 作り方: ケーブル束基板＋導線基盤3＋シリコンチップ基板＋ストーンウェハー4
+  - 公式レシピ: (定型) projectred_core:platex4 + projectred_core:bundled_plate + projectred_core:conductive_platex3 + projectred_core:silicon_chip -> projectred_integration:bus_converter_gate
   - 説明: バニラのレッドストーンの強度をケーブル束の各色の出力に変換する回路. 2つの入力面（手前、奥）と、4つの出力面（手前、左右、奥）をもつ. 各モードの入力面に入力がある間、左右に出力をする. 二つのモードがあり、ドライバーで切り替えられる. 、アナログ/デジタルモード 手前が入力面、奥が出力面になる. 手前から入ってきたバニラのレッドストーンの入力強度(0～15)をレベルに対応した色に出力する. 対応した色は0から順に、 白色、オレンジ色、赤紫、空色、黄色、黄緑色、桃色、灰色、薄灰色、水色、紫色、青色、茶色、緑色、赤色、黒色. 、デジタル/アナログモード 上のモードと逆の動作をする. 奥が入力面、手前が出力面となり、入力された色のうち最大となる強度でバニラのレッドストーンに出力する. ※奥がケーブル束側. 手前はその反対. デフォルトではアナログ/デジタルモード.
 - 挿入パネルバス (Bus Input Panel)
   - 作り方: ケーブル束基板7＋導線基盤＋任意の色のLEDパウダー
+  - 公式レシピ: (定型) projectred_core:bundled_platex7 + projectred_core:conductive_plate + #projectred_core:illumars -> projectred_integration:bus_input_panel_gate
   - 説明: プレイヤーが任意に入力できるいわゆるキーボードのような回路. 入力面（奥）と、出力面（手前）をもつ. 並んでいる16個の色のボタンを押すとボタンが光り、その色の出力がONになる. もう一度押すと光が消え、OFFになる. 奥の入力面から入力があると、全ての出力とボタンがリセットされる.
 
 #### 1.3. 配列素子(旧Arrayのもの)
 
 - 交差素子 (Null Cell)
   - 作り方: アセンブリ基盤+ワイヤー基板4＋ストーンウェハー4
+  - 公式レシピ: (定型) projectred_core:platex4 + projectred_core:wired_platex4 + projectred_core:platformed_plate -> projectred_integration:null_cell_gate
   - 説明: 2本のワイヤーを高さを変えずに、混線なしで垂直交差させられる配列素子. 下記の2つの素子と違って、余計な機能は一切ついていない.
 - 反転交差素子 (Invert Cell)
   - 作り方: アセンブリ基板＋ワイヤー基板3＋ストーンウェハー4+陰極基盤
+  - 公式レシピ: (定型) projectred_core:platex4 + projectred_core:wired_platex3 + projectred_core:platformed_plate + projectred_core:cathode -> projectred_integration:invert_cell_gate
   - 説明: 2本のワイヤーを高さを変えずに、混線なしで垂直交差させられる配列素子. 仕込まれたトーチにより上のラインがデフォルトでON状態になっており、 下のラインに動力が通るとそれにより反転してOFFになる. （逆に言えば、下のラインに動力が通らない限りは決してOFF状態にならない）
 - 連動交差素子 (Buffer Cell)
   - 作り方: アセンブリ基板＋ワイヤー基板3＋ストーンウェハー3+陰極基盤2
+  - 公式レシピ: (定型) projectred_core:platex3 + projectred_core:wired_platex3 + projectred_core:platformed_plate + projectred_core:cathodex2 -> projectred_integration:buffer_cell_gate
   - 説明: 2本のワイヤーを高さを変えずに、混線なしで垂直交差させられる配列素子. 下のラインに動力が通ると、対応して上のラインも同時にONになる. ただし逆に上のラインに動力が通っても、下のラインには一切影響が無い.
 - AND素子 (AND Cell)
   - 作り方: アセンブリ基板＋ワイヤー基板2＋ストーンウェハー+陰極基盤3＋導線基板2
+  - 公式レシピ: (定型) projectred_core:cathodex3 + projectred_core:conductive_platex2 + projectred_core:wired_platex2 + projectred_core:platformed_plate + projectred_core:plate -> projectred_integration:and_cell_gate
   - 説明: 2本のワイヤーを高さを変えずに、混線なしで垂直交差させられる配列素子. 下のライン(手前から)に動力が通り、かつ上のラインにも動力が通っている場合、下のライン(奥)がONになる. ANDゲートとの違いは、左右がつながっている点.
 - データ素子 (Stacking Latch)
   - 作り方: ワイヤー基板2＋ストーンウェハー3+陰極基盤4
@@ -331,6 +395,7 @@ Minecraft Japan Wiki の "MOD解説/Project:Red" 配下の各サブページを�
   - 説明: 不定形レシピ 絞り板は耐久値を消費するだけで、素材としては消費されない. 中間素材. pre5b2現在、紡毛カードの作成にのみ必要. 合金かまどで元の鉄インゴットに戻すこともできる.
 - 銅線コイル (Copper Coil)
   - 作り方: 鉄インゴット＋鉄格子4＋銅細線4
+  - 公式レシピ: (定型) #c:ingots/copper + projectred_core:draw_plate -> projectred_core:copper_coil
   - 説明: 中間素材. 下の青電力モーターの作成に必要.
 - 青電力モーター (Blulectric Motor)
   - 作り方: 銅線コイル2＋鉄インゴット6＋青合金インゴット
@@ -343,9 +408,11 @@ Minecraft Japan Wiki の "MOD解説/Project:Red" 配下の各サブページを�
 
 - アイテム差配器、デプロイヤー (Deployer)
   - 作り方: ピストン＋チェスト＋丸石6＋レッドストーン
+  - 公式レシピ: (定型) #c:cobblestonesx6 + minecraft:chest + minecraft:piston + #c:dusts/redstone -> projectred_expansion:deployer
   - 説明: ◆レッドストーン入力が必要 直訳すると"配置器"、"配置するもの"だが、機能は右クリック代行器. 設置時は設置口とプレイヤーが向き合う形で、全6方向を向かせて設置可能. レッドストーン入力がOFFからONに切り替わった時に1回、 内部の収納枠(9スロット)の中にあるアイテムを左上隅のものから優先して、 自身の正面1マスに、使用可能ならば右クリック使用しようとする. 詳細はインターフェイスの項を参照のこと.
 - ブロック粉砕器、ブロックブレイカー (Block Breaker)
   - 作り方: ピストン＋鉄のツルハシ＋丸石6＋レッドストーン
+  - 公式レシピ: (定型) #c:cobblestonesx6 + minecraft:iron_pickaxe + minecraft:piston + #c:dusts/redstone -> projectred_expansion:block_breaker
   - 説明: ◆レッドストーン入力が必要 "ブロック粉砕器"もとい、プレイヤー左クリック代行器. 設置時は粉砕口とプレイヤーが向き合う形で、全6方向を向かせて設置可能. レッドストーン入力がOFFからONに切り替わった時に1回、 正面1マスにあるブロックを、プレイヤーによる破壊と同じ処理で粉砕&回収する. 岩盤以外の全ブロックを回収できるが、ガラスや本棚は例によって消滅. 詳細はインターフェイスの項を参照のこと.
 - 着火装置、イグナイター (Igniter)
   - 作り方: アイテム差配器＋火打石と打ち金＋ネザーラック2＋丸石4＋レッドストーン
@@ -355,12 +422,14 @@ Minecraft Japan Wiki の "MOD解説/Project:Red" 配下の各サブページを�
 
 - 気送管、ニューマティックチューブ (Pneumatic Tube)
   - 作り方: ガラス＋ブラスインゴット2
+  - 公式レシピ: (定型) #c:ingots/copperx6 + #c:glass_panesx3 -> projectred_expansion:pneumatic_tubex8
   - 説明: 圧縮空気により、ドロップ状態のアイテムを輸送するエアチューブ. 作者自身、BuildCraftのパイプのアナザーとして作ったと明言しており、 オブジェクトを輸送するなどの基本方針は酷似しているが、 輸送スピードや分岐の仕組みなどが異なり、毛色の違うものとなっている. 基本的に配送器or選別配送器と併せて使用する. 特性の詳細な解説に関してはテクニック＆Tipsにて.
 - 制限チューブ、リストリクションチューブ (Restriction Tube)
   - 作り方: 気送管＋鉄インゴット
   - 説明: 不定形レシピ 特殊チューブ. 通常チューブの代わりにこれを使うと、そこを通る輸送経路の優先順位が下がる. 制限チューブを含むルートは"制限チューブを含まないルートのうち最も遠いルート"よりも優先順位が低くなる. 制限チューブを含むルート同士では通常通り近い方が優先される.
 - 配送器、トランスポーザー (Transposer)
   - 作り方: ピストン＋丸石5＋木材2＋レッドストーン
+  - 公式レシピ: (定型) #minecraft:planksx3 + #c:cobblestonesx4 + minecraft:piston + #c:dusts/redstone -> projectred_expansion:transposer
   - 説明: 配送器(フィルター機能なし) 設置時は受取口とプレイヤーが向き合う形で、全6方向を向かせて設置可能. 下記の選別配送器(Filter)の完全下位互換で、 右クリック時のGUIを持たず、フィルター機能を持たないことと1つずつしか出せないこと以外は同一の性能. ただしこちらの方が作成コストが格安で、手軽に量産しやすい. また、アイテムを吸える. 詳細はインターフェイスの項を参照のこと.
 - 選別配送器、フィルター (Filter)
   - 作り方: ピストン＋丸石5＋金インゴット2＋レッドウェハー
@@ -400,6 +469,7 @@ Minecraft Japan Wiki の "MOD解説/Project:Red" 配下の各サブページを�
   - 説明: 下記のモーターによって動かす構造物の骨組みとして使用する. フレームに接しているフレーム、およびブロックを一つの構造物として扱い一緒に動かすことができる. 直接接していないように見えても隣接ブロック内にワイヤーなどが存在していれば接続してしまう. 接触しているブロックを動かしたくない場合、接触する面に手ノコカットしたカバー(1/8板)を取り付けることで接続されなくなる. 同じくパネル(1/4板)を取り付けることでRP2のゲートやワイヤーを貼り付け、動かすことができる. これを利用してレッドストーン配線を保ったまま装置を移動させるようなこともできる. なおモーターの駆動面(矢印の面)や粉砕器の粉砕口、差配器の配置口等の何らかの作用を及ぼす面はカバーを付けずとも接続されない. フレームに接続されたブロックの進行方向に接続されていないブロックがある場合、動かすことができない. 特に地面やモーター用の配線が忘れがちであるので注意.
 - モーター (Frame Motor)
   - 作り方: 青電力モーター＋鉄インゴット5＋ブラスインゴット2＋青合金インゴット
+  - 公式レシピ: (定型) #minecraft:planksx2 + #c:ingots/iron + #c:dusts/redstonex2 + projectred_core:motor + #c:stonesx2 + #c:ingots/electrotine_alloy -> projectred_expansion:frame_motor
   - 説明: ◆青電力消費 ◆レッドストーン入力が必要 フレームによって接続された一つの構造物をまるごと移動させる事ができる装置. レッドストーン入力がされる度に1ブロック分ずつ動かす. 黄色い大きな矢印の描いてある面に接しているフレームを矢印の方向に動かす. フレームに接続されたモーターの駆動面はフレームの面として機能し、フレームなどのブロックと接続できる. ドライバーで右クリックすることで矢印の向きを、 Shiftキーを押しながら右クリックすることで装置自体の向きを変更することができる. チェストなど内部インベントリを持つようなブロックも問題なく移動させることができる. 透過部分を持つような一部ブロックは移動中の見た目が木箱のようになるが見た目だけで特に問題はない. 60Vで起動可. 1回起動すると、約0.2V~0.5V消費する.
 - チューブ内蔵フレーム (Tube Frame)
   - 作り方: フレーム＋チューブ
@@ -418,12 +488,14 @@ Minecraft Japan Wiki の "MOD解説/Project:Red" 配下の各サブページを�
   - 説明: ◆青電力消費 青電力で動く合金かまど. かまどが合金かまどになっただけで、仕様は青電力かまどと同じ.
 - チャージングベンチ (Charging Bench)
   - 作り方: 黒曜石2＋青電力電池2＋木材ブロック2＋銅線コイル＋チェスト＋青合金インゴット
+  - 公式レシピ: (定型) #c:stonesx2 + projectred_core:copper_coil + #minecraft:planksx2 + projectred_expansion:battery + #c:ingots/ironx2 + #c:ingots/electrotine_alloy -> projectred_expansion:charging_bench
   - 説明: ◆青電力消費 青電力を消費するツールを充電する事ができる装置. 同時に16個ものツールを充電できるが、pre6時点ではこの装置によって充電できるツールが電動ドライバーしかない.
 - 青電力電池、BTバッテリー (BT Battery)
   - 作り方: 錫インゴット＋銅インゴット2＋ニコライトパウダー6
   - 説明: ◆青電力貯蓄 青電力の電池. 蓄電器から青電力を充電して持ち運んだり、逆に蓄電器に青電力を戻すこともできる. 完全に空の時だけスタック出来る.
 - 蓄電器、バッテリーボックス (BatteryBox)
   - 作り方: 鉄インゴット3＋木材＋青電力電池4＋青合金インゴット
+  - 公式レシピ: (定型) projectred_expansion:batteryx4 + #minecraft:planks + #c:ingots/ironx3 + #c:ingots/electrotine_alloy -> projectred_expansion:battery_box
   - 説明: ◆青電力貯蓄 発電した青電力を貯めておく蓄電器. BTバッテリーと相互に充電できる. 破壊しアイテム化しても中の蓄電量は保持される. ただし電圧は保持されないので多少のロスが生じる.
 - 検流計、ボルトメーター (Voltmeter)
   - 作り方: ニコライトパウダー＋木材5＋銅インゴット3
@@ -479,6 +551,7 @@ Minecraft Japan Wiki の "MOD解説/Project:Red" 配下の各サブページを�
   - 説明: y=64以下に、しばしば巨大鉱脈(?)として見つかる石材. 鉱脈の生成率こそ低いのだが、1つの鉱脈の塊がとにかく巨大なので、一度見つけさえすれば粘土や石炭など比較にならないほど大量に手に入る. 建材としての用途以外、今のところ使い道はない.
 - 大理石レンガ (Marble Brick)
   - 作り方: 大理石4
+  - 公式レシピ: (定型) projectred_exploration:marblex4 -> projectred_exploration:marble_brickx4
   - 説明: 砂岩や石レンガと同じように、大理石を4つ組み合わせて作ったレンガ. 建材や装飾として用いる以外、特に用途はない.
 - 玄武岩(焼石) (Basalt Stone)
   - 作り方: なし
@@ -488,6 +561,7 @@ Minecraft Japan Wiki の "MOD解説/Project:Red" 配下の各サブページを�
   - 説明: プレイヤーにツルハシで回収された際、丸石化してしまった玄武岩. かまどで精錬すればもとの滑らかな玄武岩に戻せる. 建材や装飾として用いる以外、特に用途はない.
 - 玄武岩レンガ (Basalt Brick)
   - 作り方: 玄武岩（焼石）4
+  - 公式レシピ: (定型) projectred_exploration:basaltx4 -> projectred_exploration:basalt_brickx4
   - 説明: 砂岩や石レンガと同じように、玄武岩を4つ組み合わせて作ったレンガ. 建材や装飾として用いる以外に特に用途はない. pre6追加レシピ: 玄武岩レンガ4 → サークル玄武岩レンガ4 玄武岩（焼石) → スムース玄武岩レンガ
 
 #### 1.2. 追加アイテム
@@ -500,9 +574,15 @@ Minecraft Japan Wiki の "MOD解説/Project:Red" 配下の各サブページを�
   - 説明: ニコライトの鉱石ブロックを破壊した際、3～5個ドロップする. ダイヤやレッドストーン同様、鉱石ブロックを直接回収する事はできない. レッドストーンと似た見た目だが、地面に撒く事はできず、青電力関連のアイテムの材料として必要になる素材.
 - ルビー (Ruby)
   - 作り方: なし
+  - 公式レシピ: (精錬) projectred_exploration:deepslate_ruby_ore -> projectred_core:ruby
+  - 公式レシピ: (不定形) projectred_exploration:ruby_block -> projectred_core:rubyx9
+  - 公式レシピ: (精錬) projectred_exploration:ruby_ore -> projectred_core:ruby
   - 説明: それぞれ対応する鉱石ブロックを破壊した際、1つドロップする. ダイヤやレッドストーン同様、鉱石ブロックを直接回収する事はできない. 基本的には各種ツールの材料に使うしか用途がない. グリーンサファイアのみ電動ドライバーの材料として使用する.
 - サファイア (Sapphire)
   - 作り方: なし
+  - 公式レシピ: (精錬) projectred_exploration:deepslate_sapphire_ore -> projectred_core:sapphire
+  - 公式レシピ: (不定形) projectred_exploration:sapphire_block -> projectred_core:sapphirex9
+  - 公式レシピ: (精錬) projectred_exploration:sapphire_ore -> projectred_core:sapphire
   - 説明: (wiki に説明の記載なし)
 - グリーンサファイア (Green Sapphire)
   - 作り方: なし
@@ -518,15 +598,24 @@ Minecraft Japan Wiki の "MOD解説/Project:Red" 配下の各サブページを�
   - 説明: 銅の鋳塊. かまどで銅鉱石を精錬したもの. 赤合金インゴットやブラスインゴットetc.の材料に使用.
 - 錫インゴット (Tin Ingot)
   - 作り方: なし
+  - 公式レシピ: (精錬) projectred_exploration:deepslate_tin_ore -> projectred_exploration:tin_ingot
+  - 公式レシピ: (不定形) projectred_exploration:tin_block -> projectred_exploration:tin_ingotx9
+  - 公式レシピ: (精錬) projectred_exploration:raw_tin -> projectred_exploration:tin_ingot
+  - 公式レシピ: (精錬) projectred_exploration:tin_ore -> projectred_exploration:tin_ingot
   - 説明: 錫の鋳塊. かまどで錫鉱石を精錬したもの. ブラスインゴットや錫合板etc.の合金材料として使用.
 - 銀インゴット (Silver Ingot)
   - 作り方: なし
+  - 公式レシピ: (精錬) projectred_exploration:deepslate_silver_ore -> projectred_exploration:silver_ingot
+  - 公式レシピ: (不定形) projectred_exploration:silver_block -> projectred_exploration:silver_ingotx9
+  - 公式レシピ: (精錬) projectred_exploration:raw_silver -> projectred_exploration:silver_ingot
+  - 公式レシピ: (精錬) projectred_exploration:silver_ore -> projectred_exploration:silver_ingot
   - 説明: 銀の鋳塊. かまどで銀鉱石を精錬したもの. 青合金インゴットetc.の合金材料として使用.
 - 青合金インゴット (Blue Alloy Ingot)
   - 作り方: 銀インゴット＋ニコライトパウダー4
   - 説明: ◆合金かまど(Alloy Furnace)で精錬 青電力伝達のための専用導体. レシピに使用するのは銀インゴット
 - 高純度シリコン (Silicon Boule)
   - 作り方: 砂8＋石炭8or木炭8
+  - 公式レシピ: (精錬) projectred_core:sand_coal_comp -> projectred_core:boule
   - 説明: ◆合金かまど(Alloy Furnace)で精錬 石炭でも木炭でも作成可能 ICチップの素材としてお馴染みのシリコン. 半導体として高い適性を持つ. ちなみに"Boule"とは、棒状に成長させた巨大な単結晶のこと.
 - シリコンウェハー (Silicon Wafer)
   - 作り方: ダイヤノコ＋高純度シリコン
@@ -559,6 +648,7 @@ Minecraft Japan Wiki の "MOD解説/Project:Red" 配下の各サブページを�
   - 説明: (wiki に説明の記載なし)
 - アサメ (Athame)
   - 作り方: 銀インゴット＋棒
+  - 公式レシピ: (定型) #c:ingots/silver + #c:rods/wooden -> projectred_exploration:athame
   - 説明: アサメイ、アセイミナイフなどとも呼ばれる儀礼用のナイフ. エンダーマンに対する強力な武器となり、2回攻撃するだけで倒せる. ただし他のモンスターに対しては素手と同じ攻撃力でしかない. レシピに使用するのは鉄ではなく銀.
 - 紡毛カード (Wool Card)
   - 作り方: 鉄細線＋木材＋棒

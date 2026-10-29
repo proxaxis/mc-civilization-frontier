@@ -3,6 +3,7 @@
 Minecraft Japan Wiki の "MOD解説/BuildCraft/アイテムリスト" を基にした、BuildCraft で追加されるブロックとアイテムの一覧.
 
 - 出典: https://minecraftjapan.miraheze.org/wiki/MOD解説/BuildCraft/アイテムリスト
+- "公式レシピ" 行の出典: 公式リポジトリ 8.0.x-1.12.2 ブランチの recipe JSON ("[精密作業台]" は Assembly Table レシピ)
 - 作り方に "＝" と "（xxxxRF）" が含まれるものは、精密作業台 (Assembly Table) やレーザー合成台 (Integration Table) で必要RFを消費して作成するレシピ.
 
 ## 1. 部品、ツール
@@ -10,31 +11,37 @@ Minecraft Japan Wiki の "MOD解説/BuildCraft/アイテムリスト" を基に�
 ### 1.1. レンチ (Wrench)
 
 - 作り方: 石の歯車1 + 鉄インゴット3
+- 公式レシピ: (定型) ore:ingotIronx3 + ore:gearStone -> buildcraftcore:wrench
 - 説明: BuildCraftで追加されるアイテム専用の工具. エンジンの他、製図机、ビルダー、リファイナリーの向き変更に使用する. また、木パイプ、鉄パイプの搬出口切り替えにも使用する. レンチではエンジンやマシンの撤去を行うことが出来ないので注意が必要（撤去はつるはしを用いること） IndustrialCraft2のレンチと違い、マシンの高速撤去能力は無い. BC6.2.0以降、更にエンジンのオーバーヒート解除の役割を担うようになった.
 
 ### 1.2. 木の歯車 (Wooden Gear)
 
 - 作り方: 棒4
+- 公式レシピ: (定型) ore:stickWoodx4 -> buildcraftcore:gear_wood
 - 説明: 機械作成用の部品. これ自体には何の効果もない. 石の歯車、木エンジンの作成に使用する.
 
 ### 1.3. 石の歯車 (Stone Gear)
 
 - 作り方: 木の歯車1 + 丸石4
+- 公式レシピ: (定型) ore:cobblestonex4 + ore:gearWood -> buildcraftcore:gear_stone
 - 説明: 機械作成用の部品. これ自体には何の効果もない. 石エンジン、レンチ、全自動作業台の作成に使用する.
 
 ### 1.4. 鉄の歯車 (Iron Gear)
 
 - 作り方: 石の歯車1 + 鉄インゴット4
+- 公式レシピ: (定型) minecraft:iron_ingotx4 + ore:gearStone -> buildcraftcore:gear_iron
 - 説明: 機械作成用の部品. これ自体には何の効果もない. ボーリングマシン、クァーリー、鉄エンジンの作成に使用する.
 
 ### 1.5. 金の歯車 (Gold Gear)
 
 - 作り方: 鉄の歯車1 + 金インゴット4
+- 公式レシピ: (定型) minecraft:gold_ingotx4 + ore:gearIron -> buildcraftcore:gear_gold
 - 説明: 機械作成用の部品. これ自体には何の効果もない. クァーリー、フィラーの作成に使用する.
 
 ### 1.6. ダイヤの歯車 (Diamond Gear)
 
 - 作り方: 金の歯車1 + ダイヤモンド4
+- 公式レシピ: (定型) minecraft:diamondx4 + ore:gearGold -> buildcraftcore:gear_diamond
 - 説明: 機械作成用の部品. これ自体には何の効果もない. クァーリー、ビルダー、リファイナリー、製図机、精密作業台の作成に使用する.
 
 ### 1.7. 無色の絵筆 (Paintbrush)
@@ -52,16 +59,19 @@ Minecraft Japan Wiki の "MOD解説/BuildCraft/アイテムリスト" を基に�
 ### 2.1. 木エンジン (Redstone Engine)
 
 - 作り方: ガラス1 + 木材3 + 木の歯車2 + ピストン1
+- 公式レシピ: (定型) ore:plankWoodx3 + ore:blockGlassColorless + ore:gearWoodx2 + minecraft:piston -> buildcraftcore:engine#0
 - 説明: 初心者向けエンジン(パイプ用) 扱いやすい. 燃料が不要、レッドストーン入力だけで動くが、出力が極めて弱いエンジン. 出力不足からほとんどのマシンが動かせず、 このため木パイプや黒曜石パイプなど、パイプへの入力役として使われる. 燃料コスト0なので、パイプへの半永久的な入力役としては非常に優秀. 撤去時はつるはしが必須.
 
 ### 2.2. 石エンジン (Stirling Engine)
 
 - 作り方: ガラス1 + 丸石3 + 石の歯車2 + ピストン1
+- 公式レシピ: (定型) ore:cobblestonex3 + ore:blockGlassColorless + ore:gearStonex2 + minecraft:piston -> buildcraftcore:engine#1
 - 説明: 初心者向けエンジン(マシン用) 扱いやすい. レッドストーン入力に加えて、精錬用の燃料を消費するが、 中程度の出力を持ち、単機でマシンを動かせるエンジン. 木炭を燃料に使える関係で、持ち運び、設置、撤去が非常に楽なのが嬉しい. ただ、クァーリー等の高燃費マシンを1機で動かすのは色々とキツい. 撤去時はつるはしが必須.
 
 ### 2.3. 鉄エンジン (Combustion Engine)
 
 - 作り方: ガラス1 + 鉄インゴット3 + 鉄の歯車2 + ピストン1
+- 公式レシピ: (定型) minecraft:iron_ingotx3 + ore:blockGlassColorless + ore:gearIronx2 + minecraft:piston -> buildcraftcore:engine#2
 - 説明: 上級者向けのエンジン. 高性能だが扱いにくい. レッドストーン入力に加えて、"黒オイル"か"金オイル"が必要. 液体しか燃料に使えない関係で、気軽な設置や撤去ができない. また、更に追加で冷却用の"水"も注入し続けてやらないと、 長時間に渡って連続稼動させ続けた場合、必ず爆発するようになっている. 撤去時はつるはしが必須.
 
 ### 2.4. クリエイティブエンジン (Creative Engine)
@@ -176,6 +186,7 @@ Minecraft Japan Wiki の "MOD解説/BuildCraft/アイテムリスト" を基に�
 #### 3.2.1. パイプの防水材 (Pipe Sealant)
 
 - 作り方: 緑の染料1 or スライムボール1
+- 公式レシピ: (不定形) minecraft:dye#2 -> buildcrafttransport:waterproof
 - 説明: 作成に必要な緑の染料はサボテンを精製することで得られる. ただ従来のレシピでは砂漠バイオームが遠くにある人にとってキツいものだったのか、 BC6.4.0からコンフィグでスライムボールレシピを追加することが可能になった(ただしBC6.4.4まで正常に動作しない模様) 通常パイプから液体専用の各種パイプを作るのに必要.
 
 #### 3.2.2. 木の防水パイプ (Wooden Fluid Pipe)
@@ -299,6 +310,7 @@ Minecraft Japan Wiki の "MOD解説/BuildCraft/アイテムリスト" を基に�
 ### 4.1. 漏斗 (Chute)
 
 - 作り方: 石の歯車1 + チェスト1 + 鉄インゴット5
+- 公式レシピ: (定型) ore:ingotIronx5 + minecraft:chest + ore:gearStone -> buildcraftfactory:chute
 - 説明: 厳密に言えばマシンではなく、アイテム搬送ラインにおける中継装置. 内部に4スロット分のインベントリを持ち、そこにアイテムを入れておくと、 真下のチェスト、かまど、マシンetc.のスロットに空きが出来た場合、 手持ちのアイテムを(上面から)順次そこに補充する.
 
 ### 4.2. 全自動作業台 (Auto Workbench)
@@ -309,21 +321,25 @@ Minecraft Japan Wiki の "MOD解説/BuildCraft/アイテムリスト" を基に�
 ### 4.3. ボーリングマシン (Mining Well)
 
 - 作り方: 鉄の歯車1 + 鉄インゴット6 + 赤石粉1 + 鉄つるはし1
+- 公式レシピ: (定型) ore:ingotIronx6 + ore:dustRedstone + ore:gearIron + minecraft:iron_pickaxe -> buildcraftfactory:mining_well
 - 説明: 稼動にはエンジン動力が必要. 採掘マシンその1. 直下掘り機. クァーリーのマイナーチェンジ版で、自身の真下1列しか掘れないが、 作りやすく、操作も簡単、取り回しに優れ、低燃費. 初心者がとりあえず触ってBuildCraftに慣れるのに最適なマシンでもある.
 
 ### 4.4. クァーリー (Quarry)
 
 - 作り方: 鉄の歯車3 + 赤石1 + 金の歯車2 + ダイヤ歯車2 + ダイヤつるはし1
+- 公式レシピ: (定型) ore:gearIronx3 + ore:dustRedstone + ore:gearGoldx2 + ore:gearDiamondx2 + minecraft:diamond_pickaxe -> buildcraftbuilders:quarry
 - 説明: 稼動にはエンジン動力が必要. 採掘マシンその2. 露天掘り機. ボーリングマシンの強化版で、1列だけでなく広い範囲を採掘できる. ただし作成コストが高い、範囲指定などの要素がある、 低出力エンジンでは動かし辛いなど、初心者にはハードルが高い面もある. またBC7よりデザインが変化. 作業状況に応じたランプが点灯するようになっている.
 
 ### 4.5. 液体タンク (Tank)
 
 - 作り方: ガラス8
+- 公式レシピ: (定型) ore:blockGlassColorlessx8 -> buildcraftfactory:tank
 - 説明: バケツやポンプで汲んだ液体(水、溶岩、etc.)を溜め込むための液体タンク. これ1ブロックで16ブロック分の液体を貯蓄できる. 撤去しても中身の液体は溢れず、蓄えた液体ごと消滅する. 縦に重ねては結合させられるが、横に並べては連結させられない. 液体用パイプもしくはバケツの手作業で流入、搬出できる.
 
 ### 4.6. ポンプ (Pump)
 
 - 作り方: 鉄インゴット4 + レッドストーン1 + 鉄の歯車1 + 液体タンク2 + バケツ1
+- 公式レシピ: (定型) ore:ingotIronx4 + ore:dustRedstone + ore:gearIron + buildcraftfactory:tankx2 + minecraft:bucket -> buildcraftfactory:pump
 - 説明: 稼動にはエンジン動力が必要. 取水装置. 真下に液体がある場所に設置すると、ホースを伸ばして液体を吸引する. 水以外にも、溶岩、黒オイルなどを汲むのにも使え、 汲み取られた液体は隣の液体パイプや液体タンクへ次々搬出される.
 
 ### 4.7. リファイナリー (Refinery)
@@ -334,11 +350,13 @@ Minecraft Japan Wiki の "MOD解説/BuildCraft/アイテムリスト" を基に�
 ### 4.8. 選別緩衝器 (Filtered Buffer)
 
 - 作り方: 木材6 + ダイヤモンドの輸送パイプ1 + チェスト1 + ピストン1
+- 公式レシピ: (定型) ore:plankWoodx6 + buildcrafttransport:pipe_diamond_item#0 + minecraft:chest + minecraft:piston -> buildcrafttransport:filtered_buffer
 - 説明: v3.7.1から追加 アイテムの一斉搬入をしたい場合に使用する. ゲートが必要.
 
 ### 4.9. 水門 (Flood Gate)
 
 - 作り方: 鉄インゴット4 + 鉄格子3 + 鉄の歯車1 + 液体タンク1
+- 公式レシピ: (定型) ore:ingotIronx4 + ore:gearIron + minecraft:iron_barsx3 + buildcraftfactory:tank -> buildcraftfactory:flood_gate
 - 説明: v4.0.0から追加 ポンプの逆バージョン パイプから輸送された液体を周囲に設置する 範囲は設置chunk含む8chunk(要検証)
 
 ## 5. マシン（旧builder）
@@ -356,11 +374,13 @@ Minecraft Japan Wiki の "MOD解説/BuildCraft/アイテムリスト" を基に�
 ### 5.3. テンプレート (Template)
 
 - 作り方: イカスミ + 紙8
+- 公式レシピ: (定型) minecraft:paperx8 + ore:dyeBlack -> buildcraftbuilders:snapshot#0
 - 説明: 下記の製図机で使用する未記入状態の製図. 指定範囲内のブロック情報を0(＝ある)か1(=ない)かだけで記録する. 個々のブロックの種類までは記憶できない代わりに、 記録した再現する時はプレイヤーが任意の建材を使用できる. 1種類のブロックを使った単純な構造物を反復作成する場合に向く.
 
 ### 5.4. ブループリント (Blueprint)
 
 - 作り方: ラピスラズリ + 紙8
+- 公式レシピ: (定型) minecraft:paperx8 + ore:gemLapis -> buildcraftbuilders:snapshot#2
 - 説明: 製図机で使用する未記入状態の製図. テンプレートのパワーアップ版で、指定範囲内のブロック情報を、 "種類"や"向き"、"状態"まで含めて忠実に記憶する.
 
 ### 5.5. 範囲指定マップ (Map Location)
@@ -371,11 +391,13 @@ Minecraft Japan Wiki の "MOD解説/BuildCraft/アイテムリスト" を基に�
 ### 5.6. リスト (List)
 
 - 作り方: 緑色の染料1 + 紙8 + レッドストーン1
+- 公式レシピ: (定型) minecraft:paperx7 + ore:dustRedstone + minecraft:dye#2 -> buildcraftcore:list
 - 説明: ダイヤパイプのフィルター機能をより細かく設定するための道具. 右クリックするとGUIが開きアイテムを指定する欄が2段出てくる. 中にあるボタンは指定したアイテム(一番左側のみ)の詳細を指定することができる. P:不明(要検証) T:メタデータを無視するかどうか. M:類似したアイテムの指定.
 
 ### 5.7. 製図机 (Architect Table)
 
 - 作り方: 作業台1 + イカスミ2 + 青マーカー1 + 黄の染料2 + ダイヤ歯車2 + ブループリント1
+- 公式レシピ: (定型) ore:dyeBlackx2 + buildcraftcore:marker_volume + ore:dyeYellowx2 + minecraft:crafting_table + ore:gearDiamondx2 + buildcraftbuilders:snapshot#2 -> buildcraftbuilders:architect
 - 説明: 設置前に青マーカーでの作業範囲の指定が必須. 青マーカーでコピーする範囲を指定した後に、隣接させてこの機械を設置、 内部にテンプレートまたはブループリントを置くと、 使った製図の種類に応じて指定空間内におけるブロック情報を記録する. ただしあくまで"記録"だけが担当で、再構築は次の"ビルダー"の仕事.
 
 ### 5.8. 製図棚 (Electronic Library)
@@ -418,21 +440,25 @@ Minecraft Japan Wiki の "MOD解説/BuildCraft/アイテムリスト" を基に�
 ### 6.2. レーザー (Laser)
 
 - 作り方: 黒曜石2 + ダイヤ2 + レッドストーン5
+- 公式レシピ: (定型) ore:dustRedstonex5 + minecraft:obsidianx2 + ore:gemDiamondx2 -> buildcraftsilicon:laser
 - 説明: 稼動にはエンジン動力が必要 下記精密作業台を稼動させる為の、専用のレーザー照射装置. リファイナリー同様、エネルギーパイプを使用しないと動作が不安定. レーザーの色は、赤→黄→緑→青の順で、青が最も強力(40RF/t) が、青のレーザーにそれ以上エンジン入力しても効率は上がらないので、 効率を上げたい場合、青色のレーザーを2本、3本と複数用意する事.
 
 ### 6.3. 精密作業台 (Assembly Table)
 
 - 作り方: 黒曜石6 + ダイヤ1 + レッドストーン1 + ダイヤ歯車1
+- 公式レシピ: (定型) minecraft:obsidianx6 + ore:gemDiamond + ore:dustRedstone + ore:gearDiamond -> buildcraftsilicon:assembly_table
 - 説明: ワイヤー、チップセット、ゲートなどを作成する為の専用作業台. 上記アイテムはこの作業台でしか作成できず、 更にこの作業台自体、レーザーの照射によってしか稼動しない. あらかじめ材料を置き、更にそれを使って何を作るか選択しておかないと、 範囲内にレーザー照射機があっても認識してもらえない点に注意.
 
 ### 6.4. 全自動作業台、改 (Advanced Crafting Table)
 
 - 作り方: 黒曜石6 + チェスト1 + 作業台1 + 赤石チップ1
+- 公式レシピ: (定型) minecraft:obsidianx6 + ore:craftingTableWood + ore:chestWood + buildcraftsilicon:redstone_chipset#0 -> buildcraftsilicon:advanced_crafting_table
 - 説明: レーザー照射によってのみ動作する、全自動作業台. "全自動作業台(通常)"、"隣接チェスト"、"搬出用の木パイプ"の3つが 1ブロックに統合されているのと同じ作用を持っているが、 一方で加工1回に必要なエネルギー量は5000RF/tであり、 作成コストも全自動作業台(通常)に比べ遥かに高くなっている. その分レーザーを大量に設置すれば加工は一瞬で終わる.
 
 ### 6.5. レーザー合成台 (Integration Table)
 
 - 作り方: 黒曜石6 + 金インゴット1 + 赤石チップ1 + ダイヤ歯車1
+- 公式レシピ: (定型) minecraft:obsidianx6 + ore:ingotGold + buildcraftsilicon:redstone_chipset#1 + ore:gearDiamond -> buildcraftsilicon:integration_table
 - 説明: 精密作業台と似ているが、こちらはゲートやロボットにチップを合成するためだけの作業台.
 
 ### 6.6. スタンピングテーブル (Charging Table)
@@ -467,21 +493,25 @@ Minecraft Japan Wiki の "MOD解説/BuildCraft/アイテムリスト" を基に�
 #### 6.8.1. 赤石チップ (Redstone Chipset)
 
 - 作り方: 赤石チップ1 ＝ 赤石粉1（100,000RF）
+- 公式レシピ: (精密作業台) ore:dustRedstone -> buildcraftsilicon:redstone_chipset#0 (10000MJ)
 - 説明: 各ゲートの作成材料となる中間素材. これ単体では何にも使えない.
 
 #### 6.8.2. 鉄チップ (Iron Chipset)
 
 - 作り方: 鉄チップ1 ＝ 赤石粉1 + 鉄インゴット1（200,000RF）
+- 公式レシピ: (精密作業台) ore:dustRedstone + ore:ingotIron -> buildcraftsilicon:redstone_chipset#1 (20000MJ)
 - 説明: 各ゲートの作成材料となる中間素材. これ単体では何にも使えない.
 
 #### 6.8.3. 金チップ (Golden Chipset)
 
 - 作り方: 金チップ1 ＝ 赤石粉1 + 金インゴット1（400,000RF）
+- 公式レシピ: (精密作業台) ore:dustRedstone + ore:ingotGold -> buildcraftsilicon:redstone_chipset#2 (40000MJ)
 - 説明: 各ゲートの作成材料となる中間素材. これ単体では何にも使えない.
 
 #### 6.8.4. ダイヤチップ (Diamond Chipset)
 
 - 作り方: ダイヤチップ1 ＝ 赤石粉1 + ダイヤ1（800,000RF）
+- 公式レシピ: (精密作業台) ore:dustRedstone + ore:gemDiamond -> buildcraftsilicon:redstone_chipset#4 (80000MJ)
 - 説明: 各ゲートの作成材料となる中間素材. これ単体では何にも使えない.
 
 #### 6.8.5. パルサー (Pulsating Chipset)
@@ -492,6 +522,7 @@ Minecraft Japan Wiki の "MOD解説/BuildCraft/アイテムリスト" を基に�
 #### 6.8.6. 水晶チップ (Quartz Chipset)
 
 - 作り方: 水晶チップ1 ＝ 赤石粉1 + ネザー水晶1（600,000RF）
+- 公式レシピ: (精密作業台) ore:dustRedstone + ore:gemQuartz -> buildcraftsilicon:redstone_chipset#3 (60000MJ)
 - 説明: 各ゲートの作成材料となる中間素材. これ単体では何にも使えない.
 
 #### 6.8.7. コンパレータチップ (Redstone Comp Chipset)

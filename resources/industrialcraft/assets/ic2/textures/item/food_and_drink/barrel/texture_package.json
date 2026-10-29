@@ -1,0 +1,6 @@
+{
+	"beer": "ic2:item/food_and_drink/barrel/beer",
+	"potion": "ic2:item/food_and_drink/barrel/potion",
+	"rum": "ic2:item/food_and_drink/barrel/rum",
+	"whisky": "ic2:item/food_and_drink/barrel/whisky"
+}

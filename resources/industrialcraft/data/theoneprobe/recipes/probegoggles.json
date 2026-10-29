@@ -1,0 +1,25 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "baubles"
+    }
+  ],
+  "result": {
+    "item": "theoneprobe:probe"
+  },
+  "pattern": [
+    " g ",
+    "gpg",
+    " g "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "p": {
+      "item": "theoneprobe:probe"
+    },
+    "g": {
+      "tag": "forge:nuggets/gold"
+    }
+  }
+}

@@ -18,6 +18,7 @@ LogisticsPipes の移植を検討するための参考資料として、公式�
 - `assets/logisticspipes/lang/` — 言語ファイル
 - `assets/logisticspipes/book/`、`fonts/` — ガイドブック、フォント関連
 - `resources_raw/` — 生成前の元素材 (solid_block 等のベース素材)
+- `src/logisticspipes/recipes/` — コード内登録レシピの公式ソース (JSON に無いモジュール、パイプ、アップグレード系レシピ. 2026-10 追記)
 
 ## 3. 注意点 (知見)
 

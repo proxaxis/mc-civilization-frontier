@@ -3,6 +3,7 @@
 Minecraft Japan Wiki の "MOD解説/IndustrialCraft²" 配下のアイテムリストを基にした、IndustrialCraft² (IC2) で追加されるブロックとアイテムの一覧. 
 
 - 出典: MOD解説/IndustrialCraft²/アイテムリスト1、アイテムリスト2、アイテムリスト（v1.97、1.95）、農業と酒造 (https://minecraftjapan.miraheze.org)
+- "公式レシピ" 行の出典: IC2Classic-1.19.2-2.1.3.4.jar のコード内レシピ定義から機械抽出 (recipes_export.json 参照)
 
 ## アイテムリスト1
 
@@ -10,26 +11,33 @@ Minecraft Japan Wiki の "MOD解説/IndustrialCraft²" 配下のアイテムリ�
 
 - 火力発電機 (Generator)
  - 作り方: 充電式電池：１＋精錬鉄：３＋鉄のかまど：１ / 充電式電池：１＋マシン：１＋かまど：１
+ - 公式レシピ: (定型) ic2:re_battery + #forge:ingots/refined_ironx3 + ic2:iron_furnace -> ic2:generator
+ - 公式レシピ: (定型) ic2:re_battery + ic2:machine_block + minecraft:furnace -> ic2:generator
  - 発電量(発電速度): 石炭1個当たり 4,000EU (10EU/t)
  - 説明: 最もポピュラーな発電機. 他の発電機の作成にも必要. 使用できる燃料が最も多く、発電量は燃料によって異なる. 石かまどで使える燃料は、溶岩バケツを除いてこちらでも燃料として使える.
 - 地熱発電機 (Geothermal Generator)
  - 作り方: ガラス：４＋セル：２＋精錬鉄：２＋火力発電機：１
+ - 公式レシピ: (定型) #forge:glassx4 + ic2:cell_emptyx2 + #forge:ingots/refined_ironx2 + ic2:generator -> ic2:geothermal_generator
  - 発電量(発電速度): 溶岩バケツ1杯 溶岩セル1個 20,000EU (20EU/t)
  - 説明: 溶岩の熱で発電する発電機. 発電速度が火力よりも早い. 溶岩バケツ又は溶岩セルを燃料として発電ができる. 溶岩セルはスタックが可能で序盤の発電機としてはなかなか優秀. ポンプを隣接させることで溶岩を汲み上げ自動で燃料の補給も可能 (ポンプに空セルを入れておくことでセルを消費せずに発電機へ溶岩を送り込める) また、Buildcraftを導入していれば液体用パイプから溶岩を注入することができる. Jenkinsビルドの1.6.2対応版では、Buildcraftのパイプが繋がらない. 他MODを活用すれば自動バケツリレーができないこともない.
 - 水力発電機 (Water Mill)
  - 作り方: 木材：４＋木の棒：４＋火力発電機：１
+ - 公式レシピ: (定型) minecraft:stickx4 + #minecraft:planksx4 + ic2:generator -> ic2:water_millx2
  - 発電量(発電速度): 水入りバケツ: 1,000EU(1EU/t) 水流発電: 6,000EU/day (0.25 EU/t)
  - 説明: 水入りバケツを燃料として使用できるほか、水と隣接することでも発電ができる発電機. 製作コストが最も安いが発電量も抑え目となっている. 水流発電の場合、発電機を中心とした3*3*3の空間の水ブロックの数に比例して発電力が増加. 水1ブロックにつき0.01、本体とケーブルを除いて最大25ブロックなので0.25EU/tとなる. また、Buildcraftを導入していても液体用パイプから水を注入することは出来ない.
 - 風力発電機 (Wind Mill)
  - 作り方: 鉄インゴット：４＋火力発電機：１
+ - 公式レシピ: (定型) ic2:complex_circuit + ic2:transformer_hv + ic2:wind_turbine + ic2:iron_fence + ic2:advanced_machine_block -> ic2:windmill
  - 発電量(発電速度): ???EU/day (0-3EU/t)
  - 説明: リソース不要な発電機の中では高出力を誇り生産コストも非常に安い. 発電するにはある程度のスペースが必要かつ高さに応じて発電量がかなり変わる. 発電力が非常に不安定でまったく発電しないこともある. 設置高度が高すぎると発電量が5EU/tを超えてしまい風力発電機が壊れる可能性がある. (Y=147がギリギリで壊れない高さ. この高さで発電量最大値が4.98EU/t. ただしこれはケーブル設置を考慮していない理論値なので、実運用ではY=149が壊れないギリギリの高さとなる) かといって、5EU/tさえ超えなければ高い方がいいというものでもないようで、 計算上の発電量が3EU/tを超えると逆に実際の発電力が減少しはじめ、4EU/tを超えると0になってしまう模様. （簡略的な実験結果は各機械についてを参照） （4EU/tで発電が停止するとして）雷雨でも確実に発電を行いたい場合、Y=130(ケーブルを考慮するとY=132)が3.96EU/tでギリギリの高さとなる. 余談だが、発電量に関係してくるのは高度と周囲のスペースのみなので、 （スペースさえ確保できれば）屋内風力発電所などというわけのわからないものが作れたりもするというか作れる.
 - ソーラーパネル (Solar Panel)
  - 作り方: ガラス：３＋石炭の粉：３＋電子回路：２＋火力発電機：１
+ - 公式レシピ: (定型) #ic2:coal_and_charcoalx3 + #forge:glassx3 + ic2:circuitx2 + ic2:generator -> ic2:solar_panel
  - 発電量(発電速度): 13,050EU/day (1EU/t)
  - 説明: 日光を使っての発電が可能なリソース不要の発電機. 個々の発電量は低いが数さえ揃えば強力な電力源となる. 発電には日光が必要で夜間は発電が出来ない. また、パネルの上に不透明なブロックを置くことでも発電は止まる.
 - 原子炉 (Nuclear Reactor)
  - 作り方: 発展回路：１＋チャンバー：３＋火力発電機：１
+ - 公式レシピ: (定型) ic2:advanced_circuit + ic2:reactor_chamberx3 + ic2:generator -> ic2:nuclear_reactor
  - 発電量(発電速度): ウランセル1個当たり 1,000,000EU(5EU/t)
  - 説明: ウランを使うことで莫大な発電量を得ることが出来る原子炉. 現実の原子炉同様、熱量を管理することで安全な運用が可能だが、管理に失敗すれば最悪の場合大災害となりうるリスキーな発電装置.
 
@@ -43,14 +51,19 @@ Minecraft Japan Wiki の "MOD解説/IndustrialCraft²" 配下のアイテムリ�
  - 説明: ラバーによる被覆がないケーブル. 周囲が絶縁されていないので稼動中に触ると感電する. 被覆付きのケーブルよりEU損失量が多い. ラバーの節約がしたい場合に使うといい.
 - 銅のケーブル (Copper Cable)
  - 作り方: 銅インゴット：３＋ゴム：６ / 銅の被覆なしケーブル：１＋ゴム：１
+ - 公式レシピ: (定型) #forge:ingots/copperx3 -> ic2:copper_cable_itemx6
  - 損失量(EU/Block): 0.2EU/B
  - 説明: 低圧(32EU/t)まで耐えられる最もポピュラーな電線. レシピ素材、配線の両方で使う. 被覆されているので感電を防げる.
 - 金のケーブル (Gold Cable)
  - 作り方: 金インゴット：１＋ゴム：４ / 金の被覆なしケーブル：１＋ゴム：１
+ - 公式レシピ: (定型) #forge:ingots/goldx3 -> ic2:gold_cable_itemx12
  - 損失量(EU/Block): 0.45EU/B
  - 説明: 中圧(128EU/t)まで耐えられる. 損失量が銅のケーブルより大きい. このままでは感電するので注意.
 - 金の2倍絶縁ケーブル (Gold Cable Insulated 2x)
  - 作り方: 金の被覆なしケーブル：１＋ゴム：２ / 金のケーブル：１＋ゴム：１
+ - 公式レシピ: (不定形) ic2:gold_cable_item + ic2:rubber + #ic2:rubber -> ic2:gold_double_insulated_cable_item
+ - 公式レシピ: (不定形) ic2:gold_insulated_cable_item + #ic2:rubber -> ic2:gold_double_insulated_cable_item
+ - 公式レシピ: (定型) #ic2:rubberx8 + #forge:ingots/gold -> ic2:gold_double_insulated_cable_itemx4
  - 損失量(EU/Block): 0.4EU/B
  - 説明: 通常の金のケーブルよりも損失量の低いケーブル. こちらでは感電しなくなる.
 - 高圧用のケーブル (HV Cable)
@@ -75,10 +88,12 @@ Minecraft Japan Wiki の "MOD解説/IndustrialCraft²" 配下のアイテムリ�
  - 説明: v1.15で新たに追加されたスズ製のケーブル. 耐圧は超低圧(5EU/t)、損失量は0.025EU/Bと極端に低い. ペイントは不可能. 感電はしない. 風力発電などの発電力が弱い発電機はこちらを使わないと、短い距離でEU損失してしまうため、 蓄電器までに発電したEUがなくなってしまうことがある.
 - 検出ケーブル (Detector Cable)
  - 作り方: 電子回路：１＋レッドストーン：３＋高圧用の4倍絶縁ケーブル：１
+ - 公式レシピ: (定型) ic2:circuit + #forge:dusts/redstonex3 + ic2:iron_triple_insulated_cable_item -> ic2:detector_cable_item
  - 損失量(EU/Block): 0.5EU/B
  - 説明: 検出ケーブルはEUが流れているときにレッドストーンの動力を出力する. また、蓄電器などのオーバーフローも検出できる？
 - 分割ケーブル (Splitter Cable)
  - 作り方: レバー：１＋レッドストーン：２＋高圧用の4倍絶縁ケーブル：２
+ - 公式レシピ: (定型) #forge:dusts/redstonex2 + ic2:iron_triple_insulated_cable_itemx2 + minecraft:lever -> ic2:splitter_cable_item
  - 損失量(EU/Block): 0.5EU/B
  - 説明: 分割ケーブルはレッドストーンの動力が入るとEUの送電をせき止める.
 
@@ -88,12 +103,16 @@ Minecraft Japan Wiki の "MOD解説/IndustrialCraft²" 配下のアイテムリ�
 
 - 低圧変換装置 (LV Transformer)
  - 作り方: 木材：４＋銅インゴット：３＋銅のケーブル：２
+ - 公式レシピ: (定型) #minecraft:planksx4 + ic2:copper_insulated_cable_itemx2 + #forge:ingots/copperx3 -> ic2:transformer_lv
  - 説明: 中圧以下を低圧に、低圧以下を中圧に変換出来る変圧装置.
 - 中圧変換装置 (MV Transformer)
  - 作り方: マシン：１＋金の2倍絶縁ケーブル：２
+ - 公式レシピ: (定型) ic2:gold_double_insulated_cable_itemx2 + ic2:machine_block -> ic2:transformer_mv
+ - 公式レシピ: (定型) ic2:bronze_double_insulated_cable_itemx2 + ic2:machine_block -> ic2:transformer_mv
  - 説明: ver1.97より銅ケーブルから金の2倍絶縁ケーブルに変更 高圧以下を中圧に、中圧以下を高圧に変換出来る変圧装置.
 - 高圧変換装置 (HV Transformer)
  - 作り方: 高圧用の4倍絶縁ケーブル：２＋エナジークリスタル：１＋中圧変換装置：１＋電子回路：１
+ - 公式レシピ: (定型) ic2:iron_triple_insulated_cable_itemx2 + ic2:circuit + ic2:transformer_mv + ic2:energy_crystal -> ic2:transformer_hv
  - 説明: ver1.97より銅ケーブルから高圧用の4倍絶縁ケーブルに変更 超高圧以下を高圧に、高圧以下を超高圧に変換出来る変圧装置. ここでミソなのが超高圧以上を扱える点である. 2048EU/t以上の電圧を原発で発電した場合、ケーブルは蒸発するので使えないがこれを直付けすれば電気を高圧にして取り出すことができる. 追加アドオン等の超高圧以上の発電機にも言えることである.
 
 #### 2.3. 蓄電器
@@ -102,6 +121,7 @@ Redstone Behavior【レッドストーン信号の入出力設定】
 
 - バットボックス (BatBox)
  - 作り方: 木材：５＋充電式電池：３＋銅のケーブル：１
+ - 公式レシピ: (定型) #minecraft:planksx5 + ic2:copper_insulated_cable_item + ic2:re_batteryx3 -> ic2:batbox
  - 蓄電容量: 40,000EU
  - 説明: 最も低出力、低容量、低コストな蓄電器. 低圧の入出力に対応している.
 - MFEユニット (MFE Unit)
@@ -117,21 +137,35 @@ Redstone Behavior【レッドストーン信号の入出力設定】
 
 - 充電式電池 (RE Battery)
  - 作り方: スズインゴット：４＋レッドストーン：２＋銅のケーブル：１
+ - 公式レシピ: (定型) ic2:copper_insulated_cable_item + #forge:ingots/tinx4 + #forge:dusts/redstonex2 -> ic2:re_battery
+ - 公式レシピ: (不定形) ic2:industrial_belt -> ic2:re_batteryx3
  - 説明: 充電することで何度でも使える電池. 充電状態ではスタックすることが出来ない代わりに10,000EUほどの保持が可能. 手に持ってマウスの右ボタンを押し続けると、アイテムスロットに置かれたバットボックスで充電できる電動ツールに充電する.
 - 使い捨て電池 (SU Battery)
  - 作り方: 銅のケーブル：１＋レッドストーン：１＋石炭の粉末or液状化石炭：１
+ - 公式レシピ: (定型) ic2:copper_insulated_cable_item + #forge:dusts/redstone + #forge:dusts/coal -> ic2:su_batteryx6
+ - 公式レシピ: (定型) ic2:copper_insulated_cable_item + #forge:dusts/coal + #forge:dusts/redstone -> ic2:su_batteryx6
+ - 公式レシピ: (定型) ic2:copper_insulated_cable_item + #forge:dusts/redstone + ic2:dust_hydrated_coal -> ic2:su_batteryx8
+ - 公式レシピ: (定型) ic2:copper_insulated_cable_item + ic2:dust_hydrated_coal + #forge:dusts/redstone -> ic2:su_batteryx8
+ - 公式レシピ: (定型) ic2:copper_insulated_cable_item + #forge:dusts/redstone + #forge:dusts/charcoal -> ic2:su_batteryx4
+ - 公式レシピ: (定型) ic2:copper_insulated_cable_item + #forge:dusts/charcoal + #forge:dusts/redstone -> ic2:su_batteryx4
+ - 公式レシピ: (定型) ic2:copper_insulated_cable_item + #forge:dusts/redstone + ic2:dust_hydrated_charcoal -> ic2:su_batteryx6
+ - 公式レシピ: (定型) ic2:copper_insulated_cable_item + ic2:dust_hydrated_charcoal + #forge:dusts/redstone -> ic2:su_batteryx6
  - 説明: 文字通り一回限りの使い捨て電池. 1個あたり1,000EUしか保持することが出来ないが少ない素材で量産できる. 手に持って右クリックで使用すると、アイテムスロットに置かれたバットボックスで充電できる電動ツールに充電する.
 - エナジークリスタル (Energy Crystal)
  - 作り方: ダイヤモンド：１＋レッドストーン：８
+ - 公式レシピ: (定型) #forge:dusts/redstonex8 + #forge:gems/diamond -> ic2:energy_crystal
  - 説明: 絶縁性のダイヤモンドに半導性を付与し蓄電可能にしたもの. 10万EUほど保持が可能でMFEトランスミッタおよびMFSユニットで充電、放電が可能. 機械装置では、誘導加熱炉でのみ使用可能.
 - バットパック (BatPack)
  - 作り方: スズインゴット：１＋電子回路：１＋充電式電池：６
+ - 公式レシピ: (定型) ic2:re_batteryx6 + ic2:circuit + #forge:ingots/tin -> ic2:batpack
  - 説明: Battery（バッテリー）とBackPack（バックパック）をかけたもの. 60,000EUほどの電力が保持出来る携帯蓄電器. 充電することで何度でも使える. 胴体に装備して電動工具を使うとバットパックが消費を肩代わりする. 防具としての性能は皆無である.
 - ラップパック (LapPack)
  - 作り方: バットパック：１＋発展回路：１＋ラピスラズリブロック：６
+ - 公式レシピ: (定型) minecraft:lapis_blockx6 + ic2:advanced_circuit + ic2:batpack -> ic2:lappack
  - 説明: Lapis Lazuri（ラピスラズリ）とBackPack（バックパック）をかけたもの. バットパックの上位版で300,000EUほど保持することが可能. MFEもしくはMFSユニットで充電できる.
 - ラポトロンクリスタル (Lapotron Crystal)
  - 作り方: エナジークリスタル：１＋電子回路：２＋ラピスラズリ：６
+ - 公式レシピ: (定型) minecraft:lapis_lazulix6 + ic2:circuitx2 + ic2:energy_crystal -> ic2:lapatron_crystal
  - 説明: エナジークリスタルの上位版で100万EUほど保持が可能. MFSユニットでのみ充電、放電が可能.
 
 ### 3. 機械装置
@@ -140,65 +174,85 @@ Redstone Behavior【レッドストーン信号の入出力設定】
 
 - 鉄のかまど (Iron Furnace)
  - 作り方: 鉄インゴット：５＋かまど：１ / 鉄インゴット：８
+ - 公式レシピ: (定型) #forge:ingots/ironx8 -> ic2:iron_furnace
+ - 公式レシピ: (定型) #forge:ingots/ironx5 + minecraft:furnace -> ic2:iron_furnace
  - 必要電力 (最低連続動作量): なし
  - 説明: 鉄製のかまどで精錬速度が1.25倍. 基本的に燃焼時間は同じため、石炭の精錬量が8→10に. バランスの都合上溶岩バケツの燃焼時間が短い(1000s→100s)
 - 電気炉 (Electric Furnace)
  - 作り方: 鉄のかまど：１＋レッドストーン：２＋電子回路：１
+ - 公式レシピ: (定型) ic2:circuit + #forge:dusts/redstonex2 + ic2:iron_furnace -> ic2:electric_furnace
+ - 公式レシピ: (定型) ic2:circuit + #forge:dusts/redstonex2 + minecraft:furnace + ic2:machine_block -> ic2:electric_furnace
  - 必要電力 (最低連続動作量): 313EU(3EU/t)
  - 説明: 序盤に作っておきたい機械の一つ. 電気で動くかまどで精錬速度はさらに1.125倍. リソース不要な発電機と組み合わせれば燃料要らず.
 - 誘導加熱炉 (Induction Furnace)
  - 作り方: 銅インゴット：７＋アドバンスドマシン：１＋電気炉：１
+ - 公式レシピ: (定型) #forge:ingots/copperx7 + ic2:electric_furnace + ic2:advanced_machine_block -> ic2:induction_furnace
  - 必要電力 (最低連続動作量): 6000EU(0% heat時) (16EU/t) 208EU(100% heat時) (16 EU/t)
  - 説明: IC2で追加された超高性能炉. 精錬スロットが2つある. 非常にスロースターターで時間が経つと精錬速度がかなり速くなり、同時に効率もあがる. 火を落とすとゆっくり冷えていき、冷えてる状態から暖めるのは時間が掛かる. 一度に大量の精錬がしたい時に非常に役に立つ. また、レッドストーンの動力を入力しておけば1EU/tで空焚きし、炉が温まった状態を作成、維持出来る. 中圧まで対応. アップグレードモジュールはセットできない.
 - 圧縮機 (Compressor)
  - 作り方: 石：６＋マシン：１＋電子回路：１
+ - 公式レシピ: (定型) #forge:stonex6 + ic2:machine_block + ic2:circuit -> ic2:compressor
  - 必要電力 (最低連続動作量): 625EU(2EU/t)
  - 説明: 色々な物を圧縮出来る装置. 原発を作るなら必須となる.
 - 抽出機 (Extractor)
  - 作り方: ツリータップ：４＋マシン：１＋電子回路：１
+ - 公式レシピ: (定型) ic2:treetapx4 + ic2:machine_block + ic2:circuit -> ic2:extractor
  - 必要電力 (最低連続動作量): 313EU(2EU/t)
  - 説明: 序盤に作っておきたい機械の一つ. ゴムの木からゴムを抽出する時や燃料セルなどで使う.
 - 粉砕機 (Macerator)
  - 作り方: 火打石：３＋丸石：２＋マシン：１＋電子回路：１
+ - 公式レシピ: (定型) #forge:ingots/refined_ironx7 + ic2:stone_macerator + ic2:circuit -> ic2:macerator
+ - 公式レシピ: (定型) minecraft:flintx3 + #forge:cobblestonex2 + ic2:machine_block + ic2:circuit -> ic2:macerator
  - 必要電力 (最低連続動作量): 625EU(2EU/t)
  - 説明: 序盤に作っておきたい機械の一つ. 鉱物1個を粉末2つに変換する. 粉末は精錬することでインゴットになるので、実質的に鉱物の取得量を二倍に出来る装置. また、インゴットを1つの粉末にすることや、丸石を粉砕機にかけることで砂にすることもできる.
 - 掘削機 (Miner)
  - 作り方: 採掘用パイプ：２＋マシン：１＋電子回路：２
+ - 公式レシピ: (定型) ic2:circuitx2 + ic2:machine_block + ic2:mining_pipe_shaftx2 -> ic2:miner
  - 必要電力 (最低連続動作量): 530EU(2-3 EU/t) 960EU(20-24 EU/t)
  - 説明: ドリル、スキャナ、採掘用パイプを入れると、 直下掘りをしつつ周辺の鉱石も採取する装置. 鉱石部分をくり抜くため真っ暗な空間が多数できてしまう. ドリルを取り出すと自動でパイプを引き上げてくれる. 隣にポンプ装置があると、液体を汲み上げることができる. ドリルやスキャナーは掘削開始前に充電される.
 - 電解水精製装置 (Electrolyzer)
  - 作り方: 銅のケーブル：４＋セル：２＋マシン：１＋電子回路：１
+ - 公式レシピ: (定型) ic2:copper_insulated_cable_itemx4 + ic2:circuit + ic2:cell_emptyx2 + ic2:machine_block -> ic2:electrolyzer
  - 必要電力 (最低連続動作量): 15000EU(10EU/t)
  - 説明: 水セルにEUを充填し、電解水セルに変える装置. 蓄電器の付属装置として入力面に隣接して設置する. 蓄電器の蓄電量が最大容量の30%未満だと放電、75％以上だと充填を開始する. 充填、放電速度は蓄電器の性能により変わる. 水セルは左スロットに、電解水セルは右スロットにセットする事で機能する. セルが大量運搬可能な事を利用し、拠点外での簡易発電施設として運用が可能.
 - ポンプ装置 (Pump)
  - 作り方: セル：４＋ツリータップ：１＋採掘用パイプ：２＋マシン：１＋電子回路：１
+ - 公式レシピ: (定型) ic2:cell_emptyx4 + ic2:circuit + ic2:machine_block + ic2:mining_pipe_shaftx2 + ic2:treetap -> ic2:pump
  - 必要電力 (最低連続動作量): 200EU(1EU/t)
  - 説明: 水や溶岩を汲み取れる装置. セルを入れておくと下にある液体を汲み取る. 隣にチェストがあると、そちらに水の入ったセルを入れる. また、チェスト内に空のバケツがあればそれに汲み取ってくれる. 掘削機と地熱発電機を隣接させると溶岩を汲み上げ自動で燃料の補給も可能 (ポンプに空セルを入れておくことでセルを消費せずに発電機へ溶岩を送り込める) 溶岩源でなく溶岩流でも汲み上げられるので、実質的に永久機関となる. また、チェストと発電機が隣接していた場合は発電機が優先される.
 - 磁気発生装置 (Magnetizer)
  - 作り方: レッドストーン：６＋鉄の柵：２＋マシン：１
+ - 公式レシピ: (定型) #forge:dusts/redstonex6 + ic2:iron_fencex2 + ic2:machine_block -> ic2:magnetizer
  - 必要電力 (最低連続動作量): 2EU/t(使用時のみ消費)
  - 説明: 電気を通すと磁力が発生する装置. 装置の真下に鉄の柵を垂直に積み上げてから、クアンタムブーツ、ナノブーツ、スタティックブーツ、 青銅、金、鉄製ブーツ、チェインブーツを装備して触れると高速で上昇可能. ただし最大18ブロックまで.
 - リサイクル装置 (Recycler)
  - 作り方: 圧縮機：１＋土：３＋精錬鉄：２＋グロウストーンダスト：１
+ - 公式レシピ: (定型) minecraft:glowstone_dust + minecraft:dirtx3 + ic2:compressor + #forge:ingots/refined_ironx2 -> ic2:recycler
  - 必要電力 (最低連続動作量): 35EU(1EU/t)
  - 説明: 不要物を投入することで、約1/8の確率でスクラップが生成出来る. ただし、棒、板ガラス、雪玉、足場ブロックは投入してもスクラップが生成されない. （v1.71現在） 生成の可否はconfigファイルで設定変更できる.
 - 缶詰製造機 (Canning Machine)
  - 作り方: スズインゴット：７＋マシン：１＋電子回路：１
+ - 公式レシピ: (定型) #forge:ingots/tinx7 + ic2:circuit + ic2:machine_block -> ic2:canner
+ - 公式レシピ: (定型) #forge:ingots/tinx7 + ic2:circuit + ic2:stone_canner -> ic2:canner
  - 必要電力 (最低連続動作量): ？EU(1EU/t)
  - 説明: 食べ物を缶詰にしたり燃料缶やジェットパックに燃料を注入したり出来る装置. 缶詰を作るにはその食べ物の空腹回復量と同数だけ缶が必要になる. マイナス効果を持つ食べ物を缶詰にした場合、マイナス効果を引き継ぐので注意.
 - 物質製造機 (Mass Fabricator)
  - 作り方: グロウストーンダスト：４＋アドバンスドマシン：２＋発展回路：２＋ラポトロンクリスタル：１
+ - 公式レシピ: (定型) minecraft:glowstone_dustx4 + ic2:advanced_circuitx2 + ic2:stabilized_machine_blockx2 + ic2:lapatron_crystal -> ic2:mass_fabricator
  - 必要電力 (最低連続動作量): 100万EU(1EU/t)
  - 説明: 万能の物質マターを精製する装置. 安定した稼働には莫大な電力と大量の素材を必要とする. スクラップやスクラップボックスを素材に使えば必要EUと制作時間を削減できる. レッドストーンの動力が入力されている間は精製を中断する. 超高電圧には耐えられないが作業量自体は電力量に比例する為、高電圧を複数送る事で高効率化が可能.
 - ルミネータ (Luminator)
  - 作り方: ガラス：５＋超低圧用のケーブル：１＋精錬鉄：２＋銅のケーブル：１
+ - 公式レシピ: (定型) #forge:ingots/refined_ironx2 + ic2:copper_insulated_cable_item + #forge:glassx5 + ic2:tin_cable_item -> ic2:luminatorx8
  - 説明: EUを通すと光る. 電気が通っているかの確認などにも使える. ルミネータ自身がある程度蓄電してしまうため、リアルタイムな通電の確認には使えない. 送電線を埋め込んだ建築用建材に貼ることもできる. 低電圧のみ受付可能. アイコンと文字色が同じで見難いが完成個数は８である(v1.95b)
 - テラフォーマー (Terraformer)
  - 作り方: 土：３＋グロウストーンダスト：４＋アドバンスドマシン：１＋空のTFBP：１
+ - 公式レシピ: (定型) minecraft:glowstone_dustx4 + ic2:tfbp + minecraft:dirtx3 + ic2:stabilized_machine_block -> ic2:terraformer
  - 必要電力 (最低連続動作量): 寒冷化 4EU/t 砂漠化 4EU/t 平地化 40EU/t 培養 20EU/t 灌漑 8EU/t
  - 説明: 環境を変異させる装置. 草原を寒冷地や砂漠地帯に出来たりなど自由自在. 大量のEUと、TFBPという地形情報が記録されたカートリッジを読み込ませる必要がある. 左の表は最低動作電圧で、電圧をあげればあげるほど速度が上がる. 中圧まで対応.
 - 農薬散布機 (Crop-Matron)
  - 作り方: 電子回路：２＋チェスト：１＋マシン：１＋園芸用支柱：５
+ - 公式レシピ: (定型) ic2:circuitx2 + #forge:chests/wooden + ic2:crop_sticksx5 + ic2:machine_block -> ic2:crop_matron
  - 必要電力 (最低連続動作量): 1EU/t
  - 説明: 自身を中心とした縦9x横9x高3内にある園芸用支柱に、 自動で"肥料"、"保水剤セル"、"除草スプレー"を使用する装置. 各農薬は3スロット分まで内部に置いておける. 周囲に支柱、内部に農薬が無くても、常時1EU/t消費する.
 
@@ -221,42 +275,55 @@ Redstone Behavior【レッドストーン信号の入出力設定】
  - 説明: 低コストで作成可能な一時的な足場用ブロック. はしごのように登ることができる. 幅と奥行は1ブロックよりも少し小さく、設置した地面の縁に立つことができる. 足場ブロックに足場ブロックを持った状態で左クリックすると足場ブロックを上に積み上げることが可能. 左右にも2ブロック分つけることが可能. 強化された足場ブロックは左右に5ブロック分つけられるようになる. 足場ブロックに対し木の棒を持って右クリックする事で木の棒を2本消費し足場ブロックを強化する事が可能. 一番下の足場を壊すことでそこから繋がっていた足場ブロックが全てアイテム化される. 足場ブロックに対しCFスプレーを吹き付けると足場ブロックのある位置に建築用建材を設置する事が可能. 替わった際に足場ブロックはアイテム化する.
 - 鉄製の足場ブロック (Iron Scaffold)
  - 作り方: 精錬鉄：３＋鉄の柵：３
+ - 公式レシピ: (定型) #forge:ingots/refined_ironx3 + ic2:iron_fencex3 -> ic2:scaffold_ironx16
  - 説明: 鉄製の強化版足場ブロック. 足場ブロックと同じように使用でき、はじめから左右に5ブロック分までつけることができる. 鉄の柵で強化すると、左右に12ブロック分までつけられるようになる. CFスプレーを使用しても置き換わらない. 支えがなくなるとアイテム化するのは足場ブロックと同じだが、つるはしで壊さないと壊した分の足場1個はアイテム化しないので気を付けよう.
 - テスラコイル (Tesla Coil)
  - 作り方: レッドストーン：５＋精錬鉄：２＋電子回路：１＋中圧変換装置：１
+ - 公式レシピ: (定型) #forge:dusts/redstonex5 + ic2:transformer_mv + #forge:ingots/refined_ironx2 + ic2:circuit -> ic2:tesla_coil
  - 説明: 攻撃型の防衛装置. 内部に10000EUのストレージを持ち、 蓄電量に応じたダメージを範囲内のキャラクター全てに与える（分散なし） 建造物やドロップアイテムにまったく被害を出さすに敵を始末出来る. が、いかなるキャラクターでも射程内ならダメージを受けるため扱いには注意が必要. 防具で軽減できるとはいえ、最大電力ではハート12.5個分もの威力になるため即死しかねない. 中電圧まで対応. 攻撃範囲はコイルを中心に９×９×９. １回の放電で全電力を消費する. レッドストーン入力が必要で、入力されている間は2秒毎に（最低稼働電力が溜まっていれば）放電を行う.
 - 工業用TNT (IndustrialTNT)
  - 作り方: 火打石：６＋TNT：３ / ／銅のケーブル：１＋電子回路：１＋グロウストーンダスト：２＋TNT：３
+ - 公式レシピ: (定型) minecraft:flintx6 + minecraft:tntx3 -> ic2:itntx4
+ - 公式レシピ: (定型) minecraft:flintx6 + minecraft:tntx3 -> ic2:itntx4
  - 説明: 名前の通り爆破採掘用のTNTで、爆破した範囲のブロックを消失させること無くアイテム化できる（範囲内に落ちていたアイテムは消滅する） 火薬量が調整されており、通常TNTより少し爆発範囲が小さい. 素手では回収できず、着火してしまうので要注意. 現在、後者のレシピで作ろうとすると遠隔起爆装置ができます.
 - 核爆弾 (Nuke)
  - 作り方: なし
+ - 公式レシピ: (定型) minecraft:gunpowderx5 + #forge:ingots/uraniumx4 -> ic2:nuke
  - 説明: 直径約40ブロック分の球体状の大穴をあける爆弾. シークレット要素のためレシピは非公開(※ヒントは通常TNTのレシピ)
 - 鉄の柵 (Iron Fence)
  - 作り方: 精錬鉄：６
+ - 公式レシピ: (定型) #forge:ingots/refined_ironx6 -> ic2:iron_fencex12
  - 説明: 鉄の柵. 縦に積んだものにスニーク状態で掴まると、落下速度が遅くなる.
 - 採掘用パイプ (Mining Pipe)
  - 作り方: 精錬鉄：６＋ツリータップ：１
  - 説明: 掘削機に入れて使う. 再回収も可能.
 - 強化ガラス (Reinforced Glass)
  - 作り方: ガラス：７＋合金版：２
+ - 公式レシピ: (定型) #forge:glassx7 + ic2:plate_advanced_alloyx2 -> ic2:reinforced_glassx7
+ - 公式レシピ: (定型) #forge:glassx7 + ic2:plate_advanced_alloyx2 -> ic2:reinforced_glassx7
  - 説明: 強化ガラス. TNT程度では壊れないが原子炉の融解では壊れる. 融解時には溶岩化せず溶ける.
 - 強化石材 (Reinforced Stone)
  - 作り方: 石：８＋合金版：１
+ - 公式レシピ: (定型) #forge:stonex8 + ic2:plate_advanced_alloy -> ic2:reinforced_stonex8
  - 説明: 黒曜石よりも堅い石. 原子炉を建造する際に推奨される建材だがコスト高.
 - 強化ドア (Reinforced Door)
  - 作り方: 強化石材：６
+ - 公式レシピ: (定型) ic2:reinforced_stonex6 -> ic2:reinforced_door
  - 説明: 原子炉用の強化扉.
 - ラバーシート (Rubber Sheet)
  - 作り方: ゴム：６
+ - 公式レシピ: (定型) #ic2:rubberx6 -> ic2:rubber_sheetx3
  - 説明: ラバートランポリンとも. 組み合わせるとトランポリンのようになる. 左右にシートの支えとなる適当なブロックを設置しシートの下部を空白にする事で機能する. なおトランポリンは一定の高さまでのダメージを軽減する効果がある.
 - テレポーター (Teleporter)
  - 作り方: アドバンスドマシン：１＋周波数送信機：１＋ダイヤモンド：１＋グラスファイバー：２＋発展回路：４
+ - 公式レシピ: (定型) ic2:advanced_circuitx4 + ic2:frequency_transmitter + ic2:glassfiber_cable_itemx2 + ic2:stabilized_machine_block + #forge:gems/diamond -> ic2:teleporter
  - 説明: 長距離移動に使えるテレポート装置. 使い勝手は悪いが1km以上もの距離を一瞬で移動可能.
 - 個人チェスト (Personal Safe)
  - 作り方: 電子回路：１＋マシン：１＋チェスト：１
  - 説明: マルチ用アイテムで個人専用のチェストになる. 大きさはラージチェストと同じ. 設置した本人と管理者権限を持った人でないと開くことも壊すことも出来ない. 撤去するには中身をすべて取り出し、レンチを使う必要がある.
 - トレード-O-Mat (Trade-O-Mat)
  - 作り方: レッドストーン：３＋マシン：１＋チェスト：２
+ - 公式レシピ: (定型) #forge:dusts/redstonex3 + #forge:chests/woodenx2 + ic2:machine_block -> ic2:trade_o_mat
  - 説明: マルチ用アイテム. Coinやアイテムを使ってのアイテム取引に使う. 撤去方法は個人チェストと同様. 詳しい使い方は別ページにて. 余談だが名前の由来は恐らくAutomated Tradingだと思われる.
 
 ### 5. 鉱物
@@ -281,6 +348,7 @@ Redstone Behavior【レッドストーン信号の入出力設定】
  - 説明: ウラニウムを圧縮したもの. セルと組み合わせることで燃料になる. ブロック状態の鉱石でも圧縮でこれが作れるが、そんな機会はほとんど無いだろう.
 - 合金インゴット (Mixed Metal Ingot)
  - 作り方: 精錬鉄：３＋ブロンズ：３＋錫インゴット：３
+ - 公式レシピ: (定型) #forge:ingots/refined_ironx3 + #forge:ingots/bronzex3 + #forge:ingots/aluminiumx3 -> ic2:ingot_advanced_alloyx2
  - 説明: 三種類の金属を組み合わせて作れる. このままでは何にも使えない. なお、中段は銅ではなくブロンズなので注意.
 - 合金板 (Advanced Alloy)
  - 作り方: なし
@@ -293,6 +361,7 @@ Redstone Behavior【レッドストーン信号の入出力設定】
  - 説明: マターを組み合わせることでイリジウム鉱石が製作可能. イリジウム鉱石を組み合わせることでイリジウム板が製作可能.
 - イリジウムプレート (Iridium Plate)
  - 作り方: なし
+ - 公式レシピ: (定型) ic2:ore_iridiumx4 + ic2:plate_advanced_alloyx4 + #forge:gems/diamond -> ic2:plate_iridium
  - 説明: (wiki に説明の記載なし)
 
 #### 5.1. 粉末
@@ -308,12 +377,15 @@ Redstone Behavior【レッドストーン信号の入出力設定】
  - 説明: 石炭を粉砕機で砕いたもの. 木炭で作ることは出来ない.
 - ブロンズの粉 (Bronze Dust)
  - 作り方: 銅の粉：３＋スズの粉：１
+ - 公式レシピ: (不定形) #forge:dusts/tin + #forge:dusts/copperx3 -> ic2:dust_bronzex4
+ - 公式レシピ: (不定形) ic2:bronze_dust_block -> ic2:dust_bronzex9
  - 説明: 銅の粉とスズの粉を混ぜたもの. 精錬することでインゴットになる.
 - 粘土の粉 (Clay Dust)
  - 作り方: なし
  - 説明: 粘土を粉砕機で砕いたもの.
 - コーヒーの粉 (Coffee Powder)
  - 作り方: なし
+ - 公式レシピ: (不定形) ic2:coffee_beans -> ic2:coffee_powder
  - 説明: コーヒー豆を砕いたもの. コーヒー豆を直接クラフトしても1つ作成できる.
 - グリンパウダー (Grin Powder)
  - 作り方: なし
@@ -329,12 +401,17 @@ Redstone Behavior【レッドストーン信号の入出力設定】
  - 説明: ナノスーツなどの材料になる.
 - 石炭の玉 (Coal Ball)
  - 作り方: 石炭の粉：８＋火打石：１
+ - 公式レシピ: (定型) #forge:dusts/coalx8 + minecraft:flint -> ic2:coal_ball
  - 説明: 石炭の粉(石炭粉末)とフリントをかけあわせたもの. このままでは使えない.
 - 圧縮した石炭玉 (Compressed Coal Ball)
  - 作り方: なし
  - 説明: 石炭の玉を圧縮したもの.
 - 石炭の塊 (Coal Chunk)
  - 作り方: 圧縮した石炭玉：８＋鉄ブロック：１or黒曜石：１orレンガブロック：１
+ - 公式レシピ: (定型) ic2:compressed_coal_ballx8 + minecraft:obsidian -> ic2:coal_chunk
+ - 公式レシピ: (定型) ic2:compressed_coal_ballx8 + minecraft:iron_block -> ic2:coal_chunk
+ - 公式レシピ: (定型) ic2:compressed_coal_ballx8 + minecraft:bricks -> ic2:coal_chunk
+ - 公式レシピ: (精錬) ic2:bio_chunk -> ic2:coal_chunk [furnace]
  - 説明: 石炭の塊.
 - ダイヤモンド (Diamond)
  - 作り方: なし
@@ -344,9 +421,13 @@ Redstone Behavior【レッドストーン信号の入出力設定】
 
 - 液状化石炭 (Hydrated Coal Dust)
  - 作り方: (1個)水入りバケツor水セル：１＋石炭の粉：１ / (8個)水入りバケツor水セル：１＋石炭の粉：８
+ - 公式レシピ: (不定形) #forge:dusts/coal + fluid:water -> ic2:dust_hydrated_coal
+ - 公式レシピ: (定型) #forge:dusts/coalx8 + fluid:water -> ic2:dust_hydrated_coalx8
  - 説明: 石炭の粉と水を混ぜたもの. 精錬すると石炭の粉に戻る.
 - 植物の玉 (Plantball)
  - 作り方: (1個)小麦or小麦の種orサトウキビor各種葉or草：８ / (2個)各種苗：８
+ - 公式レシピ: (定型) new ArrayInput(1, false, new Object[]{Items.f_41909_, Items.f_41982_, Items.f_42029_, Items.f_41864_, Items.f_42210_, ItemTags.f_13143_, Tags.Items.CROPS, IC2Items.HEMP, Tags.Items.MUSHROOMS, Tags.Items.SEEDS, Items.f_42410_, IC2Items.STICKY_RESIN, IC2Items.CROP_SEED, Items.f_41911_, ItemTags.f_13149_, Items.f_41910_, IC2Items.HOPS, Items.f_42260_, Items.f_42259_, Items.f_42780_, Items.f_151079_, Items.f_42533_})x8 -> ic2:plant_ball
+ - 公式レシピ: (定型) #minecraft:saplingsx8 -> ic2:plant_ballx2
  - 説明: 植物を丸めた塊. 各種苗木、サトウキビ、種から作れる.
 - 圧縮した液化石炭 (H.Coal)
  - 作り方: なし
@@ -356,6 +437,7 @@ Redstone Behavior【レッドストーン信号の入出力設定】
  - 説明: 植物の塊を圧縮したもの.
 - 空の燃料缶 (Fuel Can)
  - 作り方: スズインゴット：７
+ - 公式レシピ: (定型) #forge:ingots/tinx7 -> ic2:fuel_can
  - 説明: 燃料が詰まっていない状態の燃料缶.
 - 燃料缶 (Fuel Can_Filled)
  - 作り方: なし
@@ -368,18 +450,24 @@ Redstone Behavior【レッドストーン信号の入出力設定】
  - 説明: ゴムの木は湿地帯のバイオームに多く見られ、寒冷地では群生量が少ない. ゴムの木の葉を壊すとゴムの木の苗木が手に入る. ゴムの木を伐採、もしくは樹液が出ている部分にツリータップを使うと樹液が手に入る. 樹液を採取した後、時間が経つと再び採取できるようになる. 樹液が復活する前に再度ツリータップを使っても樹液が追加で手に入る可能性があるが、穴が潰れて樹液が出てこなくなる可能性もあるので注意. 樹液は粘着ピストンや松明のレシピ代わりとして使うことも出来る. また、ブロックの上に配置することができ、その上を歩くと移動速度が遅くなり、ジャンプも低くなる. ゴムの木の原木は、作業台で加工するとジャングルの木からできるものと同じ木材が3個に、 精錬するとジャングルの木の原木になる.
 - ゴム (Rubber)
  - 作り方: なし
+ - 公式レシピ: (精錬) ic2:sticky_resin -> ic2:rubber [furnace]
  - 説明: ゴムの木から得られる素材を加工したもので主に各種ケーブルを作るときに使う. 樹液→精錬：1個 樹液→抽出機：3個 ゴムの原木→抽出機：1個 ゴムの苗木→抽出機：1個
 - 電子回路 (Electronic Circuit)
  - 作り方: 精錬鉄：１＋レッドストーン：２＋銅のケーブル：６
+ - 公式レシピ: (定型) ic2:copper_insulated_cable_itemx6 + #forge:dusts/redstonex2 + #forge:ingots/refined_iron -> ic2:circuit
+ - 公式レシピ: (定型) ic2:copper_insulated_cable_itemx6 + #forge:dusts/redstonex2 + #forge:ingots/refined_iron -> ic2:circuit
  - 説明: 機械を作るための基礎素材. レシピ素材としてかなり要求頻度が高い.
 - 発展回路 (Advanced Circuit)
  - 作り方: 電子回路：１＋レッドストーン：４＋グロウストーンの粉：２＋ラピスラズリ：２
+ - 公式レシピ: (定型) #forge:dusts/redstonex4 + minecraft:glowstone_dustx2 + minecraft:lapis_lazulix2 + ic2:circuit -> ic2:advanced_circuit
+ - 公式レシピ: (定型) #forge:dusts/redstonex4 + minecraft:lapis_lazulix2 + minecraft:glowstone_dustx2 + ic2:circuit -> ic2:advanced_circuit
  - 説明: 電子回路の上位版でより高度な機械を作るときに使う.
 - スクラップ (Scrap)
  - 作り方: なし
  - 説明: リサイクラーから生成したゴミ. スクラップ箱の素材や、物質製造機でマターを作る際の材料に使用する. 地味にかまどや火力発電機の燃料にもなる.
 - スクラップ箱 (Scrap Box)
  - 作り方: なし
+ - 公式レシピ: (定型) ic2:scrapx9 -> ic2:scrapbox
  - 説明: スクラップを並べて作ったゴミ箱. 蓋を開けてみると…？ ちなみにスクラップ箱も物質製造機に投入する事ができしっかりスクラップ9個分の働きをする. 取得可能なアイテム
 - マター (Matter)
  - 作り方: なし
@@ -389,9 +477,11 @@ Redstone Behavior【レッドストーン信号の入出力設定】
 
 - バットパック (BatPack)
  - 作り方: スズインゴット：１＋電子回路：１＋充電式電池：６
+ - 公式レシピ: (定型) ic2:re_batteryx6 + ic2:circuit + #forge:ingots/tin -> ic2:batpack
  - 説明: 60,000EUほどの電力が保持出来る携帯蓄電器. 充電することで何度でも使える. 胴体に装備して電動工具を使うとバットパックが消費を肩代わりする. 防具としての性能は皆無である.
 - ラップパック (LapPack)
  - 作り方: バットパック：１＋発展回路：１＋ラピスラズリブロック：６
+ - 公式レシピ: (定型) minecraft:lapis_blockx6 + ic2:advanced_circuit + ic2:batpack -> ic2:lappack
  - 説明: バットパックの上位版で300,000EUほど保持することが可能. MFEもしくはMFSユニットで充電できる.
 - CFパック (CF-Pack)
  - 作り方: スズインゴット：１：＋電子回路：１＋ＣＦスプレー：２＋空の燃料缶：４
@@ -401,9 +491,12 @@ Redstone Behavior【レッドストーン信号の入出力設定】
  - 説明: 液体燃料を使った推進装置. 胴体に装備してスペースで飛翔. スペースキーとMキーを押すと滞空モードに切り替わる. 缶詰製造機で燃料を補充すれば何度でも使える. 燃料満タンから90秒間飛行できる.
 - 電動ジェットパック (Electric Jetpack)
  - 作り方: 精錬鉄：４＋発展回路：１＋バットボックス：１＋グロウストーンの粉：２
+ - 公式レシピ: (定型) #forge:ingots/refined_ironx4 + ic2:advanced_circuit + ic2:batbox + minecraft:glowstone_dustx2 -> ic2:jetpack_electric
+ - 公式レシピ: (不定形) ic2:jetpack_electric + ic2:magnet + new FlagModifier(IC2Items.JETPACK_ELECTRIC, "SpecialMode", false).setUsesInput() + RecipeMods.HIDDEN_RECIPE -> ic2:jetpack_electric
  - 説明: バッテリー駆動のジェットパック. EUを充電することで何度でも使うことが出来る. スペースキーとMキーを押すと滞空モードに切り替わる. 通常のジェットパックより飛行可能な高度が低い. 最大充電(30,000EU)から80秒間飛行できる.
 - ゴムブーツ (Rubber Boots)
  - 作り方: ゴム：６＋羊毛：１
+ - 公式レシピ: (定型) #ic2:rubberx6 + #minecraft:wool -> ic2:armor_hazmat_boots
  - 説明: ゴム製のブーツで着地ダメージを大幅に軽減する. 羊毛とゴムを組み合わせることで作れる. 羊毛の色は何色でも構わない.
 - コンポジットベスト (Composite Vest)
  - 作り方: 革のチェストプレート：１＋鉄のチェストプレート：１＋合金板：６
@@ -413,6 +506,7 @@ Redstone Behavior【レッドストーン信号の入出力設定】
  - 説明: 青銅製のアーマー. 耐久値が鉄製のものより1.25倍ほど多い.
 - HAZMATスーツ (Hazmat Suit)
  - 作り方: なし
+ - 公式レシピ: (定型) #ic2:rubberx6 + minecraft:orange_dyex2 -> ic2:armor_hazmat_chest
  - 説明: 危険物取り扱い用の防護服一式(スキューバヘルメット、HAZMATチェストプレート、HAZMATレギンス、ゴムブーツで防護服一式とする) 防護服一式を着ていれば溶岩や原子炉融解時の熱を含む燃焼ダメージと感電ダメージと爆発時のダメージを完全に無効化する. ヘルメット単体には酸素マスクとして機能があり、 圧縮酸素セルを持っていれば水中で酸素マークが残り4つになっても自動で消費して酸素を補充してくれる.
 - ナノアーマー (Nano Suits)
  - 作り方: なし
@@ -422,9 +516,13 @@ Redstone Behavior【レッドストーン信号の入出力設定】
  - 説明: バッテリー駆動の特殊なアーマーでMFSユニットで充電することで耐久値を回復させることができる. 身体機能の補強効果が付随されており、部位によって異なる恩恵が（電力のある限り）得られる. ヘルメットは毒、ウィザー状態を即座に回復し、酸素ゲージが自動で供給され空腹ゲージが自動で回復する. ｖ1.110からはプレイヤーのインベントリにある食物缶詰を消費して空腹度を回復する仕様に. アーマーは殆どのダメージを耐久値によって肩代わりする. ただしver1.110からは奈落、毒、空腹のダメージは受けるように. また魔法ダメージ（負傷ポーション）や落下ダメージも軽減できない. レギンスはスプリント時の移動速度が3.4倍になる（電力を消費しないが、起動するには電力が残っている必要がある. ） ブーツはCtrlキーを押しながらジャンプすることで、ジャンプ力が約10倍に上昇する. またどんな高所から落ちても落下ダメージを受けない（ただし電力は消費する）
 - ソーラーヘルメット (Solar Helmet)
  - 作り方: 鉄：５or鉄のヘルメット：１＋ソーラーパネル：１＋銅のケーブル：３
+ - 公式レシピ: (定型) #forge:ingots/ironx5 + ic2:solar_panel + ic2:copper_insulated_cable_itemx3 -> ic2:solar_helmet
+ - 公式レシピ: (定型) minecraft:iron_helmet + ic2:solar_panel + ic2:copper_insulated_cable_itemx3 -> ic2:solar_helmet
  - 説明: 頭に装備していると、晴天下にいる間1EU/tのペースで胴装備に充電する. （夜でも発電することができる）
 - スタティックブーツ (Static Boots)
  - 作り方: 鉄：４or鉄のブーツ：１＋羊毛：１＋銅のケーブル：３
+ - 公式レシピ: (定型) #forge:ingots/ironx4 + #minecraft:wool + ic2:copper_insulated_cable_itemx3 -> ic2:static_boots
+ - 公式レシピ: (定型) minecraft:iron_boots + #minecraft:wool + ic2:copper_insulated_cable_itemx3 -> ic2:static_boots
  - 説明: 足に装備していると、歩いている間1EU/5ブロックのペースで胴装備に充電する. 満足に充電するには相当歩かなくてはならない.
 
 ### 8. 新しい道具
@@ -434,24 +532,30 @@ Redstone Behavior【レッドストーン信号の入出力設定】
  - 説明: ブロンズ製のツール. 掘る性能は鉄製ツールと同等. 耐久度は鉄製ツールの1.25倍. 鉄の消費が多いことによる救済措置.
 - チェーンソー (Chain Saw)
  - 作り方: 電子回路：１＋精錬鉄：５：充電式電池：１
+ - 公式レシピ: (定型) #forge:ingots/refined_ironx5 + ic2:circuit + ic2:re_battery -> ic2:chainsaw
  - 説明: バッテリー駆動のチェーンソーで原木や木材を最速で破壊できる. 絶対に壊れない代わりに充電(1万EU)が必要. 武器として使っても非常に優秀である. ハサミとしての機能も持っており、羊毛の刈り取りや葉ブロックの取得などができる.
 - 採掘用ドリル (Mining Drill)
  - 作り方: 電子回路：１＋精錬鉄：５＋充電式電池：１
  - 説明: バッテリー駆動のドリル. シャベルとつるはしに対応するブロックを破壊可能. 鉄製ツールを上回る性能で、充電すれば何度でも使える. レッドストーン鉱石も高速で破壊できるが、黒曜石は採取できない. 電池が切れても壊れはしないが、効率がかなり落ちる. フルチャージ(1万EU)で200回採掘可能.
 - ダイヤモンドドリル (Diamond Drill)
  - 作り方: 採掘用ドリル：１＋ダイヤモンド：３
+ - 公式レシピ: (定型) #forge:gems/diamondx3 + ic2:drill -> ic2:drill_diamond
  - 説明: 採掘用ドリルの上位版. ダイヤ製ツールを凌駕する掘削性能を持つ. 黒曜石すら数秒で破壊できるが、その分エネルギー燃費は低下している. フルチャージ(1万EU)で120回採掘可能.
 - 電動クワ (Electric Hoe)
  - 作り方: 充電式電池：１＋電子回路：１＋精錬鉄：２
+ - 公式レシピ: (定型) #forge:ingots/refined_ironx2 + ic2:circuit + ic2:re_battery -> ic2:electric_hoe
  - 説明: バッテリー駆動のクワ. 充電(1万EU)する事で何度でも使える.
 - レンチ (Wrench)
  - 作り方: ブロンズ：６
+ - 公式レシピ: (定型) #forge:ingots/bronzex6 -> ic2:wrench
  - 説明: 設置した機械類を右クリックすることで撤去が可能. 一定確率で撤去した機械が壊れてマシンブロック(上位設備ならアドバンスドマシン、発電機なら火力発電機)になる. 充電器の撤去は、出力面を右クリックか、Shift+右ダブルクリック. うまくいかない場合はAltキーを2回押す. 変圧器なら3ドット面. 充電器、変圧器共に、Shift+右シングルクリックをすると、機械の向きを通常と逆に変更できる.
 - 電動レンチ (Electric Wrench)
  - 作り方: レンチ：１＋電子回路：１＋充電式電池：１
+ - 公式レシピ: (定型) ic2:wrench + ic2:circuit + ic2:re_battery -> electricWrench
  - 説明: バッテリー駆動のレンチ. 充電(12000EU)する事で何度でも使える. 充電器の撤去は、出力面を右クリックか、Shift+右ダブルクリック. うまくいかない場合はAltキーを2回押す. 変圧器なら3ドット面. 充電器、変圧器共に、Shift+右シングルクリックをすると、機械の向きを通常と逆に変更できる. ver1.64から大きな電力を消費して機械を確実に撤去できるモードが追加された. 切り替えはMキー+右クリック Lossless wrench mode enable：確実に撤去できるモード Lossless wrench mode disabled：通常モード
 - EUリーダー (EU-Reader)
  - 作り方: 電子回路：１＋グロウストーンの粉：１：銅のケーブル：４
+ - 公式レシピ: (定型) minecraft:glowstone_dust + ic2:copper_insulated_cable_itemx4 + ic2:circuit -> ic2:eu_reader
  - 説明: ケーブルに流れるEUの量を測定出来る検流計のようなもの. 同じケーブルに対して2回以上右クリックで使うと前回のクリックから今回のクリックまでの平均EUを求めることができる.
 - CFスプレー (CF Sprayer)
  - 作り方: （CFスプレー）丸石：４＋木の棒：１ / （補充）CFスプレー：１＋CFペレット：１/CFスプレー：１＋CFペレット：８
@@ -464,48 +568,76 @@ Redstone Behavior【レッドストーン信号の入出力設定】
  - 説明: 電線を覆うゴムの厚さを変える道具. 電線を左クリックで一段階薄くでき、右クリックで手持ちのゴムを1つ消費して一段階厚くする.
 - ダイナマイト (Dynamite)
  - 作り方: 工業用TNT：１＋糸：１
+ - 公式レシピ: (不定形) ic2:itnt + minecraft:string -> ic2:dynamitex8
  - 説明: 3x3x3の小規模な爆発を起こす爆弾. 放り投げたり、地面や壁に設置して起爆する事が可能. 工業用TNTと同じく爆破したブロックを消失させない.
 - 粘着ダイナマイト (Sticky Dynamite)
  - 作り方: ダイナマイト：８＋べたつく樹液：１
+ - 公式レシピ: (定型) ic2:dynamitex8 + ic2:sticky_resin -> ic2:sticky_dynamitex8
  - 説明: 壁(ブロックの側面)に張り付くダイナマイト. 放り投げて使う. 時限式.
 - 遠隔起爆装置 (Dynamite-O-Mote)
  - 作り方: 周波数送信機：１＋スズインゴット：２＋銅のケーブル：１＋ラピスラズリ：１ / 銅のケーブル：１＋電子回路：１＋グロウストーンダスト：２＋TNT：３
+ - 公式レシピ: (定型) ic2:copper_insulated_cable_item + minecraft:glowstone_dustx2 + ic2:circuit + minecraft:tntx3 -> ic2:dynamite_remote
+ - 公式レシピ: (定型) ic2:copper_insulated_cable_item + #forge:ingots/tinx2 + minecraft:lapis_lazuli + ic2:frequency_transmitter -> ic2:dynamite_remote
  - 説明: ダイナマイトを起爆させるための装置. これを持って起爆させたい設置済みのダイナマイトを右クリック後、 ブロックにカーソルを合わせずにもう一度右クリックすることで起爆できる. これを使って起爆させた場合は、ダイナマイトが落下せず即座に爆発する.
 - ODスキャナー (OD Scanner)
  - 作り方: 充電式電池：１＋電子回路：２＋グロウストーンの粉：１＋銅のケーブル：３
+ - 公式レシピ: (定型) minecraft:glowstone_dust + ic2:circuitx2 + ic2:re_battery + ic2:copper_insulated_cable_itemx3 -> ic2:scanner_od
  - 説明: バッテリー駆動のスキャンツール. 真下に埋蔵されている鉱石の分布を数値で表す. スキャン範囲は上から見てプレイヤを中心とした5x5の正方形の内側で、プレイヤの足元以下の高度にあるブロック全て（つまりプレイヤが立ってる地面に置かれた鉱石まで含む） 範囲内に鉱石ブロックがある比率を0.1%単位で表す. 例えば範囲内の10%が鉱石ならば100、1%が鉱石ならば10と表示される. 鉱石と判定されるのは通常のminecraftに登場する鉱石とICで追加された鉱石. それ以外は石も水も空気も全て非鉱石. ※RedPowerを導入している場合、RedPower側の銅とスズは判定されないので注意.
 - OVスキャナー (OV Scanner)
  - 作り方: ODスキャナー：１＋発展回路：２＋グロウストーンの粉：３＋金の2倍絶縁ケーブル：２(注意、画像は銅ケーブル)
+ - 公式レシピ: (定型) minecraft:glowstone_dustx3 + ic2:advanced_circuit + ic2:gold_double_insulated_cable_itemx2 + ic2:scanner_od -> ic2:scanner_ov
+ - 公式レシピ: (定型) minecraft:glowstone_dustx3 + ic2:advanced_circuit + ic2:bronze_double_insulated_cable_itemx2 + ic2:scanner_od -> ic2:scanner_ov
+ - 公式レシピ: (定型) minecraft:glowstone_dustx3 + ic2:advanced_circuit + ic2:gold_double_insulated_cable_itemx2 + ic2:re_battery -> ic2:scanner_ov
+ - 公式レシピ: (定型) minecraft:glowstone_dustx3 + ic2:advanced_circuit + ic2:bronze_double_insulated_cable_itemx2 + ic2:re_battery -> ic2:scanner_ov
  - 説明: バッテリー駆動のスキャンツール. 基本はODスキャナーと同じだが、範囲が9x9と広くなり、単純な比率でなく有用な鉱石があるほど高い数値が出るようになった. MFEトランスミッタまたはMFSユニットでのみ充電可能. 具体的には非鉱石：0 石炭：1 銅とスズ：2 金とレッドストーンとラピスラズリ：3 鉄とウラニウム：4 ダイヤ：5 という倍率.
 - 採掘用レーザー (Mining Laser)
  - 作り方: エナジークリスタル：２＋発展回路：１＋合金板：４＋レッドストーン：１
+ - 公式レシピ: (定型) #forge:dusts/redstone + ic2:energy_crystalx2 + ic2:plate_advanced_alloyx5 -> ic2:mining_laser
  - 説明: バッテリー駆動のレーザーでMキーを押しながら右クリックでモード変更が可能. モードは"採掘、短射程、長射程、水平、過熱、拡散、爆発"の六種類に切り替えられる. MFEトランスミッタまたはMFSユニットでのみ充電(20万EU)可能. LapPackでの電力補充が可能. 過熱モードで精錬可能なブロックを撃つと貫通せずにそのブロックで止まり、精錬先がブロックの場合はそのブロックに置き換わり、アイテムの場合は精錬後のアイテムに置き換わる. ただし原木が木炭になるのは不自然だったのか、原木は対象外となった. MOBにダメージを与えることができ、炎上の効果があり、直線的に飛び、何故かエンダーマンが回避できない さすがに爆発以外はテレポートするようになりました. 現在は弓矢ダメージ+炎上効果の模様. なので武器としてもそこそこ優秀. ただし採掘用なだけあって外すと地形をガリガリ抉っていくので、それが気になる人は使いづらいかも.
 - スズ製の缶 (Tin Can)
  - 作り方: スズインゴット：５
+ - 公式レシピ: (定型) #forge:ingots/tinx5 -> ic2:tin_canx4
+ - 公式レシピ: (鍛冶台) #forge:ingots/tin + ic2:cutter -> ic2:tin_canx2
  - 説明: 食べ物を詰めておける錫缶.
 - 食物缶詰 (Food Can)
  - 作り方: なし
  - 説明: 食べ物を詰めた状態の錫缶. 食べるとライフと満腹度が一つ回復する. 中身を食べれば缶はスズ缶として回収できる. 空腹値を直接回復するアイテムなら、何でも食料缶にできる. ポーションやお酒、コーヒーなどは不可. 蜘蛛の目や毒ジャガイモ、ゾンビ肉も食料缶化が可能だが、毒性はそのまま継承されるので注意. (毒ダメージ版と空腹ステータス付与版の二種類の毒性食料缶がある) なお、(バグか仕様かは不明だが)食料缶自体も缶詰処理することが可能であり、 上記の毒性食料缶を(なぜか)正常な食料缶にすることが可能になっている（スズ缶は減るが）
 - ツリータップ (Treetap)
  - 作り方: 木材：５
+ - 公式レシピ: (定型) #minecraft:planksx5 -> ic2:treetap
  - 説明: ゴムの木から樹液を抽出する道具. 抽出には手に持ってゴムの木の樹液が出ている部分を右クリックすればいい. 抽出機のレシピでも使用する.
 - 電動ツリータップ (Electric Treetap)
  - 作り方: ツリータップ：１＋電子回路：１＋充電式電池：１
+ - 公式レシピ: (定型) ic2:treetap + ic2:circuit + ic2:re_battery -> ic2:electric_treetap
  - 説明: バッテリー駆動のツリータップ. 充電(1万EU)する事で何度でも使える.
 - ナノセイバー (Nano Saber)
  - 作り方: エナジークリスタル：１＋合金板：２＋グロウストーンダスト：２＋カーボンプレート：２
+ - 公式レシピ: (定型) minecraft:glowstone_dustx2 + ic2:plate_advanced_alloyx2 + ic2:carbon_platex2 + ic2:energy_crystal -> ic2:nano_saber
  - 説明: バッテリー駆動の特殊な剣. 4万EUまで充電でき、右クリックする事でオンオフが切り替えられる. オフの状態では木の剣と同等の攻撃力しかないが、EU消費が0であるため、経験値トラップとの相性が良い. オンの状態では攻撃力10なので、殆どの敵を1～2発で倒せる. またPvP要素として、展開中の電動防具への攻撃は通常ダメージの代わりに大きな電力ダメージを与え、更に電力0になった電動防具を唯一破壊することができる. 展開中は時間と共にバッテリー残量が減るので瞬間的に斬るといった使い方が好ましい. MFEトランスミッタまたはMFSユニットでのみ充電可能.
 - ペインター (Painter)
  - 作り方: （ペインター）羊毛：３＋鉄インゴット：２ || （色付き）ペインター：１＋各種染料：１
+ - 公式レシピ: (定型) #minecraft:woolx3 + #forge:ingots/ironx2 -> ic2:painter
  - 説明: 設置した電線や羊毛に色をつける道具. 画像は一例で実際には染料の数だけ色付きペインターが作れる. デフォルトのペインターと染色違う色同士の電線は繋がらなくなるため複雑な配線が可能になる. 例外として無色(黒色)の電線と有色の電線は繋がってしまう. Mキー+右クリックで自動補充モードの切り替えが可能.
 - 周波数送信機 (Frequency Transmitter)
  - 作り方: 電子回路：１＋銅のケーブル：１
+ - 公式レシピ: (不定形) ic2:circuit + ic2:copper_insulated_cable_item -> ic2:frequency_transmitter
  - 説明: 自己の周波数の登録や送信が出来る装置でテレポーターなどで使う.
 - コイン (Industrial Credit)
  - 作り方: 精錬鉄：４
+ - 公式レシピ: (不定形) ic2:coin_8x -> ic2:coinx8
+ - 公式レシピ: (定型) ic2:coin_4096xx8 -> ic2:coin_32768x
+ - 公式レシピ: (定型) ic2:coin_512xx8 -> ic2:coin_4096x
+ - 公式レシピ: (不定形) ic2:coin_32768x -> ic2:coin_4096xx8
+ - 公式レシピ: (定型) ic2:coin_64xx8 -> ic2:coin_512x
+ - 公式レシピ: (不定形) ic2:coin_4096x -> ic2:coin_512xx8
+ - 公式レシピ: (定型) ic2:coin_8xx8 -> ic2:coin_64x
+ - 公式レシピ: (不定形) ic2:coin_512x -> ic2:coin_64xx8
+ - 公式レシピ: (定型) ic2:coinx8 -> ic2:coin_8x
+ - 公式レシピ: (不定形) ic2:coin_64x -> ic2:coin_8xx8
  - 説明: 工業貨幣、つまりはお金である. SMPでトレード-O-Matと組み合わせて使うと良い. 9枚組み合わせる事で精製鉄1個に戻すことも可能.
 - ツールボックス (Toolbox)
  - 作り方: チェストボックス：１＋精錬鉄：５
+ - 公式レシピ: (定型) #forge:ingots/refined_ironx5 + #forge:chests/wooden -> ic2:tool_box
  - 説明: ツール類の保管箱. 右クリックで使用するとイベントリ内のツールを一括で格納、または取り出す事が出来る.
 - マグカップ (Stone Mug)
  - 作り方: 石：７
@@ -521,12 +653,14 @@ Redstone Behavior【レッドストーン信号の入出力設定】
 
 - 空のセル (Empty Cell)
  - 作り方: スズインゴット：４
+ - 公式レシピ: (定型) #forge:ingots/tinx4 -> ic2:cell_emptyx16
  - 説明: 様々な液体や燃料を入れられる容器. 基本的に使い捨てだが低コストで量産が容易. 手に持った状態から右クリックで水や溶岩を直接汲み取ることができる.
 - 圧縮空気セル (Compressd Air Cell)
  - 作り方: なし
  - 説明: 空のセルの中に圧縮した酸素を詰め込んだセル. 何らかの原因で空気を使ってもセルが戻ってくる.
 - バイオセル (Bio Cell)
  - 作り方: 空のセル：１＋圧縮した植物の玉：１
+ - 公式レシピ: (不定形) ic2:cell_empty + ic2:compressed_plant_ball -> ic2:cell_bio
  - 説明: セルに植物の塊を入れたもの. 燃料としては使えない.
 - 液化石炭セル (H. Coal Cell)
  - 作り方: 空のセル：１＋圧縮した液化石炭：１
@@ -548,6 +682,7 @@ Redstone Behavior【レッドストーン信号の入出力設定】
  - 説明: 電解水生成装置で精製することが可能. 電解水セルは15,000EUの保持が可能だが復元過程で1500EUほど損失する.
 - 10K冷却セル (10K Coolant Cell)
  - 作り方: v1.103までは水セルを抽出器にかけると製作可能. / v1.106以後は水セル：１＋スズインゴット：４で製作可能.
+ - 公式レシピ: (定型) #forge:ingots/tinx4 + fluid:water -> ic2:heat_storage_single
  - 説明: (wiki に説明の記載なし)
 
 ### 10. テラフォーマーブループリント
@@ -582,12 +717,25 @@ v1.62から追加されたアイテム. 機械のGUI右側に新しく4つ並ん
 
 - オーバークロッカー (Overclocker upgrade)
  - 作り方: 電子回路：１＋冷却セル：３＋銅のケーブル：２
+ - 公式レシピ: (定型) ic2:heat_storage_singlex3 + ic2:copper_insulated_cable_itemx2 + ic2:circuit -> ic2:overclocker_upgrade
+ - 公式レシピ: (定型) ic2:heat_storage_triplex3 + ic2:copper_insulated_cable_itemx2 + ic2:circuit -> ic2:overclocker_upgradex3
+ - 公式レシピ: (定型) ic2:heat_storage_sixx3 + ic2:copper_insulated_cable_itemx2 + ic2:circuit -> ic2:overclocker_upgradex6
+ - 公式レシピ: (定型) ic2:heat_storage_singlex4 + ic2:upgrade_base -> ic2:overclocker_upgrade
+ - 公式レシピ: (定型) ic2:heat_storage_singlex8 + ic2:upgrade_base -> ic2:overclocker_upgradex2
+ - 公式レシピ: (定型) ic2:heat_storage_triplex4 + ic2:upgrade_base -> ic2:overclocker_upgradex4
+ - 公式レシピ: (定型) ic2:heat_storage_triplex8 + ic2:upgrade_base -> ic2:overclocker_upgradex8
+ - 公式レシピ: (定型) ic2:heat_storage_sixx4 + ic2:upgrade_base -> ic2:overclocker_upgradex8
+ - 公式レシピ: (定型) ic2:heat_storage_sixx8 + ic2:upgrade_base -> ic2:overclocker_upgradex16
  - 説明: 機械の稼働速度を向上させるモジュール. 16個ほども重ねると、粉砕機のような仕事の遅い機械でも一瞬で仕事を完了させるようになる優れもの. ただし設置個数に応じて消費電力も増加するため注意が必要. 具体的には設置１つに付き作業時間0.7倍. 消費電力1.6倍. つまり２つ設置すると作業時間は0.7*0.7=0.49倍、消費電力は1.6*1.6=2.56倍となる. （v1.71現在） v1.106では冷却セルを10K冷却セルに置き換えれば製作可能.
 - トランスフォーマー (Transformer upgrade)
  - 作り方: 中圧変換装置：１＋電子回路：１＋金の２倍絶縁ケーブル：２＋ガラス：５
+ - 公式レシピ: (定型) #forge:glassx5 + ic2:gold_double_insulated_cable_itemx2 + ic2:transformer_mv + ic2:circuit -> ic2:transformer_upgrade
+ - 公式レシピ: (定型) #forge:glassx7 + ic2:transformer_mv + ic2:upgrade_base -> ic2:transformer_upgrade
  - 説明: 機械の対応電圧を向上させるモジュール. 1つ増える度に対応電圧が1段階上がる. とはいえ、IC2単体では低圧対応の機械にしか設置できないため、 1つで中電圧（128EU）に、2つで高電圧（512EU）に、3つで超高圧（2048EU）まで受け取れるようになるという認識で概ね問題ない. 一般機械にオーバークロッカーを積みすぎて、消費電力が32EU/tを超えてしまいMFEから直接供給しないと間に合わない！なんて時に便利. ただし、作業中に外してしまうとその途端に電圧非対応で爆発を起こすので誤クリックに注意.
 - エナジーストレージ (Energy storage upgrade)
  - 作り方: 充電式電池：１＋電子回路：１＋銅のケーブル：２＋木材：５
+ - 公式レシピ: (定型) #minecraft:planksx5 + ic2:copper_insulated_cable_itemx2 + ic2:re_battery + ic2:circuit -> ic2:energy_storage_upgrade
+ - 公式レシピ: (定型) #minecraft:planksx7 + ic2:re_battery + ic2:upgrade_base -> ic2:energy_storage_upgrade
  - 説明: 機械の蓄電性能を向上させるモジュール. 1つにつき蓄電可能容量が10,000EU上昇する. こちらもオーバークロッカーを積むときに便利.
 - イジェクター (Ejecter Upgrade)
  - 作り方: ピストン：２＋電子回路：１＋銅のケーブル：２＋ホッパー：１(※バニラのもの)
@@ -605,27 +753,36 @@ v1.62から追加されたアイテム. 機械のGUI右側に新しく4つ並ん
  - 説明: ゴムの原木を精錬することでジャングルの原木になる. こちらは原木になるので得られる個数は通常の原木と変わらないものの、精錬という手間が生じるので、 やはり使う機会は少ない.
 - バケツ (Bucket)
  - 作り方: スズインゴット：３
+ - 公式レシピ: (定型) #forge:ingots/tinx3 -> minecraft:bucket
  - 説明: 通称スズバケツ. 鉄の消費が多いことによる救済措置. RedPower2の合金かまどやUnCraft等の還元系MODを使えば、スズインゴットを鉄インゴットに等価交換することができる.
 - 線路 (Rail)
  - 作り方: 青銅インゴット：６＋棒：１
+ - 公式レシピ: (定型) #forge:ingots/bronzex6 + minecraft:stick -> minecraft:railx8
  - 説明: 鉄の消費が多いことによる救済措置. ただし、作られる数は半分の8個になる. こちらも還元系MODによって、青銅インゴット12個を鉄インゴット6個に交換することができる.
 - ピストン (Piston)
  - 作り方: 木材：３＋丸石：４＋青銅インゴット：１＋レッドストーン：１
+ - 公式レシピ: (定型) #minecraft:planksx3 + #forge:cobblestonex4 + #forge:ingots/silver + #forge:dusts/redstone -> minecraft:piston
+ - 公式レシピ: (定型) #minecraft:planksx3 + #forge:cobblestonex4 + #forge:ingots/bronze + #forge:dusts/redstone -> minecraft:piston
  - 説明: 鉄の消費が多いことによる救済措置. こちらも還元系MODによって、青銅インゴット1個を鉄インゴット1個に交換することができる.
 - 粘着ピストン (Sticky piston)
  - 作り方: ピストン：１＋樹液：１
+ - 公式レシピ: (不定形) minecraft:piston + ic2:sticky_resin + RecipeMods.HIDDEN_RECIPE -> minecraft:sticky_piston
  - 説明: おそらくスライムが見つからないときの救済措置だったのであろう、スライムボールの変わりに樹液が使えるレシピ. 今では湿地帯バイオームでスライムが沸くようになったので、湿地帯バイオームが見つからないなら使うことになるかもしれない程度.
 - 松明 (Torch)
  - 作り方: 樹液：１＋棒：１
+ - 公式レシピ: (定型) ic2:sticky_resin + minecraft:stick -> minecraft:torchx4
  - 説明: 炭で作ったときと変わりは無い. どっちのほうが楽かは人によるだろう.
 - グロウストーンの粉 (GrowStone Dusts)
  - 作り方: レッドストーン：５＋金の粉：４
  - 説明: グロウストーンの粉の追加レシピ.
 - 火薬 (Gunpowder)
  - 作り方: レッドストーン：５＋石炭の粉：４
+ - 公式レシピ: (定型) #forge:dusts/redstonex5 + #forge:dusts/coalx4 -> minecraft:gunpowderx3
  - 説明: 火薬の追加レシピ.
 - 黒曜石 (Obsidian)
  - 作り方: 水セル：２＋溶岩セル：２
+ - 公式レシピ: (不定形) ic2:cell_waterx2 + ic2:cell_lavax2 -> minecraft:obsidian
+ - 公式レシピ: (不定形) ic2:cell_waterx2 + minecraft:magma_blockx2 -> minecraft:obsidian
  - 説明: 追加レシピ. 1つ作るのに溶岩セルが2つ必要なので、溶岩源に水をかけて作る方が効率はよい. しかし、回収手段がなくても手持ちに加えられる、クラフティングで作成可能（＝BuildCraftの自動作業台等に対応できる）などの利点もある.
 - 丸石、砂、矢じり、グロウストーンダスト、糸、雪玉、骨粉、土、ブレイズの粉
  - 作り方: （丸石）石：１ || （砂）丸石or砂岩ブロック：１ || （矢じり）砂利：１ || （グロウストーンダスト）グロウストーン：4 || （糸）羊毛：１ || （雪玉）氷：１ || （骨粉）骨：１ || （土）植物の玉：１ || （ブレイズの粉）ブレイズロッド：１
@@ -652,6 +809,7 @@ v1.62から追加されたアイテム. 機械のGUI右側に新しく4つ並ん
  - 説明: ウラニウムを圧縮したもの. セルと組み合わせることで燃料になる. ブロック状態の鉱石でも圧縮でこれが作れるが、そんな機会はほとんど無いだろう.
 - 合金インゴット (Mixed Metal Ingot)
  - 作り方: 精錬鉄：３＋ブロンズ：３＋錫インゴット：３
+ - 公式レシピ: (定型) #forge:ingots/refined_ironx3 + #forge:ingots/bronzex3 + #forge:ingots/aluminiumx3 -> ic2:ingot_advanced_alloyx2
  - 説明: 三種類の金属を組み合わせて作れる. このままでは何にも使えない. なお、中段は銅ではなくブロンズなので注意.
 - 合金板 (Advanced Alloy)
  - 作り方: なし
@@ -661,6 +819,7 @@ v1.62から追加されたアイテム. 機械のGUI右側に新しく4つ並ん
  - 説明: 銅インゴット8枚を圧縮機にかけると出来る中間素材.
 - イリジウム鉱石、イリジウムプレート (Iridium Plate)
  - 作り方: （イリジウム鉱石）マター：７ / （イリジウムプレート）イリジウム鉱石：４＋合金板４＋ダイヤモンド１
+ - 公式レシピ: (定型) ic2:ore_iridiumx4 + ic2:plate_advanced_alloyx4 + #forge:gems/diamond -> ic2:plate_iridium
  - 説明: マターを組み合わせることでイリジウム鉱石が製作可能. イリジウム鉱石を組み合わせることでイリジウム板が製作可能.
 
 #### 1.1. 粉末
@@ -682,6 +841,7 @@ v1.62から追加されたアイテム. 機械のGUI右側に新しく4つ並ん
  - 説明: 粘土を粉砕機で砕いたもの.
 - コーヒーの粉 (Coffee Powder)
  - 作り方: なし
+ - 公式レシピ: (不定形) ic2:coffee_beans -> ic2:coffee_powder
  - 説明: コーヒー豆を砕いたもの. コーヒー豆を直接クラフトしても1つ作成できる.
 - グリンパウダー (Grin Powder)
  - 作り方: なし
@@ -697,12 +857,17 @@ v1.62から追加されたアイテム. 機械のGUI右側に新しく4つ並ん
  - 説明: ナノスーツなどの材料になる.
 - 石炭の玉 (Coal Ball)
  - 作り方: 石炭の粉：８＋火打石：１
+ - 公式レシピ: (定型) #forge:dusts/coalx8 + minecraft:flint -> ic2:coal_ball
  - 説明: 石炭の粉(石炭粉末)とフリントをかけあわせたもの. このままでは使えない.
 - 圧縮した石炭玉 (Compressed Coal Ball)
  - 作り方: なし
  - 説明: 石炭の玉を圧縮したもの.
 - 石炭の塊 (Coal Chunk)
  - 作り方: 圧縮した石炭玉：８＋鉄ブロック：１or黒曜石：１orレンガブロック：１
+ - 公式レシピ: (定型) ic2:compressed_coal_ballx8 + minecraft:obsidian -> ic2:coal_chunk
+ - 公式レシピ: (定型) ic2:compressed_coal_ballx8 + minecraft:iron_block -> ic2:coal_chunk
+ - 公式レシピ: (定型) ic2:compressed_coal_ballx8 + minecraft:bricks -> ic2:coal_chunk
+ - 公式レシピ: (精錬) ic2:bio_chunk -> ic2:coal_chunk [furnace]
  - 説明: 石炭の塊.
 - ダイヤモンド (Diamond)
  - 作り方: なし
@@ -712,9 +877,13 @@ v1.62から追加されたアイテム. 機械のGUI右側に新しく4つ並ん
 
 - 液状化石炭 (Hydrated Coal Dust)
  - 作り方: (1個)水入りバケツor水セル：１＋石炭の粉：１ / (8個)水入りバケツor水セル：１＋石炭の粉：８
+ - 公式レシピ: (不定形) #forge:dusts/coal + fluid:water -> ic2:dust_hydrated_coal
+ - 公式レシピ: (定型) #forge:dusts/coalx8 + fluid:water -> ic2:dust_hydrated_coalx8
  - 説明: 石炭の粉と水を混ぜたもの. 精錬すると石炭の粉に戻る.
 - 植物の玉 (Plantball)
  - 作り方: (1個)小麦or小麦の種orサトウキビor各種葉or草：８ / (2個)各種苗：８
+ - 公式レシピ: (定型) new ArrayInput(1, false, new Object[]{Items.f_41909_, Items.f_41982_, Items.f_42029_, Items.f_41864_, Items.f_42210_, ItemTags.f_13143_, Tags.Items.CROPS, IC2Items.HEMP, Tags.Items.MUSHROOMS, Tags.Items.SEEDS, Items.f_42410_, IC2Items.STICKY_RESIN, IC2Items.CROP_SEED, Items.f_41911_, ItemTags.f_13149_, Items.f_41910_, IC2Items.HOPS, Items.f_42260_, Items.f_42259_, Items.f_42780_, Items.f_151079_, Items.f_42533_})x8 -> ic2:plant_ball
+ - 公式レシピ: (定型) #minecraft:saplingsx8 -> ic2:plant_ballx2
  - 説明: 植物を丸めた塊. 各種苗木、サトウキビ、種から作れる.
 - 圧縮した液化石炭 (H.Coal)
  - 作り方: なし
@@ -724,6 +893,7 @@ v1.62から追加されたアイテム. 機械のGUI右側に新しく4つ並ん
  - 説明: 植物の塊を圧縮したもの.
 - 空の燃料缶 (Fuel Can)
  - 作り方: スズインゴット：７
+ - 公式レシピ: (定型) #forge:ingots/tinx7 -> ic2:fuel_can
  - 説明: 燃料が詰まっていない状態の燃料缶.
 - 燃料缶 (Fuel Can_Filled)
  - 作り方: なし
@@ -736,18 +906,24 @@ v1.62から追加されたアイテム. 機械のGUI右側に新しく4つ並ん
  - 説明: ゴムの木は湿地帯のバイオームに多く見られ、寒冷地では群生量が少ない. ゴムの木の葉を壊すとゴムの木の苗木が手に入る. ゴムの木を伐採、もしくは樹液が出ている部分にツリータップを使うと樹液が手に入る. 樹液を採取した後、時間が経つと再び採取できるようになる. 樹液が復活する前に再度ツリータップを使っても樹液が追加で手に入る可能性があるが、穴が潰れて樹液が出てこなくなる可能性もあるので注意. 樹液は粘着ピストンや松明のレシピ代わりとして使うことも出来る. また、ブロックの上に配置することができ、その上を歩くと移動速度が遅くなり、ジャンプも低くなる. ゴムの木の原木は、作業台で加工するとジャングルの木からできるものと同じ木材が3個に、 精錬するとジャングルの木の原木になる.
 - ゴム (Rubber)
  - 作り方: なし
+ - 公式レシピ: (精錬) ic2:sticky_resin -> ic2:rubber [furnace]
  - 説明: ゴムの木から得られる素材を加工したもので主に各種ケーブルを作るときに使う. 樹液→精錬：1個 樹液→抽出機：3個 ゴムの原木→抽出機：1個 ゴムの苗木→抽出機：1個
 - 電子回路 (Electronic Circuit)
  - 作り方: 精錬鉄：１＋レッドストーン：２＋銅のケーブル：６
+ - 公式レシピ: (定型) ic2:copper_insulated_cable_itemx6 + #forge:dusts/redstonex2 + #forge:ingots/refined_iron -> ic2:circuit
+ - 公式レシピ: (定型) ic2:copper_insulated_cable_itemx6 + #forge:dusts/redstonex2 + #forge:ingots/refined_iron -> ic2:circuit
  - 説明: 機械を作るための基礎素材. レシピ素材としてかなり要求頻度が高い.
 - 発展回路 (Advanced Circuit)
  - 作り方: 電子回路：１＋レッドストーン：４＋グロウストーンの粉：２＋ラピスラズリ：２
+ - 公式レシピ: (定型) #forge:dusts/redstonex4 + minecraft:glowstone_dustx2 + minecraft:lapis_lazulix2 + ic2:circuit -> ic2:advanced_circuit
+ - 公式レシピ: (定型) #forge:dusts/redstonex4 + minecraft:lapis_lazulix2 + minecraft:glowstone_dustx2 + ic2:circuit -> ic2:advanced_circuit
  - 説明: 電子回路の上位版でより高度な機械を作るときに使う.
 - スクラップ (Scrap)
  - 作り方: なし
  - 説明: リサイクラーから生成したゴミ. スクラップ箱の素材や、物質製造機でマターを作る際の材料に使用する. 地味にかまどや火力発電機の燃料にもなる.
 - スクラップ箱 (Scrap Box)
  - 作り方: なし
+ - 公式レシピ: (定型) ic2:scrapx9 -> ic2:scrapbox
  - 説明: スクラップを並べて作ったゴミ箱. 蓋を開けてみると…？ ちなみにスクラップ箱も物質製造機に投入する事ができしっかりスクラップ9個分の働きをする. 取得可能なアイテム
 - マター (Matter)
  - 作り方: なし
@@ -757,9 +933,11 @@ v1.62から追加されたアイテム. 機械のGUI右側に新しく4つ並ん
 
 - バットパック (BatPack)
  - 作り方: スズインゴット：１＋電子回路：１＋充電式電池：６
+ - 公式レシピ: (定型) ic2:re_batteryx6 + ic2:circuit + #forge:ingots/tin -> ic2:batpack
  - 説明: 60,000EUほどの電力が保持出来る携帯蓄電器. 充電することで何度でも使える. 胴体に装備して電動工具を使うとバットパックが消費を肩代わりする. 防具としての性能は皆無である.
 - ラップパック (LapPack)
  - 作り方: バットパック：１＋発展回路：１＋ラピスラズリブロック：６
+ - 公式レシピ: (定型) minecraft:lapis_blockx6 + ic2:advanced_circuit + ic2:batpack -> ic2:lappack
  - 説明: バットパックの上位版で300,000EUほど保持することが可能. MFEもしくはMFSユニットで充電できる.
 - CFパック (CF-Pack)
  - 作り方: スズインゴット：１：＋電子回路：１＋ＣＦスプレー：２＋空の燃料缶：４
@@ -769,9 +947,12 @@ v1.62から追加されたアイテム. 機械のGUI右側に新しく4つ並ん
  - 説明: 液体燃料を使った推進装置. 胴体に装備してスペースで飛翔. スペースキーとMキーを押すと滞空モードに切り替わる. 缶詰製造機で燃料を補充すれば何度でも使える. 燃料満タンから90秒間飛行できる.
 - 電動ジェットパック (Electric Jetpack)
  - 作り方: 精錬鉄：４＋発展回路：１＋バットボックス：１＋グロウストーンの粉：２
+ - 公式レシピ: (定型) #forge:ingots/refined_ironx4 + ic2:advanced_circuit + ic2:batbox + minecraft:glowstone_dustx2 -> ic2:jetpack_electric
+ - 公式レシピ: (不定形) ic2:jetpack_electric + ic2:magnet + new FlagModifier(IC2Items.JETPACK_ELECTRIC, "SpecialMode", false).setUsesInput() + RecipeMods.HIDDEN_RECIPE -> ic2:jetpack_electric
  - 説明: バッテリー駆動のジェットパック. EUを充電することで何度でも使うことが出来る. スペースキーとMキーを押すと滞空モードに切り替わる. 通常のジェットパックより飛行可能な高度が低い. 最大充電(30,000EU)から80秒間飛行できる.
 - ゴムブーツ (Rubber Boots)
  - 作り方: ゴム：６＋羊毛：１
+ - 公式レシピ: (定型) #ic2:rubberx6 + #minecraft:wool -> ic2:armor_hazmat_boots
  - 説明: ゴム製のブーツで着地ダメージを大幅に軽減する. 羊毛とゴムを組み合わせることで作れる. 羊毛の色は何色でも構わない.
 - コンポジットベスト (Composite Vest)
  - 作り方: 革のチェストプレート：１＋鉄のチェストプレート：１＋合金板：６
@@ -781,6 +962,7 @@ v1.62から追加されたアイテム. 機械のGUI右側に新しく4つ並ん
  - 説明: 青銅製のアーマー. 耐久値が鉄製のものより1.25倍ほど多い.
 - HAZMATスーツ (Hazmat Suit)
  - 作り方: なし
+ - 公式レシピ: (定型) #ic2:rubberx6 + minecraft:orange_dyex2 -> ic2:armor_hazmat_chest
  - 説明: 危険物取り扱い用の防護服一式(スキューバヘルメット、HAZMATチェストプレート、HAZMATレギンス、ゴムブーツで防護服一式とする) 防護服一式を着ていれば溶岩や原子炉融解時の熱を含む燃焼ダメージと感電ダメージと爆発時のダメージを完全に無効化する. ヘルメット単体には酸素マスクとして機能があり、 圧縮酸素セルを持っていれば水中で酸素マークが残り4つになっても自動で消費して酸素を補充してくれる.
 - ナノアーマー (Nano Suits)
  - 作り方: なし
@@ -790,9 +972,13 @@ v1.62から追加されたアイテム. 機械のGUI右側に新しく4つ並ん
  - 説明: バッテリー駆動の特殊なアーマーでMFSユニットで充電することで耐久値を回復させることができる. 身体機能の補強効果が付随されており、部位によって異なる恩恵が（電力のある限り）得られる. ヘルメットは毒、ウィザー状態を即座に回復し、酸素ゲージが自動で供給され空腹ゲージが自動で回復する. ｖ1.110からはプレイヤーのインベントリにある食物缶詰を消費して空腹度を回復する仕様に. アーマーは殆どのダメージを耐久値によって肩代わりする. ただしver1.110からは奈落、毒、空腹のダメージは受けるように. また魔法ダメージ（負傷ポーション）や落下ダメージも軽減できない. レギンスはスプリント時の移動速度が3.4倍になる（電力を消費しないが、起動するには電力が残っている必要がある. ） ブーツはCtrlキーを押しながらジャンプすることで、ジャンプ力が約10倍に上昇する. またどんな高所から落ちても落下ダメージを受けない（ただし電力は消費する）
 - ソーラーヘルメット (Solar Helmet)
  - 作り方: 鉄：５or鉄のヘルメット：１＋ソーラーパネル：１＋銅のケーブル：３
+ - 公式レシピ: (定型) #forge:ingots/ironx5 + ic2:solar_panel + ic2:copper_insulated_cable_itemx3 -> ic2:solar_helmet
+ - 公式レシピ: (定型) minecraft:iron_helmet + ic2:solar_panel + ic2:copper_insulated_cable_itemx3 -> ic2:solar_helmet
  - 説明: 頭に装備していると、晴天下にいる間1EU/tのペースで胴装備に充電する. （夜でも発電することができる）
 - スタティックブーツ (Static Boots)
  - 作り方: 鉄：４or鉄のブーツ：１＋羊毛：１＋銅のケーブル：３
+ - 公式レシピ: (定型) #forge:ingots/ironx4 + #minecraft:wool + ic2:copper_insulated_cable_itemx3 -> ic2:static_boots
+ - 公式レシピ: (定型) minecraft:iron_boots + #minecraft:wool + ic2:copper_insulated_cable_itemx3 -> ic2:static_boots
  - 説明: 足に装備していると、歩いている間1EU/5ブロックのペースで胴装備に充電する. 満足に充電するには相当歩かなくてはならない.
 
 ### 4. 新しい道具
@@ -802,24 +988,30 @@ v1.62から追加されたアイテム. 機械のGUI右側に新しく4つ並ん
  - 説明: ブロンズ製のツール. 掘る性能は鉄製ツールと同等. 耐久度は鉄製ツールの1.25倍. 鉄の消費が多いことによる救済措置.
 - チェーンソー (Chain Saw)
  - 作り方: 電子回路：１＋精錬鉄：５：充電式電池：１
+ - 公式レシピ: (定型) #forge:ingots/refined_ironx5 + ic2:circuit + ic2:re_battery -> ic2:chainsaw
  - 説明: バッテリー駆動のチェーンソーで原木や木材を最速で破壊できる. 絶対に壊れない代わりに充電(1万EU)が必要. 武器として使っても非常に優秀である. ハサミとしての機能も持っており、羊毛の刈り取りや葉ブロックの取得などができる.
 - 採掘用ドリル (Mining Drill)
  - 作り方: 電子回路：１＋精錬鉄：５＋充電式電池：１
  - 説明: バッテリー駆動のドリル. シャベルとつるはしに対応するブロックを破壊可能. 鉄製ツールを上回る性能で、充電すれば何度でも使える. レッドストーン鉱石も高速で破壊できるが、黒曜石は採取できない. 電池が切れても壊れはしないが、効率がかなり落ちる. フルチャージ(1万EU)で200回採掘可能.
 - ダイヤモンドドリル (Diamond Drill)
  - 作り方: 採掘用ドリル：１＋ダイヤモンド：３
+ - 公式レシピ: (定型) #forge:gems/diamondx3 + ic2:drill -> ic2:drill_diamond
  - 説明: 採掘用ドリルの上位版. ダイヤ製ツールを凌駕する掘削性能を持つ. 黒曜石すら数秒で破壊できるが、その分エネルギー燃費は低下している. フルチャージ(1万EU)で120回採掘可能.
 - 電動クワ (Electric Hoe)
  - 作り方: 充電式電池：１＋電子回路：１＋精錬鉄：２
+ - 公式レシピ: (定型) #forge:ingots/refined_ironx2 + ic2:circuit + ic2:re_battery -> ic2:electric_hoe
  - 説明: バッテリー駆動のクワ. 充電(1万EU)する事で何度でも使える.
 - レンチ (Wrench)
  - 作り方: ブロンズ：６
+ - 公式レシピ: (定型) #forge:ingots/bronzex6 -> ic2:wrench
  - 説明: 設置した機械類を右クリックすることで撤去が可能. 一定確率で撤去した機械が壊れてマシンブロック(上位設備ならアドバンスドマシン、発電機なら火力発電機)になる. 充電器の撤去は、出力面を右クリックか、Shift+右ダブルクリック. うまくいかない場合はAltキーを2回押す. 変圧器なら3ドット面. 充電器、変圧器共に、Shift+右シングルクリックをすると、機械の向きを通常と逆に変更できる.
 - 電動レンチ (Electric Wrench)
  - 作り方: レンチ：１＋電子回路：１＋充電式電池：１
+ - 公式レシピ: (定型) ic2:wrench + ic2:circuit + ic2:re_battery -> electricWrench
  - 説明: バッテリー駆動のレンチ. 充電(12000EU)する事で何度でも使える. 充電器の撤去は、出力面を右クリックか、Shift+右ダブルクリック. うまくいかない場合はAltキーを2回押す. 変圧器なら3ドット面. 充電器、変圧器共に、Shift+右シングルクリックをすると、機械の向きを通常と逆に変更できる. ver1.64から大きな電力を消費して機械を確実に撤去できるモードが追加された. 切り替えはMキー+右クリック Lossless wrench mode enable：確実に撤去できるモード Lossless wrench mode disabled：通常モード
 - EUリーダー (EU-Reader)
  - 作り方: 電子回路：１＋グロウストーンの粉：１：銅のケーブル：４
+ - 公式レシピ: (定型) minecraft:glowstone_dust + ic2:copper_insulated_cable_itemx4 + ic2:circuit -> ic2:eu_reader
  - 説明: ケーブルに流れるEUの量を測定出来る検流計のようなもの. 同じケーブルに対して2回以上右クリックで使うと前回のクリックから今回のクリックまでの平均EUを求めることができる.
 - CFスプレー (CF Sprayer)
  - 作り方: （CFスプレー）丸石：４＋木の棒：１ / （補充）CFスプレー：１＋CFペレット：１/CFスプレー：１＋CFペレット：８
@@ -832,48 +1024,76 @@ v1.62から追加されたアイテム. 機械のGUI右側に新しく4つ並ん
  - 説明: 電線を覆うゴムの厚さを変える道具. 電線を左クリックで一段階薄くでき、右クリックで手持ちのゴムを1つ消費して一段階厚くする.
 - ダイナマイト (Dynamite)
  - 作り方: 工業用TNT：１＋糸：１
+ - 公式レシピ: (不定形) ic2:itnt + minecraft:string -> ic2:dynamitex8
  - 説明: 3x3x3の小規模な爆発を起こす爆弾. 放り投げたり、地面や壁に設置して起爆する事が可能. 工業用TNTと同じく爆破したブロックを消失させない.
 - 粘着ダイナマイト (Sticky Dynamite)
  - 作り方: ダイナマイト：８＋べたつく樹液：１
+ - 公式レシピ: (定型) ic2:dynamitex8 + ic2:sticky_resin -> ic2:sticky_dynamitex8
  - 説明: 壁(ブロックの側面)に張り付くダイナマイト. 放り投げて使う. 時限式.
 - 遠隔起爆装置 (Dynamite-O-Mote)
  - 作り方: 周波数送信機：１＋スズインゴット：２＋銅のケーブル：１＋ラピスラズリ：１ / 銅のケーブル：１＋電子回路：１＋グロウストーンダスト：２＋TNT：３
+ - 公式レシピ: (定型) ic2:copper_insulated_cable_item + minecraft:glowstone_dustx2 + ic2:circuit + minecraft:tntx3 -> ic2:dynamite_remote
+ - 公式レシピ: (定型) ic2:copper_insulated_cable_item + #forge:ingots/tinx2 + minecraft:lapis_lazuli + ic2:frequency_transmitter -> ic2:dynamite_remote
  - 説明: ダイナマイトを起爆させるための装置. これを持って起爆させたい設置済みのダイナマイトを右クリック後、 ブロックにカーソルを合わせずにもう一度右クリックすることで起爆できる. これを使って起爆させた場合は、ダイナマイトが落下せず即座に爆発する.
 - ODスキャナー (OD Scanner)
  - 作り方: 充電式電池：１＋電子回路：２＋グロウストーンの粉：１＋銅のケーブル：３
+ - 公式レシピ: (定型) minecraft:glowstone_dust + ic2:circuitx2 + ic2:re_battery + ic2:copper_insulated_cable_itemx3 -> ic2:scanner_od
  - 説明: バッテリー駆動のスキャンツール. 真下に埋蔵されている鉱石の分布を数値で表す. スキャン範囲は上から見てプレイヤを中心とした5x5の正方形の内側で、プレイヤの足元以下の高度にあるブロック全て（つまりプレイヤが立ってる地面に置かれた鉱石まで含む） 範囲内に鉱石ブロックがある比率を0.1%単位で表す. 例えば範囲内の10%が鉱石ならば100、1%が鉱石ならば10と表示される. 鉱石と判定されるのは通常のminecraftに登場する鉱石とICで追加された鉱石. それ以外は石も水も空気も全て非鉱石. ※RedPowerを導入している場合、RedPower側の銅とスズは判定されないので注意.
 - OVスキャナー (OV Scanner)
  - 作り方: ODスキャナー：１＋発展回路：２＋グロウストーンの粉：３＋金の2倍絶縁ケーブル：２(注意、画像は銅ケーブル)
+ - 公式レシピ: (定型) minecraft:glowstone_dustx3 + ic2:advanced_circuit + ic2:gold_double_insulated_cable_itemx2 + ic2:scanner_od -> ic2:scanner_ov
+ - 公式レシピ: (定型) minecraft:glowstone_dustx3 + ic2:advanced_circuit + ic2:bronze_double_insulated_cable_itemx2 + ic2:scanner_od -> ic2:scanner_ov
+ - 公式レシピ: (定型) minecraft:glowstone_dustx3 + ic2:advanced_circuit + ic2:gold_double_insulated_cable_itemx2 + ic2:re_battery -> ic2:scanner_ov
+ - 公式レシピ: (定型) minecraft:glowstone_dustx3 + ic2:advanced_circuit + ic2:bronze_double_insulated_cable_itemx2 + ic2:re_battery -> ic2:scanner_ov
  - 説明: バッテリー駆動のスキャンツール. 基本はODスキャナーと同じだが、範囲が9x9と広くなり、単純な比率でなく有用な鉱石があるほど高い数値が出るようになった. MFEトランスミッタまたはMFSユニットでのみ充電可能. 具体的には非鉱石：0 石炭：1 銅とスズ：2 金とレッドストーンとラピスラズリ：3 鉄とウラニウム：4 ダイヤ：5 という倍率.
 - 採掘用レーザー (Mining Laser)
  - 作り方: エナジークリスタル：２＋発展回路：１＋合金板：４＋レッドストーン：１
+ - 公式レシピ: (定型) #forge:dusts/redstone + ic2:energy_crystalx2 + ic2:plate_advanced_alloyx5 -> ic2:mining_laser
  - 説明: バッテリー駆動のレーザーでMキーを押しながら右クリックでモード変更が可能. モードは"採掘、短射程、長射程、水平、過熱、拡散、爆発"の六種類に切り替えられる. MFEトランスミッタまたはMFSユニットでのみ充電(20万EU)可能. LapPackでの電力補充が可能. 過熱モードで精錬可能なブロックを撃つと貫通せずにそのブロックで止まり、精錬先がブロックの場合はそのブロックに置き換わり、アイテムの場合は精錬後のアイテムに置き換わる. ただし原木が木炭になるのは不自然だったのか、原木は対象外となった. MOBにダメージを与えることができ、炎上の効果があり、直線的に飛び、~~何故かエンダーマンが回避できない~~ さすがに爆発以外はテレポートするようになりました. 現在は弓矢ダメージ+炎上効果の模様. なので武器としてもそこそこ優秀. ただし採掘用なだけあって外すと地形をガリガリ抉っていくので、それが気になる人は使いづらいかも.
 - スズ製の缶 (Tin Can)
  - 作り方: スズインゴット：５
+ - 公式レシピ: (定型) #forge:ingots/tinx5 -> ic2:tin_canx4
+ - 公式レシピ: (鍛冶台) #forge:ingots/tin + ic2:cutter -> ic2:tin_canx2
  - 説明: 食べ物を詰めておける錫缶.
 - 食物缶詰 (Food Can)
  - 作り方: なし
  - 説明: 食べ物を詰めた状態の錫缶. 食べるとライフと満腹度が一つ回復する. 中身を食べれば缶はスズ缶として回収できる. 空腹値を直接回復するアイテムなら、何でも食料缶にできる. ポーションやお酒、コーヒーなどは不可. 蜘蛛の目や毒ジャガイモ、ゾンビ肉も食料缶化が可能だが、毒性はそのまま継承されるので注意. (毒ダメージ版と空腹ステータス付与版の二種類の毒性食料缶がある) なお、(バグか仕様かは不明だが)食料缶自体も缶詰処理することが可能であり、 上記の毒性食料缶を(なぜか)正常な食料缶にすることが可能になっている（スズ缶は減るが）
 - ツリータップ (Treetap)
  - 作り方: 木材：５
+ - 公式レシピ: (定型) #minecraft:planksx5 -> ic2:treetap
  - 説明: ゴムの木から樹液を抽出する道具. 抽出には手に持ってゴムの木の樹液が出ている部分を右クリックすればいい. 抽出機のレシピでも使用する.
 - 電動ツリータップ (Electric Treetap)
  - 作り方: ツリータップ：１＋電子回路：１＋充電式電池：１
+ - 公式レシピ: (定型) ic2:treetap + ic2:circuit + ic2:re_battery -> ic2:electric_treetap
  - 説明: バッテリー駆動のツリータップ. 充電(1万EU)する事で何度でも使える.
 - ナノセイバー (Nano Saber)
  - 作り方: エナジークリスタル：１＋合金板：２＋グロウストーンダスト：２＋カーボンプレート：２
+ - 公式レシピ: (定型) minecraft:glowstone_dustx2 + ic2:plate_advanced_alloyx2 + ic2:carbon_platex2 + ic2:energy_crystal -> ic2:nano_saber
  - 説明: バッテリー駆動の特殊な剣. 4万EUまで充電でき、右クリックする事でオンオフが切り替えられる. オフの状態では木の剣と同等の攻撃力しかないが、EU消費が0であるため、経験値トラップとの相性が良い. オンの状態では攻撃力10なので、殆どの敵を1～2発で倒せる. またPvP要素として、展開中の電動防具への攻撃は通常ダメージの代わりに大きな電力ダメージを与え、更に電力0になった電動防具を唯一破壊することができる. 展開中は時間と共にバッテリー残量が減るので瞬間的に斬るといった使い方が好ましい. MFEトランスミッタまたはMFSユニットでのみ充電可能.
 - ペインター (Painter)
  - 作り方: （ペインター）羊毛：３＋鉄インゴット：２ || （色付き）ペインター：１＋各種染料：１
+ - 公式レシピ: (定型) #minecraft:woolx3 + #forge:ingots/ironx2 -> ic2:painter
  - 説明: 設置した電線や羊毛に色をつける道具. 画像は一例で実際には染料の数だけ色付きペインターが作れる. デフォルトのペインターと染色違う色同士の電線は繋がらなくなるため複雑な配線が可能になる. 例外として無色(黒色)の電線と有色の電線は繋がってしまう. Mキー+右クリックで自動補充モードの切り替えが可能.
 - 周波数送信機 (Frequency Transmitter)
  - 作り方: 電子回路：１＋銅のケーブル：１
+ - 公式レシピ: (不定形) ic2:circuit + ic2:copper_insulated_cable_item -> ic2:frequency_transmitter
  - 説明: 自己の周波数の登録や送信が出来る装置でテレポーターなどで使う.
 - コイン (Industrial Credit)
  - 作り方: 精錬鉄：４
+ - 公式レシピ: (不定形) ic2:coin_8x -> ic2:coinx8
+ - 公式レシピ: (定型) ic2:coin_4096xx8 -> ic2:coin_32768x
+ - 公式レシピ: (定型) ic2:coin_512xx8 -> ic2:coin_4096x
+ - 公式レシピ: (不定形) ic2:coin_32768x -> ic2:coin_4096xx8
+ - 公式レシピ: (定型) ic2:coin_64xx8 -> ic2:coin_512x
+ - 公式レシピ: (不定形) ic2:coin_4096x -> ic2:coin_512xx8
+ - 公式レシピ: (定型) ic2:coin_8xx8 -> ic2:coin_64x
+ - 公式レシピ: (不定形) ic2:coin_512x -> ic2:coin_64xx8
+ - 公式レシピ: (定型) ic2:coinx8 -> ic2:coin_8x
+ - 公式レシピ: (不定形) ic2:coin_64x -> ic2:coin_8xx8
  - 説明: 工業貨幣、つまりはお金である. SMPでトレード-O-Matと組み合わせて使うと良い. 9枚組み合わせる事で精製鉄1個に戻すことも可能.
 - ツールボックス (Toolbox)
  - 作り方: チェストボックス：１＋精錬鉄：５
+ - 公式レシピ: (定型) #forge:ingots/refined_ironx5 + #forge:chests/wooden -> ic2:tool_box
  - 説明: ツール類の保管箱. 右クリックで使用するとイベントリ内のツールを一括で格納、または取り出す事が出来る.
 - マグカップ (Stone Mug)
  - 作り方: 石：７
@@ -889,12 +1109,14 @@ v1.62から追加されたアイテム. 機械のGUI右側に新しく4つ並ん
 
 - 空のセル (Empty Cell)
  - 作り方: スズインゴット：４
+ - 公式レシピ: (定型) #forge:ingots/tinx4 -> ic2:cell_emptyx16
  - 説明: 様々な液体や燃料を入れられる容器. 基本的に使い捨てだが低コストで量産が容易. 手に持った状態から右クリックで水や溶岩を直接汲み取ることができる.
 - 圧縮空気セル (Compressd Air Cell)
  - 作り方: なし
  - 説明: 空のセルの中に圧縮した酸素を詰め込んだセル. 何らかの原因で空気を使ってもセルが戻ってくる.
 - バイオセル (Bio Cell)
  - 作り方: 空のセル：１＋圧縮した植物の玉：１
+ - 公式レシピ: (不定形) ic2:cell_empty + ic2:compressed_plant_ball -> ic2:cell_bio
  - 説明: セルに植物の塊を入れたもの. 燃料としては使えない.
 - 液化石炭セル (H. Coal Cell)
  - 作り方: 空のセル：１＋圧縮した液化石炭：１
@@ -916,6 +1138,7 @@ v1.62から追加されたアイテム. 機械のGUI右側に新しく4つ並ん
  - 説明: 電解水生成装置で精製することが可能. 電解水セルは15,000EUの保持が可能だが復元過程で1500EUほど損失する.
 - 10K冷却セル (10K Coolant Cell)
  - 作り方: v1.103までは水セルを抽出器にかけると製作可能. / v1.106以後は水セル：１＋スズインゴット：４で製作可能.
+ - 公式レシピ: (定型) #forge:ingots/tinx4 + fluid:water -> ic2:heat_storage_single
  - 説明: (wiki に説明の記載なし)
 
 ### 6. テラフォーマーブループリント
@@ -950,12 +1173,25 @@ v1.62から追加されたアイテム. 機械のGUI右側に新しく4つ並ん
 
 - オーバークロッカー (Overclocker upgrade)
  - 作り方: 電子回路：１＋冷却セル：３＋銅のケーブル：２
+ - 公式レシピ: (定型) ic2:heat_storage_singlex3 + ic2:copper_insulated_cable_itemx2 + ic2:circuit -> ic2:overclocker_upgrade
+ - 公式レシピ: (定型) ic2:heat_storage_triplex3 + ic2:copper_insulated_cable_itemx2 + ic2:circuit -> ic2:overclocker_upgradex3
+ - 公式レシピ: (定型) ic2:heat_storage_sixx3 + ic2:copper_insulated_cable_itemx2 + ic2:circuit -> ic2:overclocker_upgradex6
+ - 公式レシピ: (定型) ic2:heat_storage_singlex4 + ic2:upgrade_base -> ic2:overclocker_upgrade
+ - 公式レシピ: (定型) ic2:heat_storage_singlex8 + ic2:upgrade_base -> ic2:overclocker_upgradex2
+ - 公式レシピ: (定型) ic2:heat_storage_triplex4 + ic2:upgrade_base -> ic2:overclocker_upgradex4
+ - 公式レシピ: (定型) ic2:heat_storage_triplex8 + ic2:upgrade_base -> ic2:overclocker_upgradex8
+ - 公式レシピ: (定型) ic2:heat_storage_sixx4 + ic2:upgrade_base -> ic2:overclocker_upgradex8
+ - 公式レシピ: (定型) ic2:heat_storage_sixx8 + ic2:upgrade_base -> ic2:overclocker_upgradex16
  - 説明: 機械の稼働速度を向上させるモジュール. 16個ほども重ねると、粉砕機のような仕事の遅い機械でも一瞬で仕事を完了させるようになる優れもの. ただし設置個数に応じて消費電力も増加するため注意が必要. 具体的には設置１つに付き作業時間0.7倍. 消費電力1.6倍. つまり２つ設置すると作業時間は0.7*0.7=0.49倍、消費電力は1.6*1.6=2.56倍となる. （v1.71現在） v1.106では冷却セルを10K冷却セルに置き換えれば製作可能.
 - トランスフォーマー (Transformer upgrade)
  - 作り方: 中圧変換装置：１＋電子回路：１＋金の２倍絶縁ケーブル：２＋ガラス：５
+ - 公式レシピ: (定型) #forge:glassx5 + ic2:gold_double_insulated_cable_itemx2 + ic2:transformer_mv + ic2:circuit -> ic2:transformer_upgrade
+ - 公式レシピ: (定型) #forge:glassx7 + ic2:transformer_mv + ic2:upgrade_base -> ic2:transformer_upgrade
  - 説明: 機械の対応電圧を向上させるモジュール. 1つ増える度に対応電圧が1段階上がる. とはいえ、IC2単体では低圧対応の機械にしか設置できないため、 1つで中電圧（128EU）に、2つで高電圧（512EU）に、3つで超高圧（2048EU）まで受け取れるようになるという認識で概ね問題ない. 一般機械にオーバークロッカーを積みすぎて、消費電力が32EU/tを超えてしまいMFEから直接供給しないと間に合わない！なんて時に便利. ただし、作業中に外してしまうとその途端に電圧非対応で爆発を起こすので誤クリックに注意.
 - エナジーストレージ (Energy storage upgrade)
  - 作り方: 充電式電池：１＋電子回路：１＋銅のケーブル：２＋木材：５
+ - 公式レシピ: (定型) #minecraft:planksx5 + ic2:copper_insulated_cable_itemx2 + ic2:re_battery + ic2:circuit -> ic2:energy_storage_upgrade
+ - 公式レシピ: (定型) #minecraft:planksx7 + ic2:re_battery + ic2:upgrade_base -> ic2:energy_storage_upgrade
  - 説明: 機械の蓄電性能を向上させるモジュール. 1つにつき蓄電可能容量が10,000EU上昇する. こちらもオーバークロッカーを積むときに便利.
 - イジェクター (Ejecter Upgrade)
  - 作り方: ピストン：２＋電子回路：１＋銅のケーブル：２＋ホッパー：１(※バニラのもの)
@@ -973,27 +1209,36 @@ v1.62から追加されたアイテム. 機械のGUI右側に新しく4つ並ん
  - 説明: ゴムの原木を精錬することでジャングルの原木になる. こちらは原木になるので得られる個数は通常の原木と変わらないものの、精錬という手間が生じるので、 やはり使う機会は少ない.
 - バケツ (Bucket)
  - 作り方: スズインゴット：３
+ - 公式レシピ: (定型) #forge:ingots/tinx3 -> minecraft:bucket
  - 説明: 通称スズバケツ. 鉄の消費が多いことによる救済措置. RedPower2の合金かまどやUnCraft等の還元系MODを使えば、スズインゴットを鉄インゴットに等価交換することができる.
 - 線路 (Rail)
  - 作り方: 青銅インゴット：６＋棒：１
+ - 公式レシピ: (定型) #forge:ingots/bronzex6 + minecraft:stick -> minecraft:railx8
  - 説明: 鉄の消費が多いことによる救済措置. ただし、作られる数は半分の8個になる. こちらも還元系MODによって、青銅インゴット12個を鉄インゴット6個に交換することができる.
 - ピストン (Piston)
  - 作り方: 木材：３＋丸石：４＋青銅インゴット：１＋レッドストーン：１
+ - 公式レシピ: (定型) #minecraft:planksx3 + #forge:cobblestonex4 + #forge:ingots/silver + #forge:dusts/redstone -> minecraft:piston
+ - 公式レシピ: (定型) #minecraft:planksx3 + #forge:cobblestonex4 + #forge:ingots/bronze + #forge:dusts/redstone -> minecraft:piston
  - 説明: 鉄の消費が多いことによる救済措置. こちらも還元系MODによって、青銅インゴット1個を鉄インゴット1個に交換することができる.
 - 粘着ピストン (Sticky piston)
  - 作り方: ピストン：１＋樹液：１
+ - 公式レシピ: (不定形) minecraft:piston + ic2:sticky_resin + RecipeMods.HIDDEN_RECIPE -> minecraft:sticky_piston
  - 説明: おそらくスライムが見つからないときの救済措置だったのであろう、スライムボールの変わりに樹液が使えるレシピ. 今では湿地帯バイオームでスライムが沸くようになったので、湿地帯バイオームが見つからないなら使うことになるかもしれない程度.
 - 松明 (Torch)
  - 作り方: 樹液：１＋棒：１
+ - 公式レシピ: (定型) ic2:sticky_resin + minecraft:stick -> minecraft:torchx4
  - 説明: 炭で作ったときと変わりは無い. どっちのほうが楽かは人によるだろう.
 - グロウストーンの粉 (GrowStone Dusts)
  - 作り方: レッドストーン：５＋金の粉：４
  - 説明: グロウストーンの粉の追加レシピ.
 - 火薬 (Gunpowder)
  - 作り方: レッドストーン：５＋石炭の粉：４
+ - 公式レシピ: (定型) #forge:dusts/redstonex5 + #forge:dusts/coalx4 -> minecraft:gunpowderx3
  - 説明: 火薬の追加レシピ.
 - 黒曜石 (Obsidian)
  - 作り方: 水セル：２＋溶岩セル：２
+ - 公式レシピ: (不定形) ic2:cell_waterx2 + ic2:cell_lavax2 -> minecraft:obsidian
+ - 公式レシピ: (不定形) ic2:cell_waterx2 + minecraft:magma_blockx2 -> minecraft:obsidian
  - 説明: 追加レシピ. 1つ作るのに溶岩セルが2つ必要なので、溶岩源に水をかけて作る方が効率はよい. しかし、回収手段がなくても手持ちに加えられる、クラフティングで作成可能（＝BuildCraftの自動作業台等に対応できる）などの利点もある.
 - 丸石、砂、矢じり、グロウストーンダスト、糸、雪玉、骨粉、土、ブレイズの粉
  - 作り方: （丸石）石：１ || （砂）丸石or砂岩ブロック：１ || （矢じり）砂利：１ || （グロウストーンダスト）グロウストーン：4 || （糸）羊毛：１ || （雪玉）氷：１ || （骨粉）骨：１ || （土）植物の玉：１ || （ブレイズの粉）ブレイズロッド：１
@@ -1008,9 +1253,11 @@ v1.62から追加されたアイテム. 機械のGUI右側に新しく4つ並ん
 
 - 原子炉 (Nuclear Reactor)
  - 作り方: 合金板：４＋発展回路：２＋チャンバー：２＋火力発電機：１
+ - 公式レシピ: (定型) ic2:advanced_circuit + ic2:reactor_chamberx3 + ic2:generator -> ic2:nuclear_reactor
  - 説明: ウランを使うことで莫大な発電量を得ることが出来る原子炉. ウランセル1個当たり1,000,000EU(10EU/t)発電する. 熱量を管理することで安全な運用が可能. レッドストーン入力で発電を停止することができる.
 - チャンバー (Reactor Chamber)
  - 作り方: マシン：１＋ヒートディスペンサー：１＋リアクタープレート：３＋合金板：４
+ - 公式レシピ: (定型) ic2:plate_dense_copperx4 + ic2:machine_block -> ic2:reactor_chamber
  - 説明: 原子炉のスロットを増量するための追加拡張炉. 単体では使用不可能で原子炉に隣接して設置する. 最大6基まで増設が可能. また、冷却能力や耐熱値を向上させる効果を持っている.
 - ウランセル (Uranium Cell)
  - 作り方: 空のセル：１＋精錬ウラン：１
@@ -1066,6 +1313,7 @@ v1.62から追加されたアイテム. 機械のGUI右側に新しく4つ並ん
  - 説明: 支柱に植えるには"サトウキビ x1"または"種袋(アシ) x1"が必要. 明るさLvに関係なく植えられる. 種から完全成長まで約4分、収穫から再収穫まで約4分.
 - 赤の花、Tier 2 (Rose)
  - 作り方: なし
+ - 公式レシピ: (不定形) ColorMaps.CFOAM_BLOCKS.getBlock(DyeColor.GREEN) + ColorMaps.CFOAM_BLOCKS.getBlock(DyeColor.PINK) -> ic2:rose
  - 作物名: 、赤の染料 1-4個(期待値1.5個) 、種袋 0-2個(期待値1.0個)
  - 説明: 支柱に植えるには"赤の花 x4"または"種袋(バラ) x1"が必要. 花の所持数が3以下では植えられない. 花を使って植えた場合、最初から完全に育ちきった状態で植えられる. 明るさLvが12以上でないと種を蒔けない＆育たない. 種から完全成育まで約16分、一度収穫してから再収穫まで約8分.
 - 黄の花、Tier 2 (Flower)
@@ -1099,6 +1347,8 @@ v1.62から追加されたアイテム. 機械のGUI右側に新しく4つ並ん
 
 - 肥料 (Fertilizer)
  - 作り方: 骨粉1 + スクラップ1
+ - 公式レシピ: (不定形) ic2:scrap + minecraft:bone_meal -> ic2:fertilizerx2
+ - 公式レシピ: (不定形) ic2:scrapx2 + ic2:fertilizer -> ic2:fertilizerx2
  - スペック: 234px]]
  - 説明: または肥料1 + スクラップ2 → 2個 土壌の栄養分を増やす事で支柱作物の成長を促進する. 骨粉のような即効性はない. 64個スタックできるが、1個が1回分相当.
 - 保水剤セル (Hydration Cell)
@@ -1110,18 +1360,21 @@ v1.62から追加されたアイテム. 機械のGUI右側に新しく4つ並ん
  - 説明: 微弱な毒性を持つ粉. 除草スプレーの材料になる.
 - 除草スプレー (Weed-EX)
  - 作り方: 空のセル1 + 毒の粉1 + レッドストーンパウダー1
+ - 公式レシピ: (定型) #forge:dusts/redstone + ic2:grin_powder + ic2:cell_empty -> ic2:weedex
  - 説明: 雑草対策のスプレー. Cropに雑草が生えないようにする. スタック不可だが、耐久度があり1個が64回使える.
 - 作物分析機 (Cropnalyzer)
  - 作り方: ガラス：１＋電子回路：１＋レッドストーン：４＋銅のケーブル：２
  - 説明: 作物の情報を分析する装置. 手に持って使う. 種袋を分析することができる. （要バッテリー） 完全に解析するには都合4回分析しなければならない. また、分析済みの種袋を支柱に植えた場合、その支柱を右クリックすることで情報を表示できる.
 - 農薬散布機 (Crop-Matron)
  - 作り方: 電子回路2 + チェスト1 + マシン1 + 園芸用支柱5 → 1個
+ - 公式レシピ: (定型) ic2:circuitx2 + #forge:chests/wooden + ic2:crop_sticksx5 + ic2:machine_block -> ic2:crop_matron
  - 説明: 装置を中心とした縦9x横9x高3範囲にある園芸用支柱に、 自動で"肥料"、"保水剤セル"、"除草スプレー"を使用する装置. 周囲にそれらを与えるべき園芸用支柱があろうとなかろうと、 稼働中は常に1EU/t消費.
 
 ### 3. １．農薬散布機を設置する
 
 - 農薬散布機 (Crop-Matron)
  - 作り方: なし
+ - 公式レシピ: (定型) ic2:circuitx2 + #forge:chests/wooden + ic2:crop_sticksx5 + ic2:machine_block -> ic2:crop_matron
  - 説明: (wiki に説明の記載なし)
 
 ### 4. ３．作物分析機で作物を鑑定
@@ -1174,6 +1427,7 @@ v1.62から追加されたアイテム. 機械のGUI右側に新しく4つ並ん
  - 説明: 足場ブロックに被せる形で設置する. 左クリックすると1クリックで足場ブロックから引き剥がせるが、 内容物はアイテム化しても記録されたまま. ただし熟成はマップ上に設置された状態でしか進まない.
 - ツリータップ (Treetap)
  - 作り方: 木材5
+ - 公式レシピ: (定型) #minecraft:planksx5 -> ic2:treetap
  - 説明: ゴムの木から樹液を抽出する道具. ただし酒造においては酒樽から酒を汲む目的で酒樽に取り付ける.
 - マグカップ (Stone Mug)
  - 作り方: 焼石7

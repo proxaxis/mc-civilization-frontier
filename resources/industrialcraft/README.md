@@ -60,6 +60,12 @@ IndustrialCraft² (IC2) の移植を検討するための参照資料メモ. 収
 - アセット (テクスチャ、モデル、lang) は jar 内部の `assets/` 以下に入っているため、jar をダウンロードして展開すれば取得可能. 必要になったら該当バージョンの jar を Maven から取得して展開する
 - API ドキュメントは http://ic2api.player.to/ic2api/html/annotated.html
 
+### 3.1. IC2 Classic の assets/data 取得済み (2026-10 追記)
+
+- IC2 系は IC2 Classic (Speiger 版) を採用し、CurseForge 配布の `IC2Classic-1.19.2-2.1.3.4.jar` から `assets/` (4521ファイル) と `data/` (loot_tables, loot_modifiers, biome_modifier) を展開して `assets/`, `data/` に配置済み
+- `TinyModularThings/IC2Classic` (GitHub) は API とバグトラッカーのみで実装ソースは非公開. クラフトレシピは `data/ic2/recipes` ではなく jar 内コード (`IC2Recipes.addRecipes`) に登録されるため、CFR で逆コンパイルし `recipes_export.json` (917件) として機械抽出した
+- ITEMS.md の各アイテムには、抽出レシピを `公式レシピ` 行として併記済み (lang で英名と item id を対応付け. IC2C と旧 IC2 で名称が違う項目は未対応)
+
 ## 4. 関連 MOD
 
 - BuildCraft: `../buildcraft/` に ITEMS.md (アイテム一覧)、README.md、公式リポジトリのアセットを収録済み
