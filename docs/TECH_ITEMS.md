@@ -1,4 +1,4 @@
-# TECH_ITEMS.md - 技術系 MOD アイテム,レシピ一覧
+# 科学技術アイテムとレシピのカタログ
 
 BCN (Build Craft Neo) 実装用に、BuildCraft / IndustrialCraft2 / Project:Red / LogisticsPipes の
 鉱石、アイテム、機械、パイプ類とそのレシピを整理した一覧. レシピの正本は各 `resources/*/ITEMS.md` (wiki 仕様)
@@ -55,6 +55,14 @@ EFP は重工業稼働で世界全体に蓄積する汚染指数 (`cfb_efp` ス�
 1. BCN (Java) 側から `cfb_efp` スコアボードを直接更新 (最も正確. mod 側で稼働状態が取れる)
 2. datapack が稼働中機械を定期スキャンして加算 (Java 改修なしで先行実装可能)
 3. 暫定は既存の手動加算ボタン運用 → 本実装で 1. に移行
+
+### 2.1. Pollution of the Realms (AdPother) との役割分担
+
+導入済みの AdPother (26.3.0.1) は「物理的汚染ブロック」(局所に漂う汚染物質, エンティティ影響, 換気)を担うMODで、EFP の「世界全体の累積指数→災害トリガー」とは別レイヤー. 併用を推奨.
+
+- 排出源登録: BCN のエンジン, 各種炉, リファイナリー, クァーリー, 核施設を AdPother の設定 JSON で emitter 登録 → 視覚的な汚染と実害がコード無しで付く
+- EFP 指数: `cfb_efp` スコアボードをグローバル指標として維持 (災害トリガーは datapack 実装済み)
+- 同期: PotR jar を `modImplementation` に加えて汚染量 API を読み取り、`cfb_efp` に反映 (task-104 報告の方針と同じ. 実測値連動にしたい場合はこれ)
 
 ## 3. アイテム,レシピ一覧
 
