@@ -516,3 +516,12 @@
   * fabric.mod.json に client エントリポイント追加
   * このバージョンの API は `FluidRenderingRegistry.register(Fluid, Fluid, FluidModel$Unbaked)` で、Material は単一 Identifier コンストラクタを取る
 * 未解決: クライアントでの実際の描画確認は実機待ち(サーバー側では検証不可)
+
+## BCN アセット配線検証(アイテム/テクスチャ/モデル)
+
+* 結果: 成功 — アセットパイプラインは完備、新規要素モデルブロックの通し検証も登録・配置まで確認
+* 変更点:
+  * `BcnItemGroup` 新設 — bcn 名前空間の全アイテムを自動収集するクリエイティブタブ(fabric.mod.json lang `itemGroup.bcn.main`)
+  * `engine_frame` 検証用ブロック — 5 要素のカスタム 3D モデル・blockstate・アイテムモデル・テクスチャ・lang を追加し登録
+* 検証済み: 登録 18 件 vs items.json 29 件の網羅差分は流体のみで正常、`bcn:engine_frame` の give + setblock 動作確認
+* 未検証(クライアント目視): カスタムモデルの見た目・タブ表示・oil 流体レンダラ

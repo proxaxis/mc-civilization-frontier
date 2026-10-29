@@ -6,25 +6,10 @@
   "learn": {},
   "active": {
     "cast": {
+      "duration": 0.0,
       "animation": {
         "id": "spell_engine:one_handed_projectile_charge"
-      },
-      "sound": {
-        "id": "spell_engine:generic_fire_casting"
-      },
-      "particles": [
-        {
-          "id": "spell_engine:flame",
-          "appearance": {},
-          "batch": {
-            "count": 1.0,
-            "shape": "PIPE",
-            "anchor": "ENTITY",
-            "min_speed": 0.05,
-            "max_speed": 0.1
-          }
-        }
-      ]
+      }
     }
   },
   "release": {
@@ -34,7 +19,9 @@
   },
   "target": {
     "type": "AIM",
-    "aim": {}
+    "aim": {
+      "sticky": true
+    }
   },
   "impacts": [
     {
@@ -44,26 +31,6 @@
           "spell_power_coefficient": 1.2,
           "knockback": 0.3
         }
-      },
-      "visuals": {
-        "particles": [
-          {
-            "id": "spell_engine:flame",
-            "appearance": {
-              "motion": "BURST"
-            },
-            "batch": {
-              "count": 15.0,
-              "shape": "SPHERE",
-              "anchor": "ENTITY",
-              "min_speed": 0.1,
-              "max_speed": 0.5
-            }
-          }
-        ]
-      },
-      "sound": {
-        "id": "spell_engine:generic_fire_impact_1"
       }
     },
     {
@@ -72,26 +39,6 @@
         "fire": {
           "duration": 2.0
         }
-      },
-      "visuals": {
-        "particles": [
-          {
-            "id": "spell_engine:flame",
-            "appearance": {
-              "motion": "BURST"
-            },
-            "batch": {
-              "count": 15.0,
-              "shape": "SPHERE",
-              "anchor": "ENTITY",
-              "min_speed": 0.1,
-              "max_speed": 0.5
-            }
-          }
-        ]
-      },
-      "sound": {
-        "id": "spell_engine:generic_fire_impact_1"
       }
     }
   ],
@@ -104,45 +51,6 @@
     },
     "item": {
       "id": "runes:fire_stone"
-    }
-  },
-  "deliver": {
-    "type": "PROJECTILE",
-    "projectile": {
-      "launch_properties": {
-        "velocity": 1.0,
-        "sound": {
-          "id": "spell_engine:generic_fire_release"
-        }
-      },
-      "projectile": {
-        "client_data": {
-          "light_level": 8,
-          "travel_particles": [
-            {
-              "id": "spell_engine:flame",
-              "appearance": {},
-              "batch": {
-                "count": 3.0,
-                "shape": "CIRCLE",
-                "anchor": "ENTITY",
-                "min_speed": 0.0,
-                "max_speed": 0.1
-              }
-            }
-          ],
-          "composite_model": {
-            "models": [
-              {
-                "fx": {
-                  "model_id": "wizards:spell_projectile/fireball",
-                  "scale": 0.5
-                }
-              }
-            ]
-          }
-        }
-      }
     }
   }
 }

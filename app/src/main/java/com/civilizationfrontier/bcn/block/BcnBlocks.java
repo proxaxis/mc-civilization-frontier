@@ -46,6 +46,8 @@ public final class BcnBlocks {
 					.pushReaction(net.minecraft.world.level.material.PushReaction.POPPED)
 					.liquid()
 					.noLootTable());
+	public static final Block ENGINE_FRAME = register("engine_frame", Block::new,
+			BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).mapColor(MapColor.METAL));
 	public static final Block OIL_SPRING = register("oil_spring", OilSpringBlock::new,
 			BlockBehaviour.Properties.ofFullCopy(Blocks.OBSIDIAN)
 					.mapColor(MapColor.COLOR_BLACK)

@@ -33,6 +33,8 @@ def aggro():
     return {"action": {"type": "AGGRO", "aggro": {"pull": True}}}
 def fire(dur):
     return {"action": {"type": "FIRE", "fire": {"duration": float(dur)}}}
+def summon(ent, ttl):
+    return {"action": {"type": "SPAWN", "spawns": [{"entity_type_id": ent, "time_to_live_seconds": float(ttl)}]}}
 
 # id: (school, tier, cast秒, cd秒, exhaust, rune, target, impacts)
 S = {
@@ -67,7 +69,7 @@ S = {
   "stealth":      ("arcane",3, 0.5, 60,  0.5, None, "caster", [eff("minecraft:invisibility",8),eff("minecraft:speed",8)]),
   "deathblow":    ("arcane",4, 0.0, 50,  0.5, None, "aim",    [dmg(3.0,0.6)]),
   "vanish":       ("arcane",3, 0.0, 70,  0.4, None, "caster", [eff("minecraft:invisibility",3),vel(0,0.3,1.0)]),
-  "clone":        ("arcane",4, 0.5, 80,  0.5, None, "caster", [eff("minecraft:invisibility",6),eff("minecraft:speed",6,1)]),
+  "clone":        ("arcane",4, 0.5, 80,  0.5, None, "caster", [summon("minecraft:villager",10),eff("minecraft:invisibility",4),eff("minecraft:speed",4,1)]),
   "burial":       ("arcane",5, 0.5, 180, 0.8, "runes:arcane_stone", "aim", [dmg(5.0,1.0)]),
  },
  "mage": {
