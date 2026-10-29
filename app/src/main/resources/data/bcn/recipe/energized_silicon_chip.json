@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "bcn:energized_silicon",
+    "bcn:plate",
+    "bcn:plate",
+    "bcn:plate"
+  ],
+  "result": {
+    "id": "bcn:energized_silicon_chip",
+    "count": 1
+  }
+}

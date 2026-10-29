@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "bcn:plate",
+    "bcn:silicon_chip",
+    "bcn:bundled_plate"
+  ],
+  "result": {
+    "id": "bcn:ic_gate",
+    "count": 1
+  }
+}

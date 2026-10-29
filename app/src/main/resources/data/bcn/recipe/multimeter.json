@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    "bcn:red_ingot",
+    "bcn:red_ingot",
+    "minecraft:black_dye",
+    "minecraft:black_dye",
+    "minecraft:red_dye",
+    "minecraft:glowstone_dust"
+  ],
+  "result": {
+    "id": "bcn:multimeter",
+    "count": 1
+  }
+}

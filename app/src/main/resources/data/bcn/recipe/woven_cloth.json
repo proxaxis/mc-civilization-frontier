@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:string",
+    "minecraft:string",
+    "minecraft:string",
+    "minecraft:string",
+    "minecraft:string",
+    "minecraft:string",
+    "minecraft:string",
+    "minecraft:string",
+    "minecraft:stick"
+  ],
+  "result": {
+    "id": "bcn:woven_cloth",
+    "count": 1
+  }
+}

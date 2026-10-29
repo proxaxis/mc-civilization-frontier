@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "bcn:module_blank",
+    "minecraft:lapis_lazuli",
+    "minecraft:lapis_lazuli",
+    "bcn:gear_iron"
+  ],
+  "result": {
+    "id": "bcn:module_extractor",
+    "count": 1
+  }
+}

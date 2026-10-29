@@ -1,0 +1,684 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "face": "floor"
+      },
+      "apply": {
+        "model": "bcn:block/bwire_base_nup"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "floor"
+          },
+          {
+            "OR": [
+              {
+                "north": "wire"
+              },
+              {
+                "north": "block"
+              }
+            ]
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_arm_nup_dnorth"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "floor"
+          },
+          {
+            "OR": [
+              {
+                "south": "wire"
+              },
+              {
+                "south": "block"
+              }
+            ]
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_arm_nup_dsouth"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "floor"
+          },
+          {
+            "OR": [
+              {
+                "east": "wire"
+              },
+              {
+                "east": "block"
+              }
+            ]
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_arm_nup_deast"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "floor"
+          },
+          {
+            "OR": [
+              {
+                "west": "wire"
+              },
+              {
+                "west": "block"
+              }
+            ]
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_arm_nup_dwest"
+      }
+    },
+    {
+      "when": {
+        "face": "ceiling"
+      },
+      "apply": {
+        "model": "bcn:block/bwire_base_ndown"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "ceiling"
+          },
+          {
+            "OR": [
+              {
+                "north": "wire"
+              },
+              {
+                "north": "block"
+              }
+            ]
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_arm_ndown_dnorth"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "ceiling"
+          },
+          {
+            "OR": [
+              {
+                "south": "wire"
+              },
+              {
+                "south": "block"
+              }
+            ]
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_arm_ndown_dsouth"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "ceiling"
+          },
+          {
+            "OR": [
+              {
+                "east": "wire"
+              },
+              {
+                "east": "block"
+              }
+            ]
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_arm_ndown_deast"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "ceiling"
+          },
+          {
+            "OR": [
+              {
+                "west": "wire"
+              },
+              {
+                "west": "block"
+              }
+            ]
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_arm_ndown_dwest"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "wall"
+          },
+          {
+            "facing": "north"
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_base_nnorth"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "wall"
+          },
+          {
+            "facing": "north"
+          },
+          {
+            "OR": [
+              {
+                "up": "wire"
+              },
+              {
+                "up": "block"
+              }
+            ]
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_arm_nnorth_dup"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "wall"
+          },
+          {
+            "facing": "north"
+          },
+          {
+            "OR": [
+              {
+                "down": "wire"
+              },
+              {
+                "down": "block"
+              }
+            ]
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_arm_nnorth_ddown"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "wall"
+          },
+          {
+            "facing": "north"
+          },
+          {
+            "OR": [
+              {
+                "east": "wire"
+              },
+              {
+                "east": "block"
+              }
+            ]
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_arm_nnorth_deast"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "wall"
+          },
+          {
+            "facing": "north"
+          },
+          {
+            "OR": [
+              {
+                "west": "wire"
+              },
+              {
+                "west": "block"
+              }
+            ]
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_arm_nnorth_dwest"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "wall"
+          },
+          {
+            "facing": "south"
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_base_nsouth"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "wall"
+          },
+          {
+            "facing": "south"
+          },
+          {
+            "OR": [
+              {
+                "up": "wire"
+              },
+              {
+                "up": "block"
+              }
+            ]
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_arm_nsouth_dup"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "wall"
+          },
+          {
+            "facing": "south"
+          },
+          {
+            "OR": [
+              {
+                "down": "wire"
+              },
+              {
+                "down": "block"
+              }
+            ]
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_arm_nsouth_ddown"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "wall"
+          },
+          {
+            "facing": "south"
+          },
+          {
+            "OR": [
+              {
+                "east": "wire"
+              },
+              {
+                "east": "block"
+              }
+            ]
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_arm_nsouth_deast"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "wall"
+          },
+          {
+            "facing": "south"
+          },
+          {
+            "OR": [
+              {
+                "west": "wire"
+              },
+              {
+                "west": "block"
+              }
+            ]
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_arm_nsouth_dwest"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "wall"
+          },
+          {
+            "facing": "east"
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_base_neast"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "wall"
+          },
+          {
+            "facing": "east"
+          },
+          {
+            "OR": [
+              {
+                "up": "wire"
+              },
+              {
+                "up": "block"
+              }
+            ]
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_arm_neast_dup"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "wall"
+          },
+          {
+            "facing": "east"
+          },
+          {
+            "OR": [
+              {
+                "down": "wire"
+              },
+              {
+                "down": "block"
+              }
+            ]
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_arm_neast_ddown"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "wall"
+          },
+          {
+            "facing": "east"
+          },
+          {
+            "OR": [
+              {
+                "north": "wire"
+              },
+              {
+                "north": "block"
+              }
+            ]
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_arm_neast_dnorth"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "wall"
+          },
+          {
+            "facing": "east"
+          },
+          {
+            "OR": [
+              {
+                "south": "wire"
+              },
+              {
+                "south": "block"
+              }
+            ]
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_arm_neast_dsouth"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "wall"
+          },
+          {
+            "facing": "west"
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_base_nwest"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "wall"
+          },
+          {
+            "facing": "west"
+          },
+          {
+            "OR": [
+              {
+                "up": "wire"
+              },
+              {
+                "up": "block"
+              }
+            ]
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_arm_nwest_dup"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "wall"
+          },
+          {
+            "facing": "west"
+          },
+          {
+            "OR": [
+              {
+                "down": "wire"
+              },
+              {
+                "down": "block"
+              }
+            ]
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_arm_nwest_ddown"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "wall"
+          },
+          {
+            "facing": "west"
+          },
+          {
+            "OR": [
+              {
+                "north": "wire"
+              },
+              {
+                "north": "block"
+              }
+            ]
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_arm_nwest_dnorth"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "face": "wall"
+          },
+          {
+            "facing": "west"
+          },
+          {
+            "OR": [
+              {
+                "south": "wire"
+              },
+              {
+                "south": "block"
+              }
+            ]
+          },
+          {}
+        ]
+      },
+      "apply": {
+        "model": "bcn:block/bwire_arm_nwest_dsouth"
+      }
+    }
+  ]
+}

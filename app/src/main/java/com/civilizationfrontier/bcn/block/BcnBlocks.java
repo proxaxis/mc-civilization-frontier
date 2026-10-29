@@ -1,5 +1,7 @@
 package com.civilizationfrontier.bcn.block;
 
+import java.util.EnumMap;
+import java.util.Map;
 import java.util.function.Function;
 
 import com.civilizationfrontier.bcn.Bcn;
@@ -18,10 +20,15 @@ import com.civilizationfrontier.bcn.energy.block.MjQuarryBlock;
 import com.civilizationfrontier.bcn.energy.block.MjRefineryBlock;
 import com.civilizationfrontier.bcn.energy.block.MjTransformerBlock;
 import com.civilizationfrontier.bcn.fluid.BcnFluids;
+import com.civilizationfrontier.bcn.lp.LiquidSupplierPipeBlock;
+import com.civilizationfrontier.bcn.lp.LogisticsPipeBlock;
+import com.civilizationfrontier.bcn.lp.LpKind;
+import com.civilizationfrontier.bcn.lp.SolderingStationBlock;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 
 import net.minecraft.world.level.block.Blocks;
@@ -67,6 +74,12 @@ public final class BcnBlocks {
 	public static final BcnEngineBlock ENGINE_STONE = register("engine_stone",
 			properties -> new BcnEngineBlock(EngineKind.STONE, properties),
 			BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).mapColor(MapColor.STONE));
+	public static final BcnEngineBlock ENGINE_REDSTONE = register("engine_redstone",
+			properties -> new BcnEngineBlock(EngineKind.REDSTONE, properties),
+			BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).mapColor(MapColor.WOOD));
+	public static final BcnEngineBlock ENGINE_CREATIVE = register("engine_creative",
+			properties -> new BcnEngineBlock(EngineKind.CREATIVE, properties),
+			BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).mapColor(MapColor.COLOR_PURPLE));
 	public static final BcnEngineBlock ENGINE_COMBUSTION = register("engine_combustion",
 			properties -> new BcnEngineBlock(EngineKind.COMBUSTION, properties),
 			BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).mapColor(MapColor.METAL)
@@ -187,6 +200,51 @@ public final class BcnBlocks {
 					.noOcclusion()
 					.strength(0.1F)
 					.pushReaction(net.minecraft.world.level.material.PushReaction.POPPED));
+	public static final LogisticsPipeBlock PIPE_BASIC_LOGISTICS = register(
+			"pipe_basic_logistics",
+			properties -> new LogisticsPipeBlock(LpKind.BASIC, properties),
+			BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).noOcclusion());
+	public static final LogisticsPipeBlock PIPE_PROVIDER = register(
+			"pipe_provider",
+			properties -> new LogisticsPipeBlock(LpKind.PROVIDER, properties),
+			BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).noOcclusion());
+	public static final LogisticsPipeBlock PIPE_REQUEST = register(
+			"pipe_request",
+			properties -> new LogisticsPipeBlock(LpKind.REQUEST, properties),
+			BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).noOcclusion());
+	public static final LogisticsPipeBlock PIPE_SUPPLIER = register(
+			"pipe_supplier",
+			properties -> new LogisticsPipeBlock(LpKind.SUPPLIER, properties),
+			BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).noOcclusion());
+	public static final LogisticsPipeBlock PIPE_CRAFTING = register(
+			"pipe_crafting",
+			properties -> new LogisticsPipeBlock(LpKind.CRAFTING, properties),
+			BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).noOcclusion());
+	public static final LogisticsPipeBlock PIPE_CHASSIS_MK1 = register(
+			"pipe_chassis_mk1",
+			properties -> new LogisticsPipeBlock(LpKind.CHASSIS1, properties),
+			BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).noOcclusion());
+	public static final LogisticsPipeBlock PIPE_CHASSIS_MK2 = register(
+			"pipe_chassis_mk2",
+			properties -> new LogisticsPipeBlock(LpKind.CHASSIS2, properties),
+			BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).noOcclusion());
+	public static final LogisticsPipeBlock PIPE_CHASSIS_MK3 = register(
+			"pipe_chassis_mk3",
+			properties -> new LogisticsPipeBlock(LpKind.CHASSIS3, properties),
+			BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).noOcclusion());
+	public static final LogisticsPipeBlock PIPE_CHASSIS_MK4 = register(
+			"pipe_chassis_mk4",
+			properties -> new LogisticsPipeBlock(LpKind.CHASSIS4, properties),
+			BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).noOcclusion());
+	public static final LogisticsPipeBlock PIPE_CHASSIS_MK5 = register(
+			"pipe_chassis_mk5",
+			properties -> new LogisticsPipeBlock(LpKind.CHASSIS5, properties),
+			BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).noOcclusion());
+	public static final LiquidSupplierPipeBlock PIPE_LIQUID_SUPPLIER = register(
+			"pipe_liquid_supplier", LiquidSupplierPipeBlock::new,
+			BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).noOcclusion());
+	public static final SolderingStationBlock SOLDERING_STATION = register(
+			"soldering_station", SolderingStationBlock::new, machineProps());
 	public static final BcnGateBlock GATE_NOT = registerGate("gate_not", BcnGateBlock.GateType.NOT);
 	public static final BcnGateBlock GATE_BUFFER = registerGate("gate_buffer", BcnGateBlock.GateType.BUFFER);
 	public static final BcnGateBlock GATE_OR = registerGate("gate_or", BcnGateBlock.GateType.OR);
@@ -197,6 +255,37 @@ public final class BcnBlocks {
 	public static final BcnGateBlock GATE_XNOR = registerGate("gate_xnor", BcnGateBlock.GateType.XNOR);
 	public static final BcnGateBlock GATE_RS_LATCH = registerGate("gate_rs_latch", BcnGateBlock.GateType.RS_LATCH);
 	public static final BcnGateBlock GATE_T_LATCH = registerGate("gate_t_latch", BcnGateBlock.GateType.T_LATCH);
+
+	// ---- Project:Red 系 ----
+
+	public static final Map<DyeColor, BcnInsulatedWireBlock> INSULATED_WIRE = registerInsulatedWires();
+	public static final BcnBundledCableBlock BUNDLED_CABLE = register("bundled_cable",
+			BcnBundledCableBlock::new, wireProps().strength(0.3F));
+	public static final BcnIcGateBlock IC_GATE = register("ic_gate", BcnIcGateBlock::new,
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.STONE)
+					.noOcclusion()
+					.strength(0.5F)
+					.pushReaction(net.minecraft.world.level.material.PushReaction.POPPED));
+	public static final BcnFrameBlock FRAME = register("frame", BcnFrameBlock::new,
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.WOOD)
+					.noOcclusion()
+					.strength(0.5F));
+	public static final BcnFrameMotorBlock FRAME_MOTOR = register("frame_motor",
+			BcnFrameMotorBlock::new, machineProps());
+	public static final BcnMicroblockBlock MICROBLOCK = register("microblock", BcnMicroblockBlock::new,
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.STONE)
+					.noOcclusion()
+					.strength(1.0F));
+	public static final Block BOULE = register("boule", Block::new,
+			BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_BLOCK).mapColor(MapColor.COLOR_LIGHT_GRAY)
+					.requiresCorrectToolForDrops());
+	public static final MjBatteryBlock BT_BATTERY_BOX = register("bt_battery_box",
+			properties -> new MjBatteryBlock(MjPressure.LV, 24000, properties), machineProps());
+	public static final Ic2GeneratorBlock SOLAR_PANEL = register("solar_panel",
+			p -> new Ic2GeneratorBlock(Ic2GeneratorBlock.Gen.SOLAR, p), machineProps());
 	public static final CropStickBlock CROP_STICK = register("crop_stick", CropStickBlock::new,
 			BlockBehaviour.Properties.of()
 					.mapColor(MapColor.WOOD)
@@ -204,7 +293,7 @@ public final class BcnBlocks {
 					.noOcclusion()
 					.strength(0.1F)
 					.sound(net.minecraft.world.level.block.SoundType.WOOD)
-					.pushReaction(net.minecraft.world.level.material.PushReaction.DESTROY));
+					.pushReaction(net.minecraft.world.level.material.PushReaction.POPPED));
 	public static final BoozeBarrelBlock BOOZE_BARREL = register("booze_barrel", BoozeBarrelBlock::new,
 			BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL));
 	public static final com.civilizationfrontier.bcn.builder.LandmarkBlock LANDMARK = register("landmark",
@@ -222,6 +311,24 @@ public final class BcnBlocks {
 	public static final com.civilizationfrontier.bcn.builder.ArchitectTableBlock ARCHITECT_TABLE = register("architect_table",
 			com.civilizationfrontier.bcn.builder.ArchitectTableBlock::new,
 			BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE));
+
+	private static Map<DyeColor, BcnInsulatedWireBlock> registerInsulatedWires() {
+		Map<DyeColor, BcnInsulatedWireBlock> map = new EnumMap<>(DyeColor.class);
+		for (DyeColor color : DyeColor.values()) {
+			map.put(color, register("insulated_wire_" + color.getName(),
+					p -> new BcnInsulatedWireBlock(p, color), wireProps()));
+		}
+		return Map.copyOf(map);
+	}
+
+	private static BlockBehaviour.Properties wireProps() {
+		return BlockBehaviour.Properties.of()
+				.mapColor(MapColor.COLOR_RED)
+				.noCollision()
+				.noOcclusion()
+				.strength(0.1F)
+				.pushReaction(net.minecraft.world.level.material.PushReaction.POPPED);
+	}
 
 	private static BcnGateBlock registerGate(String name, BcnGateBlock.GateType type) {
 		return register(name, properties -> new BcnGateBlock(properties, type),

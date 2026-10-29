@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " i ",
+    "csc",
+    "rir"
+  ],
+  "key": {
+    "i": "minecraft:iron_ingot",
+    "c": "bcn:copper_coil",
+    "s": "minecraft:stone",
+    "r": "minecraft:redstone"
+  },
+  "result": {
+    "id": "bcn:motor",
+    "count": 1
+  }
+}

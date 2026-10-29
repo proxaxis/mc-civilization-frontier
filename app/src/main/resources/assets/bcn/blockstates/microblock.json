@@ -1,0 +1,112 @@
+{
+  "variants": {
+    "face=floor,facing=north,size=half": {
+      "model": "bcn:block/microblock_half_down"
+    },
+    "face=floor,facing=south,size=half": {
+      "model": "bcn:block/microblock_half_down"
+    },
+    "face=floor,facing=east,size=half": {
+      "model": "bcn:block/microblock_half_down"
+    },
+    "face=floor,facing=west,size=half": {
+      "model": "bcn:block/microblock_half_down"
+    },
+    "face=ceiling,facing=north,size=half": {
+      "model": "bcn:block/microblock_half_up"
+    },
+    "face=ceiling,facing=south,size=half": {
+      "model": "bcn:block/microblock_half_up"
+    },
+    "face=ceiling,facing=east,size=half": {
+      "model": "bcn:block/microblock_half_up"
+    },
+    "face=ceiling,facing=west,size=half": {
+      "model": "bcn:block/microblock_half_up"
+    },
+    "face=wall,facing=north,size=half": {
+      "model": "bcn:block/microblock_half_north"
+    },
+    "face=wall,facing=south,size=half": {
+      "model": "bcn:block/microblock_half_south"
+    },
+    "face=wall,facing=east,size=half": {
+      "model": "bcn:block/microblock_half_east"
+    },
+    "face=wall,facing=west,size=half": {
+      "model": "bcn:block/microblock_half_west"
+    },
+    "face=floor,facing=north,size=panel": {
+      "model": "bcn:block/microblock_panel_down"
+    },
+    "face=floor,facing=south,size=panel": {
+      "model": "bcn:block/microblock_panel_down"
+    },
+    "face=floor,facing=east,size=panel": {
+      "model": "bcn:block/microblock_panel_down"
+    },
+    "face=floor,facing=west,size=panel": {
+      "model": "bcn:block/microblock_panel_down"
+    },
+    "face=ceiling,facing=north,size=panel": {
+      "model": "bcn:block/microblock_panel_up"
+    },
+    "face=ceiling,facing=south,size=panel": {
+      "model": "bcn:block/microblock_panel_up"
+    },
+    "face=ceiling,facing=east,size=panel": {
+      "model": "bcn:block/microblock_panel_up"
+    },
+    "face=ceiling,facing=west,size=panel": {
+      "model": "bcn:block/microblock_panel_up"
+    },
+    "face=wall,facing=north,size=panel": {
+      "model": "bcn:block/microblock_panel_north"
+    },
+    "face=wall,facing=south,size=panel": {
+      "model": "bcn:block/microblock_panel_south"
+    },
+    "face=wall,facing=east,size=panel": {
+      "model": "bcn:block/microblock_panel_east"
+    },
+    "face=wall,facing=west,size=panel": {
+      "model": "bcn:block/microblock_panel_west"
+    },
+    "face=floor,facing=north,size=cover": {
+      "model": "bcn:block/microblock_cover_down"
+    },
+    "face=floor,facing=south,size=cover": {
+      "model": "bcn:block/microblock_cover_down"
+    },
+    "face=floor,facing=east,size=cover": {
+      "model": "bcn:block/microblock_cover_down"
+    },
+    "face=floor,facing=west,size=cover": {
+      "model": "bcn:block/microblock_cover_down"
+    },
+    "face=ceiling,facing=north,size=cover": {
+      "model": "bcn:block/microblock_cover_up"
+    },
+    "face=ceiling,facing=south,size=cover": {
+      "model": "bcn:block/microblock_cover_up"
+    },
+    "face=ceiling,facing=east,size=cover": {
+      "model": "bcn:block/microblock_cover_up"
+    },
+    "face=ceiling,facing=west,size=cover": {
+      "model": "bcn:block/microblock_cover_up"
+    },
+    "face=wall,facing=north,size=cover": {
+      "model": "bcn:block/microblock_cover_north"
+    },
+    "face=wall,facing=south,size=cover": {
+      "model": "bcn:block/microblock_cover_south"
+    },
+    "face=wall,facing=east,size=cover": {
+      "model": "bcn:block/microblock_cover_east"
+    },
+    "face=wall,facing=west,size=cover": {
+      "model": "bcn:block/microblock_cover_west"
+    }
+  }
+}

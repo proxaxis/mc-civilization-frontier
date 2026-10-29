@@ -869,3 +869,18 @@
   * 絵筆の対象ブロック着色機能は未実装 (スコープ外, 別タスク)
   * 歯車の段階クラフト中間物としての c:gears タグ活用は後続レシピで拡張
   * 並行作業のレシピエラー (tin_can, rail_signal, processing/*) は別タスクで要修正
+
+## task-210 BCN 残りエンジン (redstone/creative)
+
+* 結果: 実装済み — redstone エンジンの RS 駆動微弱発電と creative エンジンの常時大出力を実機確認
+* EngineKind 拡張: `FuelMode` enum (SOLID/FLUID/NONE_POWERED/NONE_ALWAYS) + rate + outputRank + addsEfp のテーブル化. tier 追加は enum 1 行 + ブロック/アイテム登録で可能
+  * `REDSTONE` — 燃料不要・RS 駆動・0.2 MJ/t・ULV 出力 (BC redstone engine 相当の微弱 tier)
+  * `CREATIVE` — 燃料不要・常時発電・200 MJ/t・EV 出力・EFP 除外 (クリエイティブ専用, クラフト不可)
+* 実装詳細: `BcnEngineBlock(EngineKind)` で engine_redstone/engine_creative を登録, `EngineBlockEntity` は fuelMode で燃焼処理を分岐 (NONE 系は produce() 直接), RS ゲートは needsPower() で判定, 燃料投入は SOLID のみ許可 (右クリック/ホッパー両方)
+* 実機検証 (testserver):
+  * engine_redstone + redstone_block → 0.2 MJ/t で 60.2 MJ 生成 → スズ線経由 59.7 MJ 到達 (ULV 2MJ パケット). efp_buffer 蓄積確認
+  * engine_creative (RS 無し) → 200 MJ/t で 61000 MJ 生成 → HV 線経由 60576.4 MJ 到達 (EV 819MJ パケット). efp_buffer=0 で除外確認
+  * `/recipe give` で engine_redstone レシピ登録確認 (ガラス1+板材3+木歯車2+ピストン1)
+* 未解決・要判断:
+  * creative レシピは意図的に無し (クリエイティブタブ限定). redstone engine の素材は BC 準拠の仮置き
+  * 既存 engine_stone/combustion のレシピは別タスク (材料は歯車系で確定済み)

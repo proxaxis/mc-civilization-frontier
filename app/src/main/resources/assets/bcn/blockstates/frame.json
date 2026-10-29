@@ -1,0 +1,40 @@
+{
+  "variants": {
+    "face=floor,facing=north": {
+      "model": "bcn:block/frame_down"
+    },
+    "face=floor,facing=south": {
+      "model": "bcn:block/frame_down"
+    },
+    "face=floor,facing=east": {
+      "model": "bcn:block/frame_down"
+    },
+    "face=floor,facing=west": {
+      "model": "bcn:block/frame_down"
+    },
+    "face=ceiling,facing=north": {
+      "model": "bcn:block/frame_up"
+    },
+    "face=ceiling,facing=south": {
+      "model": "bcn:block/frame_up"
+    },
+    "face=ceiling,facing=east": {
+      "model": "bcn:block/frame_up"
+    },
+    "face=ceiling,facing=west": {
+      "model": "bcn:block/frame_up"
+    },
+    "face=wall,facing=north": {
+      "model": "bcn:block/frame_north"
+    },
+    "face=wall,facing=south": {
+      "model": "bcn:block/frame_south"
+    },
+    "face=wall,facing=east": {
+      "model": "bcn:block/frame_east"
+    },
+    "face=wall,facing=west": {
+      "model": "bcn:block/frame_west"
+    }
+  }
+}

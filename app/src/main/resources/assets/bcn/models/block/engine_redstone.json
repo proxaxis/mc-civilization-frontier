@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "side": "bcn:block/engine_redstone_side",
+    "top": "bcn:block/engine_redstone_top",
+    "front": "bcn:block/engine_redstone_front"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:glass",
+    "minecraft:glass",
+    "minecraft:glass",
+    "minecraft:glass",
+    "bcn:gear_diamond",
+    "bcn:gear_diamond"
+  ],
+  "result": {
+    "id": "bcn:remote_orderer",
+    "count": 1
+  }
+}

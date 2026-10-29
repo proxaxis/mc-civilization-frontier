@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "#minecraft:planks",
+    "#minecraft:planks",
+    "minecraft:iron_ingot",
+    "minecraft:redstone",
+    "minecraft:redstone",
+    "bcn:motor",
+    "minecraft:stone",
+    "minecraft:stone",
+    "bcn:electrotine_ingot"
+  ],
+  "result": {
+    "id": "bcn:frame_motor",
+    "count": 1
+  }
+}

@@ -92,10 +92,14 @@ public class EngineBlockEntity extends MjStorageBlockEntity implements WorldlyCo
 			return;
 		}
 		boolean running = false;
-		if (level.hasNeighborSignal(pos)) {
-			running = be.kind().fluidFueled() ? be.burnFluid() : be.burnSolid();
+		if (!be.kind().needsPower() || level.hasNeighborSignal(pos)) {
+			running = switch (be.kind().fuelMode()) {
+			case SOLID -> be.burnSolid();
+			case FLUID -> be.burnFluid();
+			case NONE_POWERED, NONE_ALWAYS -> be.produce();
+			};
 		}
-		if (running) {
+		if (running && be.kind().addsEfp()) {
 			be.efpBuffer += EFP_PER_TICK;
 			if (be.efpBuffer >= 1.0) {
 				long whole = (long) be.efpBuffer;
@@ -286,7 +290,7 @@ public class EngineBlockEntity extends MjStorageBlockEntity implements WorldlyCo
 
 	@Override
 	public boolean canPlaceItemThroughFace(int slot, ItemStack stack, Direction dir) {
-		return fuelTicks(stack) > 0;
+		return kind().fuelMode() == EngineKind.FuelMode.SOLID && fuelTicks(stack) > 0;
 	}
 
 	@Override

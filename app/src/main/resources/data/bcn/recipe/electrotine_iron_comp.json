@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:iron_ingot",
+    "bcn:electrotine_dust",
+    "bcn:electrotine_dust",
+    "bcn:electrotine_dust",
+    "bcn:electrotine_dust",
+    "bcn:electrotine_dust",
+    "bcn:electrotine_dust",
+    "bcn:electrotine_dust",
+    "bcn:electrotine_dust"
+  ],
+  "result": {
+    "id": "bcn:electrotine_iron_comp",
+    "count": 1
+  }
+}

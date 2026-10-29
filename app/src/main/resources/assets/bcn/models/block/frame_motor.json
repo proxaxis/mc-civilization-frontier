@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "side": "bcn:block/frame_motor_side",
+    "top": "bcn:block/frame_motor_top",
+    "front": "bcn:block/frame_motor_front"
+  }
+}

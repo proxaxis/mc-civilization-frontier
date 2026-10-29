@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "bcn:plate",
+    "minecraft:redstone"
+  ],
+  "result": {
+    "id": "bcn:conductive_plate",
+    "count": 1
+  }
+}

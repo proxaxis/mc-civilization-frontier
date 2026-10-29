@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "bcn:pipe_chassis_mk4",
+    "bcn:gear_diamond"
+  ],
+  "result": {
+    "id": "bcn:pipe_chassis_mk5",
+    "count": 1
+  }
+}

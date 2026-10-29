@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "bcn:redwire",
+    "minecraft:black_wool"
+  ],
+  "result": {
+    "id": "bcn:insulated_wire_black",
+    "count": 1
+  }
+}

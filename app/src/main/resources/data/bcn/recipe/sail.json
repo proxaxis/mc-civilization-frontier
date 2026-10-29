@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "bcn:woven_cloth",
+    "bcn:woven_cloth",
+    "bcn:woven_cloth",
+    "bcn:woven_cloth",
+    "bcn:woven_cloth",
+    "bcn:woven_cloth"
+  ],
+  "result": {
+    "id": "bcn:sail",
+    "count": 1
+  }
+}

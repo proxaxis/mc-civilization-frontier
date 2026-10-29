@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    "minecraft:stick",
+    "minecraft:stick",
+    "minecraft:stick",
+    "minecraft:iron_ingot",
+    "minecraft:iron_ingot",
+    "bcn:ruby",
+    "bcn:ruby"
+  ],
+  "result": {
+    "id": "bcn:ruby_handsaw",
+    "count": 1
+  }
+}

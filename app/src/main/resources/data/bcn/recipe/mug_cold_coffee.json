@@ -4,7 +4,7 @@
   "ingredients": [
     "bcn:stone_mug",
     "bcn:coffee_powder",
-    "minecraft:water_bottle"
+    "minecraft:water_bucket"
   ],
   "result": {
     "id": "bcn:mug_cold_coffee"

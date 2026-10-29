@@ -1,0 +1,1 @@
+{"textures":{"0":"bcn:block/iwire_green_off","particle":"bcn:block/iwire_green_off"},"elements":[{"from":[6,0,15],"to":[10,10,16],"faces":{"down":{"texture":"#0"},"up":{"texture":"#0"},"north":{"texture":"#0"},"south":{"texture":"#0"},"west":{"texture":"#0"},"east":{"texture":"#0"}}}]}

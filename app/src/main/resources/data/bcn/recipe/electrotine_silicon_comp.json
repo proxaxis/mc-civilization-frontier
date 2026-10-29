@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "bcn:silicon",
+    "bcn:electrotine_dust",
+    "bcn:electrotine_dust",
+    "bcn:electrotine_dust",
+    "bcn:electrotine_dust",
+    "bcn:electrotine_dust",
+    "bcn:electrotine_dust",
+    "bcn:electrotine_dust",
+    "bcn:electrotine_dust"
+  ],
+  "result": {
+    "id": "bcn:electrotine_silicon_comp",
+    "count": 1
+  }
+}

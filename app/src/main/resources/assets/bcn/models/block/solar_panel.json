@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "side": "bcn:block/machine_side",
+    "top": "bcn:block/solar_panel",
+    "front": "bcn:block/solar_panel"
+  }
+}

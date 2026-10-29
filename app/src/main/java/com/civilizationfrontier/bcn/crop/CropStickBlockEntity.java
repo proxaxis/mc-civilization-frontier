@@ -143,7 +143,7 @@ public class CropStickBlockEntity extends BlockEntity {
 	}
 
 	private void spreadWeed(ServerLevel level, BlockPos pos, RandomSource random) {
-		List<Direction> dirs = new ArrayList<>(List.of(Direction.Plane.HORIZONTAL.stream().toList()));
+		List<Direction> dirs = Direction.Plane.HORIZONTAL.stream().toList();
 		Direction dir = dirs.get(random.nextInt(dirs.size()));
 		if (level.getBlockEntity(pos.relative(dir)) instanceof CropStickBlockEntity other
 				&& other.hasCrop() && !BcnCropType.WEED.id().equals(other.crop)

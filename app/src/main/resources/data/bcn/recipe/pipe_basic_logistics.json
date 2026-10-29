@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "bcn:item_pipe",
+    "bcn:gear_diamond"
+  ],
+  "result": {
+    "id": "bcn:pipe_basic_logistics",
+    "count": 1
+  }
+}

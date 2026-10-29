@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "bcn:module_blank",
+    "minecraft:lime_dye",
+    "minecraft:lime_dye",
+    "bcn:gear_iron"
+  ],
+  "result": {
+    "id": "bcn:module_item_sink",
+    "count": 1
+  }
+}

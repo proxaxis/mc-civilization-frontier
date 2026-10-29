@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "bcn:electrotine_ingot",
+    "bcn:electro_silicon",
+    "bcn:electro_silicon",
+    "bcn:electro_silicon",
+    "bcn:electro_silicon",
+    "bcn:electro_silicon",
+    "bcn:electro_silicon",
+    "bcn:electro_silicon",
+    "bcn:electro_silicon"
+  ],
+  "result": {
+    "id": "bcn:solar_panel",
+    "count": 1
+  }
+}

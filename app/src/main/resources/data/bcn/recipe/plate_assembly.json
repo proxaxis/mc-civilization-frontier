@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "bcn:plate",
+    "bcn:plate",
+    "bcn:plate",
+    "minecraft:stick",
+    "minecraft:stick",
+    "bcn:wired_plate",
+    "bcn:wired_plate"
+  ],
+  "result": {
+    "id": "bcn:plate_assembly",
+    "count": 1
+  }
+}

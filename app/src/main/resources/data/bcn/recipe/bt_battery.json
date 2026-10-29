@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "bcn:tin_ingot",
+    "minecraft:copper_ingot",
+    "minecraft:copper_ingot",
+    "bcn:electrotine_dust",
+    "bcn:electrotine_dust",
+    "bcn:electrotine_dust",
+    "bcn:electrotine_dust",
+    "bcn:electrotine_dust",
+    "bcn:electrotine_dust"
+  ],
+  "result": {
+    "id": "bcn:bt_battery",
+    "count": 1
+  }
+}

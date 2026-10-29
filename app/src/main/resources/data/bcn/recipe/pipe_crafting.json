@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "bcn:pipe_basic_logistics",
+    "minecraft:redstone",
+    "bcn:gear_stone"
+  ],
+  "result": {
+    "id": "bcn:pipe_crafting",
+    "count": 1
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "#bcn:insulated_wires",
+    "#bcn:insulated_wires",
+    "#bcn:insulated_wires"
+  ],
+  "result": {
+    "id": "bcn:bundled_cable",
+    "count": 3
+  }
+}

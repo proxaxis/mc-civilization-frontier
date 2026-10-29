@@ -1,0 +1,56 @@
+{
+  "variants": {
+    "facing=down,powered=false": {
+      "model": "bcn:block/frame_motor",
+      "x": 180
+    },
+    "facing=down,powered=true": {
+      "model": "bcn:block/frame_motor",
+      "x": 180
+    },
+    "facing=up,powered=false": {
+      "model": "bcn:block/frame_motor"
+    },
+    "facing=up,powered=true": {
+      "model": "bcn:block/frame_motor"
+    },
+    "facing=north,powered=false": {
+      "model": "bcn:block/frame_motor",
+      "x": 90
+    },
+    "facing=north,powered=true": {
+      "model": "bcn:block/frame_motor",
+      "x": 90
+    },
+    "facing=south,powered=false": {
+      "model": "bcn:block/frame_motor",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,powered=true": {
+      "model": "bcn:block/frame_motor",
+      "x": 90,
+      "y": 180
+    },
+    "facing=west,powered=false": {
+      "model": "bcn:block/frame_motor",
+      "x": 90,
+      "y": 90
+    },
+    "facing=west,powered=true": {
+      "model": "bcn:block/frame_motor",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,powered=false": {
+      "model": "bcn:block/frame_motor",
+      "x": 90,
+      "y": 270
+    },
+    "facing=east,powered=true": {
+      "model": "bcn:block/frame_motor",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

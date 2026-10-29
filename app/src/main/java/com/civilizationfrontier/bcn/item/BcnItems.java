@@ -1,10 +1,15 @@
 package com.civilizationfrontier.bcn.item;
 
+import java.util.EnumMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Function;
 
 import com.civilizationfrontier.bcn.Bcn;
 import com.civilizationfrontier.bcn.block.BcnBlocks;
+import com.civilizationfrontier.bcn.lp.LpModule;
+import com.civilizationfrontier.bcn.lp.LpModuleItem;
+import com.civilizationfrontier.bcn.lp.RemoteOrdererItem;
 import com.civilizationfrontier.bcn.fluid.BcnFluids;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
@@ -98,6 +103,8 @@ public final class BcnItems {
 			properties -> new MjBatteryItem(120000, 51, true, 0x33CCCC, properties),
 			new Item.Properties().equippable(net.minecraft.world.entity.EquipmentSlot.CHEST));
 	public static final Item ENGINE_COMBUSTION = registerBlockItem("engine_combustion", BcnBlocks.ENGINE_COMBUSTION);
+	public static final Item ENGINE_REDSTONE = registerBlockItem("engine_redstone", BcnBlocks.ENGINE_REDSTONE);
+	public static final Item ENGINE_CREATIVE = registerBlockItem("engine_creative", BcnBlocks.ENGINE_CREATIVE);
 	public static final Item REFINERY = registerBlockItem("refinery", BcnBlocks.REFINERY);
 	public static final Item QUARRY = registerBlockItem("quarry", BcnBlocks.QUARRY);
 	public static final Item FILLER = registerBlockItem("filler", BcnBlocks.FILLER);
@@ -243,6 +250,114 @@ public final class BcnItems {
 			effect(MobEffects.JUMP_BOOST, 2400, 0, 1.0F),
 			new RemoveStatusEffectsConsumeEffect(
 					HolderSet.direct(List.of(MobEffects.SLOWNESS, MobEffects.MINING_FATIGUE))));
+
+	// ---- Project:Red 系 ----
+
+	public static final Map<net.minecraft.world.item.DyeColor, Item> INSULATED_WIRE = registerInsulatedWireItems();
+	public static final Item BUNDLED_CABLE = registerBlockItem("bundled_cable", BcnBlocks.BUNDLED_CABLE);
+	public static final Item IC_GATE = registerBlockItem("ic_gate", BcnBlocks.IC_GATE);
+	public static final Item FRAME = registerBlockItem("frame", BcnBlocks.FRAME);
+	public static final Item FRAME_MOTOR = registerBlockItem("frame_motor", BcnBlocks.FRAME_MOTOR);
+	public static final Item MICROBLOCK = register("microblock",
+			p -> new MicroblockItem(BcnBlocks.MICROBLOCK, p), new Item.Properties());
+	public static final Item BOULE = registerBlockItem("boule", BcnBlocks.BOULE);
+	public static final Item BT_BATTERY_BOX = registerBlockItem("bt_battery_box", BcnBlocks.BT_BATTERY_BOX);
+	public static final Item SOLAR_PANEL = registerBlockItem("solar_panel", BcnBlocks.SOLAR_PANEL);
+
+	public static final Item PLATE = register("plate", Item::new, new Item.Properties());
+	public static final Item CONDUCTIVE_PLATE = register("conductive_plate", Item::new, new Item.Properties());
+	public static final Item WIRED_PLATE = register("wired_plate", Item::new, new Item.Properties());
+	public static final Item BUNDLED_PLATE = register("bundled_plate", Item::new, new Item.Properties());
+	public static final Item ANODE = register("anode", Item::new, new Item.Properties());
+	public static final Item CATHODE = register("cathode", Item::new, new Item.Properties());
+	public static final Item POINTER = register("pointer", Item::new, new Item.Properties());
+	public static final Item SILICON_CHIP = register("silicon_chip", Item::new, new Item.Properties());
+	public static final Item ENERGIZED_SILICON_CHIP = register("energized_silicon_chip", Item::new, new Item.Properties());
+	public static final Item PLATE_ASSEMBLY = register("plate_assembly", Item::new, new Item.Properties());
+	public static final Item RED_INGOT = register("red_ingot", Item::new, new Item.Properties());
+	public static final Item SILICON = register("silicon", Item::new, new Item.Properties());
+	public static final Item INFUSED_SILICON = register("infused_silicon", Item::new, new Item.Properties());
+	public static final Item ENERGIZED_SILICON = register("energized_silicon", Item::new, new Item.Properties());
+	public static final Item ELECTRO_SILICON = register("electro_silicon", Item::new, new Item.Properties());
+	public static final Item MOTOR = register("motor", Item::new, new Item.Properties());
+	public static final Item COPPER_COIL = register("copper_coil", Item::new, new Item.Properties());
+	public static final Item IRON_COIL = register("iron_coil", Item::new, new Item.Properties());
+	public static final Item GOLD_COIL = register("gold_coil", Item::new, new Item.Properties());
+	public static final Item WOVEN_CLOTH = register("woven_cloth", Item::new, new Item.Properties());
+	public static final Item SAIL = register("sail", Item::new, new Item.Properties());
+	public static final Item RED_IRON_COMP = register("red_iron_comp", Item::new, new Item.Properties());
+	public static final Item SAND_COAL_COMP = register("sand_coal_comp", Item::new, new Item.Properties());
+	public static final Item RED_SILICON_COMP = register("red_silicon_comp", Item::new, new Item.Properties());
+	public static final Item GLOW_SILICON_COMP = register("glow_silicon_comp", Item::new, new Item.Properties());
+	public static final Item ELECTROTINE_INGOT = register("electrotine_ingot", Item::new, new Item.Properties());
+	public static final Item ELECTROTINE_IRON_COMP = register("electrotine_iron_comp", Item::new, new Item.Properties());
+	public static final Item ELECTROTINE_SILICON_COMP = register("electrotine_silicon_comp", Item::new, new Item.Properties());
+	public static final Item SCREWDRIVER = register("screwdriver", Item::new, new Item.Properties().stacksTo(1));
+	public static final Item DRAW_PLATE = register("draw_plate", Item::new, new Item.Properties().stacksTo(1));
+	public static final Item MULTIMETER = register("multimeter", BcnMultimeterItem::new, new Item.Properties());
+	public static final Item HANDSAW = register("handsaw",
+			p -> new BcnHandsawItem(false, p), new Item.Properties());
+	public static final Item DIAMOND_HANDSAW = register("diamond_handsaw",
+			p -> new BcnHandsawItem(true, p), new Item.Properties());
+	public static final Item RUBY_HANDSAW = register("ruby_handsaw",
+			p -> new BcnHandsawItem(true, p), new Item.Properties());
+	public static final Item SAPPHIRE_HANDSAW = register("sapphire_handsaw",
+			p -> new BcnHandsawItem(true, p), new Item.Properties());
+	public static final Item PERIDOT_HANDSAW = register("peridot_handsaw",
+			p -> new BcnHandsawItem(true, p), new Item.Properties());
+	public static final Item BT_BATTERY = register("bt_battery",
+			p -> new MjBatteryItem(24000, 64, true, 0x3b6fff, p), new Item.Properties());
+
+	public static final Item PIPE_BASIC_LOGISTICS = registerBlockItem("pipe_basic_logistics", BcnBlocks.PIPE_BASIC_LOGISTICS);
+	public static final Item PIPE_PROVIDER = registerBlockItem("pipe_provider", BcnBlocks.PIPE_PROVIDER);
+	public static final Item PIPE_REQUEST = registerBlockItem("pipe_request", BcnBlocks.PIPE_REQUEST);
+	public static final Item PIPE_SUPPLIER = registerBlockItem("pipe_supplier", BcnBlocks.PIPE_SUPPLIER);
+	public static final Item PIPE_CRAFTING = registerBlockItem("pipe_crafting", BcnBlocks.PIPE_CRAFTING);
+	public static final Item PIPE_CHASSIS_MK1 = registerBlockItem("pipe_chassis_mk1", BcnBlocks.PIPE_CHASSIS_MK1);
+	public static final Item PIPE_CHASSIS_MK2 = registerBlockItem("pipe_chassis_mk2", BcnBlocks.PIPE_CHASSIS_MK2);
+	public static final Item PIPE_CHASSIS_MK3 = registerBlockItem("pipe_chassis_mk3", BcnBlocks.PIPE_CHASSIS_MK3);
+	public static final Item PIPE_CHASSIS_MK4 = registerBlockItem("pipe_chassis_mk4", BcnBlocks.PIPE_CHASSIS_MK4);
+	public static final Item PIPE_CHASSIS_MK5 = registerBlockItem("pipe_chassis_mk5", BcnBlocks.PIPE_CHASSIS_MK5);
+	public static final Item PIPE_LIQUID_SUPPLIER = registerBlockItem("pipe_liquid_supplier", BcnBlocks.PIPE_LIQUID_SUPPLIER);
+	public static final Item SOLDERING_STATION = registerBlockItem("soldering_station", BcnBlocks.SOLDERING_STATION);
+
+	public static final Item MODULE_BLANK = register("module_blank",
+			p -> new LpModuleItem(LpModule.BLANK, p), new Item.Properties());
+	public static final Item MODULE_ITEM_SINK = register("module_item_sink",
+			p -> new LpModuleItem(LpModule.ITEM_SINK, p), new Item.Properties());
+	public static final Item MODULE_POLYMORPHIC = register("module_polymorphic",
+			p -> new LpModuleItem(LpModule.POLYMORPHIC_SINK, p), new Item.Properties());
+	public static final Item MODULE_TERMINUS = register("module_terminus",
+			p -> new LpModuleItem(LpModule.TERMINUS_SINK, p), new Item.Properties());
+	public static final Item MODULE_PASSIVE_SUPPLIER = register("module_passive_supplier",
+			p -> new LpModuleItem(LpModule.PASSIVE_SUPPLIER, p), new Item.Properties());
+	public static final Item MODULE_PROVIDER = register("module_provider",
+			p -> new LpModuleItem(LpModule.PROVIDER, p), new Item.Properties());
+	public static final Item MODULE_EXTRACTOR = register("module_extractor",
+			p -> new LpModuleItem(LpModule.EXTRACTOR, p), new Item.Properties());
+	public static final Item MODULE_QUICK_SORT = register("module_quick_sort",
+			p -> new LpModuleItem(LpModule.QUICK_SORT, p), new Item.Properties());
+	public static final Item MODULE_ACTIVE_SUPPLIER = register("module_active_supplier",
+			p -> new LpModuleItem(LpModule.ACTIVE_SUPPLIER, p), new Item.Properties());
+	public static final Item MODULE_CRAFTING = register("module_crafting",
+			p -> new LpModuleItem(LpModule.CRAFTING, p), new Item.Properties());
+	public static final Item REMOTE_ORDERER = register("remote_orderer",
+			RemoteOrdererItem::new, new Item.Properties().stacksTo(1));
+	public static final Item NANO_HOPPER = register("nano_hopper", Item::new, new Item.Properties());
+	public static final Item ITEM_CARD = register("item_card", Item::new, new Item.Properties());
+	public static final Item HUD_BOW = register("hud_bow", Item::new, new Item.Properties());
+	public static final Item HUD_GLASS = register("hud_glass", Item::new, new Item.Properties());
+	public static final Item HUD_NOSE = register("hud_nose", Item::new, new Item.Properties());
+	public static final Item HUD_GLASSES = register("hud_glasses", Item::new, new Item.Properties().stacksTo(1));
+
+	private static Map<net.minecraft.world.item.DyeColor, Item> registerInsulatedWireItems() {
+		Map<net.minecraft.world.item.DyeColor, Item> map = new EnumMap<>(net.minecraft.world.item.DyeColor.class);
+		for (net.minecraft.world.item.DyeColor color : net.minecraft.world.item.DyeColor.values()) {
+			map.put(color, registerBlockItem("insulated_wire_" + color.getName(),
+					BcnBlocks.INSULATED_WIRE.get(color)));
+		}
+		return Map.copyOf(map);
+	}
 
 	private static Item registerBlockItem(String name, Block block) {
 		ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Bcn.id(name));

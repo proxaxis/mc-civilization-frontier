@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "bcn:module_blank",
+    "minecraft:ink_sac",
+    "minecraft:purple_dye",
+    "bcn:gear_iron"
+  ],
+  "result": {
+    "id": "bcn:module_terminus",
+    "count": 1
+  }
+}

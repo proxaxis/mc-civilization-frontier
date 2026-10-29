@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "bcn:insulated_wire_yellow"
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "bcn:blocks/insulated_wire_yellow"
+}

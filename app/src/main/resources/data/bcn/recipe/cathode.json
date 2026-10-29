@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "bcn:plate",
+    "minecraft:redstone_torch"
+  ],
+  "result": {
+    "id": "bcn:cathode",
+    "count": 1
+  }
+}

@@ -38,6 +38,7 @@ public class ReactorBlockEntity extends MjStorageBlockEntity {
 	private final NonNullList<ItemStack> fuelSlot = NonNullList.withSize(1, ItemStack.EMPTY);
 	private int burnTime;
 	private double heat;
+	private boolean fuelOutSpiked;
 	private double producedTotal;
 
 	public ReactorBlockEntity(BlockPos pos, BlockState state) {
@@ -75,15 +76,19 @@ public class ReactorBlockEntity extends MjStorageBlockEntity {
 		be.setChanged();
 	}
 
-	/** 新しい燃料燃焼を開始. 燃料切れ時は熱スパイクを与え、高温なら臨界へ. */
+	/** 新しい燃料燃焼を開始. 燃料切れ時は熱スパイクを1回だけ与え、高温なら臨界へ. */
 	private boolean startBurn(Level level, BlockPos pos) {
 		ItemStack slot = fuelSlot.get(0);
 		if (slot.isEmpty()) {
-			heat += HEAT_FUEL_OUT_SPIKE;
+			if (!fuelOutSpiked) {
+				heat += HEAT_FUEL_OUT_SPIKE;
+				fuelOutSpiked = true;
+			}
 			return false;
 		}
 		slot.shrink(1);
 		burnTime = BURN_TICKS;
+		fuelOutSpiked = false;
 		return true;
 	}
 
@@ -111,6 +116,7 @@ public class ReactorBlockEntity extends MjStorageBlockEntity {
 			return false;
 		}
 		stack.shrink(1);
+		fuelOutSpiked = false;
 		setChanged();
 		return true;
 	}
@@ -162,6 +168,7 @@ public class ReactorBlockEntity extends MjStorageBlockEntity {
 		super.saveAdditional(output);
 		output.putInt("burn_time", burnTime);
 		output.putDouble("heat", heat);
+		output.putBoolean("fuel_out_spiked", fuelOutSpiked);
 		output.putDouble("produced_total", producedTotal);
 		net.minecraft.world.ContainerHelper.saveAllItems(output, fuelSlot, true);
 	}
@@ -171,6 +178,7 @@ public class ReactorBlockEntity extends MjStorageBlockEntity {
 		super.loadAdditional(input);
 		burnTime = input.getIntOr("burn_time", 0);
 		heat = input.getDoubleOr("heat", 0);
+		fuelOutSpiked = input.getBooleanOr("fuel_out_spiked", false);
 		producedTotal = input.getDoubleOr("produced_total", 0);
 		net.minecraft.world.ContainerHelper.loadAllItems(input, fuelSlot);
 	}

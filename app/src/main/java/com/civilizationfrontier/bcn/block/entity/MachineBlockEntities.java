@@ -34,7 +34,8 @@ public final class MachineBlockEntities {
 					BcnBlocks.TRANSFORMER_LV, BcnBlocks.TRANSFORMER_MV, BcnBlocks.TRANSFORMER_HV).build());
 	public static final BlockEntityType<BatteryBlockEntity> BATTERY = register("battery",
 			FabricBlockEntityTypeBuilder.create(BatteryBlockEntity::new,
-					BcnBlocks.BATTERY_BOX, BcnBlocks.BATBOX, BcnBlocks.MFE, BcnBlocks.MFSU).build());
+					BcnBlocks.BATTERY_BOX, BcnBlocks.BATBOX, BcnBlocks.MFE, BcnBlocks.MFSU,
+					BcnBlocks.BT_BATTERY_BOX).build());
 	public static final BlockEntityType<com.civilizationfrontier.bcn.energy.block.entity.CableDetectorBlockEntity> CABLE_DETECTOR = register("cable_detector",
 			FabricBlockEntityTypeBuilder.create(
 					com.civilizationfrontier.bcn.energy.block.entity.CableDetectorBlockEntity::new,
@@ -45,7 +46,7 @@ public final class MachineBlockEntities {
 					BcnBlocks.CABLE_SPLITTER).build());
 	public static final BlockEntityType<EngineBlockEntity> ENGINE = register("engine",
 			FabricBlockEntityTypeBuilder.create(EngineBlockEntity::new,
-					BcnBlocks.ENGINE_STONE, BcnBlocks.ENGINE_COMBUSTION).build());
+					BcnBlocks.ENGINE_STONE, BcnBlocks.ENGINE_COMBUSTION, BcnBlocks.ENGINE_REDSTONE, BcnBlocks.ENGINE_CREATIVE).build());
 	public static final BlockEntityType<com.civilizationfrontier.bcn.builder.FillerBlock.FillerBlockEntity> FILLER = register("filler",
 			FabricBlockEntityTypeBuilder.create(com.civilizationfrontier.bcn.builder.FillerBlock.FillerBlockEntity::new,
 					BcnBlocks.FILLER).build());
@@ -78,6 +79,24 @@ public final class MachineBlockEntities {
 			FabricBlockEntityTypeBuilder.create(
 					com.civilizationfrontier.bcn.energy.block.entity.RefineryBlockEntity::new,
 					BcnBlocks.REFINERY).build());
+	public static final BlockEntityType<com.civilizationfrontier.bcn.lp.LogisticsPipeBlockEntity> LOGISTICS_PIPE = register(
+			"logistics_pipe",
+			FabricBlockEntityTypeBuilder.create(
+					com.civilizationfrontier.bcn.lp.LogisticsPipeBlockEntity::new,
+					BcnBlocks.PIPE_BASIC_LOGISTICS, BcnBlocks.PIPE_PROVIDER, BcnBlocks.PIPE_REQUEST,
+					BcnBlocks.PIPE_SUPPLIER, BcnBlocks.PIPE_CRAFTING, BcnBlocks.PIPE_CHASSIS_MK1,
+					BcnBlocks.PIPE_CHASSIS_MK2, BcnBlocks.PIPE_CHASSIS_MK3, BcnBlocks.PIPE_CHASSIS_MK4,
+					BcnBlocks.PIPE_CHASSIS_MK5).build());
+	public static final BlockEntityType<com.civilizationfrontier.bcn.lp.LiquidSupplierPipeBlockEntity> LIQUID_SUPPLIER = register(
+			"pipe_liquid_supplier",
+			FabricBlockEntityTypeBuilder.create(
+					com.civilizationfrontier.bcn.lp.LiquidSupplierPipeBlockEntity::new,
+					BcnBlocks.PIPE_LIQUID_SUPPLIER).build());
+	public static final BlockEntityType<com.civilizationfrontier.bcn.lp.SolderingStationBlockEntity> SOLDERING_STATION = register(
+			"soldering_station",
+			FabricBlockEntityTypeBuilder.create(
+					com.civilizationfrontier.bcn.lp.SolderingStationBlockEntity::new,
+					BcnBlocks.SOLDERING_STATION).build());
 	public static final BlockEntityType<com.civilizationfrontier.bcn.energy.block.entity.ProcessorBlockEntity> PROCESSOR = register("processor",
 			FabricBlockEntityTypeBuilder.create(
 					com.civilizationfrontier.bcn.energy.block.entity.ProcessorBlockEntity::new,
@@ -95,7 +114,13 @@ public final class MachineBlockEntities {
 					BcnBlocks.GENERATOR_WIND).build());
 	public static final BlockEntityType<com.civilizationfrontier.bcn.energy.block.entity.SolarGeneratorBlockEntity> SOLAR_GENERATOR = register("generator_solar",
 			FabricBlockEntityTypeBuilder.create(com.civilizationfrontier.bcn.energy.block.entity.SolarGeneratorBlockEntity::new,
-					BcnBlocks.GENERATOR_SOLAR).build());
+					BcnBlocks.GENERATOR_SOLAR, BcnBlocks.SOLAR_PANEL).build());
+	public static final BlockEntityType<BundledCableBlockEntity> BUNDLED_CABLE = register("bundled_cable",
+			FabricBlockEntityTypeBuilder.create(BundledCableBlockEntity::new, BcnBlocks.BUNDLED_CABLE).build());
+	public static final BlockEntityType<IcGateBlockEntity> IC_GATE = register("ic_gate",
+			FabricBlockEntityTypeBuilder.create(IcGateBlockEntity::new, BcnBlocks.IC_GATE).build());
+	public static final BlockEntityType<MicroblockBlockEntity> MICROBLOCK = register("microblock",
+			FabricBlockEntityTypeBuilder.create(MicroblockBlockEntity::new, BcnBlocks.MICROBLOCK).build());
 	public static final BlockEntityType<com.civilizationfrontier.bcn.energy.block.entity.ReactorBlockEntity> REACTOR = register("reactor",
 			FabricBlockEntityTypeBuilder.create(com.civilizationfrontier.bcn.energy.block.entity.ReactorBlockEntity::new,
 					BcnBlocks.REACTOR).build());

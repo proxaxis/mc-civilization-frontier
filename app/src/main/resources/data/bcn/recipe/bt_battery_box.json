@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "bcn:bt_battery",
+    "bcn:bt_battery",
+    "bcn:bt_battery",
+    "bcn:bt_battery",
+    "#minecraft:planks",
+    "minecraft:iron_ingot",
+    "minecraft:iron_ingot",
+    "minecraft:iron_ingot",
+    "bcn:electrotine_ingot"
+  ],
+  "result": {
+    "id": "bcn:bt_battery_box",
+    "count": 1
+  }
+}

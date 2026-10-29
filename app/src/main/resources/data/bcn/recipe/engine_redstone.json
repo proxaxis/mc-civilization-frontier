@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " G ",
+    "PWP",
+    "OEO"
+  ],
+  "key": {
+    "G": "minecraft:glass",
+    "P": "#minecraft:planks",
+    "W": "bcn:gear_wood",
+    "O": "bcn:gear_wood",
+    "E": "minecraft:piston"
+  },
+  "result": {
+    "id": "bcn:engine_redstone",
+    "count": 1
+  }
+}

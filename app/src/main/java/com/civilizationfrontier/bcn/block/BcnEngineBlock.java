@@ -61,7 +61,7 @@ public class BcnEngineBlock extends MjMachineBlock {
 					&& FluidStorageUtil.interactWithFluidStorage(be.fluidStorage(hit.getDirection()), player, hand)) {
 				return InteractionResult.SUCCESS;
 			}
-			if (!kind.fluidFueled() && EngineBlockEntity.fuelTicks(stack) > 0) {
+			if (kind.fuelMode() == EngineKind.FuelMode.SOLID && EngineBlockEntity.fuelTicks(stack) > 0) {
 				if (!level.isClientSide() && be.insertFuel(stack)) {
 					return InteractionResult.SUCCESS;
 				}

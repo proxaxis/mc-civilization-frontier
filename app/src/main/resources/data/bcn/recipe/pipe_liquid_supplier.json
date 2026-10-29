@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "bcn:waterproof_pipe",
+    "minecraft:gold_ingot",
+    "minecraft:gold_ingot",
+    "minecraft:lapis_lazuli",
+    "minecraft:lapis_lazuli"
+  ],
+  "result": {
+    "id": "bcn:pipe_liquid_supplier",
+    "count": 1
+  }
+}

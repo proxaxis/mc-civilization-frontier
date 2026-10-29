@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "bcn:module_passive_supplier",
+    "bcn:gear_gold"
+  ],
+  "result": {
+    "id": "bcn:module_active_supplier",
+    "count": 1
+  }
+}

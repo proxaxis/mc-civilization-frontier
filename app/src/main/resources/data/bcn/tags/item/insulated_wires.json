@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "bcn:insulated_wire_white",
+    "bcn:insulated_wire_orange",
+    "bcn:insulated_wire_magenta",
+    "bcn:insulated_wire_light_blue",
+    "bcn:insulated_wire_yellow",
+    "bcn:insulated_wire_lime",
+    "bcn:insulated_wire_pink",
+    "bcn:insulated_wire_gray",
+    "bcn:insulated_wire_light_gray",
+    "bcn:insulated_wire_cyan",
+    "bcn:insulated_wire_purple",
+    "bcn:insulated_wire_blue",
+    "bcn:insulated_wire_brown",
+    "bcn:insulated_wire_green",
+    "bcn:insulated_wire_red",
+    "bcn:insulated_wire_black"
+  ]
+}
