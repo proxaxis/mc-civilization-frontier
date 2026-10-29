@@ -1,0 +1,2910 @@
+{
+ "_comment": "IC2C 1.19.2 jar の TileEntity::loadRecipes 等から機械抽出. Experimental 準拠の正本は wiki 記述",
+ "count": 188,
+ "recipes": [
+  {
+   "id": "ic2:polished_uranium\").mainInput(IC2Fluids.ALCOHOL",
+   "machine": "RefineryTileEntity",
+   "call": "addIC2Recipe",
+   "result": {
+    "id": "100).catalyst(IC2Tags.ORE_URANIUM).buildSimple((IOutputGenerator)new ItemGenerator((ItemLike)IC2Items.ORE_URANIUM_DROP, 5)",
+    "count": 1
+   },
+   "ingredients": []
+  },
+  {
+   "id": "ic2:enriched_lava\").mainInput((Fluid)Fluids.f_76195_",
+   "machine": "RefineryTileEntity",
+   "call": "addIC2Recipe",
+   "result": {
+    "id": "16000).catalyst(new ItemStack((ItemLike)Items.f_42593_, 5)).addMod(RecipeMods.ENERGY_USAGE",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "8.0).addMod(RecipeMods.RECIPE_TIME",
+     "count": 1
+    },
+    {
+     "item": "2.0).buildSimple(new FluidStack[]{new FluidStack(IC2Fluids.BLAZING_LAVA, 16000)}",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:polished_gold\").mainInput(IC2Fluids.ALCOHOL",
+   "machine": "RefineryTileEntity",
+   "call": "addIC2Recipe",
+   "result": {
+    "id": "500).catalyst((ItemLike)Items.f_42417_).buildSimple((IOutputGenerator)new ItemGenerator((ItemLike)IC2Items.INGOT_POLISHED_GOLD)",
+    "count": 1
+   },
+   "ingredients": []
+  },
+  {
+   "id": "ic2:bio_gas_fuel\").mainInput(IC2Fluids.WOOD_GAS",
+   "machine": "RefineryTileEntity",
+   "call": "addIC2Recipe",
+   "result": {
+    "id": "1000).secondInput((Fluid)Fluids.f_76193_",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "1000).addMod(RecipeMods.RECIPE_TIME",
+     "count": 1
+    },
+    {
+     "item": "2.0).buildSimple(new FluidStack[]{new FluidStack(IC2Fluids.BIO_FUEL, 100)}",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:bio_fuel\").catalyst(new ItemStack((ItemLike)IC2Items.PLANT_BALL_COMPRESSED, 2)).mainInput((Fluid)Fluids.f_76193_",
+   "machine": "RefineryTileEntity",
+   "call": "addIC2Recipe",
+   "result": {
+    "id": "2000).buildSimple(new FluidStack[]{new FluidStack(IC2Fluids.BIO_FUEL, 500)}",
+    "count": 1
+   },
+   "ingredients": []
+  },
+  {
+   "id": "ic2:alcohol_mug\").mainInput((Fluid)Fluids.f_76193_",
+   "machine": "RefineryTileEntity",
+   "call": "addIC2Recipe",
+   "result": {
+    "id": "1000).catalyst((IInput)new AlcoholInput(IC2Items.MUG_BEER)).buildCustom(T -> new AlcoholOutput(IC2Items.MUG)",
+    "count": 1
+   },
+   "ingredients": []
+  },
+  {
+   "id": "ic2:alcohol_glass\").mainInput((Fluid)Fluids.f_76193_",
+   "machine": "RefineryTileEntity",
+   "call": "addIC2Recipe",
+   "result": {
+    "id": "1000).catalyst((IInput)new AlcoholInput(IC2Items.GLASS_BEER)).buildCustom(T -> new AlcoholOutput(IC2Items.GLASS)",
+    "count": 1
+   },
+   "ingredients": []
+  },
+  {
+   "id": "ic2:whisky_mug\").mainInput((Fluid)Fluids.f_76193_",
+   "machine": "RefineryTileEntity",
+   "call": "addIC2Recipe",
+   "result": {
+    "id": "4000).catalyst((IInput)new SubItemInput(IC2Items.MUG_WHISKY)).buildCustom(T -> new WhiskyOutput(IC2Items.MUG)",
+    "count": 1
+   },
+   "ingredients": []
+  },
+  {
+   "id": "ic2:whisky_glass\").mainInput((Fluid)Fluids.f_76193_",
+   "machine": "RefineryTileEntity",
+   "call": "addIC2Recipe",
+   "result": {
+    "id": "4000).catalyst((IInput)new SubItemInput(IC2Items.GLASS_WHISKY)).buildCustom(T -> new WhiskyOutput(IC2Items.GLASS)",
+    "count": 1
+   },
+   "ingredients": []
+  },
+  {
+   "id": "ic2:unrefined_whisky\").mainInput((Fluid)Fluids.f_76193_",
+   "machine": "RefineryTileEntity",
+   "call": "addIC2Recipe",
+   "result": {
+    "id": "1000).catalyst(new ItemStack((ItemLike)IC2Items.FLOUR, 4)).addMod(RecipeMods.RECIPE_TIME",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "0.5).buildSimple(new FluidStack[]{new FluidStack(IC2Fluids.WHISKY, 250)}",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:refined_whisky\").mainInput(IC2Fluids.WHISKY",
+   "machine": "RefineryTileEntity",
+   "call": "addIC2Recipe",
+   "result": {
+    "id": "1000).buildSimple((IOutputGenerator)new ItemGenerator((ItemLike)IC2Items.WHISKY_GRIST)",
+    "count": 1
+   },
+   "ingredients": []
+  },
+  {
+   "id": "ic2:coal_dust_washing\").addMod(RecipeMods.RECIPE_TIME",
+   "machine": "RefineryTileEntity",
+   "call": "addIC2Recipe",
+   "result": {
+    "id": "0.1).mainInput((Fluid)Fluids.f_76193_",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "100).catalyst((ItemLike)IC2Items.DUST_COAL).buildSimple((IOutputGenerator)new ItemGenerator((ItemLike)IC2Items.DUST_HYDRATED_COAL)",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:charcoal_dust_washing\").addMod(RecipeMods.RECIPE_TIME",
+   "machine": "RefineryTileEntity",
+   "call": "addIC2Recipe",
+   "result": {
+    "id": "0.1).mainInput((Fluid)Fluids.f_76193_",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "100).catalyst((ItemLike)IC2Items.DUST_CHARCOAL).buildSimple((IOutputGenerator)new ItemGenerator((ItemLike)IC2Items.DUST_HYDRATED_CHARCOAL)",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:mud_to_clay\").catalyst((ItemLike)Items.f_220216_).buildSimple((List)ObjectArrayList.of((Object[])new IOutputGenerator[]{new ItemGenerator((ItemLike)Items.f_42329_), new ItemGenerator((ItemLike)Items.f_42461_)})",
+   "machine": "RefineryTileEntity",
+   "call": "addIC2Recipe",
+   "result": {
+    "id": "(List)ObjectLists.singleton((Object)new FluidStack((Fluid)Fluids.f_76193_, 500))",
+    "count": 1
+   },
+   "ingredients": []
+  },
+  {
+   "id": "ic2:chocolate\").catalyst(new ItemStack((ItemLike)Items.f_42533_, 8)).mainInput(ForgeMod.MILK",
+   "machine": "RefineryTileEntity",
+   "call": "addIC2Recipe",
+   "result": {
+    "id": "250).buildSimple((IOutputGenerator)new ItemGenerator((ItemLike)IC2Items.CHOCOLATE)",
+    "count": 1
+   },
+   "ingredients": []
+  },
+  {
+   "id": "ic2:melon_sawmill",
+   "machine": "SawmillTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:melon_slice",
+    "count": 9
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:melon",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:sliced_potatoes",
+   "machine": "SawmillTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:potato_slices",
+    "count": 8
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:potato",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:coal_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "minecraft:coal",
+    "count": 5
+   },
+   "ingredients": [
+    {
+     "item": "#forge:ores/coal",
+     "count": 1
+    }
+   ],
+   "xp": 0.3
+  },
+  {
+   "id": "ic2:lapis_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "minecraft:lapis_lazuli",
+    "count": 10
+   },
+   "ingredients": [
+    {
+     "item": "#forge:ores/lapis",
+     "count": 1
+    }
+   ],
+   "xp": 0.5
+  },
+  {
+   "id": "ic2:diamond_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "minecraft:diamond",
+    "count": 3
+   },
+   "ingredients": [
+    {
+     "item": "#forge:ores/diamond",
+     "count": 1
+    }
+   ],
+   "xp": 1.0
+  },
+  {
+   "id": "ic2:emerald_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "minecraft:emerald",
+    "count": 3
+   },
+   "ingredients": [
+    {
+     "item": "#forge:ores/emerald",
+     "count": 1
+    }
+   ],
+   "xp": 1.0
+  },
+  {
+   "id": "ic2:quartz_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "minecraft:quartz",
+    "count": 3
+   },
+   "ingredients": [
+    {
+     "item": "#forge:ores/quartz",
+     "count": 1
+    }
+   ],
+   "xp": 1.0
+  },
+  {
+   "id": "ic2:uranium_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:ore_uranium",
+    "count": 3
+   },
+   "ingredients": [
+    {
+     "item": "#forge:ores/uranium",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:flint_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:flint",
+    "count": 2
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:gravel",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:sticky_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:rubber",
+    "count": 3
+   },
+   "ingredients": [
+    {
+     "item": "ic2:sticky_resin",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:rubber_log_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:rubber",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:rubberwood_log",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:rubber_sapling_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:rubber",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:rubber_sapling",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:poppy_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:red_dye",
+    "count": 3
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:poppy",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:dandelion_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:yellow_dye",
+    "count": 3
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:dandelion",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:blue_orchid_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:light_blue_dye",
+    "count": 3
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:blue_orchid",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:allium_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:magenta_dye",
+    "count": 3
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:allium",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:azure_bluet_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:light_gray_dye",
+    "count": 3
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:azure_bluet",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:red_tulip_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:red_dye",
+    "count": 3
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:red_tulip",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:orange_tulip_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:orange_dye",
+    "count": 3
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:orange_tulip",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:white_tulip_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:light_gray_dye",
+    "count": 3
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:white_tulip",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:pink_tulip_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:pink_dye",
+    "count": 3
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:pink_tulip",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:oxeye_daisy_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:light_gray_dye",
+    "count": 3
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:oxeye_daisy",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:cornflower_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:blue_dye",
+    "count": 3
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:cornflower",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:lily_of_the_valley_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:white_dye",
+    "count": 3
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:lily_of_the_valley",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:wither_rose_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:black_dye",
+    "count": 3
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:wither_rose",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:beetroot_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:red_dye",
+    "count": 3
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:beetroot",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:sunflower_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:yellow_dye",
+    "count": 6
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:sunflower",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:lilac_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:magenta_dye",
+    "count": 6
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:lilac",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:rose_bush_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:red_dye",
+    "count": 6
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:rose_bush",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:peony_extraction",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:pink_dye",
+    "count": 6
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:peony",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:hydration_cell",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:hydration_cell",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:cell_water",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:bio_cell_refinement",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:cell_bio_fuel",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:cell_bio",
+     "count": 1
+    }
+   ],
+   "xp": 0.1
+  },
+  {
+   "id": "ic2:wood_gas_refinement",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:cell_bio_fuel",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:cell_woodgas",
+     "count": 1
+    }
+   ],
+   "xp": 0.1
+  },
+  {
+   "id": "ic2:coal_cell_refinement",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:cell_coal_fuel",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:cell_coal",
+     "count": 1
+    }
+   ],
+   "xp": 0.1
+  },
+  {
+   "id": "ic2:water_cell_refinement",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:cell_water",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:hydration_cell",
+     "count": 1
+    }
+   ],
+   "xp": 0.1
+  },
+  {
+   "id": "ic2:resin_removal",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:dynamite",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:sticky_dynamite",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:scrapbox_unpacking",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2Recipe",
+   "result": {
+    "id": "(IRecipeOutput)new ScrapBoxOutput()",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:scrapbox",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:slimy_business",
+   "machine": "ExtractorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:slime_ball",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:magma_cream",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:flesh_composting",
+   "machine": "RecyclerTileEntity",
+   "call": "addIC2RangeRecipe",
+   "result": {
+    "id": "ic2:fertilizer",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:rotten_flesh",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:rare_earth_recycling",
+   "machine": "RecyclerTileEntity",
+   "call": "addIC2Recipe",
+   "result": {
+    "id": "(IRecipeOutput)new SimpleRecipeOutput((List)ObjectLists.singleton((Object)new ItemGenerator((ItemLike)IC2Items.SCRAP_METAL)), RecipeMods.RECIPE_TIME.create(10.0), 0.0f)",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:rare_earth_chunk",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:basalt_fertilizer",
+   "machine": "RecyclerTileEntity",
+   "call": "addIC2ChanceRecipe",
+   "result": {
+    "id": "ic2:fertilizer",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:basalt",
+     "count": 1
+    }
+   ],
+   "xp": 0.0
+  },
+  {
+   "id": "ic2:recycle_iron_horse_armor",
+   "machine": "RecyclerTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "minecraft:iron_ingot",
+    "count": 5
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:iron_horse_armor",
+     "count": 1
+    }
+   ],
+   "xp": 0.2
+  },
+  {
+   "id": "ic2:recycle_gold_horse_armor",
+   "machine": "RecyclerTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "minecraft:gold_ingot",
+    "count": 5
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:golden_horse_armor",
+     "count": 1
+    }
+   ],
+   "xp": 0.5
+  },
+  {
+   "id": "ic2:recycle_diamond_horse_armor",
+   "machine": "RecyclerTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "minecraft:diamond",
+    "count": 5
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:diamond_horse_armor",
+     "count": 1
+    }
+   ],
+   "xp": 1.0
+  },
+  {
+   "id": "ic2:recycling_axe_\" + type[i]",
+   "machine": "RecyclerTileEntity",
+   "call": "addIC2RangeRecipe",
+   "result": {
+    "id": "results[i].m_41777_()",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "new DamagedInput(axe[i]).setUndamaged()",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:recycling_pickaxe_\" + type[i]",
+   "machine": "RecyclerTileEntity",
+   "call": "addIC2RangeRecipe",
+   "result": {
+    "id": "results[i].m_41777_()",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "new DamagedInput(pickaxe[i]).setUndamaged()",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:recycling_shovel_\" + type[i]",
+   "machine": "RecyclerTileEntity",
+   "call": "addIC2RangeRecipe",
+   "result": {
+    "id": "results[i].m_41777_()",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "new DamagedInput(shovel[i]).setUndamaged()",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:recycling_hoe_\" + type[i]",
+   "machine": "RecyclerTileEntity",
+   "call": "addIC2RangeRecipe",
+   "result": {
+    "id": "results[i].m_41777_()",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "new DamagedInput(hoe[i]).setUndamaged()",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:recycling_sword_\" + type[i]",
+   "machine": "RecyclerTileEntity",
+   "call": "addIC2RangeRecipe",
+   "result": {
+    "id": "results[i].m_41777_()",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "new DamagedInput(sword[i]).setUndamaged()",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:recycling_helmet_\" + type[i]",
+   "machine": "RecyclerTileEntity",
+   "call": "addIC2RangeRecipe",
+   "result": {
+    "id": "results[i].m_41777_()",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "new DamagedInput(helmet[i]).setUndamaged()",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:recycling_chestplate_\" + type[i]",
+   "machine": "RecyclerTileEntity",
+   "call": "addIC2RangeRecipe",
+   "result": {
+    "id": "results[i].m_41777_()",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "new DamagedInput(chestplate[i]).setUndamaged()",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:recycling_leggings_\" + type[i]",
+   "machine": "RecyclerTileEntity",
+   "call": "addIC2RangeRecipe",
+   "result": {
+    "id": "results[i].m_41777_()",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "new DamagedInput(leggings[i]).setUndamaged()",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:recycling_boots_\" + type[i]",
+   "machine": "RecyclerTileEntity",
+   "call": "addIC2RangeRecipe",
+   "result": {
+    "id": "results[i].m_41777_()",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "new DamagedInput(boots[i]).setUndamaged()",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:recycling_damaged_axe_\" + type[i]",
+   "machine": "RecyclerTileEntity",
+   "call": "addIC2RangeRecipe",
+   "result": {
+    "id": "ic2:scrap_metal",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "new DamagedInput(axe[i])",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:recycling_damaged_pickaxe_\" + type[i]",
+   "machine": "RecyclerTileEntity",
+   "call": "addIC2RangeRecipe",
+   "result": {
+    "id": "ic2:scrap_metal",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "new DamagedInput(pickaxe[i])",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:recycling_damaged_shovel_\" + type[i]",
+   "machine": "RecyclerTileEntity",
+   "call": "addIC2RangeRecipe",
+   "result": {
+    "id": "ic2:scrap_metal",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "new DamagedInput(shovel[i])",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:recycling_damaged_hoe_\" + type[i]",
+   "machine": "RecyclerTileEntity",
+   "call": "addIC2RangeRecipe",
+   "result": {
+    "id": "ic2:scrap_metal",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "new DamagedInput(hoe[i])",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:recycling_damaged_sword_\" + type[i]",
+   "machine": "RecyclerTileEntity",
+   "call": "addIC2RangeRecipe",
+   "result": {
+    "id": "ic2:scrap_metal",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "new DamagedInput(sword[i])",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:recycling_damaged_helmet_\" + type[i]",
+   "machine": "RecyclerTileEntity",
+   "call": "addIC2RangeRecipe",
+   "result": {
+    "id": "ic2:scrap_metal",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "new DamagedInput(helmet[i])",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:recycling_damaged_chestplate_\" + type[i]",
+   "machine": "RecyclerTileEntity",
+   "call": "addIC2RangeRecipe",
+   "result": {
+    "id": "ic2:scrap_metal",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "new DamagedInput(chestplate[i])",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:recycling_damaged_leggings_\" + type[i]",
+   "machine": "RecyclerTileEntity",
+   "call": "addIC2RangeRecipe",
+   "result": {
+    "id": "ic2:scrap_metal",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "new DamagedInput(leggings[i])",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:recycling_damaged_boots_\" + type[i]",
+   "machine": "RecyclerTileEntity",
+   "call": "addIC2RangeRecipe",
+   "result": {
+    "id": "ic2:scrap_metal",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "new DamagedInput(boots[i])",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:recycling_ancient_debris",
+   "machine": "RecyclerTileEntity",
+   "call": "addIC2RangeRecipe",
+   "result": {
+    "id": "minecraft:netherite_scrap",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:ancient_debris",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:sand_to_stone",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:sandstone",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:sand",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:red_sand_to_stone",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:red_sandstone",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:red_sand",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:netherrack_to_brick",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:nether_bricks",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:netherrack",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "id": "ic2:snow_to_ice",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:ice",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:snowball",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:ice_to_packed",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:packed_ice",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:ice",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "id": "ic2:packed_to_blue",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:blue_ice",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:packed_ice",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "id": "ic2:blaze_powder_compression",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:blaze_rod",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:blaze_powder",
+     "count": 5
+    }
+   ]
+  },
+  {
+   "id": "ic2:water_to_snow",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:snowball",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "new FluidInput((Fluid)Fluids.f_76193_)",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:flint_to_gunpowder",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2ChanceRecipe",
+   "result": {
+    "id": "minecraft:gunpowder",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:flint",
+     "count": 1
+    }
+   ],
+   "xp": 0.0
+  },
+  {
+   "id": "ic2:uranium_ingot",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:ingot_uranium",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "#forge:raw_materials/uranium",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:dense_copper_plate",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:plate_dense_copper",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:copper_ingot",
+     "count": 8
+    }
+   ]
+  },
+  {
+   "id": "ic2:plant_ball_compression",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:compressed_plant_ball",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:plant_ball",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:coal_dust_compression",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:compressed_hydrated_coal",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:dust_hydrated_coal",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:charcoal_dust_compression",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:compressed_hydrated_coal",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:dust_hydrated_charcoal",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:air_compression",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:cell_air",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:cell_empty",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:bio_leather",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:raw_leather",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:flesh_ball",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:super_cable",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:super_cable_item",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:uncompressed_super_cable",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:machine_to_pipe",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:mining_pipe_shaft",
+    "count": 10
+   },
+   "ingredients": [
+    {
+     "item": "ic2:machine_block",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:magnet_creation",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:dead_magnet",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:rare_earth_chunk",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:carbon_plate_compression",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:carbon_plate",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:carbon_mesh",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:compressed_coal_ball",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:compressed_coal_ball",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:coal_ball",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:compressed_bio_ball",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:compressed_bio_ball",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:bio_ball",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:industrial_diamond_making",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:industrial_diamond",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:coal_chunk",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:scrap_compression",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:scrap_metal_chunk",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:scrap_metal",
+     "count": 8
+    }
+   ]
+  },
+  {
+   "id": "ic2:obsidian_blade_melding",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:obsidian_blade",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:raw_obsidian_blade",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:mixed_metal_plate",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:plate_advanced_alloy",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:ingot_advanced_alloy",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:cfoam_pellets",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:cf_pellet",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:cfoam_wet",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:diamond_compression",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:diamond",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:dust_diamond",
+     "count": 4
+    }
+   ]
+  },
+  {
+   "id": "ic2:compress_solar_panel",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:solar_panel_compressed",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:solar_panel",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:compress_lv_solar_panel",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:solar_panel_lv_compressed",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:solar_panel_lv",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:compress_mv_solar_panel",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:solar_panel_mv_compressed",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:solar_panel_mv",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:compress_hv_solar_panel",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:solar_panel_hv_compressed",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:solar_panel_hv",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:compress_wiki",
+   "machine": "CompressorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:wiki_item",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:unprinted_wiki",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:coal_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_coal",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:coal",
+     "count": 1
+    }
+   ],
+   "xp": 0.1
+  },
+  {
+   "id": "ic2:coal_block_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_coal",
+    "count": 9
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:coal_block",
+     "count": 1
+    }
+   ],
+   "xp": 0.1
+  },
+  {
+   "id": "ic2:charcoal_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_charcoal",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:charcoal",
+     "count": 1
+    }
+   ],
+   "xp": 0.05
+  },
+  {
+   "id": "ic2:charcoal_block_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_charcoal",
+    "count": 9
+   },
+   "ingredients": [
+    {
+     "item": "ic2:charcoal_block",
+     "count": 1
+    }
+   ],
+   "xp": 0.1
+  },
+  {
+   "id": "ic2:coal_ore_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_coal",
+    "count": 2
+   },
+   "ingredients": [
+    {
+     "item": "#forge:ores/coal",
+     "count": 1
+    }
+   ],
+   "xp": 0.5
+  },
+  {
+   "id": "ic2:iron_ore_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_iron",
+    "count": 2
+   },
+   "ingredients": [
+    {
+     "item": "#forge:ores/iron",
+     "count": 1
+    }
+   ],
+   "xp": 0.7
+  },
+  {
+   "id": "ic2:gold_ore_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_gold",
+    "count": 2
+   },
+   "ingredients": [
+    {
+     "item": "#forge:ores/gold",
+     "count": 1
+    }
+   ],
+   "xp": 1.0
+  },
+  {
+   "id": "ic2:copper_ore_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_copper",
+    "count": 2
+   },
+   "ingredients": [
+    {
+     "item": "#forge:ores/copper",
+     "count": 1
+    }
+   ],
+   "xp": 0.3
+  },
+  {
+   "id": "ic2:tin_ore_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_tin",
+    "count": 2
+   },
+   "ingredients": [
+    {
+     "item": "#forge:ores/tin",
+     "count": 1
+    }
+   ],
+   "xp": 0.4
+  },
+  {
+   "id": "ic2:silver_ore_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_silver",
+    "count": 2
+   },
+   "ingredients": [
+    {
+     "item": "#forge:ores/silver",
+     "count": 1
+    }
+   ],
+   "xp": 0.8
+  },
+  {
+   "id": "ic2:quartz_ore_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:quartz",
+    "count": 2
+   },
+   "ingredients": [
+    {
+     "item": "#forge:ores/quartz",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:aluminum_ore_nether_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_aluminium",
+    "count": 2
+   },
+   "ingredients": [
+    {
+     "item": "#forge:ores/aluminium",
+     "count": 1
+    }
+   ],
+   "xp": 1.0
+  },
+  {
+   "id": "ic2:raw_iron_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_iron",
+    "count": 2
+   },
+   "ingredients": [
+    {
+     "item": "#forge:raw/materials_iron",
+     "count": 1
+    }
+   ],
+   "xp": 0.7
+  },
+  {
+   "id": "ic2:raw_gold_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_gold",
+    "count": 2
+   },
+   "ingredients": [
+    {
+     "item": "#forge:raw/materials_gold",
+     "count": 1
+    }
+   ],
+   "xp": 1.0
+  },
+  {
+   "id": "ic2:raw_copper_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_copper",
+    "count": 2
+   },
+   "ingredients": [
+    {
+     "item": "#forge:raw/materials_copper",
+     "count": 1
+    }
+   ],
+   "xp": 0.3
+  },
+  {
+   "id": "ic2:raw_tin_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_tin",
+    "count": 2
+   },
+   "ingredients": [
+    {
+     "item": "#forge:raw_materials/tin",
+     "count": 1
+    }
+   ],
+   "xp": 0.4
+  },
+  {
+   "id": "ic2:raw_silver_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_silver",
+    "count": 2
+   },
+   "ingredients": [
+    {
+     "item": "#forge:raw_materials/silver",
+     "count": 1
+    }
+   ],
+   "xp": 0.8
+  },
+  {
+   "id": "ic2:raw_aluminum_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_aluminium",
+    "count": 2
+   },
+   "ingredients": [
+    {
+     "item": "#forge:raw_materials/aluminium",
+     "count": 1
+    }
+   ],
+   "xp": 1.0
+  },
+  {
+   "id": "ic2:diamond_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:dust_diamond",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "#forge:gems/diamond",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:raw_iron_block_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_iron",
+    "count": 18
+   },
+   "ingredients": [
+    {
+     "item": "#forge:storage/blocks_raw_iron",
+     "count": 1
+    }
+   ],
+   "xp": 6.3
+  },
+  {
+   "id": "ic2:raw_gold_block_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_gold",
+    "count": 18
+   },
+   "ingredients": [
+    {
+     "item": "#forge:storage/blocks_raw_gold",
+     "count": 1
+    }
+   ],
+   "xp": 9.0
+  },
+  {
+   "id": "ic2:raw_copper_block_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_copper",
+    "count": 18
+   },
+   "ingredients": [
+    {
+     "item": "#forge:storage/blocks_raw_copper",
+     "count": 1
+    }
+   ],
+   "xp": 2.7
+  },
+  {
+   "id": "ic2:raw_tin_block_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_tin",
+    "count": 18
+   },
+   "ingredients": [
+    {
+     "item": "#forge:storage_blocks/raw_tin",
+     "count": 1
+    }
+   ],
+   "xp": 3.6
+  },
+  {
+   "id": "ic2:raw_silver_block_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_silver",
+    "count": 18
+   },
+   "ingredients": [
+    {
+     "item": "#forge:storage_blocks/raw_silver",
+     "count": 1
+    }
+   ],
+   "xp": 7.2
+  },
+  {
+   "id": "ic2:raw_aluminum_block_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_aluminium",
+    "count": 18
+   },
+   "ingredients": [
+    {
+     "item": "#forge:storage_blocks/raw_aluminium",
+     "count": 1
+    }
+   ],
+   "xp": 9.0
+  },
+  {
+   "id": "ic2:iron_block_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_iron",
+    "count": 9
+   },
+   "ingredients": [
+    {
+     "item": "#forge:storage/blocks_iron",
+     "count": 1
+    }
+   ],
+   "xp": 0.9
+  },
+  {
+   "id": "ic2:gold_block_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_gold",
+    "count": 9
+   },
+   "ingredients": [
+    {
+     "item": "#forge:storage/blocks_gold",
+     "count": 1
+    }
+   ],
+   "xp": 0.9
+  },
+  {
+   "id": "ic2:copper_block_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_copper",
+    "count": 9
+   },
+   "ingredients": [
+    {
+     "item": "#forge:storage/blocks_copper",
+     "count": 1
+    }
+   ],
+   "xp": 0.9
+  },
+  {
+   "id": "ic2:tin_block_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_tin",
+    "count": 9
+   },
+   "ingredients": [
+    {
+     "item": "#forge:storage_blocks/tin",
+     "count": 1
+    }
+   ],
+   "xp": 0.9
+  },
+  {
+   "id": "ic2:silver_block_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_silver",
+    "count": 9
+   },
+   "ingredients": [
+    {
+     "item": "#forge:storage_blocks/silver",
+     "count": 1
+    }
+   ],
+   "xp": 0.9
+  },
+  {
+   "id": "ic2:aluminum_block_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_aluminium",
+    "count": 9
+   },
+   "ingredients": [
+    {
+     "item": "#forge:storage_blocks/aluminium",
+     "count": 1
+    }
+   ],
+   "xp": 0.9
+  },
+  {
+   "id": "ic2:iron_ingot_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_iron",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "#forge:ingots/iron",
+     "count": 1
+    }
+   ],
+   "xp": 0.1
+  },
+  {
+   "id": "ic2:refined_iron_ingot_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_iron",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "#forge:ingots/refined_iron",
+     "count": 1
+    }
+   ],
+   "xp": 0.1
+  },
+  {
+   "id": "ic2:gold_ingot_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_gold",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "#forge:ingots/gold",
+     "count": 1
+    }
+   ],
+   "xp": 0.1
+  },
+  {
+   "id": "ic2:copper_ingot_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_copper",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "#forge:ingots/copper",
+     "count": 1
+    }
+   ],
+   "xp": 0.1
+  },
+  {
+   "id": "ic2:tin_ingot_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_tin",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "#forge:ingots/tin",
+     "count": 1
+    }
+   ],
+   "xp": 0.1
+  },
+  {
+   "id": "ic2:silver_ingot_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_silver",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "#forge:ingots/silver",
+     "count": 1
+    }
+   ],
+   "xp": 0.1
+  },
+  {
+   "id": "ic2:aluminum_ingot_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_aluminium",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "#forge:ingots/aluminium",
+     "count": 1
+    }
+   ],
+   "xp": 0.1
+  },
+  {
+   "id": "ic2:blaze_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "minecraft:blaze_powder",
+    "count": 5
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:blaze_rod",
+     "count": 1
+    }
+   ],
+   "xp": 0.3
+  },
+  {
+   "id": "ic2:wool_to_string",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "minecraft:string",
+    "count": 4
+   },
+   "ingredients": [
+    {
+     "item": "#minecraft:wool",
+     "count": 1
+    }
+   ],
+   "xp": 0.1
+  },
+  {
+   "id": "ic2:spider_to_grin",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:grin_powder",
+    "count": 2
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:spider_eye",
+     "count": 1
+    }
+   ],
+   "xp": 0.4
+  },
+  {
+   "id": "ic2:fish_to_grin",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:grin_powder",
+    "count": 3
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:pufferfish",
+     "count": 1
+    }
+   ],
+   "xp": 0.4
+  },
+  {
+   "id": "ic2:potato_to_grin",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:grin_powder",
+    "count": 2
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:poisonous_potato",
+     "count": 1
+    }
+   ],
+   "xp": 0.4
+  },
+  {
+   "id": "ic2:stone_to_gravel",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "minecraft:gravel",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:stone",
+     "count": 1
+    }
+   ],
+   "xp": 0.1
+  },
+  {
+   "id": "ic2:cobble_to_sand",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "minecraft:sand",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:cobblestone",
+     "count": 1
+    }
+   ],
+   "xp": 0.1
+  },
+  {
+   "id": "ic2:sandstone_to_sand",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "minecraft:sand",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:sandstone",
+     "count": 1
+    }
+   ],
+   "xp": 0.1
+  },
+  {
+   "id": "ic2:red_sandstone_to_sand",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "minecraft:red_sand",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:red_sandstone",
+     "count": 1
+    }
+   ],
+   "xp": 0.1
+  },
+  {
+   "id": "ic2:ice_to_snowball",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "minecraft:snowball",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:ice",
+     "count": 1
+    }
+   ],
+   "xp": 0.1
+  },
+  {
+   "id": "ic2:clay_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_clay",
+    "count": 2
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:clay",
+     "count": 1
+    }
+   ],
+   "xp": 0.3
+  },
+  {
+   "id": "ic2:glowstone_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "minecraft:glowstone_dust",
+    "count": 4
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:glowstone",
+     "count": 1
+    }
+   ],
+   "xp": 0.15
+  },
+  {
+   "id": "ic2:bone_to_meal",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "minecraft:bone_meal",
+    "count": 5
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:bone",
+     "count": 1
+    }
+   ],
+   "xp": 0.2
+  },
+  {
+   "id": "ic2:plant_to_dirt",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "minecraft:dirt",
+    "count": 8
+   },
+   "ingredients": [
+    {
+     "item": "ic2:plant_ball",
+     "count": 1
+    }
+   ],
+   "xp": 0.1
+  },
+  {
+   "id": "ic2:coffee_to_powder",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:coffee_powder",
+    "count": 3
+   },
+   "ingredients": [
+    {
+     "item": "ic2:coffee_beans",
+     "count": 1
+    }
+   ],
+   "xp": 0.4
+  },
+  {
+   "id": "ic2:obsidian_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:dust_obsidian",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:obsidian",
+     "count": 1
+    }
+   ],
+   "xp": 0.1
+  },
+  {
+   "id": "ic2:potato_to_flour",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:flour",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "#forge:crops/potato",
+     "count": 1
+    }
+   ],
+   "xp": 0.1
+  },
+  {
+   "id": "ic2:wheat_to_flour",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:flour",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "#forge:crops/wheat",
+     "count": 1
+    }
+   ],
+   "xp": 0.3
+  },
+  {
+   "id": "ic2:hay_to_flour",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:flour",
+    "count": 9
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:hay_block",
+     "count": 1
+    }
+   ],
+   "xp": 2.7
+  },
+  {
+   "id": "ic2:bio_ball_to_fiber",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2XPRecipe",
+   "result": {
+    "id": "ic2:raw_bio_fiber",
+    "count": 2
+   },
+   "ingredients": [
+    {
+     "item": "ic2:bio_ball",
+     "count": 1
+    }
+   ],
+   "xp": 0.1
+  },
+  {
+   "id": "ic2:redstone_ore_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:redstone",
+    "count": 16
+   },
+   "ingredients": [
+    {
+     "item": "#forge:ores/redstone",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:netherrack_to_dust",
+   "machine": "MaceratorTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:dust_netherrack",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "minecraft:netherrack",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:aluminium",
+   "machine": "AlloySmelterTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:ingot_aluminium",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "#forge:dusts/aluminium",
+     "count": 1
+    },
+    {
+     "item": "#minecraft:sand",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:aluminium_block",
+   "machine": "AlloySmelterTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:aluminium_block",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:aluminium_dust_block",
+     "count": 1
+    },
+    {
+     "item": "#minecraft:sand",
+     "count": 9
+    }
+   ]
+  },
+  {
+   "id": "ic2:bronze_ore",
+   "machine": "AlloySmelterTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:ingot_bronze",
+    "count": 8
+   },
+   "ingredients": [
+    {
+     "item": "#forge:ores/copper",
+     "count": 3
+    },
+    {
+     "item": "#forge:ores/tin",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:bronze_ore_raw_copper",
+   "machine": "AlloySmelterTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:ingot_bronze",
+    "count": 8
+   },
+   "ingredients": [
+    {
+     "item": "Items.f_151051_, 3",
+     "count": 1
+    },
+    {
+     "item": "#forge:ores/tin",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:bronze_ore_raw_tin",
+   "machine": "AlloySmelterTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:ingot_bronze",
+    "count": 8
+   },
+   "ingredients": [
+    {
+     "item": "#forge:ores/copper",
+     "count": 3
+    },
+    {
+     "item": "ic2:raw_tin",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:bronze_raw",
+   "machine": "AlloySmelterTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:ingot_bronze",
+    "count": 8
+   },
+   "ingredients": [
+    {
+     "item": "Items.f_151051_, 3",
+     "count": 1
+    },
+    {
+     "item": "ic2:raw_tin",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:bronze_dust",
+   "machine": "AlloySmelterTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:ingot_bronze",
+    "count": 4
+   },
+   "ingredients": [
+    {
+     "item": "#forge:dusts/copper",
+     "count": 3
+    },
+    {
+     "item": "#forge:dusts/tin",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:bronze_ingot",
+   "machine": "AlloySmelterTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:ingot_bronze",
+    "count": 4
+   },
+   "ingredients": [
+    {
+     "item": "#forge:ingots/copper",
+     "count": 3
+    },
+    {
+     "item": "#forge:ingots/tin",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:bronze_block",
+   "machine": "AlloySmelterTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:bronze_block",
+    "count": 4
+   },
+   "ingredients": [
+    {
+     "item": "#forge:storage_blocks/copper",
+     "count": 3
+    },
+    {
+     "item": "#forge:storage_blocks/tin",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:bronze_block_2",
+   "machine": "AlloySmelterTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:bronze_block",
+    "count": 4
+   },
+   "ingredients": [
+    {
+     "item": "ic2:copper_dust_block",
+     "count": 3
+    },
+    {
+     "item": "ic2:tin_dust_block",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:bronze_mixed",
+   "machine": "AlloySmelterTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:ingot_bronze",
+    "count": 12
+   },
+   "ingredients": [
+    {
+     "item": "#forge:storage_blocks/copper",
+     "count": 1
+    },
+    {
+     "item": "#forge:ingots/tin",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "id": "ic2:bronze_mixed_2",
+   "machine": "AlloySmelterTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:ingot_bronze",
+    "count": 36
+   },
+   "ingredients": [
+    {
+     "item": "#forge:ingots/copper",
+     "count": 27
+    },
+    {
+     "item": "#forge:storage_blocks/tin",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:pulsating_quartz",
+   "machine": "AlloySmelterTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "ic2:pulsating_quartz",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "#forge:dusts/redstone",
+     "count": 2
+    },
+    {
+     "item": "minecraft:quartz",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:netherite_ingot",
+   "machine": "AlloySmelterTileEntity",
+   "call": "addIC2SimpleRecipe",
+   "result": {
+    "id": "minecraft:netherite_ingot",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "Items.f_42419_, 2",
+     "count": 1
+    },
+    {
+     "item": "Items.f_42417_, 2",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:scrap",
+   "machine": "MassFabricatorTileEntity",
+   "call": "addIC2Recipe",
+   "result": {
+    "id": "MassFabricatorTileEntity.createCount(1000)",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:scrap",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:scrap_box",
+   "machine": "MassFabricatorTileEntity",
+   "call": "addIC2Recipe",
+   "result": {
+    "id": "MassFabricatorTileEntity.createCount(45000)",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:scrapbox",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "ic2:scrap_metal",
+   "machine": "MassFabricatorTileEntity",
+   "call": "addIC2Recipe",
+   "result": {
+    "id": "MassFabricatorTileEntity.createCount(100000)",
+    "count": 1
+   },
+   "ingredients": [
+    {
+     "item": "ic2:scrap_metal",
+     "count": 1
+    }
+   ]
+  }
+ ]
+}
