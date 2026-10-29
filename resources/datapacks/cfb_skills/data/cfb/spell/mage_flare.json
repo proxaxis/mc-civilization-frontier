@@ -48,7 +48,7 @@
     "exhaust": 1.6,
     "cooldown": {
       "group": "weapon",
-      "duration": 25,
+      "duration": 15,
       "proportional": true
     }
   }

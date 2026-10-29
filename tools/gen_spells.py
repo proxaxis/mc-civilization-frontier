@@ -116,7 +116,7 @@ TARGETS = {
 
 def make_spell(job, sid, v):
     school, tier, cast, cd, exh, rune, target, impacts = v
-    cost = {"exhaust": exh * 4.0, "cooldown": {"group": "weapon", "duration": cd, "proportional": True}}
+    cost = {"exhaust": exh * 4.0, "cooldown": {"group": "weapon", "duration": round(cd * 0.6), "proportional": True}}
     if rune:
         cost["item"] = {"id": rune}
     return {
