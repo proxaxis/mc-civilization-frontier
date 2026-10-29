@@ -12,7 +12,7 @@ BCN (Build Craft Neo) 実装用に、BuildCraft / IndustrialCraft2 / Project:Red
 |---|---|---|
 | 1 EU | 0.4 MJ (=4RF) | IC2 伝統換算 1EU=4RF に準拠 |
 | 1 MJ | 10 RF (2.5 EU) | BC6 系の MJ-RF 換算 |
-| 1 LP | LogisticsPipes 内部単位 | LP変換機で MJ/EU から変換 (要 BCN 側 MJ) |
+| LP | 使わない | LogisticsPipes の動力も MJ 直結とする (ユーザー決定) |
 
 主な発電量の MJ 換算目安 (wiki 記載 EU 値を 0.4 倍):
 
@@ -45,7 +45,9 @@ BCN (Build Craft Neo) 実装用に、BuildCraft / IndustrialCraft2 / Project:Red
 (MJ-P は旧 EU-P の 0.4 倍を整数化した値. 比例はほぼ維持)
 
 - 変圧器でパケット分割/統合 (大 1 → 小 4 方向のみ基本) する仕組みを残し、蓄電器の入出力圧もランクに紐付ける
+- ケーブル損失率は源流値を流用する (IC2 ITEMS.md の損失量欄: 銅 0.2, 金 0.45/0.4, HV 0.95/0.9/0.8, GF 0.025, スズ 0.025 EU/B を MJ 換算で使用)
 - 動力伝送はケーブル (圧力管理) に一本化し、BC の伝導パイプ系は実装しない (ユーザー決定)
+- 軽量性: パケット方式は網シミュレーション不要で、ケーブルは圧値+損失テーブルのみ. 常時計算の e-net 型より低負荷
 
 ## 1. 実装上の考慮事項
 
