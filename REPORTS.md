@@ -57,3 +57,15 @@
 * 未解決・要判断:
   * ワールドは MOD 未搭載の初回起動で一度生成済みのため、スポーン周辺チャンクはバニラ生成. 全コンテンツをスポーン近辺で確認したい場合は world ボリュームの作り直しが必要(要ユーザー判断)
   * `WORKSPACE_HOST_PATH` は現環境固有. 別環境では unset(`.` 既定)で動くが、リモート daemon 環境では設定が必要
+
+## task-102 - JOB_*.md 4職業ガイド作成
+
+* 結果: 成功
+* 変更点:
+  * `docs/JOB_GUARDIAN.md`・`JOB_ASSASSIN.md`・`JOB_MAGE.md`・`JOB_PALADIN.md` を `JOB_GUIDE_TEMPLATE.md` 構成(特徴/パッシブ/アクティブ/装備品)で新規作成
+  * 各職業にパッシブ3種・アクティブ3種・対応MOD武具(Paladins/Rogues/Wizards/Runes/Arsenal)を記述
+* 判明したこと:
+  * 性能値・クールダウン・消費量は全て (仮) 置き。タスク 103 のスキルツリー・スペル定義と整合させる前提
+  * Guardian=Paladins パラディン系、Paladin(聖職者)=同 MOD のプリースト系として分担記述
+* 未解決・要判断:
+  * 数値確定は 103 の実装側との擦り合わせ待ち
