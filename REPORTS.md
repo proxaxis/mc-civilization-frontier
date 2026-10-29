@@ -268,3 +268,18 @@
   * datapack のスペル定義はサーバー側のみではクライアントに届かずキャスト不可 → jar同梱が必須(cfb:test_arcane=arcane_missile完全コピーでも打てず、namespace/配布形態が原因と確定)
 * 未解決・要判断:
   * クライアント jar 更新後の発動確認待ち。成功なら datapack の spell/関連を jar 側に寄せる運用に確定か
+
+## task-103検証7 - cfbスペル実発動成功・assets jar同梱
+
+* 結果: 成功
+* 変更点:
+  * クライアント側 bcn jar 更新で cfb スペルの実発動を確認(ホットバースロットキーで詠唱→発射)
+  * `assets/cfb/`(スペルアイコン60+lang ja/en)を bcn jar に同梱、リソースパック配布を不要化
+  * 検証用 `cfb:test_arcane` スペル削除
+* 判明したこと:
+  * datapack同梱コンテンツはクライアントへ届かないため、クライアント側で解決が必要な定義(スペル・スキルカテゴリ・タグ・アセット)は jar 同梱が必須 — 実機で証明済み
+  * cfb_skills datapack と jar 同梱内容は現状二重登録だが動作に支障なし(要整理)
+* 未解決・要判断:
+  * exhaust の満腹度実消費・cooldown HUD・ルーン消費の定量検証(サバイバルで要実測)
+  * 他59スペルは骨格定義のまま(firebolt は arcane_blast 複写) → 実装内容を JOB ガイド値に合わせる本実装が残る
+  * cfb_skills datapack と jar の二重登録の整理(dataload 先をどちらに寄せるか)
