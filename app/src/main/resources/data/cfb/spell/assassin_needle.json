@@ -2,29 +2,131 @@
   "school": "spell_power:arcane",
   "range": 16.0,
   "tier": 2,
-  "group": "rogue_subtlety",
+  "group": "cfb_assassin",
   "learn": {},
   "active": {
     "cast": {
       "duration": 0.0,
       "animation": {
-        "id": "spell_engine:one_handed_area_charge"
-      }
+        "id": "spell_engine:one_handed_projectile_charge"
+      },
+      "sound": {
+        "id": "spell_engine:generic_arcane_casting"
+      },
+      "particles": [
+        {
+          "id": "spell_engine:magic_arcane",
+          "appearance": {},
+          "batch": {
+            "count": 1.0,
+            "shape": "PIPE",
+            "anchor": "ENTITY",
+            "min_speed": 0.05,
+            "max_speed": 0.1
+          }
+        }
+      ]
     }
   },
   "release": {
     "animation": {
-      "id": "spell_engine:one_handed_area_release"
+      "id": "spell_engine:one_handed_projectile_release"
+    }
+  },
+  "target": {
+    "type": "AIM",
+    "aim": {
+      "sticky": true
     }
   },
   "impacts": [
     {
       "action": {
+        "type": "DAMAGE",
+        "damage": {
+          "spell_power_coefficient": 0.8,
+          "knockback": 0.3
+        }
+      },
+      "visuals": {
+        "particles": [
+          {
+            "id": "spell_engine:magic_arcane",
+            "appearance": {
+              "motion": "BURST"
+            },
+            "batch": {
+              "count": 15.0,
+              "shape": "SPHERE",
+              "anchor": "ENTITY",
+              "min_speed": 0.1,
+              "max_speed": 0.5
+            }
+          }
+        ]
+      },
+      "sound": {
+        "id": "spell_engine:generic_arcane_release"
+      }
+    },
+    {
+      "action": {
         "type": "STATUS_EFFECT",
         "status_effect": {
           "effect_id": "minecraft:slowness",
-          "duration": 4.0
+          "duration": 4.0,
+          "amplifier": 1
         }
+      },
+      "visuals": {
+        "particles": [
+          {
+            "id": "spell_engine:magic_arcane",
+            "appearance": {
+              "motion": "BURST"
+            },
+            "batch": {
+              "count": 15.0,
+              "shape": "SPHERE",
+              "anchor": "ENTITY",
+              "min_speed": 0.1,
+              "max_speed": 0.5
+            }
+          }
+        ]
+      },
+      "sound": {
+        "id": "spell_engine:generic_arcane_release"
+      }
+    },
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "effect_id": "minecraft:poison",
+          "duration": 4.0,
+          "amplifier": 0
+        }
+      },
+      "visuals": {
+        "particles": [
+          {
+            "id": "spell_engine:magic_arcane",
+            "appearance": {
+              "motion": "BURST"
+            },
+            "batch": {
+              "count": 15.0,
+              "shape": "SPHERE",
+              "anchor": "ENTITY",
+              "min_speed": 0.1,
+              "max_speed": 0.5
+            }
+          }
+        ]
+      },
+      "sound": {
+        "id": "spell_engine:generic_arcane_release"
       }
     }
   ],
@@ -32,17 +134,50 @@
     "exhaust": 1.6,
     "cooldown": {
       "group": "weapon",
-      "duration": 35,
+      "duration": 21,
       "proportional": true
     },
     "item": {
       "id": "runes:arcane_stone"
     }
   },
-  "target": {
-    "type": "AREA",
-    "area": {
-      "include_caster": true
+  "deliver": {
+    "type": "PROJECTILE",
+    "projectile": {
+      "launch_properties": {
+        "velocity": 1.0,
+        "sound": {
+          "id": "spell_engine:generic_arcane_release"
+        }
+      },
+      "projectile": {
+        "client_data": {
+          "light_level": 8,
+          "travel_particles": [
+            {
+              "id": "spell_engine:magic_arcane",
+              "appearance": {},
+              "batch": {
+                "count": 3.0,
+                "shape": "CIRCLE",
+                "anchor": "ENTITY",
+                "min_speed": 0.0,
+                "max_speed": 0.1
+              }
+            }
+          ],
+          "composite_model": {
+            "models": [
+              {
+                "fx": {
+                  "model_id": "wizards:spell_projectile/arcane_bolt",
+                  "scale": 0.5
+                }
+              }
+            ]
+          }
+        }
+      }
     }
   }
 }

@@ -2,14 +2,30 @@
   "school": "spell_power:arcane",
   "range": 16.0,
   "tier": 1,
-  "group": "rogue_subtlety",
+  "group": "cfb_assassin",
   "learn": {},
   "active": {
     "cast": {
       "duration": 0.0,
       "animation": {
         "id": "spell_engine:one_handed_area_charge"
-      }
+      },
+      "sound": {
+        "id": "spell_engine:generic_arcane_casting"
+      },
+      "particles": [
+        {
+          "id": "spell_engine:magic_arcane",
+          "appearance": {},
+          "batch": {
+            "count": 1.0,
+            "shape": "PIPE",
+            "anchor": "ENTITY",
+            "min_speed": 0.05,
+            "max_speed": 0.1
+          }
+        }
+      ]
     }
   },
   "release": {
@@ -17,14 +33,43 @@
       "id": "spell_engine:one_handed_area_release"
     }
   },
+  "target": {
+    "type": "CASTER"
+  },
   "impacts": [
     {
       "action": {
-        "type": "STATUS_EFFECT",
-        "status_effect": {
-          "effect_id": "minecraft:speed",
-          "duration": 3.0
+        "type": "VELOCITY",
+        "velocity": {
+          "frame": "LOOK",
+          "push": {
+            "x": 0,
+            "y": 0.2,
+            "z": 1.8
+          },
+          "reset_velocity": false,
+          "intent": "HELPFUL"
         }
+      },
+      "visuals": {
+        "particles": [
+          {
+            "id": "spell_engine:magic_arcane",
+            "appearance": {
+              "motion": "BURST"
+            },
+            "batch": {
+              "count": 15.0,
+              "shape": "SPHERE",
+              "anchor": "ENTITY",
+              "min_speed": 0.1,
+              "max_speed": 0.5
+            }
+          }
+        ]
+      },
+      "sound": {
+        "id": "spell_engine:generic_arcane_release"
       }
     }
   ],
@@ -32,14 +77,8 @@
     "exhaust": 0.8,
     "cooldown": {
       "group": "weapon",
-      "duration": 12,
+      "duration": 7,
       "proportional": true
-    }
-  },
-  "target": {
-    "type": "AREA",
-    "area": {
-      "include_caster": true
     }
   }
 }

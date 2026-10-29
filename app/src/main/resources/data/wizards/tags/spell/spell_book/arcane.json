@@ -1,9 +1,4 @@
 {
   "replace": false,
-  "values": [
-    {"id": "cfb:mage_firebolt", "required": false},
-    {"id": "cfb:mage_inferno", "required": false},
-    {"id": "cfb:mage_shockbolt", "required": false},
-    {"id": "cfb:mage_blink", "required": false}
-  ]
+  "values": []
 }

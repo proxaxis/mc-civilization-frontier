@@ -2,19 +2,42 @@
   "school": "spell_power:arcane",
   "range": 16.0,
   "tier": 3,
-  "group": "paladin_protection",
+  "group": "cfb_guardian",
   "learn": {},
   "active": {
     "cast": {
       "duration": 0.5,
       "animation": {
         "id": "spell_engine:one_handed_area_charge"
-      }
+      },
+      "sound": {
+        "id": "spell_engine:generic_arcane_casting"
+      },
+      "particles": [
+        {
+          "id": "spell_engine:magic_arcane",
+          "appearance": {},
+          "batch": {
+            "count": 1.0,
+            "shape": "PIPE",
+            "anchor": "ENTITY",
+            "min_speed": 0.05,
+            "max_speed": 0.1
+          }
+        }
+      ]
     }
   },
   "release": {
     "animation": {
       "id": "spell_engine:one_handed_area_release"
+    }
+  },
+  "target": {
+    "type": "AREA",
+    "area": {
+      "range": 6.0,
+      "include_caster": true
     }
   },
   "impacts": [
@@ -23,8 +46,59 @@
         "type": "STATUS_EFFECT",
         "status_effect": {
           "effect_id": "minecraft:resistance",
-          "duration": 8.0
+          "duration": 8.0,
+          "amplifier": 0
         }
+      },
+      "visuals": {
+        "particles": [
+          {
+            "id": "spell_engine:magic_arcane",
+            "appearance": {
+              "motion": "BURST"
+            },
+            "batch": {
+              "count": 30.0,
+              "shape": "SPHERE",
+              "anchor": "ENTITY",
+              "min_speed": 0.1,
+              "max_speed": 0.5
+            }
+          }
+        ]
+      },
+      "sound": {
+        "id": "spell_engine:generic_arcane_release"
+      }
+    },
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "effect_id": "minecraft:absorption",
+          "duration": 8.0,
+          "amplifier": 0
+        }
+      },
+      "visuals": {
+        "particles": [
+          {
+            "id": "spell_engine:magic_arcane",
+            "appearance": {
+              "motion": "BURST"
+            },
+            "batch": {
+              "count": 30.0,
+              "shape": "SPHERE",
+              "anchor": "ENTITY",
+              "min_speed": 0.1,
+              "max_speed": 0.5
+            }
+          }
+        ]
+      },
+      "sound": {
+        "id": "spell_engine:generic_arcane_release"
       }
     }
   ],
@@ -32,14 +106,8 @@
     "exhaust": 1.6,
     "cooldown": {
       "group": "weapon",
-      "duration": 35,
+      "duration": 21,
       "proportional": true
-    }
-  },
-  "target": {
-    "type": "AREA",
-    "area": {
-      "include_caster": true
     }
   }
 }

@@ -2,19 +2,42 @@
   "school": "spell_power:healing",
   "range": 16.0,
   "tier": 3,
-  "group": "priest_holy",
+  "group": "cfb_paladin",
   "learn": {},
   "active": {
     "cast": {
       "duration": 0.5,
       "animation": {
         "id": "spell_engine:one_handed_area_charge"
-      }
+      },
+      "sound": {
+        "id": "spell_engine:generic_healing_casting"
+      },
+      "particles": [
+        {
+          "id": "spell_engine:magic_heal",
+          "appearance": {},
+          "batch": {
+            "count": 1.0,
+            "shape": "PIPE",
+            "anchor": "ENTITY",
+            "min_speed": 0.05,
+            "max_speed": 0.1
+          }
+        }
+      ]
     }
   },
   "release": {
     "animation": {
       "id": "spell_engine:one_handed_area_release"
+    }
+  },
+  "target": {
+    "type": "AREA",
+    "area": {
+      "range": 6.0,
+      "include_caster": true
     }
   },
   "impacts": [
@@ -24,6 +47,56 @@
         "heal": {
           "spell_power_coefficient": 2.0
         }
+      },
+      "visuals": {
+        "particles": [
+          {
+            "id": "spell_engine:magic_heal",
+            "appearance": {
+              "motion": "BURST"
+            },
+            "batch": {
+              "count": 30.0,
+              "shape": "SPHERE",
+              "anchor": "ENTITY",
+              "min_speed": 0.1,
+              "max_speed": 0.5
+            }
+          }
+        ]
+      },
+      "sound": {
+        "id": "spell_engine:generic_healing_impact_1"
+      }
+    },
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "effect_id": "minecraft:regeneration",
+          "duration": 8.0,
+          "amplifier": 0
+        }
+      },
+      "visuals": {
+        "particles": [
+          {
+            "id": "spell_engine:magic_heal",
+            "appearance": {
+              "motion": "BURST"
+            },
+            "batch": {
+              "count": 30.0,
+              "shape": "SPHERE",
+              "anchor": "ENTITY",
+              "min_speed": 0.1,
+              "max_speed": 0.5
+            }
+          }
+        ]
+      },
+      "sound": {
+        "id": "spell_engine:generic_healing_impact_1"
       }
     }
   ],
@@ -31,18 +104,11 @@
     "exhaust": 2.0,
     "cooldown": {
       "group": "weapon",
-      "duration": 50,
+      "duration": 30,
       "proportional": true
     },
     "item": {
       "id": "runes:healing_stone"
-    }
-  },
-  "target": {
-    "type": "AIM",
-    "aim": {
-      "sticky": true,
-      "use_caster_as_fallback": true
     }
   }
 }
