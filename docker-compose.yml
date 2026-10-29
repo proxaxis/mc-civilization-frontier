@@ -39,7 +39,6 @@ services:
       - nv_testserver_data:/data
       - ${WORKSPACE_HOST_PATH:-.}/resources/mods:/data/mods:ro
       - ${WORKSPACE_HOST_PATH:-.}/resources/datapacks/cfb_fixes:/data/world/datapacks/cfb_fixes:ro
-      - ${WORKSPACE_HOST_PATH:-.}/resources/datapacks/cfb_skills:/data/world/datapacks/cfb_skills:ro
 
   # Operation Agent
   orchestrator:

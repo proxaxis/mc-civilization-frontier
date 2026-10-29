@@ -321,3 +321,16 @@
   * 呪文書の max_spell_count が上限(追加は別書が必要)
 * 未解決・要判断:
   * 本番の習得設計(ツリー連携で解禁か、常時購入可能か)は未決定
+
+## task-103整理1 - datapack/jar 二重登録の整理
+
+* 結果: 整理完了
+* 変更点:
+  * 役割分担を確定: world datapack `cfb_skills` = サーバーロジック(puffishカテゴリ・functions・進捗・minecraftタグ)、bcn jar = クライアント共有コンテンツ(スペル・武器/書タグ・assets)
+  * jar からサーバー側分69エントリを除去、docker-compose の cfb_skills マウント撤去
+  * pack.mcmeta を新形式(min_format/max_format)へ修正
+  * 関数内コマンドを正しい `puffish_skills` ルートに修正
+* 判明したこと:
+  * puffish カテゴリは jar 同梱ではロードされない → world datapack が必須(一方でスペル・タグは jar が必須)
+  * docker compose 再作成時に `WORKSPACE_HOST_PATH` 未指定だとリモート daemon 側に空 dir がマウントされ MOD が全く読み込まれない(「Loading 4 mods」が兆候)
+  * コマンド公式構文: `puffish_skills category lock/unlock <player> <category>`、`skills`(経験値等)は別系
