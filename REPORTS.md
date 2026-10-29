@@ -308,3 +308,16 @@
   * クライアント jar 再更新が必要(配布形態は前回同様)
   * 個別スペルの演出・数値の体感調整は実機フィードバック次第
   * スキルツリー未習得のキャストロックは未実装
+
+## task-103実装2 - 全60スペルの取得経路を完備
+
+* 結果: 実装・デプロイ済み
+* 変更点:
+  * cfb スペル全60種を spell_book/spell_scroll タグに職業別マージ
+  * mage→wizards:spell_book/arcane、assassin→rogues:spell_book/rogue、guardian→rogues:spell_book/warrior、paladin→paladins:spell_book/priest
+  * scroll 側にも同マージ(巻物経由の取得も可能に)
+* 判明したこと:
+  * 取得経路は「本+ラピス→Binding Table→呪文書タイプ選択→スペル購入」+「巻物+書→バインド」
+  * 呪文書の max_spell_count が上限(追加は別書が必要)
+* 未解決・要判断:
+  * 本番の習得設計(ツリー連携で解禁か、常時購入可能か)は未決定
