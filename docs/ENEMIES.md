@@ -114,3 +114,30 @@ Remnants: The Eclipsed Realm により各バイオームの討伐構造物に出
 * 固有ギミック:
   * 全面改修されたドラゴン戦(Dragonkind Evolved). 多段フェーズと追加攻撃パターンを持つ.
   * クリスタル破壊時の誘爆と飛翔ブレスの複合攻撃. 奈落への落下死が最大の損害要因.
+
+## 8. 実装対応表
+
+独自命名の敵は、導入 MOD が提供する実在モブへ以下の通り割り当てています. 出現は構造物のスポナーやボス召喚関数(`cfb:boss/*`, `cfb:spawn/*`)で行います.
+
+| 設計上の名称 | 実装モブ | 提供 MOD | ギミック実装 |
+|---|---|---|---|
+| コラプター | `graveyard:corrupted_pillager` | The Graveyard | 衰弱矢に近似した遠距離デバフ射手 |
+| グール | `graveyard:ghoul` | The Graveyard | 集団突撃の実装通り |
+| アコライト | `graveyard:acolyte` | The Graveyard | 隠し満腹度蒸発は hunger 効果で近似 |
+| レイス | `graveyard:revenant` | The Graveyard | 浮遊・物理無力化を近似 |
+| 夜襲の群れ | `undeadnights:horde_zombie` 等 | Undead Nights | 周期 horde night で発生 |
+| トルメンター | `minecraft:drowned` (強化) | vanilla + 装備調整 | 水中奇襲を再現 |
+| メイズ・ストーカー | `minecraft:drowned` + 属性強化 | vanilla | 接近捕食を再現 |
+| アングラー・サーペント | `minecraft:guardian` | vanilla | 酸素消費は水域環境で代替 |
+| アイアン・ヴァンガード | `remnants:rusted_guardian` | Remnants | 重装盾兵として近似 |
+| オートマトン・セントリー | `remnants:hollow_sentinel` | Remnants | NB無効+遠距離攻撃で近似 |
+| トラップスミス | `remnants:relic_stalker` | Remnants | 投擲系を代替表現 |
+| マスクド・デュエリスト | `remnants:soulbound_knight` | Remnants | 高機動剣士として近似 |
+| ファントム・ダンサー | `remnants:memory_wraith` | Remnants | 分身・残像の演出近似 |
+| 蝕界の眷属 | `remnants:hollow_sovereign` | Remnants | 上位個体として配置 |
+| 残蝕の尖兵 | `remnants:gravebound_soldier` | Remnants | 集団警備兵 |
+| 幽霊船団の主 | `remnants:ancient_vessel` | Remnants | `cfb:boss/cornelia` + 浸水/召喚Fx |
+| 腐敗の司教 | `graveyard:lich` | The Graveyard | `cfb:boss/lich` + 魂防壁/飢餓波浪 |
+| 天空の覇王 | `remnants:hollow_sovereign` | Remnants | `cfb:boss/flagship` + 強風/掃射 |
+| 蝕界の王 | `remnants:hollow_sovereign` | Remnants | `cfb:boss/remnant` + 侵食/眷属召喚 |
+| 終焉の龍 | Ender Dragon + 眷属 | Dragonkind Evolved | MOD 実装の強化ドラゴン戦 |

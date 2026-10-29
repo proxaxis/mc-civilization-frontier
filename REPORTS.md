@@ -403,3 +403,22 @@
 * 未解決・要判断:
   * 重機稼働・兵器使用の実イベントからの EFP 加算は BCN Java 側の仕掛けが本実装
   * AdPother 実汚染値との同期(双方向)は mod jar を modImplementation に入れれば本実装可能
+
+## task-105実装1 - 敵対応表+ボス4体とギミック(cfb_enemies datapack)
+
+* 結果: 実装・召喚検証済み(cornelia/lich)
+* 変更点:
+  * `cfb_enemies` datapack 新設: boss/menu + 4ボス召喚関数 + tick ギミック
+  * Ghost Cornelia: remnants:ancient_vessel + 浸水フィールド(鈍足・飢餓・採掘疲労)+水兵亡霊周期召喚
+  * Corrupted Lich: graveyard:lich + 魂の防壁(revenant柱が生存中は耐性4)+飢餓波浪(15s周期の強制hunger)
+  * Flagship Core: remnants:hollow_sovereign + 強風(levitation)+砲台掃射(矢を上から降らせる)
+  * Eclipse Remnant: remnants:hollow_sovereign + 侵食(常時wither)+眷属周期召喚
+  * ENEMIES.md に「8. 実装対応表」を追加(設計名↔実在モブの全対応)
+* 判明したこと:
+  * 実在 modid は `remnants:`(remnant_bosses ではない)/`graveyard:` — lang の entity.* エントリで確定
+  * 26.3 の random_chance predicate は関数内で使いにくい → スコアカウンタ周期に切替
+  * graveyard に acolyte/ghoul/lich の同名実在モブがあり、ENEMIES.md の命名とほぼ一致
+* 未解決・要判断:
+  * 構造物への自動出現は未配線 → 次は各構造物のスポナー配置か、構造物侵入時のトリガー設計
+  * Tier 2 汎用敵の spawn 関数群(cfb:spawn/*)は未実装 — 対応表から生成すれば即作れる
+  * Dragonkind Evolved ドラゴンは MOD 側実装なので設定確認のみ
