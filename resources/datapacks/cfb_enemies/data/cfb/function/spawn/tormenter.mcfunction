@@ -1,0 +1,1 @@
+summon minecraft:drowned ~ ~ ~ {"Tags": ["cfb_tier2", "cfb_enemy"], "CustomName": "[{\"text\":\"トルメンター\"}]", "PersistenceRequired": true, "ArmorItems": [{}, {}, {}, {"id": "minecraft:chainmail_helmet", "count": 1}]}
