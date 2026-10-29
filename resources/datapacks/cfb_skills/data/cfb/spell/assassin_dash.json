@@ -2,7 +2,7 @@
   "school": "spell_power:arcane",
   "range": 16.0,
   "tier": 1,
-  "group": "rogue_subtlety",
+  "group": "cfb_assassin",
   "learn": {},
   "active": {
     "cast": {
@@ -17,13 +17,22 @@
       "id": "spell_engine:one_handed_area_release"
     }
   },
+  "target": {
+    "type": "CASTER"
+  },
   "impacts": [
     {
       "action": {
-        "type": "STATUS_EFFECT",
-        "status_effect": {
-          "effect_id": "minecraft:speed",
-          "duration": 3.0
+        "type": "VELOCITY",
+        "velocity": {
+          "frame": "LOOK",
+          "push": {
+            "x": 0,
+            "y": 0.2,
+            "z": 1.8
+          },
+          "reset_velocity": false,
+          "intent": "HELPFUL"
         }
       }
     }
@@ -34,12 +43,6 @@
       "group": "weapon",
       "duration": 12,
       "proportional": true
-    }
-  },
-  "target": {
-    "type": "AREA",
-    "area": {
-      "include_caster": true
     }
   }
 }

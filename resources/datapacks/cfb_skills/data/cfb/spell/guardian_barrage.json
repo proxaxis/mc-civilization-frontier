@@ -2,7 +2,7 @@
   "school": "spell_power:arcane",
   "range": 16.0,
   "tier": 1,
-  "group": "paladin_protection",
+  "group": "cfb_guardian",
   "learn": {},
   "active": {
     "cast": {
@@ -15,6 +15,13 @@
   "release": {
     "animation": {
       "id": "spell_engine:one_handed_area_release"
+    }
+  },
+  "target": {
+    "type": "AREA",
+    "area": {
+      "range": 6.0,
+      "include_caster": true
     }
   },
   "impacts": [
@@ -34,12 +41,6 @@
       "group": "weapon",
       "duration": 15,
       "proportional": true
-    }
-  },
-  "target": {
-    "type": "AIM",
-    "aim": {
-      "sticky": true
     }
   }
 }

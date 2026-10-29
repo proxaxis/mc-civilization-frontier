@@ -2,7 +2,7 @@
   "school": "spell_power:healing",
   "range": 16.0,
   "tier": 2,
-  "group": "priest_holy",
+  "group": "cfb_paladin",
   "learn": {},
   "active": {
     "cast": {
@@ -17,13 +17,31 @@
       "id": "spell_engine:one_handed_area_release"
     }
   },
+  "target": {
+    "type": "AIM",
+    "aim": {
+      "sticky": true,
+      "use_caster_as_fallback": true
+    }
+  },
   "impacts": [
     {
       "action": {
         "type": "STATUS_EFFECT",
         "status_effect": {
           "effect_id": "minecraft:absorption",
-          "duration": 10.0
+          "duration": 10.0,
+          "amplifier": 2
+        }
+      }
+    },
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "effect_id": "minecraft:resistance",
+          "duration": 10.0,
+          "amplifier": 0
         }
       }
     }
@@ -34,12 +52,6 @@
       "group": "weapon",
       "duration": 45,
       "proportional": true
-    }
-  },
-  "target": {
-    "type": "AREA",
-    "area": {
-      "include_caster": true
     }
   }
 }

@@ -2,7 +2,7 @@
   "school": "spell_power:arcane",
   "range": 16.0,
   "tier": 3,
-  "group": "paladin_protection",
+  "group": "cfb_guardian",
   "learn": {},
   "active": {
     "cast": {
@@ -17,12 +17,25 @@
       "id": "spell_engine:one_handed_area_release"
     }
   },
+  "target": {
+    "type": "CASTER"
+  },
   "impacts": [
     {
       "action": {
         "type": "HEAL",
         "heal": {
           "spell_power_coefficient": 3.0
+        }
+      }
+    },
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "effect_id": "minecraft:regeneration",
+          "duration": 5.0,
+          "amplifier": 0
         }
       }
     }
@@ -33,13 +46,6 @@
       "group": "weapon",
       "duration": 70,
       "proportional": true
-    }
-  },
-  "target": {
-    "type": "AIM",
-    "aim": {
-      "sticky": true,
-      "use_caster_as_fallback": true
     }
   }
 }

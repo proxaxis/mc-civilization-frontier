@@ -2,7 +2,7 @@
   "school": "spell_power:arcane",
   "range": 16.0,
   "tier": 2,
-  "group": "rogue_subtlety",
+  "group": "cfb_assassin",
   "learn": {},
   "active": {
     "cast": {
@@ -17,7 +17,26 @@
       "id": "spell_engine:one_handed_area_release"
     }
   },
+  "target": {
+    "type": "AIM",
+    "aim": {
+      "required": true,
+      "sticky": true
+    }
+  },
   "impacts": [
+    {
+      "action": {
+        "type": "TELEPORT",
+        "teleport": {
+          "mode": "BEHIND_TARGET",
+          "intent": "HELPFUL",
+          "forward": {
+            "distance": 8
+          }
+        }
+      }
+    },
     {
       "action": {
         "type": "DAMAGE",
@@ -34,12 +53,6 @@
       "group": "weapon",
       "duration": 30,
       "proportional": true
-    }
-  },
-  "target": {
-    "type": "AIM",
-    "aim": {
-      "sticky": true
     }
   }
 }

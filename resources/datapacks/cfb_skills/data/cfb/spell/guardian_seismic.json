@@ -2,7 +2,7 @@
   "school": "spell_power:arcane",
   "range": 16.0,
   "tier": 3,
-  "group": "paladin_protection",
+  "group": "cfb_guardian",
   "learn": {},
   "active": {
     "cast": {
@@ -17,13 +17,30 @@
       "id": "spell_engine:one_handed_area_release"
     }
   },
+  "target": {
+    "type": "AREA",
+    "area": {
+      "range": 6.0,
+      "include_caster": true
+    }
+  },
   "impacts": [
     {
       "action": {
         "type": "DAMAGE",
         "damage": {
           "spell_power_coefficient": 1.5,
-          "knockback": 0.3
+          "knockback": 1.2
+        }
+      }
+    },
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "effect_id": "minecraft:slowness",
+          "duration": 3.0,
+          "amplifier": 0
         }
       }
     }
@@ -34,12 +51,6 @@
       "group": "weapon",
       "duration": 25,
       "proportional": true
-    }
-  },
-  "target": {
-    "type": "AIM",
-    "aim": {
-      "sticky": true
     }
   }
 }

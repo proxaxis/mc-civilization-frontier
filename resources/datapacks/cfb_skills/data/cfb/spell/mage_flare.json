@@ -2,19 +2,25 @@
   "school": "spell_power:arcane",
   "range": 16.0,
   "tier": 2,
-  "group": "arcane_sorcery",
+  "group": "cfb_mage",
   "learn": {},
   "active": {
     "cast": {
       "duration": 0.0,
       "animation": {
-        "id": "spell_engine:one_handed_area_charge"
+        "id": "spell_engine:one_handed_projectile_charge"
       }
     }
   },
   "release": {
     "animation": {
-      "id": "spell_engine:one_handed_area_release"
+      "id": "spell_engine:one_handed_projectile_release"
+    }
+  },
+  "target": {
+    "type": "AIM",
+    "aim": {
+      "sticky": true
     }
   },
   "impacts": [
@@ -26,6 +32,16 @@
           "knockback": 0.3
         }
       }
+    },
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "effect_id": "minecraft:glowing",
+          "duration": 10.0,
+          "amplifier": 0
+        }
+      }
     }
   ],
   "cost": {
@@ -34,12 +50,6 @@
       "group": "weapon",
       "duration": 25,
       "proportional": true
-    }
-  },
-  "target": {
-    "type": "AIM",
-    "aim": {
-      "sticky": true
     }
   }
 }

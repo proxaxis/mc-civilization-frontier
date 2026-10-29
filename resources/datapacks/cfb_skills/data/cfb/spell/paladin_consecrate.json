@@ -2,7 +2,7 @@
   "school": "spell_power:healing",
   "range": 16.0,
   "tier": 1,
-  "group": "priest_holy",
+  "group": "cfb_paladin",
   "learn": {},
   "active": {
     "cast": {
@@ -17,6 +17,13 @@
       "id": "spell_engine:one_handed_area_release"
     }
   },
+  "target": {
+    "type": "AREA",
+    "area": {
+      "range": 6.0,
+      "include_caster": true
+    }
+  },
   "impacts": [
     {
       "action": {
@@ -24,6 +31,14 @@
         "damage": {
           "spell_power_coefficient": 0.8,
           "knockback": 0.3
+        }
+      }
+    },
+    {
+      "action": {
+        "type": "HEAL",
+        "heal": {
+          "spell_power_coefficient": 0.8
         }
       }
     }
@@ -34,12 +49,6 @@
       "group": "weapon",
       "duration": 45,
       "proportional": true
-    }
-  },
-  "target": {
-    "type": "AIM",
-    "aim": {
-      "sticky": true
     }
   }
 }

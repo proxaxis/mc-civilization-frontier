@@ -2,19 +2,25 @@
   "school": "spell_power:arcane",
   "range": 16.0,
   "tier": 3,
-  "group": "arcane_sorcery",
+  "group": "cfb_mage",
   "learn": {},
   "active": {
     "cast": {
       "duration": 0.5,
       "animation": {
-        "id": "spell_engine:one_handed_area_charge"
+        "id": "spell_engine:one_handed_projectile_charge"
       }
     }
   },
   "release": {
     "animation": {
-      "id": "spell_engine:one_handed_area_release"
+      "id": "spell_engine:one_handed_projectile_release"
+    }
+  },
+  "target": {
+    "type": "AIM",
+    "aim": {
+      "sticky": true
     }
   },
   "impacts": [
@@ -37,12 +43,6 @@
     },
     "item": {
       "id": "runes:arcane_stone"
-    }
-  },
-  "target": {
-    "type": "AIM",
-    "aim": {
-      "sticky": true
     }
   }
 }

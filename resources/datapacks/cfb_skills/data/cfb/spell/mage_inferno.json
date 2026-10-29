@@ -2,7 +2,7 @@
   "school": "spell_power:fire",
   "range": 16.0,
   "tier": 2,
-  "group": "arcane_sorcery",
+  "group": "cfb_mage",
   "learn": {},
   "active": {
     "cast": {
@@ -17,6 +17,13 @@
       "id": "spell_engine:one_handed_area_release"
     }
   },
+  "target": {
+    "type": "AREA",
+    "area": {
+      "range": 6.0,
+      "include_caster": true
+    }
+  },
   "impacts": [
     {
       "action": {
@@ -24,6 +31,14 @@
         "damage": {
           "spell_power_coefficient": 1.8,
           "knockback": 0.3
+        }
+      }
+    },
+    {
+      "action": {
+        "type": "FIRE",
+        "fire": {
+          "duration": 4.0
         }
       }
     }
@@ -37,12 +52,6 @@
     },
     "item": {
       "id": "runes:fire_stone"
-    }
-  },
-  "target": {
-    "type": "AIM",
-    "aim": {
-      "sticky": true
     }
   }
 }

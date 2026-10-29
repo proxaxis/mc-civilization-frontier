@@ -2,7 +2,7 @@
   "school": "spell_power:frost",
   "range": 16.0,
   "tier": 2,
-  "group": "arcane_sorcery",
+  "group": "cfb_mage",
   "learn": {},
   "active": {
     "cast": {
@@ -17,13 +17,30 @@
       "id": "spell_engine:one_handed_area_release"
     }
   },
+  "target": {
+    "type": "AREA",
+    "area": {
+      "range": 6.0,
+      "include_caster": true
+    }
+  },
   "impacts": [
     {
       "action": {
         "type": "STATUS_EFFECT",
         "status_effect": {
           "effect_id": "minecraft:slowness",
-          "duration": 8.0
+          "duration": 8.0,
+          "amplifier": 1
+        }
+      }
+    },
+    {
+      "action": {
+        "type": "DAMAGE",
+        "damage": {
+          "spell_power_coefficient": 0.5,
+          "knockback": 0.3
         }
       }
     }
@@ -37,12 +54,6 @@
     },
     "item": {
       "id": "runes:frost_stone"
-    }
-  },
-  "target": {
-    "type": "AREA",
-    "area": {
-      "include_caster": true
     }
   }
 }

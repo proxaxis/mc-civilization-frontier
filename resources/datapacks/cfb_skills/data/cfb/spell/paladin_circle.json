@@ -2,7 +2,7 @@
   "school": "spell_power:healing",
   "range": 16.0,
   "tier": 3,
-  "group": "priest_holy",
+  "group": "cfb_paladin",
   "learn": {},
   "active": {
     "cast": {
@@ -17,12 +17,29 @@
       "id": "spell_engine:one_handed_area_release"
     }
   },
+  "target": {
+    "type": "AREA",
+    "area": {
+      "range": 6.0,
+      "include_caster": true
+    }
+  },
   "impacts": [
     {
       "action": {
         "type": "HEAL",
         "heal": {
           "spell_power_coefficient": 2.0
+        }
+      }
+    },
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "effect_id": "minecraft:regeneration",
+          "duration": 8.0,
+          "amplifier": 0
         }
       }
     }
@@ -36,13 +53,6 @@
     },
     "item": {
       "id": "runes:healing_stone"
-    }
-  },
-  "target": {
-    "type": "AIM",
-    "aim": {
-      "sticky": true,
-      "use_caster_as_fallback": true
     }
   }
 }

@@ -2,19 +2,25 @@
   "school": "spell_power:arcane",
   "range": 16.0,
   "tier": 4,
-  "group": "rogue_subtlety",
+  "group": "cfb_assassin",
   "learn": {},
   "active": {
     "cast": {
       "duration": 0.0,
       "animation": {
-        "id": "spell_engine:one_handed_area_charge"
+        "id": "spell_engine:one_handed_projectile_charge"
       }
     }
   },
   "release": {
     "animation": {
-      "id": "spell_engine:one_handed_area_release"
+      "id": "spell_engine:one_handed_projectile_release"
+    }
+  },
+  "target": {
+    "type": "AIM",
+    "aim": {
+      "sticky": true
     }
   },
   "impacts": [
@@ -23,7 +29,7 @@
         "type": "DAMAGE",
         "damage": {
           "spell_power_coefficient": 3.0,
-          "knockback": 0.3
+          "knockback": 0.6
         }
       }
     }
@@ -34,12 +40,6 @@
       "group": "weapon",
       "duration": 50,
       "proportional": true
-    }
-  },
-  "target": {
-    "type": "AIM",
-    "aim": {
-      "sticky": true
     }
   }
 }

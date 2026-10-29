@@ -2,7 +2,7 @@
   "school": "spell_power:arcane",
   "range": 16.0,
   "tier": 2,
-  "group": "arcane_sorcery",
+  "group": "cfb_mage",
   "learn": {},
   "active": {
     "cast": {
@@ -17,13 +17,27 @@
       "id": "spell_engine:one_handed_area_release"
     }
   },
+  "target": {
+    "type": "CASTER"
+  },
   "impacts": [
     {
       "action": {
         "type": "STATUS_EFFECT",
         "status_effect": {
           "effect_id": "minecraft:haste",
-          "duration": 10.0
+          "duration": 10.0,
+          "amplifier": 1
+        }
+      }
+    },
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "effect_id": "minecraft:speed",
+          "duration": 10.0,
+          "amplifier": 0
         }
       }
     }
@@ -34,12 +48,6 @@
       "group": "weapon",
       "duration": 50,
       "proportional": true
-    }
-  },
-  "target": {
-    "type": "AREA",
-    "area": {
-      "include_caster": true
     }
   }
 }

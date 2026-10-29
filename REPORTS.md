@@ -295,3 +295,16 @@
 * 未解決・要判断:
   * 満腹度コストをもっと体感できる値(例:1発=半分等)にするかはバランス要相談
   * 残り59スペルの本実装(骨格→JOBガイド値)が次フェーズ
+
+## task-103実装1 - 60スペル本実装(骨格→多様action)
+
+* 結果: 実装・デプロイ(実機確認待ち)
+* 変更点:
+  * gen_spells.py を複合impact+多様action(TELEPORT/VELOCITY/AGGRO/FIRE/HEAL/STATUS_EFFECT)対応に全面書換
+  * 全60スペルを職業コンセプトに合わせて本実装(例: blink=TELEPORT FORWARD, shadow_strike=背後TP+斬撃, roar/taunt=AGGRO, fire系=着弾+FIRE, 各種範囲buff/heal=AREA)
+  * target 種別を整理(aim/aim_fb/aim_req/area/caster)、アニメーションを投射/範囲で出し分け
+  * bcn jar に再同梱してサーバー再起動
+* 未解決・要判断:
+  * クライアント jar 再更新が必要(配布形態は前回同様)
+  * 個別スペルの演出・数値の体感調整は実機フィードバック次第
+  * スキルツリー未習得のキャストロックは未実装
