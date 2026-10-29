@@ -6,7 +6,6 @@
   "learn": {},
   "active": {
     "cast": {
-      "duration": 0.0,
       "animation": {
         "id": "spell_engine:one_handed_area_charge"
       },
@@ -35,10 +34,7 @@
   },
   "target": {
     "type": "AIM",
-    "aim": {
-      "required": true,
-      "sticky": true
-    }
+    "aim": {}
   },
   "impacts": [
     {

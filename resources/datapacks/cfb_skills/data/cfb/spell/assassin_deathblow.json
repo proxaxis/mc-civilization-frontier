@@ -6,7 +6,6 @@
   "learn": {},
   "active": {
     "cast": {
-      "duration": 0.0,
       "animation": {
         "id": "spell_engine:one_handed_projectile_charge"
       },
@@ -35,9 +34,7 @@
   },
   "target": {
     "type": "AIM",
-    "aim": {
-      "sticky": true
-    }
+    "aim": {}
   },
   "impacts": [
     {
