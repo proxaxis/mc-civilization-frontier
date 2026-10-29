@@ -1,5 +1,7 @@
-execute if score @s cfb_q_guardian matches 3.. run scoreboard players set @s cfb_q_guardian 0
-execute if score @s cfb_q_guardian matches ..2 run tellraw @s [{"text":"古の守護者: elder_guardian 討伐数 3 未達です","color":"red"}]
+scoreboard players operation @s cfb_q_tmp = @s cfb_q_guardian
+scoreboard players operation @s cfb_q_tmp -= @s cfb_q_gb
+execute if score @s cfb_q_tmp matches ..2 run return run tellraw @s [{"text":"古の守護者: 討伐数 3 未達です","color":"red"}]
+scoreboard players add @s cfb_q_gb 3
 give @s coinsje:gold_coin 1
 give @s coinsje:iron_coin 16
 experience add @s 4 levels

@@ -5,6 +5,6 @@
     }
   },
   "rewards": {
-    "function": "cfb:job/menu"
+    "function": "cfb:job/first_join"
   }
 }
