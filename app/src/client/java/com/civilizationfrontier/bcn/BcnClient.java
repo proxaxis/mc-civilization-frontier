@@ -1,6 +1,7 @@
 package com.civilizationfrontier.bcn;
 
 import com.civilizationfrontier.bcn.block.entity.MachineBlockEntities;
+import com.civilizationfrontier.bcn.client.mcp.McpHttpd;
 import com.civilizationfrontier.bcn.client.ItemPipeRenderer;
 import com.civilizationfrontier.bcn.client.LaserBeamRenderer;
 import com.civilizationfrontier.bcn.entity.BcnEntities;
@@ -43,5 +44,9 @@ public final class BcnClient implements ClientModInitializer {
                         return new net.minecraft.client.renderer.entity.state.EntityRenderState();
                     }
                 });
+
+        if (Boolean.parseBoolean(System.getProperty("bcn.mcp", "true"))) {
+            McpHttpd.start();
+        }
     }
 }
