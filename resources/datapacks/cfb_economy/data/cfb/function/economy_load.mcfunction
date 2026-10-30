@@ -1,5 +1,9 @@
 scoreboard objectives add cfb_days dummy
 scoreboard objectives add cfb_quest dummy "クエスト"
+scoreboard objectives add cfb_qmenu trigger
+scoreboard objectives add cfb_died minecraft.custom:minecraft.deaths
+scoreboard objectives add cfb_tsd minecraft.custom:minecraft.time_since_death
+scoreboard players enable @a cfb_qmenu
 scoreboard objectives add cfb_fee dummy
 scoreboard objectives add cfb_q_tmp dummy
 scoreboard objectives add cfb_q_zb dummy

@@ -999,3 +999,13 @@
   * ゲートの素材差別化 (条件スロット数・トリガ種別) 未実装 — 現状 AND=電源有 / OR=電源無の単一条件のみ
   * ゲート改造 4 種はアイテム登録のみ (装着/動作は別タスク). 派生作業台もスタブ
   * ロボットは登録+ dock 配置のみ. ビーム描画はクライアント側で未目視 (render 構造のみ実機確認不可)
+
+## quest-導線 クエストブック配布 + trigger 化
+
+* 実装:
+  * `cfb_qmenu`(trigger 型)を新設 — 非OPでも `/trigger cfb_qmenu` でクエスト一覧が開ける. economy_tick で 1=menu 表示→0 戻し→再 enable
+  * `cfb:quest/book` 新設 — written_book を配布, 1 ページ目に `[クエスト一覧を開く]` リンク(`/trigger cfb_qmenu` 実行)
+  * job 確定時(guardian/assassin/mage/paladin)にブックを配布
+  * 死亡で失わない仕様: `cfb_died`(deaths 統計)+`cfb_tsd`(time_since_death)でリスポーン直後 1 秒以内に再配布
+* 検証: trigger でメニュー表示+リセット確認, book give でインベントリ入りを確認(満杯時はドロップ扱い). 死亡再配布は Carpet fake がリスポーンしないため実プレイヤー待ち
+* 未解決: keepInventory 環境では死亡時にブックが重複し得る(現環境は非 keepInventory)

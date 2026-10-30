@@ -7,3 +7,10 @@ execute if score #disaster_cd cfb_days matches ..0 run function cfb:disaster/che
 # 自然減衰: 稼働停止なら汚染は徐々に下がる(1200tickごとに-1)
 scoreboard players add #decay cfb_days 1
 execute if score #decay cfb_days matches 1200.. run function cfb:disaster/decay
+# クエストメニュー trigger(非OPも /trigger cfb_qmenu で開ける)
+execute as @a[scores={cfb_qmenu=1..}] run function cfb:quest/menu
+scoreboard players set @a[scores={cfb_qmenu=1..}] cfb_qmenu 0
+scoreboard players enable @a cfb_qmenu
+# クエストブックは死亡で失わない — リスポーン直後(1秒以内)に再配布
+execute as @a[scores={cfb_died=1..,cfb_tsd=1..20}] run function cfb:quest/book
+scoreboard players set @a[scores={cfb_died=1..,cfb_tsd=1..20}] cfb_died 0

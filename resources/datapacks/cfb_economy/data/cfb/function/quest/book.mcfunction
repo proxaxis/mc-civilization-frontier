@@ -1,0 +1,2 @@
+give @s minecraft:written_book[minecraft:written_book_content={title:"クエストブック",author:"Civilization Frontier",pages:[[{"text":"クエストブック\n\nこの本のリンクからクエスト一覧を開けます.\n\n"},{"text":"[クエスト一覧を開く]","color":"aqua",click_event:{action:"run_command",command:"/trigger cfb_qmenu"}}],[{"text":"各クエストの[申請]を押すと達成判定を行います.\n納品系は手持ちアイテムを消費し, 討伐系は累計討伐数で判定されます.\n報酬は MD 硬貨と XP です."}]]}]
+tellraw @s [{"text":"クエストブックを受け取りました. 死亡しても再配布されます.","color":"gray"}]
