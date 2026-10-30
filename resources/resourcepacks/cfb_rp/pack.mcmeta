@@ -1,1 +1,1 @@
-{"pack": {"pack_format": 65, "description": "CFB quest font pack (small font + emoji)"}}
+{"pack": {"description": "CFB quest font pack (small font + emoji)", "min_format": 101, "max_format": 2147483647}}
