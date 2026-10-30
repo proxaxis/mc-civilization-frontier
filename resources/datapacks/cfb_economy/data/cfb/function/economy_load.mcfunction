@@ -12,3 +12,4 @@ scoreboard objectives add cfb_q_wb dummy
 scoreboard objectives add cfb_q_gb dummy
 scoreboard players set #tick cfb_days 0
 tellraw @a [{"text":"[CFB] 経済システムを読み込みました. MD交換は /function cfb:md/menu","color":"gray"}]
+function cfb:quest/gen_load
