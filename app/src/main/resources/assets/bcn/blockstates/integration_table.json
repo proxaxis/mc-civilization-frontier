@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "bcn:block/integration_table"
+    }
+  }
+}

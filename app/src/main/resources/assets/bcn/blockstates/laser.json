@@ -1,0 +1,48 @@
+{
+  "variants": {
+    "active=false,facing=down": {
+      "model": "bcn:block/laser",
+      "x": 180
+    },
+    "active=true,facing=down": {
+      "model": "bcn:block/laser_on",
+      "x": 180
+    },
+    "active=false,facing=up": {
+      "model": "bcn:block/laser"
+    },
+    "active=true,facing=up": {
+      "model": "bcn:block/laser_on"
+    },
+    "active=false,facing=north": {
+      "model": "bcn:block/laser"
+    },
+    "active=true,facing=north": {
+      "model": "bcn:block/laser_on"
+    },
+    "active=false,facing=south": {
+      "model": "bcn:block/laser",
+      "y": 180
+    },
+    "active=true,facing=south": {
+      "model": "bcn:block/laser_on",
+      "y": 180
+    },
+    "active=false,facing=west": {
+      "model": "bcn:block/laser",
+      "y": 90
+    },
+    "active=true,facing=west": {
+      "model": "bcn:block/laser_on",
+      "y": 90
+    },
+    "active=false,facing=east": {
+      "model": "bcn:block/laser",
+      "y": 270
+    },
+    "active=true,facing=east": {
+      "model": "bcn:block/laser_on",
+      "y": 270
+    }
+  }
+}

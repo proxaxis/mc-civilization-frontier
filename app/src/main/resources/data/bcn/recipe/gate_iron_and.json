@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "C",
+    "I",
+    "R"
+  ],
+  "key": {
+    "C": "bcn:chipset_redstone",
+    "I": "minecraft:iron_ingot",
+    "R": "minecraft:redstone"
+  },
+  "result": {
+    "id": "bcn:gate_iron_and",
+    "count": 1
+  }
+}

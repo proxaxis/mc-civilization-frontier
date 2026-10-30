@@ -2,6 +2,7 @@ package com.civilizationfrontier.bcn;
 
 import com.civilizationfrontier.bcn.block.entity.MachineBlockEntities;
 import com.civilizationfrontier.bcn.client.ItemPipeRenderer;
+import com.civilizationfrontier.bcn.client.LaserBeamRenderer;
 import com.civilizationfrontier.bcn.entity.BcnEntities;
 import com.civilizationfrontier.bcn.fluid.BcnFluids;
 import net.fabricmc.api.ClientModInitializer;
@@ -33,5 +34,14 @@ public final class BcnClient implements ClientModInitializer {
                 context -> new ThrownItemRenderer<>(context, 2.0F, true));
 
         BlockEntityRenderers.register(MachineBlockEntities.ITEM_PIPE, ItemPipeRenderer::new);
+        BlockEntityRenderers.register(MachineBlockEntities.LASER, LaserBeamRenderer::new);
+        EntityRendererRegistry.register(BcnEntities.ROBOT,
+                context -> new net.minecraft.client.renderer.entity.EntityRenderer<com.civilizationfrontier.bcn.entity.RobotEntity,
+                        net.minecraft.client.renderer.entity.state.EntityRenderState>(context) {
+                    @Override
+                    public net.minecraft.client.renderer.entity.state.EntityRenderState createRenderState() {
+                        return new net.minecraft.client.renderer.entity.state.EntityRenderState();
+                    }
+                });
     }
 }

@@ -59,6 +59,8 @@ public class ItemPipeBlockEntity extends BlockEntity implements WorldlyContainer
 
 	private final List<Transit> transit = new ArrayList<>();
 	private Direction pendingFrom;
+	private String gate = "";          // BC 式ゲート: "and"(信号ONで抽出) / "or"(信号OFFで抽出)
+	private int gateCooldown;
 
 	public ItemPipeBlockEntity(BlockPos pos, BlockState state) {
 		this(MachineBlockEntities.ITEM_PIPE, pos, state);
@@ -70,6 +72,40 @@ public class ItemPipeBlockEntity extends BlockEntity implements WorldlyContainer
 
 	public List<Transit> transit() {
 		return transit;
+	}
+
+	public void setGate(String gate) {
+		this.gate = gate;
+		setChanged();
+	}
+
+	public String gate() {
+		return gate;
+	}
+
+	/** BC 式ゲートの抽出: AND=信号ON時のみ / OR=信号OFF時のみ、隣接コンテナから1スタック取り込む. */
+	private void gateExtract(Level level, BlockPos pos) {
+		boolean powered = level.hasNeighborSignal(pos);
+		if (("and".equals(gate) && !powered) || ("or".equals(gate) && powered)) {
+			return;
+		}
+		if (transit.size() >= MAX_TRANSIT) {
+			return;
+		}
+		for (Direction d : Direction.values()) {
+			net.minecraft.world.Container c = HopperBlockEntity.getContainerAt(level, pos.relative(d));
+			if (c == null || c == this) {
+				continue;
+			}
+			for (int i = 0; i < c.getContainerSize(); i++) {
+				ItemStack slot = c.getItem(i);
+				if (!slot.isEmpty()) {
+					ItemStack taken = c.removeItem(i, 1);
+					addTransit(taken, d);
+					return;
+				}
+			}
+		}
 	}
 
 	public boolean addTransit(ItemStack stack, Direction from) {
@@ -94,6 +130,10 @@ public class ItemPipeBlockEntity extends BlockEntity implements WorldlyContainer
 	}
 
 	public void tick(Level level, BlockPos pos) {
+		if (!level.isClientSide() && !gate.isEmpty() && --gateCooldown <= 0) {
+			gateCooldown = 10;
+			gateExtract(level, pos);
+		}
 		boolean sync = false;
 		for (int i = transit.size() - 1; i >= 0; i--) {
 			Transit t = transit.get(i);
@@ -260,6 +300,7 @@ public class ItemPipeBlockEntity extends BlockEntity implements WorldlyContainer
 	@Override
 	protected void saveAdditional(ValueOutput out) {
 		super.saveAdditional(out);
+		out.putString("gate", gate);
 		ValueOutput.ValueOutputList list = out.childrenList("transit");
 		for (Transit t : transit) {
 			ValueOutput child = list.addChild();
@@ -284,6 +325,7 @@ public class ItemPipeBlockEntity extends BlockEntity implements WorldlyContainer
 	@Override
 	protected void loadAdditional(ValueInput in) {
 		super.loadAdditional(in);
+		gate = in.getStringOr("gate", "");
 		transit.clear();
 		for (ValueInput child : in.childrenListOrEmpty("transit")) {
 			Transit t = new Transit();

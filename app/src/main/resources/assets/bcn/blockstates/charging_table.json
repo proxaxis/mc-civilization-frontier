@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "bcn:block/charging_table"
+    }
+  }
+}

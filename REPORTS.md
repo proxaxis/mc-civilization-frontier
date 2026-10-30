@@ -884,3 +884,118 @@
 * 未解決・要判断:
   * creative レシピは意図的に無し (クリエイティブタブ限定). redstone engine の素材は BC 準拠の仮置き
   * 既存 engine_stone/combustion のレシピは別タスク (材料は歯車系で確定済み)
+
+## task-219 BCN Project:Red (配線/IC/モーター/blulectricity)
+
+* 結果: 実装済み — 色別絶縁ワイヤー・ケーブル束・ic_gate・手ノコ/マイクロブロック・フレームモーターを testserver で実機確認
+* 配線系 (task-206 の redwire を拡張):
+  * `BcnInsulatedWireBlock` — 16 色 (DyeColor 全色, `insulated_wire_<color>`). 同色絶縁ワイヤーとケーブル束にのみ接続し、ネットワークは色別に完全分離. 外部ソースの信号読み/弱信号出力は redwire 同様
+  * `BcnBundledCableBlock` + `BundledCableBlockEntity` — 16 チャネルの信号を1本で運ぶ. チャネル状態は BE の 16bit `channels` マスクに保持
+  * `ColoredWireNetwork` — 評価エンジン. チャネル c のハイパーコンポーネント (bundled 全体 ∪ 色 c の絶縁ワイヤー群) を flood し、メンバの外部信号 OR で一括 powered 確定. 異色ワイヤーは同一ケーブル束上で混線しない. redwire とは別ネット (絶縁→redwire の一方向読み取りのみ許可しループ防止)
+* `ic_gate` — `BcnIcGateBlock` + `IcGateBlockEntity`. 内部に最大4個の論理セル {t,in,out,src} を記憶し1ブロックで複数論理を実行. セルは各ゲート種のデフォルト端子配置で登録 (ゲートアイテム右クリック追加/ドライバーで削除/素手で構成表示). `src` 参照で先行セル出力を入力に連鎖させ多段論理も可能 (NBT 編集で設定). ラッチ系はセル別 mem を保持
+* 中間素材 — TECH_ITEMS.md の PR 系を登録: plate 系 4種/陽極・陰極・指針/シリコンチップ 2種/アセンブリ基板/赤合金・青合金インゴット/シリコンウェハー系 4種 (boule はブロック)/モーター/コイル 3種/帆布・帆/化合物 6種/絞り板/ドライバー. 全種レシピ付き
+* `frame`/`frame_motor` — フレームは面貼り付き骨組み (ホストブロックを掴む). モーターは RS 信号中 4 tick 毎に、接するフレーム網 + ホストブロック群を FACING 方向へ 1 ブロック瞬間移動 (BE は NBT 引継ぎ, 上限512, 行き先塞がり/移動不能時は中断)
+* blulectricity — MJ ブリッジとして最小実装: `bt_battery` (MjBatteryItem, 24000MJ/64MJ-t 充電式), `bt_battery_box` (MjBatteryBlock LV 24000, 既存蓄電スロット機構を共用), `solar_panel` (Ic2GeneratorBlock SOLAR 共用で昼間発電), `multimeter` (MJ 蓄積表示ツール)
+* `handsaw` + `microblock` — 手ノコ5種 (鉄 + 宝石4種). フルブロックを HALF に置換 + 残り半分をアイテム化, マイクロブロックは HALF→PANEL×2→COVER×2 に分割. 宝石ノコで boule ブロック → シリコン×8. マイクロブロック素材は BE 保持, アイテムは BLOCK_STATE + BLOCK_ENTITY_DATA コンポーネントで搬送 (通常 BlockItem 設置経路で反映)
+* 実機検証 (testserver, RCON):
+  * レバー → 赤ワイヤー powered=true, 隣接青/非接触赤は powered=false で色分離を確認
+  * レバー → 緑ワイヤー → bundled ×2 → 緑ワイヤー: 末端 powered=true, BE `channels: 8192` (bit13=緑). 同色中継 + 他色は無影響
+  * ic_gate: cells=[and(in12→out1), not(in2→out8)] 設定で out_north/out_east 両立, 南入力投入で out_east 消灯を確認 (複数論理1ブロック)
+  * 手ノコ (carpet fake player): stone → HALF マイクロブロック置換 + 半分アイテム取得, HALF→PANEL 分割で {block_state:{size:panel}, block_entity_data:{material}} コンポーネント付きアイテム取得
+  * frame_motor: レッドストーンブロック駆動で cobblestone + 天井フレームが 1 ブロック東へ移動
+* 判明したこと:
+  * 26.3 で `displayClientMessage` は `sendOverlayMessage` に改名, PushReaction の移動不能は `IMMOVEABLE`
+  * FaceAttachedHorizontalDirectionalBlock 派生は FACE/FACING を自分で `createBlockStateDefinition` 登録必須 (忘れると登録時に getShape で死ぬ)
+  * レシピ category に "tools" は存在しない (equipment を使う)
+  * 稼働中サーバーへの jar 上書きは zip 破損 (invalid LOC header) でクラッシュ → 必ず停止→差替→起動
+* 未解決・要判断:
+  * bundled cable の絶縁ワイヤーは外部ソースを持たないと読めない設計 (ケーブル束自体は信号源に非ず, PR 準拠). redwire/bundled 間は直接ブリッジせず絶縁経由のみ
+  * ic_gate セル編集 UI は無し (ゲート投入/ドライバー削除 + NBT 直接編集). 破壊時セルは消散
+  * 絶縁ワイヤーのモデルは全色同形状で色テクスチャ差替のみ. 見た目のゲート構成表示は無し
+  * blulectric 専用機器 (かまど/風力等) はスコープ外, MJ 共用実装のみ
+  * マイクロブロックのマルチパート同居 (同一セル複数パーツ) は未対応
+  * tools/gen_pr_assets.py でアセット約1350ファイルを生成 (再生成可)
+
+## task-220 BCN LogisticsPipes (物流パイプ網)
+
+* 結果: 実装済み — provider→request の網内自動搬送, モジュール挙動, remote_orderer 遠隔要求, 補給, 溶接台を testserver で実機確認
+* 構成: `com.civilizationfrontier.bcn.lp` パッケージ. item_pipe の Transit に宛先/経路を持たせる拡張方式
+  * `ItemPipeBlockEntity.Transit` — dest(BlockPos)/destFace/route を追加し chooseExit/handOff で宛先配送. destFace>=6 はパイプ内部バッファ配送 (加工材料)
+  * `BcnPipeBlock.conn` — 同クラス限定から同流体種へ緩和し、item_pipe と物流パイプ、防水管と液体系パイプが接続するように
+  * `LogisticsNetwork` — BFS で網列挙/最短経路/シンク解決/要求発行 (MjNetwork と同じ都度探索方針)
+* 実装ブロック (全て `bcn:` 接頭辞, WorldlyContainer なしの NBT 駆動設定)
+  * `pipe_basic_logistics` — フィルタ設定で回収ポイント (優先度30), 未設定なら Default Route (1)
+  * `pipe_provider` — 隣接コンテナを供給源登録
+  * `pipe_request` — `flt` NBT で発注. 網内供給源から destFace の隣接コンテナへ配送, 到達で発注残を減算
+  * `pipe_supplier` — `flt` のアイテムを指定個数まで隣接コンテナに維持
+  * `pipe_crafting` — 隣接バニラ Crafter のグリッドをレシピとして解決し、材料を網から取寄せて成果物を配送
+  * `pipe_chassis_mk1..5` — モジュール 1,2,3,4,8 スロットの受け皿
+  * `pipe_liquid_supplier` — 防水管網内の他タンクから指定液体を維持量まで配送
+  * `soldering_station` — 材料9+燃料(鉄)+完成1 スロット, MJ 消費で nano_hopper/item_card/HUD 部品を組立
+* モジュール (item) — item_sink/polymorphic/terminus/passive_supplier/provider/extractor/quick_sort/active_supplier/crafting/blank. chassis へ右クリック挿入, レンチで取出. フィルタはモジュールの custom_data `flt`
+* `remote_orderer` — useOn で物流パイプに紐付け (custom_data `pipe`), 空中 use で反対側の手のアイテム or 保存 `req` を遠隔要求
+* 動力: 全ロジパイプ/溶接台は MjReceiver (バッファ128/1024MJ). 発送2MJ/個, クラフト16MJ/回, 液体補給4MJ/回, 溶接320MJ/回
+* 実機検証 (RCON): provider 64→56, request チェストへ8配送で発注完了 (16MJ消費). extractor モジュール挿しで 32→24 抽出→basic シンクへ配送. orderer で 4 個遠隔要求 (56→52, 17→21). supplier で鉄16維持 (64→48). 溶接台で hopper8+鉄1+320MJ→nano_hopper
+* 判明したこと:
+  * ItemPipeBlockEntity が WorldlyContainer のため HopperBlockEntity.getContainerAt が隣接パイプをコンテナ扱いする → attachedContainer は BcnPipeBlock を除外必須 (要求が常に0になる障害の原因だった)
+  * 26.3 の displayClientMessage は sendOverlayMessage(Component) に改名, Recipe.assemble は引数1個 (registryAccess 不要)
+  * 他タスクの進行中レシピ (handsaw/multimeter 系6件) がレジストリロードを落とす → 検証は jar から該当レシピのみ除去した仮パッチで実施 (ソースは未改変, 再ビルドで復活)
+* 未解決・要判断:
+  * LP 用 GUI 未実装 (要求/フィルタ/モジュール設定は NBT と右クリック投入で代用)
+  * 物流パイプ BE に検証用 dbg/dbgs カウンタが残っている (デバッグ用途, 次回除去候補)
+  * 加工パイプの衛星パイプ/速度チップ/LP変換機・ファイアウォール等の周辺要素は未実装
+  * `data/bcn/recipe/rail_signal.json` の minecraft:redstone_dust 誤記 (task-201 からの既知件) は依然要修正
+
+## task-218 BCN IC2 crops (支柱育種・農薬・飲料系)
+
+* 結果: 実装済み — 支柱の作物成長・交差育種・酒樽発酵の tick 動作を testserver で実機確認 (プレイヤー操作パスはコードのみ)
+* 構成: `com.civilizationfrontier.bcn.crop` パッケージ
+  * `CropStickBlock` (crop_stick) — 耕地上限定 (canSurvive=FarmlandBlock). 空支柱へ支柱使用で cross=true の二重支柱. バニラ種や種袋で植え付け, 成熟時は素手右クリック収穫 (stage-3 に戻り持続), それ以外は簡易鑑定表示. 破壊で支柱ドロップ + BE 側から種袋 (未成熟40%/成熟25%) と収穫物
+  * `CropStickBlockEntity` — crop/stage/GGR (growth,gain,resistance 1-31) + grow_progress + 栄養/保水/除草ストック (0-100, 20 tick 毎に減衰). 5 パラメータは 光量=sky light, 通気=周囲 3x3x3 空気率, 栄養=ストック+耕地湿潤, 保水=ストック+湿潤+水源数, 除草=ストック を各 0-20 で算出
+  * 交差育種 — cross 支柱が隣接 4 方の成熟した通常支柱 2 株を親に子を発生 (0.15/20tick). 種は親継承 60% / 親最大 tier+1 以下への突然変異 25% / 雑草 15%. GGR は親平均±1 で 1-31
+  * 雑草 — 栄養>=40 かつ除草 0 の空支柱に自然発生, 耐性<=20 かつ除草 0 の隣作物へ拡散. weed_ex 使用で枯死
+  * `BcnCropType` — 12 種 (weed/wheat/pumpkin/carrot/potato/melon/sugarcane/beetroot/cocoa/nether_wart/coffee/hops). バニラ種をそのまま植え付け可 (GGR=1/1/1)
+* アイテム
+  * `crop_seed_bag` — 作物種+GGR+scanned をデータコンポーネント保持 (item.BcnComponents に crop_id/crop_growth/crop_gain/crop_resistance/crop_scanned を追加). 未鑑定はツールチップでステータス非表示
+  * `crop_analyzer` — 支柱右クリックで種名/stage/GGR/5 パラメータを表示, 手に持って使用で反対手の種袋を鑑定
+  * `fertilizer`(+栄養50) `hydrated_coal`(+保水50) `weed_ex`(+除草50, 雑草枯死) `grin_powder` `hops` `coffee_beans` `coffee_powder` `stone_mug`
+* 飲料系
+  * `BoozeBarrelBlock`+BE — 水バケツ注水後, 砂糖 3 でラム, 小麦 2+ホップ 1 で麦酒を仕込み (4 杯分). ferment_ticks を tick 毎加算し, 汲み出し時の熟度で産物分岐: ラム <24000=未発酵/以上=熟成, 麦酒 <6000 若い酒/<18000 ビール/<36000 エール/以上 暗黒物質X
+  * マグ系 9 種 — Consumable コンポーネントで飲用効果 (未発酵rum/暗黒物質X は確率付き複数効果の近似, 熟成rum は耐性2+火炎耐性+力, コーヒー系は速度/加速に加え slowness/mining_fatigue 解除の覚醒効果), usingConvertsTo で空マグ返却
+  * コーヒー加工線 — coffee_beans→coffee_powder (不定形), stone_mug+粉+水バケツ→コールドコーヒー, 精錬でブラックホットコーヒー, +砂糖+ミルクでホットコーヒー
+* 実機検証 (testserver RCON, NBT 注入):
+  * 水張り耕地上に setblock → BE 生成と NBT 正常を確認. 親株 wheat (4/3/2) と carrot (6/8/10) を成熟化すると cross 支柱に子 wheat (G6/G6/R6) が発生し stage 5 まで成長
+  * growth 20 の小麦が約 2 分で stage 0→7 に成熟, ブロックステート growth=3 へ反映
+  * 酒樽に brew=beer/servings=4 を注入 → ferment_ticks が tick 連動で増加 (2 分で 2411)
+  * give で mug_beer/crop_analyzer/crop_seed_bag/fertilizer を取得 (lang 名も解決), `give Tester bcn:crop_seed_bag[bcn:crop_id="coffee",...]` でコンポーネントの往復保存を確認
+  * loot spawn で crop_stick/booze_barrel のブロックルートを確認
+* 判明したこと:
+  * 本パックでは乾燥かつ未植付の耕地が dirt に自然復帰する → 支柱の検証は水張り耕地 (moisture>0) が必須. 乾燥耕地に支柱を置くと耕地が dirt 化して支柱もポップする
+  * `minecraft:water_bottle` はアイテム ID として存在しない (ポーションは minecraft:potion+components) → コールドコーヒーの材料は water_bucket に変更
+  * 26.3 の PushReaction は PUSH_PULL/PUSH/POPPED/IMMOVEABLE/IGNORE_ENTITY (DESTROY なし, 作物には POPPED)
+  * ランダム飲用効果は ApplyStatusEffectsConsumeEffect の probability を効果毎に複数登録して "いずれか 1 つ" を近似できる
+* 未解決・要判断:
+  * プレイヤー必須パス (分析機の右クリック, 収穫, マグ汲み出し, 飲用効果) は RCON で実行不能なため未実機確認. コードパスとコンポーネント往復のみ検証済み
+  * 共有ワークツリー上の他タスク WIP コード (lp/PR 系の未完成参照) で全体 gradle build が間欠的に失敗する. 検証 jar は WIP ファイルの一時退避でビルドし対象を復帰済み (jar 内の壊れた BcnGateBlock 中間版は javac 単体差替で修正)
+  * rail_signal レシピの redstone_dust 誤記はソース側修正済みのため再ビルドで解消. 他タスクの壊れたリソース (handsaw 系 recipe の "tools" カテゴリ) はソース側も equipment に修正済み
+  * GUI なし (鑑定表示はチャット, 樽状態は右クリック表示). crop_matron (農薬散布機), treetap, 足場, ラムの糖蜜工程 (extractor/canner), 麦酒の品質接頭語 (Watery/Strong 等) は未実装
+
+## task-211 BCN silicon (laser/assembly/chipset/gate/robot)
+
+* 結果: 実装済み — レーザー→精密作業台→チップ製造・BC 式ゲートの RS 制御抽出・ロボット最小 dock を実機確認
+* 実装:
+  * `assembly_table`/`AssemblyTableBlockEntity` — レーザー専用受電 (CAP 10000), 素材 12 スロット, `BcnProcessingRecipes.find("assembly_table", slots)` のデータ駆動レシピで energy>=cost 時に製作, 隣接コンテナへ搬出 (右クリック投入可)
+  * `laser`/`LaserBlockEntity` — MjStorageBlockEntity (LV 受電・容量 500), 半径 5 の作業台へ ≤4 MJ/t 分配. `LaserBeamRenderer` で照射ライン描画 (26.3 render-state API)
+  * チップセット 8 種 + `data/bcn/processing/assembly_table.json` で 8 レシピ定義 (JSON データ駆動)
+  * `GateItem` (AND/OR ×5 材) — パイプ右クリックで装着, `ItemPipeBlockEntity.gate` 保存. 10 tick 毎に AND=信号ON時のみ/OR=信号OFF時のみに隣接コンテナから 1 抽出 (redwire 系とは別系統)
+  * 派生作業台 4 種 (integration/charging/gate_copier/advanced_crafting) + `docking_station` は登録のみ (機能は別タスク)
+  * `robot`/`RobotEntity` — dock 右クリックで配置, 最小の待機エンティティ (AI 無し). gate_mod 4 種 + redstone_board/crystal も登録
+* 実機検証 (testserver, RCON):
+  * laser 受電 760 MJ → 作業台へ 4 MJ/t 供給 → redstone×4 + 800 MJ で `chipset_redstone` 生成→チェスト搬出 (crafted_total=1)
+  * gate=and のパイプは RS 無しで搬出 0 → redstone_block で cobble 搬出開始を確認
+  * `summon bcn:robot` + dock ブロック配置で実体化を確認
+* 判明したこと: 26.3 描画 API は `BlockEntityRenderer<T,S>` + `createRenderState/extractRenderState/submit` + `SubmitNodeCollector.submitCustomGeometry`, RenderType 定数は `rendertype.RenderTypes` 複数形
+* 未解決・要判断:
+  * ゲートの素材差別化 (条件スロット数・トリガ種別) 未実装 — 現状 AND=電源有 / OR=電源無の単一条件のみ
+  * ゲート改造 4 種はアイテム登録のみ (装着/動作は別タスク). 派生作業台もスタブ
+  * ロボットは登録+ dock 配置のみ. ビーム描画はクライアント側で未目視 (render 構造のみ実機確認不可)

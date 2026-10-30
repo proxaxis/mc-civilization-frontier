@@ -120,10 +120,14 @@ public final class LogisticsNetwork {
 		return Direction.NORTH;
 	}
 
-	/** パイプに隣接する最初のコンテナを返す (供給/回収の対象面). */
+	/** パイプに隣接する最初のコンテナを返す (供給/回収の対象面). パイプ自身は除外する. */
 	public static FaceContainer attachedContainer(Level level, BlockPos pos) {
 		for (Direction d : Direction.values()) {
-			Container container = HopperBlockEntity.getContainerAt(level, pos.relative(d));
+			BlockPos rel = pos.relative(d);
+			if (level.getBlockState(rel).getBlock() instanceof BcnPipeBlock) {
+				continue;
+			}
+			Container container = HopperBlockEntity.getContainerAt(level, rel);
 			if (container != null) {
 				return new FaceContainer(container, d);
 			}

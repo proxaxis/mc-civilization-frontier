@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ORO",
+    "ORO",
+    "OSO"
+  ],
+  "key": {
+    "O": "minecraft:obsidian",
+    "R": "minecraft:redstone",
+    "S": "bcn:gear_stone"
+  },
+  "result": {
+    "id": "bcn:laser",
+    "count": 1
+  }
+}

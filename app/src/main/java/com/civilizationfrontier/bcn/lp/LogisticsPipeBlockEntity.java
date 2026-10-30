@@ -221,6 +221,7 @@ public class LogisticsPipeBlockEntity extends ItemPipeBlockEntity implements MjR
 	// ---- 要求側 ----
 
 	private void tickRequest(Level level, BlockPos pos) {
+		dbg++;
 		if (filter.isEmpty() || !powered()) {
 			return;
 		}
@@ -231,12 +232,16 @@ public class LogisticsPipeBlockEntity extends ItemPipeBlockEntity implements MjR
 		FaceContainer attached = LogisticsNetwork.attachedContainer(level, pos);
 		int face = attached != null ? attached.face().ordinal() : LogisticsNetwork.FACE_EJECT;
 		int sent = LogisticsNetwork.request(level, filter.copyWithCount(want), pos, pos, face);
+		dbgSent = sent;
 		if (sent > 0) {
 			inflight += sent;
 			spend(sent * COST_PER_ITEM);
 			setChanged();
 		}
 	}
+
+	private int dbg;
+	private int dbgSent;
 
 	private void tickSupply(Level level, BlockPos pos, ItemStack want) {
 		if (want.isEmpty() || !powered()) {
@@ -583,6 +588,8 @@ public class LogisticsPipeBlockEntity extends ItemPipeBlockEntity implements MjR
 		super.saveAdditional(out);
 		out.putDouble("power", power);
 		out.putInt("fly", inflight);
+		out.putInt("dbg", dbg);
+		out.putInt("dbgs", dbgSent);
 		if (!filter.isEmpty()) {
 			out.store("flt", ItemStack.CODEC, filter);
 		}

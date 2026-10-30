@@ -16,6 +16,8 @@ import com.civilizationfrontier.bcn.energy.block.MjCableSplitterBlock;
 import com.civilizationfrontier.bcn.energy.block.MjConsumerBlock;
 import com.civilizationfrontier.bcn.energy.block.Ic2GeneratorBlock;
 import com.civilizationfrontier.bcn.energy.block.MjGeneratorBlock;
+import com.civilizationfrontier.bcn.energy.block.MjAssemblyTableBlock;
+import com.civilizationfrontier.bcn.energy.block.MjLaserBlock;
 import com.civilizationfrontier.bcn.energy.block.MjQuarryBlock;
 import com.civilizationfrontier.bcn.energy.block.MjRefineryBlock;
 import com.civilizationfrontier.bcn.energy.block.MjTransformerBlock;
@@ -86,6 +88,13 @@ public final class BcnBlocks {
 					.requiresCorrectToolForDrops());
 	public static final MjRefineryBlock REFINERY = register("refinery", MjRefineryBlock::new, machineProps());
 	public static final MjQuarryBlock QUARRY = register("quarry", MjQuarryBlock::new, machineProps());
+	public static final MjAssemblyTableBlock ASSEMBLY_TABLE = register("assembly_table", MjAssemblyTableBlock::new, machineProps());
+	public static final MjLaserBlock LASER = register("laser", MjLaserBlock::new, machineProps());
+	public static final Block INTEGRATION_TABLE = register("integration_table", Block::new, machineProps());
+	public static final Block CHARGING_TABLE = register("charging_table", Block::new, machineProps());
+	public static final Block GATE_COPIER = register("gate_copier", Block::new, machineProps());
+	public static final Block ADVANCED_CRAFTING_TABLE = register("advanced_crafting_table", Block::new, machineProps());
+	public static final Block DOCKING_STATION = register("docking_station", Block::new, machineProps());
 	public static final MjProcessorBlock MACERATOR = register("macerator",
 			properties -> new MjProcessorBlock(properties, "macerator"), machineProps());
 	public static final MjProcessorBlock EXTRACTOR = register("extractor",

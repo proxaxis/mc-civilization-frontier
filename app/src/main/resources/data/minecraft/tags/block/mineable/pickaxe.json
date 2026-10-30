@@ -118,6 +118,13 @@
     "bcn:pipe_chassis_mk4",
     "bcn:pipe_chassis_mk5",
     "bcn:pipe_liquid_supplier",
-    "bcn:soldering_station"
+    "bcn:soldering_station",
+    "bcn:assembly_table",
+    "bcn:laser",
+    "bcn:integration_table",
+    "bcn:charging_table",
+    "bcn:gate_copier",
+    "bcn:advanced_crafting_table",
+    "bcn:docking_station"
   ]
 }

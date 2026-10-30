@@ -1,0 +1,144 @@
+{
+  "recipes": [
+    {
+      "in": [
+        [
+          "minecraft:redstone",
+          4
+        ]
+      ],
+      "out": [
+        "bcn:chipset_redstone",
+        1
+      ],
+      "ticks": 200,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "minecraft:iron_ingot",
+          2
+        ],
+        [
+          "minecraft:redstone",
+          4
+        ]
+      ],
+      "out": [
+        "bcn:chipset_iron",
+        1
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "minecraft:gold_ingot",
+          2
+        ],
+        [
+          "minecraft:redstone",
+          4
+        ]
+      ],
+      "out": [
+        "bcn:chipset_gold",
+        1
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "minecraft:quartz",
+          4
+        ],
+        [
+          "minecraft:redstone",
+          4
+        ]
+      ],
+      "out": [
+        "bcn:chipset_quartz",
+        1
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "minecraft:diamond",
+          1
+        ],
+        [
+          "minecraft:redstone",
+          4
+        ]
+      ],
+      "out": [
+        "bcn:chipset_diamond",
+        1
+      ],
+      "ticks": 600,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "minecraft:ender_pearl",
+          2
+        ],
+        [
+          "minecraft:redstone",
+          4
+        ]
+      ],
+      "out": [
+        "bcn:chipset_pulsating",
+        1
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "minecraft:redstone",
+          8
+        ],
+        [
+          "minecraft:iron_ingot",
+          1
+        ]
+      ],
+      "out": [
+        "bcn:chipset_comp",
+        1
+      ],
+      "ticks": 400,
+      "mj_per_tick": 4.0
+    },
+    {
+      "in": [
+        [
+          "minecraft:emerald",
+          1
+        ],
+        [
+          "minecraft:redstone",
+          4
+        ]
+      ],
+      "out": [
+        "bcn:chipset_emerald",
+        1
+      ],
+      "ticks": 600,
+      "mj_per_tick": 4.0
+    }
+  ]
+}

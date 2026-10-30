@@ -23,6 +23,8 @@ public final class BcnEntities {
 					.fireImmune()
 					.noSave());
 
+	public static final EntityType<RobotEntity> ROBOT = register("robot",
+			EntityType.Builder.<RobotEntity>of(RobotEntity::new, MobCategory.MISC).sized(0.6F, 0.9F));
 	public static final EntityType<SiegeShotEntity> SIEGE_SHOT = register("siege_shot",
 			EntityType.Builder.<SiegeShotEntity>of(SiegeShotEntity::new, MobCategory.MISC)
 					.sized(1.0F, 1.0F)

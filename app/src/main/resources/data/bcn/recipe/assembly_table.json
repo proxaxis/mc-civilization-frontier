@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "OGO",
+    "OWO",
+    "ODO"
+  ],
+  "key": {
+    "O": "minecraft:obsidian",
+    "G": "bcn:gear_diamond",
+    "W": "bcn:gear_stone",
+    "D": "minecraft:diamond"
+  },
+  "result": {
+    "id": "bcn:assembly_table",
+    "count": 1
+  }
+}

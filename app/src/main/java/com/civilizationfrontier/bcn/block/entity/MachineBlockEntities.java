@@ -53,6 +53,11 @@ public final class MachineBlockEntities {
 	public static final BlockEntityType<com.civilizationfrontier.bcn.builder.BuilderBlock.BuilderBlockEntity> BUILDER = register("builder",
 			FabricBlockEntityTypeBuilder.create(com.civilizationfrontier.bcn.builder.BuilderBlock.BuilderBlockEntity::new,
 					BcnBlocks.BUILDER).build());
+	public static final BlockEntityType<AssemblyTableBlockEntity> ASSEMBLY_TABLE = register("assembly_table",
+			FabricBlockEntityTypeBuilder.create(AssemblyTableBlockEntity::new, BcnBlocks.ASSEMBLY_TABLE).build());
+	public static final BlockEntityType<com.civilizationfrontier.bcn.energy.block.entity.LaserBlockEntity> LASER = register("laser",
+			FabricBlockEntityTypeBuilder.create(com.civilizationfrontier.bcn.energy.block.entity.LaserBlockEntity::new,
+					BcnBlocks.LASER).build());
 	public static final BlockEntityType<com.civilizationfrontier.bcn.energy.block.entity.QuarryBlockEntity> QUARRY = register("quarry",
 			FabricBlockEntityTypeBuilder.create(
 					com.civilizationfrontier.bcn.energy.block.entity.QuarryBlockEntity::new,

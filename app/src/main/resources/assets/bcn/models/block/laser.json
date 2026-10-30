@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "side": "bcn:block/laser_side",
+    "top": "bcn:block/laser_top",
+    "front": "bcn:block/laser_front"
+  }
+}
