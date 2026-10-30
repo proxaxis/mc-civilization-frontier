@@ -8,4 +8,4 @@ experience add @s 1000 points
 give @s minecraft:heart_of_the_sea 1
 give @s minecraft:recovery_compass 1
 tag @s add qd_c6_eclipse
-tellraw @s [{"text":"[クエスト達成] 蝕界の深淵 → diamond_coinx2 / XP+1000 / heart_of_the_seax1 / recovery_compassx1","color":"green"}]
+tellraw @s [{"text":"[クエスト達成] 蝕界の深淵 → ダイヤ貨x2 / XP+1000 / マリンの心臓x1 / 回生のコンパスx1","color":"green"}]

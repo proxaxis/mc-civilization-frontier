@@ -5,4 +5,4 @@ scoreboard players add @s cfb_k_memorywrab 5
 give @s coinsje:gold_coin 5
 experience add @s 500 points
 give @s minecraft:ender_pearl 8
-tellraw @s [{"text":"[クエスト達成] 残響の舞姫 → gold_coinx5 / XP+500 / ender_pearlx8","color":"green"}]
+tellraw @s [{"text":"[クエスト達成] 残響の舞姫 → 金貨x5 / XP+500 / エンダーパールx8","color":"green"}]

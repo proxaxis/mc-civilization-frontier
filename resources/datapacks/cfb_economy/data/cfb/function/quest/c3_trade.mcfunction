@@ -4,4 +4,4 @@ give @s coinsje:gold_coin 1
 experience add @s 150 points
 give @s minecraft:emerald 4
 tag @s add qd_c3_trade
-tellraw @s [{"text":"[クエスト達成] 交易都市への参入 → gold_coinx1 / XP+150 / emeraldx4","color":"green"}]
+tellraw @s [{"text":"[クエスト達成] 交易都市への参入 → 金貨x1 / XP+150 / エメラルドx4","color":"green"}]

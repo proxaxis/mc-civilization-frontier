@@ -5,4 +5,4 @@ scoreboard players add @s cfb_k_soulboundb 5
 give @s coinsje:iron_coin 15
 experience add @s 250 points
 give @s minecraft:iron_sword 1
-tellraw @s [{"text":"[クエスト達成] 誓約の剣士 → iron_coinx15 / XP+250 / iron_swordx1","color":"green"}]
+tellraw @s [{"text":"[クエスト達成] 誓約の剣士 → 鉄貨x15 / XP+250 / 鉄の剣x1","color":"green"}]

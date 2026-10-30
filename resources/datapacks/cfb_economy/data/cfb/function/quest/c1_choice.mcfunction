@@ -5,4 +5,4 @@ experience add @s 100 points
 give @s minecraft:shield 1
 give @s coinsje:copper_coin 5
 tag @s add qd_c1_choice
-tellraw @s [{"text":"[クエスト達成] 運命の選択 → copper_coinx5 / XP+100 / shieldx1 / copper_coinx5","color":"green"}]
+tellraw @s [{"text":"[クエスト達成] 運命の選択 → 銅貨x5 / XP+100 / 盾x1 / 銅貨x5","color":"green"}]

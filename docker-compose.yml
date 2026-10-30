@@ -30,8 +30,8 @@ services:
       MEMORY: "6G"
       JVM_XX_OPTS: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"
     ports:
-      - "25565:25565"
-      - "25575:25575"
+      - "25566:25565"
+      - "25576:25575"
       - "5005:5005"
     stdin_open: true
     tty: true
@@ -39,6 +39,33 @@ services:
       - nv_testserver_data:/data
       - ${WORKSPACE_HOST_PATH:-.}/resources/mods:/data/mods:ro
       - ${WORKSPACE_HOST_PATH:-.}/resources/datapacks/cfb_fixes:/data/world/datapacks/cfb_fixes:ro
+
+  # Production Minecraft Fabric Server
+  productionserver:
+    image: mc-civilization-frontier-testserver:latest
+    container_name: mc_civilization_frontier_productionserver
+    environment:
+      EULA: "TRUE"
+      TYPE: "FABRIC"
+      VERSION: "26.3"
+      ONLINE_MODE: "TRUE"
+      DIFFICULTY: "hard"
+      ALLOW_CHEATS: "false"
+      ENABLE_RCON: "true"
+      RCON_PASSWORD: "devpassword"
+      MEMORY: "6G"
+    ports:
+      - "25565:25565"
+      - "25575:25575"
+    stdin_open: true
+    tty: true
+    volumes:
+      - nv_production_data:/data
+      - ${WORKSPACE_HOST_PATH:-.}/resources/mods:/data/mods:ro
+      - ${WORKSPACE_HOST_PATH:-.}/resources/datapacks/cfb_fixes:/data/world/datapacks/cfb_fixes:ro
+      - ${WORKSPACE_HOST_PATH:-.}/resources/datapacks/cfb_economy:/data/world/datapacks/cfb_economy:ro
+      - ${WORKSPACE_HOST_PATH:-.}/resources/datapacks/cfb_enemies:/data/world/datapacks/cfb_enemies:ro
+      - ${WORKSPACE_HOST_PATH:-.}/resources/datapacks/cfb_skills:/data/world/datapacks/cfb_skills:ro
 
   # Operation Agent
   orchestrator:
@@ -51,3 +78,4 @@ services:
 
 volumes:
   nv_testserver_data:
+  nv_production_data:

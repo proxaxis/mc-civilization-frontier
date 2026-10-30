@@ -5,4 +5,4 @@ experience add @s 50 points
 give @s minecraft:bread 8
 give @s minecraft:charcoal 16
 tag @s add qd_c1_shelter
-tellraw @s [{"text":"[クエスト達成] 荒野の生命線 → copper_coinx5 / XP+50 / breadx8 / charcoalx16","color":"green"}]
+tellraw @s [{"text":"[クエスト達成] 荒野の生命線 → 銅貨x5 / XP+50 / パンx8 / 木炭x16","color":"green"}]

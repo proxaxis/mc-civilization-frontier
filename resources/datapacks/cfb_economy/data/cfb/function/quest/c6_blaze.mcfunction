@@ -5,4 +5,4 @@ scoreboard players add @s cfb_k_blazeb 10
 give @s coinsje:gold_coin 3
 experience add @s 400 points
 give @s minecraft:blaze_rod 8
-tellraw @s [{"text":"[クエスト達成] 炎の絨毯 → gold_coinx3 / XP+400 / blaze_rodx8","color":"green"}]
+tellraw @s [{"text":"[クエスト達成] 炎の絨毯 → 金貨x3 / XP+400 / ブレイズロッドx8","color":"green"}]

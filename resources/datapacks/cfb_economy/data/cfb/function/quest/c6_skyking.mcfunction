@@ -8,4 +8,4 @@ experience add @s 800 points
 give @s minecraft:beacon 1
 give @s minecraft:totem_of_undying 1
 tag @s add qd_c6_skyking
-tellraw @s [{"text":"[クエスト達成] 天空の覇王 → gold_coinx10 / XP+800 / beaconx1 / totem_of_undyingx1","color":"green"}]
+tellraw @s [{"text":"[クエスト達成] 天空の覇王 → 金貨x10 / XP+800 / ビーコンx1 / 不死のトーテムx1","color":"green"}]

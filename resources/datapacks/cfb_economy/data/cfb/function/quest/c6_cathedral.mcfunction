@@ -8,4 +8,4 @@ experience add @s 800 points
 give @s minecraft:echo_shard 4
 give @s minecraft:netherite_ingot 2
 tag @s add qd_c6_cathedral
-tellraw @s [{"text":"[クエスト達成] 腐敗の大聖堂 → gold_coinx10 / XP+800 / echo_shardx4 / netherite_ingotx2","color":"green"}]
+tellraw @s [{"text":"[クエスト達成] 腐敗の大聖堂 → 金貨x10 / XP+800 / 残響の欠片x4 / ネザライトインゴットx2","color":"green"}]

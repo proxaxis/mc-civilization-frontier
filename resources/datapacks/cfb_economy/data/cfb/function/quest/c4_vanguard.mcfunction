@@ -5,4 +5,4 @@ scoreboard players add @s cfb_k_rustedguab 5
 give @s coinsje:iron_coin 15
 experience add @s 250 points
 give @s minecraft:shield 1
-tellraw @s [{"text":"[クエスト達成] 鋼の盾兵 → iron_coinx15 / XP+250 / shieldx1","color":"green"}]
+tellraw @s [{"text":"[クエスト達成] 鋼の盾兵 → 鉄貨x15 / XP+250 / 盾x1","color":"green"}]

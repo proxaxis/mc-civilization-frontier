@@ -5,4 +5,4 @@ scoreboard players add @s cfb_k_ghoulb 10
 give @s coinsje:iron_coin 10
 experience add @s 200 points
 give @s minecraft:rotten_flesh 32
-tellraw @s [{"text":"[クエスト達成] 蠢く墓地 → iron_coinx10 / XP+200 / rotten_fleshx32","color":"green"}]
+tellraw @s [{"text":"[クエスト達成] 蠢く墓地 → 鉄貨x10 / XP+200 / 腐った肉x32","color":"green"}]

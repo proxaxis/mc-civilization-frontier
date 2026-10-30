@@ -5,4 +5,4 @@ scoreboard players add @s cfb_k_hollowsovb 3
 give @s coinsje:gold_coin 3
 experience add @s 400 points
 give @s minecraft:obsidian 16
-tellraw @s [{"text":"[クエスト達成] 眷属の排除 → gold_coinx3 / XP+400 / obsidianx16","color":"green"}]
+tellraw @s [{"text":"[クエスト達成] 眷属の排除 → 金貨x3 / XP+400 / 黒曜石x16","color":"green"}]

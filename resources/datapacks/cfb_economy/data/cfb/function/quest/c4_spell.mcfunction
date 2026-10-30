@@ -5,4 +5,4 @@ experience add @s 200 points
 give @s minecraft:lapis_lazuli 16
 give @s runes:fire_stone 8
 tag @s add qd_c4_spell
-tellraw @s [{"text":"[クエスト達成] 呪文書の結合 → iron_coinx10 / XP+200 / lapis_lazulix16 / fire_stonex8","color":"green"}]
+tellraw @s [{"text":"[クエスト達成] 呪文書の結合 → 鉄貨x10 / XP+200 / ラピスラズリx16 / 火のルーンx8","color":"green"}]

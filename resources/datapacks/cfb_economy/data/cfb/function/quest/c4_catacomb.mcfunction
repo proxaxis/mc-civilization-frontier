@@ -6,4 +6,4 @@ give @s coinsje:iron_coin 20
 experience add @s 350 points
 give @s minecraft:potion[minecraft:potion_contents={potion:"minecraft:strong_healing"}] 3
 give @s minecraft:trial_key 1
-tellraw @s [{"text":"[クエスト達成] カタコンベの深淵 → iron_coinx20 / XP+350 / potionx3 / trial_keyx1","color":"green"}]
+tellraw @s [{"text":"[クエスト達成] カタコンベの深淵 → 鉄貨x20 / XP+350 / 強力な治癒のポーションx3 / トライアルキーx1","color":"green"}]

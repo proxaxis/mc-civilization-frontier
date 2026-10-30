@@ -27,3 +27,7 @@ scoreboard objectives add cfb_k_hordezomb minecraft.killed:undeadnights:horde_zo
 scoreboard objectives add cfb_k_hordezombb dummy
 scoreboard objectives add cfb_m_spawner minecraft.mined:minecraft.spawner
 scoreboard objectives add cfb_m_spawnerb dummy
+scoreboard objectives add cfb_q_zombie minecraft.killed:minecraft.zombie
+scoreboard objectives add cfb_q_pillager minecraft.killed:minecraft.pillager
+scoreboard objectives add cfb_q_guardian minecraft.killed:minecraft.guardian
+scoreboard objectives add cfb_q_wither minecraft.killed:minecraft.wither_skeleton

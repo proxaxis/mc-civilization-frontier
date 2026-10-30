@@ -5,4 +5,4 @@ give @s coinsje:copper_coin 10
 experience add @s 100 points
 give @s minecraft:lapis_lazuli 8
 tag @s add qd_c1_magic
-tellraw @s [{"text":"[クエスト達成] 初めての術式 → copper_coinx10 / XP+100 / lapis_lazulix8","color":"green"}]
+tellraw @s [{"text":"[クエスト達成] 初めての術式 → 銅貨x10 / XP+100 / ラピスラズリx8","color":"green"}]

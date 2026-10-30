@@ -4,4 +4,4 @@ give @s coinsje:gold_coin 2
 experience add @s 200 points
 give @s minecraft:golden_shovel 1
 tag @s add qd_c3_claim
-tellraw @s [{"text":"[クエスト達成] 領地の保護と納税 → gold_coinx2 / XP+200 / golden_shovelx1","color":"green"}]
+tellraw @s [{"text":"[クエスト達成] 領地の保護と納税 → 金貨x2 / XP+200 / 金のシャベルx1","color":"green"}]

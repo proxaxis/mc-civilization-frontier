@@ -5,4 +5,4 @@ scoreboard players add @s cfb_k_acolyteb 5
 give @s coinsje:iron_coin 10
 experience add @s 200 points
 give @s minecraft:bone_block 8
-tellraw @s [{"text":"[クエスト達成] 異端の信徒 → iron_coinx10 / XP+200 / bone_blockx8","color":"green"}]
+tellraw @s [{"text":"[クエスト達成] 異端の信徒 → 鉄貨x10 / XP+200 / 骨ブロックx8","color":"green"}]

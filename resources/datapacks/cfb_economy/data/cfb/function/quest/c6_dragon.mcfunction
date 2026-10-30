@@ -5,4 +5,4 @@ experience add @s 2000 points
 give @s minecraft:dragon_egg 1
 give @s minecraft:dragon_head 1
 tag @s add qd_c6_dragon
-tellraw @s [{"text":"[クエスト達成] 終焉の龍と新時代の夜明け → netherite_coinx1 / XP+2000 / dragon_eggx1 / dragon_headx1","color":"green"}]
+tellraw @s [{"text":"[クエスト達成] 終焉の龍と新時代の夜明け → ネザライト貨x1 / XP+2000 / ドラゴンの卵x1 / ドラゴンの頭x1","color":"green"}]
