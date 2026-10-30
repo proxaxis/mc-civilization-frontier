@@ -108,6 +108,9 @@ public class RailSignalBlockEntity extends BlockEntity {
 	}
 
 	private void applyStops(Level level) {
+		if (section == null || section.rails().isEmpty()) {
+			return;
+		}
 		BlockPos guardRail = section.guardRail();
 		AABB around = new AABB(guardRail).inflate(0.5);
 		for (AbstractMinecart cart : level.getEntities(EntityTypeTest.forClass(AbstractMinecart.class),

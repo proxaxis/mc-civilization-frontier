@@ -35,7 +35,8 @@ chapters = []
 for path in sorted(glob.glob("/ws/quests/chapter_*.md")):
     txt = open(path).read()
     title = re.search(r"# 第\s*(\d+)\s*章\s*-\s*(\S+)", txt)
-    cnum, ctitle = int(title.group(1)), title.group(2)
+    cnum = int(title.group(1))
+    ctitle = re.sub(r"^[^\u3040-\u9fff]+", "", title.group(2))  # 先頭絵文字を除去
     desc = re.search(r"## 説明\n\n(.+)", txt)
     goal = re.search(r"## 目的\n\n(.+)", txt)
     quests = []
@@ -117,25 +118,25 @@ open(f"{QDIR}/route.mcfunction", "w").write("\n".join(route_lines) + "\n")
 
 # ---- 章シート本 ----
 for i, ch in enumerate(chapters, 1):
-    emoji = ch["title"][0] if ch["title"] else ""
+    emoji = "◆"  # 絵文字はクライアントで豆腐になるため記号に統一
     pages = []
     pages.append('["",{"text":"第 ' + str(ch["num"]) + ' 章\\n\\n"},{"text":"' + esc(ch["title"]) + '\\n\\n","color":"dark_purple"},{"text":"' + esc(ch["desc"]) + '"}]')
     pages.append('["",{"text":"' + emoji + '0' + str(ch["num"]) + ' > 目的\\n\\n","color":"gray"},{"text":"' + esc(ch["goal"]) + '"}]')
-    lst = '["",{"text":"' + emoji + '0' + str(ch["num"]) + ' > 📜クエスト\\n\\n","color":"gray"}'
+    lst = '["",{"text":"' + emoji + '0' + str(ch["num"]) + ' > ▶クエスト\\n\\n","color":"gray"}'
     for j, q in enumerate(ch["quests"], 1):
-        lst += ',{"text":"☐ ' + f"{j:02d}" + ' ' + esc(q["name"]) + '\\n"}'
+        lst += ',{"text":"□ ' + f"{j:02d}" + ' ' + esc(q["name"]) + '\\n"}'
     pages.append(lst + "]")
     for j, q in enumerate(ch["quests"], 1):
         code = q["code"]
-        reward = " ".join(f"💎{r[0].split(':')[-1]}x{r[1]}" if r[0] != "xp" else f"✨{r[1]}" for r in q["rews"])
-        reqtxt = "".join(f"🔶{t}:{tg.split(':')[-1]}x{n}\\n" for t, tg, n in q["reqs"])
-        pages.append('["",{"text":"' + emoji + '0' + str(ch["num"]) + ' > 📜' + f"{j:02d}" + ' ' + esc(q["name"]) + '\\n","bold":true},{"text":">> ' + esc(reward) + '\\n","color":"gold"},{"text":"' + reqtxt + '\\n","color":"dark_red"},{"text":"[申請]\\n\\n","color":"aqua",click_event:{action:"run_command",command:"/trigger cfb_qmenu set ' + str(code) + '"}},{"text":"' + esc(q["desc"]) + '"}]')
+        reward = " ".join(f"◆{r[0].split(chr(91))[0].split(':')[-1]}x{r[1]}" if r[0] != "xp" else f"XP+{r[1]}" for r in q["rews"])
+        reqtxt = "".join(f"■{t}:{tg.split(':')[-1]}x{n}\\n" for t, tg, n in q["reqs"])
+        pages.append('["",{"text":"' + emoji + '0' + str(ch["num"]) + ' > ' + f"{j:02d}" + f"{j:02d}" + ' ' + esc(q["name"]) + '\\n","bold":true},{"text":">> ' + esc(reward) + '\\n","color":"gold"},{"text":"' + reqtxt + '\\n","color":"dark_red"},{"text":"[申請]\\n\\n","color":"aqua",click_event:{action:"run_command",command:"/trigger cfb_qmenu set ' + str(code) + '"}},{"text":"' + esc(q["desc"]) + '"}]')
     book = 'give @s minecraft:written_book[minecraft:written_book_content={title:"クエストシート - ' + esc(ch["title"]) + '",author:"Civilization Frontier",pages:[' + ",".join(pages) + ']}]'
     open(f"{QDIR}/sheet{i}.mcfunction", "w").write(book + f'\ntellraw @s [{{"text":"クエストシート 第{ch["num"]}章 を受け取りました.","color":"gray"}}]\n')
 
 # ---- マスターブック ----
-intro = '["",{"text":"⚙️Civilization Frontier\\n\\n―― 創世か, 終焉か.\\n大災厄によって旧文明が崩壊した世界.\\n頭上には浮遊城塞, 足元には無限の迷宮が広がり, 安息の地はどこにもない.\\n己の職業を定め, 街道の酒場を確保し, 最初の道具を作れ.\\n産業を興して資源を掌握し, 失われた遺産を取り戻す戦いが今始まる.\\n\\n歯車を回せ, 剣を抜け!\\n新たな時代を築くのは君だ!"}]'
-menu = '["",{"text":"⚙️クエスト本 > ブックメニュー\\n\\n"}'
+intro = '["",{"text":"★ Civilization Frontier\\n\\n―― 創世か, 終焉か.\\n大災厄によって旧文明が崩壊した世界.\\n頭上には浮遊城塞, 足元には無限の迷宮が広がり, 安息の地はどこにもない.\\n己の職業を定め, 街道の酒場を確保し, 最初の道具を作れ.\\n産業を興して資源を掌握し, 失われた遺産を取り戻す戦いが今始まる.\\n\\n歯車を回せ, 剣を抜け!\\n新たな時代を築くのは君だ!"}]'
+menu = '["",{"text":"★ クエスト本 > ブックメニュー\\n\\n"}'
 for i, ch in enumerate(chapters, 1):
     menu += ',{"text":"' + f"{i:02d}" + '. ","color":"gray"},{"text":"' + esc(ch["title"]) + ' "},{"text":"[取得]\\n","color":"aqua",click_event:{action:"run_command",command:"/trigger cfb_qmenu set ' + str(900 + i) + '"}}'
 menu += ']'

@@ -1,8 +1,8 @@
-# 科学技術アイテムとレシピのカタログ
+> [ガイド](./GUIDE.md) > 科学技術アイテムカタログ
 
-BCN (Build Craft Neo) 実装用に、BuildCraft / IndustrialCraft2 / Project:Red / LogisticsPipes の
-鉱石、アイテム、機械、パイプ類とそのレシピを整理した一覧. レシピの正本は各 `resources/*/ITEMS.md` (wiki 仕様)
-であり、`公式レシピ` 行は現行公式データ(IC2C 1.19.2 / BC 7.99 / PR 1.21.1 / LP 1.12.2)からの近似参照.
+# 科学技術アイテムカタログ
+
+`Build Craft Neo` 実装に伴い、鉱石、アイテム、機械、パイプ類とそのレシピを整理した一覧. レシピの正本は各 `resources/*/ITEMS.md` (wiki 仕様) であり、`公式レシピ` 行は現行公式データ(IC2C 1.19.2 / BC 7.99 / PR 1.21.1 / LP 1.12.2)からの近似参照.
 
 ## 0. エネルギー単位の統一 (EU -> MJ)
 
@@ -103,7 +103,6 @@ EFP は重工業稼働で世界全体に蓄積する汚染指数 (`cfb_efp` ス�
 
 
 ## BuildCraft (7.99 / MC1.12.2)
-
 
 ### 1. 部品、ツール
 
