@@ -1,6 +1,6 @@
 # Civilization Frontier: Beyond the Cataclysm
 
-![](./assets/banner.jpg)
+![](./docs/assets/readme_banner.jpg)
 
 > _創世か、終焉か ――_<br/>
 > _開拓、産業、経済、そして迫りくる強大な災厄 ―― 歯車を回せ! 剣を抜け!_<br/>
